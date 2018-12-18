@@ -1,0 +1,311 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+body{
+	margin: auto;
+	/* margin-top:1em;
+	margin-bottom:1em; */
+
+	background: #E4E4E4;
+	max-width: 1200px;
+	font-family: 'Montserrat',sans-serif;
+}
+
+h1{
+	font-size:2em;
+	margin-bottom: 1em;
+}
+
+h2{
+	font-size:1.6em;
+	margin-bottom: 1em;
+}
+
+p{
+	font-size: 1.1em;
+	margin:0.8em 0 0.8em 0;
+}
+
+
+
+/*****
+MENU
+******/
+
+#nav {
+	margin:0;
+	padding-left: 2%;
+	padding-right: 2%;
+	text-align: right;
+	background-color: #fff;
+	color:#fff;
+}
+
+#logo {
+	float:left;
+	padding: 0.5em 0 0.5em 0;
+}
+
+#logo img {
+	max-height: 3.8em;
+	vertical-align:middle;
+}
+
+#nav li{
+	display: inline-block;
+	padding: 1.8em 1% 1.8em 1%;
+}
+
+#nav li>a {
+	font-weight: bold;
+	border-radius: 15px;
+	padding: 0.5em;
+	color: #044B5D;
+}
+
+#nav li>a:link {
+	color: #044B5D;
+	text-decoration: none;
+}
+
+#nav li>a:hover{
+	color: #000;
+	background-color: #E4E4E4;
+}
+
+#nav #currentLink{
+	height: 100%;
+	padding:0;
+	border-radius: 15px;
+	padding: 0.5em;
+	cursor:default;
+	color: #fff;
+	background-color: #343434;
+	font-weight: bold;
+}
+
+#menuIcon{
+}
+
+
+
+/*****
+HEADER
+******/
+
+
+#header{
+	color:white;
+	background-color: black;
+	background-image: url("banner.jpg");
+	height: 20em;
+	background-size:cover;
+	background-position: center;
+	text-align: center;
+}
+
+#header img{
+	margin: 1em 0 1em 0;
+	width: 70%;
+	display: none;
+}
+
+
+/*****
+USERBAR
+******/
+#userBar{
+	text-align: right;
+	background-color: #343434;
+	width: 98%;
+	color:white;
+	padding:1%;
+}
+
+#userBar li{
+	display: inline-block;
+	margin: 0 0.5em 0 0.5em;
+}
+
+#userBar li>a {
+	color:white;
+}
+
+
+/*****
+CONTENUTO
+******/
+
+#content{
+	padding:2em 5% 2em 5%;
+	background: #fff;
+	text-align:left;
+}
+
+.divDx, .divSx {
+	padding-top: 3em;
+	min-height: 20em;
+}
+
+.divGenerico{
+	margin-top: 4em;
+}
+
+#Banner{
+	margin-top: 5em;
+	min-height: 18em;
+	background-image: url("header.jpg");
+	background-size:cover;
+	background-position: center;
+	position: relative;
+}
+
+#Banner div{
+	opacity: 0.95;
+	filter:Alpha(opacity=95);		/*per IE dalla ottava versione in giú*/
+	position:absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 50%;
+	background-color: #343434;
+	color:#fff;
+	padding: 0 2% 0 2%;
+}
+
+
+.button {
+  background-color: #E4E4E4;
+  border: none;
+  color: #000;
+  padding: 1em 2em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#Banner h1{
+	margin-top: 1em;
+	margin-bottom: 0.5em;
+}
+
+.divGenerico h1{
+	text-align:center;
+}
+
+.divSx h1, .divDx h1 {
+	font-weight: bold;
+}
+
+.divSx h1{
+	text-align:right;
+}
+
+.divDx img{
+	float:left;
+	width: 35%;
+	margin: 0 1.2em 1.2em 0;
+	text-align: left;
+}
+
+.divSx img{
+	float:right;
+	width: 35%;
+	margin: 0 0 1.2em 1.2em;
+}
+
+#content #breadcrumb p{
+	font-style: italic;
+	font-size: 1em;
+	margin: 0;
+}
+
+.Card{
+	text-align: center;
+	width: 40%;
+	padding:5%;
+}
+
+.Sx {
+	float:left;
+}
+
+.Dx{
+	display:inline-block;
+}
+
+.Card img{
+	width: 30%;
+}
+
+.Card h2{
+	margin-top: 1em;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+
+
+/*****
+FOOTER
+******/
+
+#footer{
+	text-align: center;
+	font-size: 0.9em;
+	background-color: #343434;
+	color:#fff;
+	padding: 1em;
+}
+
+#footer p{
+	margin: 0.4em 0 0.4em 0;
+	font-size: 1em;
+}
+
+#imgValidCode{
+	float:left;  /*mettendo float, trasformo il contenuto in elemento di blocco e lo posiziono con l'inline a sx o dx*/
+}
+
+#imgValidCSS{
+	float:right;
+}
+
+
+
+/****************
+PULSANTE SCROLL
+*****************/
+
+#scrollUp{
+	font-size: 2.5em;
+	height: 1.5em;
+	width: 1.5em;
+	border:0;
+	border-radius: 50%;
+	position: fixed;
+	bottom: 5%;
+	right: 8%;
+	cursor: pointer;
+	background-color: #044B5D;
+	color: #fff;
+	visibility: visible;
+}
+
+#scrollUp.show{
+	visibility: hidden;
+}
+
+#menuIcon{
+	border:0;
+	height: 1.5em;
+	width: 1.5em;
+	font-size:2em;
+	color:#000;
+	cursor: pointer;
+	background-color: #fff;
+	display: none;
+}

@@ -1,0 +1,44 @@
+#nav{
+	min-height: 3em;
+}
+
+#nav ul{
+	display: none;
+}
+
+#header{
+	background: #343434;
+	height:auto;
+	background-size: auto;
+}
+
+#header img{
+	display: inline;
+}
+
+#content #breadcrumb p{
+	font-size: 0.9em;
+}
+
+.divGenerico{
+	margin-top: 0;
+}
+
+.divDx, .divSx {
+	padding:1em;
+}
+
+.divDx img, .divSx img{
+	display:none;
+}
+
+.Card img {display: none;}
+
+#footer p {
+	font-size: 0.9em;
+}
+
+#menuIcon{
+	float: right;
+	display: block;
+}
