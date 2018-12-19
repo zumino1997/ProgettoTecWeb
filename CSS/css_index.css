@@ -99,7 +99,7 @@ HEADER
 #header{
 	color:white;
 	background-color: black;
-	background-image: url("banner.jpg");
+	background-image: url("IMG/banner.jpg");
 	height: 20em;
 	background-size:cover;
 	background-position: center;
@@ -156,7 +156,7 @@ CONTENUTO
 #Banner{
 	margin-top: 5em;
 	min-height: 18em;
-	background-image: url("header.jpg");
+	background-image: url("IMG/header.jpg");
 	background-size:cover;
 	background-position: center;
 	position: relative;
