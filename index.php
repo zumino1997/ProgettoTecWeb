@@ -12,10 +12,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<link rel="stylesheet" type="text/css" href="css_index.css" media="handheld, screen"/>
-<link rel="stylesheet" type="text/css" href="css_index_small_1200px.css" media="handheld, screen and (max-width:1200px),only screen and (max-device-width:1200px)"/>
-<link rel="stylesheet" type="text/css" href="css_index_small_720px.css" media="handheld, screen and (max-width:768px),only screen and (max-device-width:720px)"/>
-<link rel="stylesheet" type="text/css" href="css_index_small_480px.css" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)"/>
+<link rel="stylesheet" type="text/css" href="CSS/css_index.css" media="handheld, screen"/>
+<link rel="stylesheet" type="text/css" href="CSS/css_index_small_1200px.css" media="handheld, screen and (max-width:1200px),only screen and (max-device-width:1200px)"/>
+<link rel="stylesheet" type="text/css" href="CSS/css_index_small_720px.css" media="handheld, screen and (max-width:768px),only screen and (max-device-width:720px)"/>
+<link rel="stylesheet" type="text/css" href="CSS/css_index_small_480px.css" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css'>
 
@@ -27,9 +27,33 @@
 </head>
 <body>
 
-	<?php include 'navbar.php' ?>
+	<div id="nav">
+	  <div id="logo"><img src="IMG/logo2.png" alt="Logo Energya"/></div>
+	  <button id="menuIcon"><i class='fas fa-bars'></i></button>
+	  <ul>
+	    <li id="currentLink" xml:lang="en">Home</li>
+	    <li><a href="">Attivit&aacute;</a></li>
+	    <li><a href="">Orari</a></li>
+	    <li><a href="" xml:lang="en">Staff</a></li>
+	    <li><a href="">Contatti</a></li>
+	  </ul>
+	</div>
+	<div id="header">
+		<img src="IMG/logo1.png" alt=""/>
+	</div>
 
-	<?php include 'header.php' ?>
+	<div id="userBar">
+	  <ul>
+	    <li>
+	      <span><i class="far fa-user-circle" alt="user"></i></span>
+	      <a href="#">Registrati</a>
+	    </li>
+	    <li>
+	      <span><i class="far fa-user-circle"></i></span>
+	      <a href="#">Accedi</a>
+	    </li>
+	  </ul>
+	</div>
 
 	<div id="content">
 		<div id="breadcrumb">
@@ -38,7 +62,7 @@
 
 		<div class="divDx">
 			<h1>Chi siamo</h1>
-			<img src="foto1.jpg" alt=""/>
+			<img src="IMG/foto1.jpg" alt=""/>
 			<p>Il Centro Natatorio Comunale <span xml:lang="en">"Freestyle"</span> offre numerose opportunità per sfruttare i benefici garantiti dal movimento in acqua, in un ambiente accogliente e confortevole, sotto la guida di uno staff di Istruttori Federali preparati e disponibili.</p>
 			<p>Le attività didattiche sono organizzate secondo le norme della Scuola Nuoto Federale e programmate nell'intero arco dell'anno sportivo. </p>
 			<p>Lo schema didattico prevede diversi gradi di apprendimento delle tecniche di base e di perfezionamento sia nel nuoto che nelle altre attivit&aacute;.</p>
@@ -46,7 +70,7 @@
 
 		<div class="divSx">
 			<h1>La nostra storia</h1>
-			<img src="foto2.jpg" alt="Interno della palestra"/>
+			<img src="IMG/foto2.jpg" alt="Interno della palestra"/>
 			<p>La struttura, nata nel 1981, ospita da molti anni competizioni natatorie a livello regionale.</p>
 			<p>Nel 1983 l'impianto aderir&aacute; ufficialmente alle norme della <abbr title="Federazione Italiana Nuoto">FIN</abbr>, avendo l'obbligo di formare i propri istruttori e collaboratori con relativi corsi indetti dalla federazione. </p>
 			<p>Nel 2016 verr&aacute; premiata come centro natatorio migliore in Veneto</p>
@@ -64,13 +88,13 @@
 
 			<h1> I nostri punti di forza </h1>
 			<div class="Card Sx">
-				<img src="woman.png" alt="Icona persona con manubri"/>
+				<img src="IMG/woman.png" alt="Icona persona con manubri"/>
 				<h2>Professionalit&aacute;</h2>
 				<p>La struttura, nata nel 1981, ospita da molti anni competizioni natatorie a livello regionale.</p>
 			</div>
 
 			<div class="Card Dx">
-				<img src="gym.png" alt="Icona manubrio"/>
+				<img src="IMG/gym.png" alt="Icona manubrio"/>
 				<h2>Benessere</h2>
 				<p>La struttura, nata nel 1981, ospita da molti anni competizioni natatorie a livello regionale.</p>
 			</div>
@@ -79,7 +103,13 @@
 
 	</div>
 
-	<?php include 'footer.php' ?>
+	<div id="footer">
+		<p>Sito <span xml:lang="en" xml:abbr title="World Wide Web">Web</abbr>  realizzato da: </p>
+		<p>Luca</p>
+		<p>Matteo</p>
+		<p>Franconetti Simone</p>
+	</div>
+
 
 
 
