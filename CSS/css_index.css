@@ -86,8 +86,6 @@ MENU
 	font-weight: bold;
 }
 
-#menuIcon{
-}
 
 
 
@@ -99,7 +97,7 @@ HEADER
 #header{
 	color:white;
 	background-color: black;
-	background-image: url("IMG/banner.jpg");
+	background-image: url("../IMG/banner.jpg");
 	height: 20em;
 	background-size:cover;
 	background-position: center;
@@ -156,7 +154,7 @@ CONTENUTO
 #Banner{
 	margin-top: 5em;
 	min-height: 18em;
-	background-image: url("IMG/header.jpg");
+	background-image: url("../IMG/header.jpg");
 	background-size:cover;
 	background-position: center;
 	position: relative;
@@ -247,6 +245,35 @@ CONTENUTO
 	text-transform: uppercase;
 }
 
+#contatti {
+	margin-top:2em;
+}
+
+#contatti p,#contatti h1, #contatti h2 {
+	margin-left: 55%;
+}
+
+#contatti p{
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
+}
+
+#contatti h1{
+	margin-bottom: 0em;
+}
+
+#contatti h2{
+	margin-top: 0.8em;
+	margin-bottom: 0.5em;
+}
+
+#map iframe{
+	width: 50%;
+	height: 25em;
+	border: 0;
+	float: left;
+}
+
 
 
 /*****
@@ -259,6 +286,7 @@ FOOTER
 	background-color: #343434;
 	color:#fff;
 	padding: 1em;
+	clear: both;
 }
 
 #footer p{
