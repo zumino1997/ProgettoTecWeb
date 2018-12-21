@@ -69,4 +69,15 @@
 
 #Banner{
 	display:none;
+} 
+
+
+/*CORSI*/
+.hei{
+	min-height: 31em;
 }
+
+.box p{
+	padding-bottom: 12%;
+}
+/*FINE CORSI*/

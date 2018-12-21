@@ -140,6 +140,7 @@ CONTENUTO
 	padding:2em 5% 2em 5%;
 	background: #fff;
 	text-align:left;
+	overflow: hidden;
 }
 
 .divDx, .divSx {
@@ -274,7 +275,32 @@ CONTENUTO
 	float: left;
 }
 
+/*******
+CSS CORSI
+*******/
 
+.center{
+	text-align:center;
+}
+
+.box img{
+	width: 70%;
+}
+
+.box p{
+	margin: auto;
+	padding: 5%;
+}
+
+.box{
+	text-align: center;
+	width: 50%;
+}
+
+.hei{
+		min-height: 42em;
+}
+/******FINE CSS CORSI******/
 
 /*****
 FOOTER
