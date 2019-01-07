@@ -69,15 +69,25 @@
 
 #Banner{
 	display:none;
-} 
+}
 
 
 /*CORSI*/
-.hei{
-	min-height: 31em;
+.box{
+	width: 100%;
 }
 
 .box p{
 	padding-bottom: 12%;
 }
 /*FINE CORSI*/
+
+
+/*LOGIN*/
+#login-form ul {
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+/*FINE LOGIN*/
