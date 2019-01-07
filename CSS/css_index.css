@@ -308,6 +308,7 @@ CSS CORSI
 
 /******FINE CSS CORSI******/
 
+<<<<<<< HEAD
 
 /*******
 CSS LOGIN
@@ -362,6 +363,23 @@ CSS LOGIN
 fieldset{
 	margin-bottom: 3em;
 }
+=======
+/***STAFF***/
+
+#fila{
+	float: left;
+	display: inline-block;
+	text-align: center;
+	width: 25%;
+	padding-top: 5%;
+}
+#fila img{
+	width: 50%;
+	border-radius: 50%;
+}
+
+/***FINE STAFF***/
+>>>>>>> 6f09b291869eeefa82b954fb9972519e03b4727f
 
 /*****
 FOOTER

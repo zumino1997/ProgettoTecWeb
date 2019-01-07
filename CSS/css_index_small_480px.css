@@ -51,9 +51,19 @@
 .hei{
 	min-height: initial;
 }
+<<<<<<< HEAD
 /*CORSI*/
 
 /*LOGIN*/
 #delete-login-button{
 	display:none;
 }
+=======
+/*CORSI/*
+
+/*STAFF*/
+#fila{
+	width: 100%;
+}
+/*STAFF*/
+>>>>>>> 6f09b291869eeefa82b954fb9972519e03b4727f
