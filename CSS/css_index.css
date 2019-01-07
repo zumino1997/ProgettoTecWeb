@@ -302,6 +302,22 @@ CSS CORSI
 }
 /******FINE CSS CORSI******/
 
+/***STAFF***/
+
+#fila{
+	float: left;
+	display: inline-block;
+	text-align: center;
+	width: 25%;
+	padding-top: 5%;
+}
+#fila img{
+	width: 50%;
+	border-radius: 50%;
+}
+
+/***FINE STAFF***/
+
 /*****
 FOOTER
 ******/
