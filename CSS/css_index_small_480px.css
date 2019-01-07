@@ -51,4 +51,9 @@
 .hei{
 	min-height: initial;
 }
-/*CORSI/*
+/*CORSI*/
+
+/*LOGIN*/
+#delete-login-button{
+	display:none;
+}

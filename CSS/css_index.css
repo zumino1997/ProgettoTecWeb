@@ -150,6 +150,7 @@ CONTENUTO
 
 .divGenerico{
 	margin-top: 4em;
+	overflow: auto;
 }
 
 #Banner{
@@ -246,6 +247,11 @@ CONTENUTO
 	text-transform: uppercase;
 }
 
+
+/*******
+CSS CONTATTI
+*******/
+
 #contatti {
 	margin-top:2em;
 }
@@ -275,13 +281,16 @@ CONTENUTO
 	float: left;
 }
 
+
+/******FINE CSS CONTATTI******/
+
+
+
 /*******
 CSS CORSI
 *******/
 
-.center{
-	text-align:center;
-}
+
 
 .box img{
 	width: 70%;
@@ -297,10 +306,62 @@ CSS CORSI
 	width: 50%;
 }
 
-.hei{
-		min-height: 42em;
-}
 /******FINE CSS CORSI******/
+
+
+/*******
+CSS LOGIN
+*******/
+
+#login-register-form {
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+	text-align: center;
+}
+
+#login-register-form ul {
+	width: 40%;
+	margin-left: 30%;
+	margin-right: 30%;
+}
+
+#login-register-form li{
+	list-style-type: none;
+	margin: 1.2em;
+	text-align: left;
+}
+
+#login-register-form #buttons-login{
+	text-align: center;
+}
+
+#login-register-form li input[type=email], #login-register-form li input[type=password],#login-register-form li input[type=text]{
+	width: 100%;
+	display: block;
+  padding: 0.7em;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+#login-register-form input[type=email]:focus, #login-register-form input[type=password]:focus,#login-register-form li input[type=text]:focus {
+  border: 2px solid #555;
+}
+
+#login-button{
+	font-weight: bold;
+}
+
+.error p{
+	font-size: 0.9em;
+	color: red;
+}
+
+fieldset{
+	margin-bottom: 3em;
+}
 
 /*****
 FOOTER
@@ -308,7 +369,7 @@ FOOTER
 
 #footer{
 	text-align: center;
-	font-size: 0.9em;
+	font-size:0.9em;
 	background-color: #343434;
 	color:#fff;
 	padding: 1em;
