@@ -1,19 +1,48 @@
+#menuIcon{
+	float: right;
+	display: block;
+}
+
 #nav{
 	min-height: 3em;
+	padding:0;
 }
 
 #nav ul{
-	display: none;
+
+}
+
+#nav li{
+	transition: height 0.8s ;
+	clear: both;
+	width: 100%;
+	display: block;
+	padding: 0.9em 0 0.9em 0;
+}
+
+#nav li:hover{
+	color: #000;
+	background-color: #E4E4E4;
+}
+
+#nav #currentLink{
+	border-radius: 0;
+	padding: 0.9em 0 0.9em 0;
+}
+
+.hide {
+	display: block;
+	height: 0;
+	overflow: hidden;
 }
 
 #header{
-	background: #343434;
-	height:auto;
-	background-size: auto;
+	padding: 3em 0 3em 0;
 }
 
 #header img{
-	display: inline;
+	display: block;
+	width: 70%;
 }
 
 #content #breadcrumb p{
@@ -38,32 +67,39 @@
 	font-size: 0.9em;
 }
 
-#menuIcon{
-	float: right;
-	display: block;
-}
+
 
 /*CORSI*/
-.box{
-	width: 100%;
+
+h1{
+	margin-bottom:0;
 }
 
-.hei{
-	min-height: initial;
+.box h2{
+	margin: 1em 0 0.5em 0;
 }
-<<<<<<< HEAD
+
+.box{
+	width: 100%;
+	min-height: auto;
+}
+
+.box img{
+	display: none;
+}
+.box p{
+	padding: 0;
+}
 /*CORSI*/
 
 /*LOGIN*/
 #delete-login-button{
 	display:none;
 }
-=======
-/*CORSI/*
+
 
 /*STAFF*/
-#fila{
-	width: 100%;
+#fila img{
+	width: 40%;
 }
 /*STAFF*/
->>>>>>> 6f09b291869eeefa82b954fb9972519e03b4727f
