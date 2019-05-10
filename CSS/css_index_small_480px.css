@@ -52,3 +52,13 @@
 	min-height: initial;
 }
 /*CORSI/*
+
+#column{
+	width:90%;
+	float:left;
+	padding:5%;
+}
+ 
+#showImage img{
+	width:90%;
+}
