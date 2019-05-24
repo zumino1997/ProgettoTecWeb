@@ -19,8 +19,8 @@ class DBConnection
   }
 
   public function getUser($email,$psw){
-    $querySelect= 'SELECT mail FROM utenti WHERE mail= "' . $email . '" and password="'. $psw .'"';
-    $queryResult = mysqli_query($this->conn,$querySelect);
+    $querySelect= 'SELECT mail FROM utenti WHERE mail= "' . $email . '" AND password="'. $psw .'"';
+    $queryResult = mysqli_query($this->conn,$querySelect) or die (mysqli_error($this->conn));
     if (mysqli_num_rows($queryResult)==0)
       return false;
     else {
@@ -28,9 +28,9 @@ class DBConnection
     }
   }
 
-  public function getUser2($email,$psw){
+  public function getUser2($email){
     $querySelect= 'SELECT mail FROM utenti WHERE mail= "' . $email . '"';
-    $queryResult = mysqli_query($this->conn,$querySelect) ;
+    $queryResult = mysqli_query($this->conn,$querySelect) or die (mysqli_error($this->conn));
     if (mysqli_num_rows($queryResult)==0)
       return false;
     else {
@@ -38,8 +38,14 @@ class DBConnection
     }
   }
 
-  public function getCorso(){
+  public function numCorsi(){
     $querySelect= "SELECT * FROM  corsi";
+    $queryResult= mysqli_query ($this->conn,$querySelect) or die (mysqli_error($this->conn));
+    return mysqli_num_rows($queryResult);
+  }
+
+  public function getCorsi($this_page_first_result,$results_per_page){
+    $querySelect= 'SELECT * FROM  corsi LIMIT ' . $this_page_first_result . ',' .  $results_per_page .'';
     $queryResult= mysqli_query ($this->conn,$querySelect) or die (mysqli_error($this->conn));
     if (mysqli_num_rows($queryResult)==0)
       return null;
@@ -49,7 +55,8 @@ class DBConnection
         $arrayCorso=array(
           'Id'=>$row['corsi_id'],
           'Titolo'=>$row['titolo'],
-          'Descrizione'=>$row['descrizione']
+          'Descrizione'=>$row['descrizione'],
+          'Immagine'=>$row['immagine']
         );
         array_push($result,$arrayCorso);
       }
@@ -57,6 +64,24 @@ class DBConnection
     }
   }
 
+  public function getCorso(){
+    $querySelect= 'SELECT * FROM  corsi WHERE corsi_id="'.$_GET['id'].'"';
+    $queryResult= mysqli_query ($this->conn,$querySelect) or die (mysqli_error($this->conn));
+    if (mysqli_num_rows($queryResult)==0)
+      return null;
+    else{
+      while ($row=mysqli_fetch_assoc($queryResult)){
+        $arrayCorso=array(
+          'Id'=>$row['corsi_id'],
+          'Titolo'=>$row['titolo'],
+          'Descrizione'=>$row['descrizione'],
+          'DescrizioneL'=>$row['descrizione_long'],
+          'Immagine'=>$row['immagine']
+        );
+      }
+      return $arrayCorso;
+    }
+  }
 
   public function insertUser($nome,$cognome,$citta,$indirizzo,$nascita,$emailR,$passwordR){
     $query1 = "INSERT INTO anagrafica (nome, cognome, citta, indirizzo, nascita, mail) VALUES ('$nome','$cognome','$citta','$indirizzo','$nascita','$emailR')";
@@ -71,6 +96,49 @@ class DBConnection
     }
   }
 
+  public function numImg(){
+    $querySelect= "SELECT * FROM  galleria";
+    $queryResult= mysqli_query ($this->conn,$querySelect) or die (mysqli_error($this->conn));
+    return mysqli_num_rows($queryResult);
+  }
 
-}
+  public function getImg($this_page_first_result,$results_per_page){
+    $querySelect= 'SELECT * FROM  galleria LIMIT ' . $this_page_first_result . ',' .  $results_per_page .'';
+    $queryResult= mysqli_query ($this->conn,$querySelect) or die (mysqli_error($this->conn));
+    if (mysqli_num_rows($queryResult)==0)
+      return null;
+    else{
+      $result=array();
+      while ($row=mysqli_fetch_assoc($queryResult)){
+        $arrayGalleria=array(
+          'Id'=>$row['id'],
+          'Immagine'=>$row['immagine']
+        );
+        array_push($result,$arrayGalleria);
+      }
+      return $result;
+    }
+  }
+
+  public function getNews(){
+    $querySelect= 'SELECT * FROM  news';
+    $queryResult= mysqli_query ($this->conn,$querySelect) or die (mysqli_error($this->conn));
+    if (mysqli_num_rows($queryResult)==0)
+      return null;
+    else{
+      $result=array();
+      while ($row=mysqli_fetch_assoc($queryResult)){
+        $arrayNews=array(
+          'Immagine'=>$row['immagine'],
+          'Id'=>$row['id'],
+          'Titolo'=>$row['titolo'],
+          'Testo'=>$row['testo']
+        );
+        array_push($result,$arrayNews);
+      }
+      return $result;
+    }
+  }
+
+};
 ?>

@@ -15,17 +15,7 @@ $dbOpen=$connection->openConnection();
 $_SESSION["error"] = "";
 
 if ($dbOpen){
-		$number_of_results=$connection->numCorsi();
-    $results_per_page = 4;
-    $number_of_pages = ceil($number_of_results/$results_per_page);
-    if (!isset($_GET['page']) || $_GET['page']>$number_of_pages || $_GET['page']<0) {
-      $_GET['page']=1;
-      $page = 1;
-    } else {
-      $page = $_GET['page'];
-    }
-    $this_page_first_result = ($page-1)*$results_per_page;
-    $listaCorsi=$connection->getCorsi($this_page_first_result,$results_per_page);
+    $corso=$connection->getCorso();
 	}
 else {
 		$_SESSION["error"] = "Connessione non stabilita correttamente";
@@ -68,9 +58,9 @@ else {
 	<div id="nav">
 		<div id="logo"><img src="IMG/logo2.png" alt="Logo Energya"/></div>
     <button id="menuIcon" onclick="menuHamburger()"><i class='fas fa-bars'></i></button>
-    <ul class="menuItems" id="menuu" >
+	  <ul class="menuItems" id="menuu" >
 			<li xml:lang="en"><a href="index.html">Home</a></li>
-			<li id="currentLink">Corsi</li>
+			<li><a href="corsi.php">Corsi</a></li>
       <li><a href="galleria.php">Galleria</a></li>
 			<li><a href="staff.html" xml:lang="en">Staff</a></li>
 			<li><a href="contatti.html">Contatti</a></li>
@@ -101,29 +91,18 @@ else {
 	<div id="content">
 
 		<div id="breadcrumb">
-			<p>Ti trovi in: Corsi </p>
+			<p>Ti trovi in: Corsi > <?php echo $corso['Titolo']; ?> </p>
 		</div>
 
-  	<h1 class="center">Corsi</h1>
+  	<h1 class="center"><?php echo $corso['Titolo']; ?></h1>
 
-  	<?php foreach ($listaCorsi as $corso) {
-  		echo '<div class="box Sx">';
-  		echo '<h2>'.$corso['Titolo'].'</h2>';
-      echo '<img src="data:image/jpeg;base64,'.base64_encode($corso['Immagine']).'"/>';
-  		echo '<p>'.$corso['Descrizione'].'</p>';
-      echo '<a href="corsoSingolo.php?id='.$corso['Id'].'">Scopri il corso "'.$corso['Titolo'].'"</a>';
-  		echo '</div>';
-  	} ?>
+  	<?php
+      echo '<div class="divGenerico center">';
+      echo '<img src="data:image/jpeg;base64,'.base64_encode($corso['Immagine']).'" alt="immagine corso '.$corso['Titolo'].'"/>';
+      echo '<p>'.$corso['DescrizioneL'].'</p>';
+      echo '</div>';
+    ?>
 
-    <div class="pagination"><?php
-    for ($page=1;$page<=$number_of_pages;$page++) {
-      if ($_GET['page']!=$page)
-        echo '<a href="corsi.php?page=' . $page . '">' . $page . '</a> ';
-      else {
-        echo '<span class="active"' . $page . '">' . $page . '</span> ';
-      }
-    }
-    ?></div>
 		</div>
 </div>
 
@@ -133,6 +112,8 @@ else {
   <p>Matteo</p>
   <p>Franconetti Simone</p>
 </div>
+
+
 
 
 </body>

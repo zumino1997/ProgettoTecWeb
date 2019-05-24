@@ -38,26 +38,29 @@ $dbOpen=$connection->openConnection();
 
 <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
+<script type="text/javascript" src="JS/script.js"> </script>
 
 
 </head>
 <body>
 	<div id="nav">
 	  <div id="logo"><img src="IMG/logo2.png" alt="Logo Energya"/></div>
-	  <button id="menuIcon"><i class='fas fa-bars'></i></button>
-	  <ul>
-			<li><a href="index.html" xml:lang="en">Home</a></li>
-	    <li><a href="corsi.html">Attivit&aacute;</a></li>
-	    <li><a href="">Orari</a></li>
-	    <li><a href="" xml:lang="en">Staff</a></li>
+    <button id="menuIcon" onclick="menuHamburger()"><i class='fas fa-bars'></i></button>
+    <ul class="menuItems" id="menuu" >
+      <li><a href="index.html" xml:lang="en">Home</a></li>
+	    <li><a href="corsi.php">Corsi</a></li>
+      <li><a href="galleria.php">Galleria</a></li>
+	    <li><a href="staff.html" xml:lang="en">Staff</a></li>
 	    <li><a href="contatti.html">Contatti</a></li>
+      <li><a href="registrazione.php">Registrazione</a></li>
+      <li><a href="login.php">Accedi</a></li>
 	  </ul>
 	</div>
 	<div id="header">
 		<img src="IMG/logo1.png" alt=""/>
 	</div>
 
-	<?php if(!$_SESSION["loggedIn"]) {?>
+	<?php if(!isset($_SESSION["email"])) {?>
 	<div id="userBar">
 	  <ul>
 	    <li>
@@ -102,10 +105,6 @@ $dbOpen=$connection->openConnection();
 	</div>
 
 
-
-
-	<button id="scrollUp"><i class="fa fa-arrow-up"></i></button>
-
  <script>
 	function myFunction() {
 	  var x = document.getElementById("password");
@@ -118,27 +117,8 @@ $dbOpen=$connection->openConnection();
 </script>
 
 
-	<!-- <script>
-		var body, scroll;
-		body=document.getElementsByTagName("body");
-		scroll=document.getElementById("scrollUp");
-		window.onscroll=Scroll();
 
-
-		function Scroll(){
-			var altezza=0.5*window.innerHeight;
-			if (body.scrollTop>altezza){
-				scroll.classList.add("show");
-			}
-			else {
-				scroll.classList.remove("show");
-			}
-		}
-	</script> -->
-
-
-
-<?php mysql_close($dbOpen); ?>
+<?php mysqli_close($dbOpen); ?>
 
 </body>
 </html>

@@ -13,7 +13,16 @@
 }
 
 #header{
-	height: 15em;
+	height: auto;
+	padding: 4em 0 4em 0;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/IMG/banner.jpg");
+	background-size:cover;
+}
+
+#header img{
+	width: 60%;
+	margin: auto;
+	display: block;
 }
 
 .divDx, .divSx {
@@ -67,27 +76,67 @@
 /*CORSI*/
 .box{
 	width: 100%;
+	min-height: 20em;
+	margin-bottom: 3em;
+}
+
+.box img{
+	max-width: 60%;
+	max-height: auto;
 }
 
 .box p{
-	padding-bottom: 12%;
+	padding: 3%;
 }
+
+
 /*FINE CORSI*/
 
-<<<<<<< HEAD
 
-/*LOGIN*/
-#login-form ul {
-	width: 80%;
-	margin-left: 10%;
-	margin-right: 10%;
+/*LOGIN-REGISTRAZIONE*/
+#login-register-form ul {
+	width: 70%;
+	margin-left: 15%;
+	margin-right: 15%;
 }
 
 /*FINE LOGIN*/
-=======
+
 /*STAFF*/
 #fila{
 	width: 50%;
 }
-/*STAFF*/
->>>>>>> 6f09b291869eeefa82b954fb9972519e03b4727f
+/*FINE STAFF*/
+
+/*CONTATTI*/
+
+#contatti{
+	min-height: auto;
+	margin-bottom: 3em;
+}
+
+#map iframe{
+	margin-bottom: 3em;
+	width: 100%;
+	height: 25em;
+	border: 0;
+	float: left;
+}
+
+#contatti p,#contatti h1, #contatti h2 {
+	margin-left: 0;
+}
+/*FINE CONTATTI*/
+
+/*GALLERIA*/
+
+#column{
+	width:40%;
+	padding:5%;
+}
+
+#showImage img{
+	width:90%;
+}
+
+/*FINE GALLERIA*/

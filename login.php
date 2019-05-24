@@ -4,7 +4,7 @@ if (session_status() == PHP_SESSION_NONE) {
   session_start();
 }
 
-if ($_SESSION["loggedIn"] && $_SESSION["email"]){
+if (isset($_SESSION["email"])){
 	header("Location: index.html");
 	exit();
 }
@@ -38,7 +38,6 @@ if (isset($_POST["login"])){
 			$psw=md5($psw);
 			$accesso=$connection->getUser($email,$psw);
 			if ($accesso){
-				$_SESSION["loggedIn"]=1;
 				$_SESSION["email"]=$email;
 				$_SESSION["error"] = "";
 				header("Location: profilo.php");
@@ -83,19 +82,22 @@ if (isset($_POST["login"])){
 
 <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
+<script type="text/javascript" src="JS/script.js"> </script>
 
 
 </head>
 <body>
 	<div id="nav">
 	  <div id="logo"><img src="IMG/logo2.png" alt="Logo Energya"/></div>
-	  <button id="menuIcon"><i class='fas fa-bars'></i></button>
-	  <ul>
-			<li><a href="index.html" xml:lang="en">Home</a></li>
-	    <li><a href="corsi.html">Attivit&aacute;</a></li>
-	    <li><a href="">Orari</a></li>
+    <button id="menuIcon" onclick="menuHamburger()"><i class='fas fa-bars'></i></button>
+	  <ul class="menuItems" id="menuu" >
+      <li><a href="index.html" xml:lang="en">Home</a></li>
+	    <li><a href="corsi.php">Corsi</a></li>
+      <li><a href="galleria.php">Galleria</a></li>
 	    <li><a href="" xml:lang="en">Staff</a></li>
 	    <li><a href="contatti.html">Contatti</a></li>
+      <li><a href="registrazione.php">Registrazione</a></li>
+      <li><a href="login.php">Accedi</a></li>
 	  </ul>
 	</div>
 	<div id="header">
@@ -125,11 +127,11 @@ if (isset($_POST["login"])){
 				<ul>
 					<li>
 						<label for="email">Email</label>:
-						<input id="email" name="email" type="email" placeholder="Email" />
+						<input id="email" name="email" type="email"/>
 					</li>
 					<li>
 						<label for="password"><span xml:lang="en">Password</span></label>:
-						<input id="password" name="password" type="password" placeholder="Password"/>
+						<input id="password" name="password" type="password"/>
 					</li>
 					<?php if($_SESSION["error"]) echo '<li class="error"><p>' . $_SESSION['error'] . '</p></li>';?>
 					<li>
@@ -153,9 +155,6 @@ if (isset($_POST["login"])){
 
 
 
-
-	<button id="scrollUp"><i class="fa fa-arrow-up"></i></button>
-
  <script>
 	function myFunction() {
 	  var x = document.getElementById("password");
@@ -168,27 +167,8 @@ if (isset($_POST["login"])){
 </script>
 
 
-	<!-- <script>
-		var body, scroll;
-		body=document.getElementsByTagName("body");
-		scroll=document.getElementById("scrollUp");
-		window.onscroll=Scroll();
 
-
-		function Scroll(){
-			var altezza=0.5*window.innerHeight;
-			if (body.scrollTop>altezza){
-				scroll.classList.add("show");
-			}
-			else {
-				scroll.classList.remove("show");
-			}
-		}
-	</script> -->
-
-
-
-<?php mysql_close($dbOpen); ?>
+<?php mysqli_close($dbOpen); ?>
 
 </body>
 </html>

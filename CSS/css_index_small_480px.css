@@ -1,23 +1,34 @@
+body{
+	line-height: 1.4em;
+}
+
 #menuIcon{
 	float: right;
 	display: block;
 }
 
 #nav{
+	position:absolute;
+	width: 100%;
 	min-height: 3em;
 	padding:0;
+	background-color: #fff;
 }
 
-#nav ul{
-
+.menuItems{
+	display: block;
+	width: 100%;
+	height: 0;
+	overflow: hidden;
 }
 
 #nav li{
-	transition: height 0.8s ;
 	clear: both;
 	width: 100%;
 	display: block;
 	padding: 0.9em 0 0.9em 0;
+	background-color: #fff;
+	color: #044B5D;
 }
 
 #nav li:hover{
@@ -25,24 +36,43 @@
 	background-color: #E4E4E4;
 }
 
+#nav li:nth-child(6), #nav li:nth-child(7){
+	display:block;
+	font-weight: bold;
+	background-color: #044B5D;
+}
+
+#nav li:nth-child(6)>a, #nav li:nth-child(7)>a, #nav li:nth-child(6)>a:hover, #nav li:nth-child(7)>a:hover{
+	background-color: #044B5D;
+	color:#fff;
+}
+
+#nav li:nth-child(6):hover, #nav li:nth-child(7):hover{
+	background-color: #044B5D;
+}
+
 #nav #currentLink{
 	border-radius: 0;
 	padding: 0.9em 0 0.9em 0;
 }
 
-.hide {
-	display: block;
-	height: 0;
-	overflow: hidden;
+.menuItems.show {
+	transition: all 0.8s ;
+	height: 100%;
+	overflow: auto;
 }
 
 #header{
-	padding: 3em 0 3em 0;
+	padding: 6em 0 3em 0;
 }
 
 #header img{
 	display: block;
 	width: 70%;
+}
+
+#userBar{
+	display:none;
 }
 
 #content #breadcrumb p{
@@ -88,7 +118,7 @@ h1{
 	display: none;
 }
 .box p{
-	padding: 0;
+	padding: 0 0 0.5em 0;
 }
 /*CORSI*/
 
@@ -103,3 +133,23 @@ h1{
 	width: 40%;
 }
 /*STAFF*/
+
+/*LOGIN-REGISTRAZIONE*/
+#login-register-form ul {
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+/*GALLERIA*/
+
+#column{
+	width:90%;
+}
+
+/*FINE GALLERIA*/
+
+/*contatti*/
+#map {
+	display: none;
+}

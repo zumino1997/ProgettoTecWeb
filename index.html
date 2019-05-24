@@ -22,20 +22,22 @@
 
 <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
-
+<script type="text/javascript" src="JS/script.js"> </script>
 
 </head>
 <body>
 
 	<div id="nav">
 	  <div id="logo"><img src="IMG/logo2.png" alt="Logo Energya"/></div>
-	  <button id="menuIcon"><i class='fas fa-bars'></i></button>
-	  <ul>
+	  <button id="menuIcon" onclick="menuHamburger()"><i class='fas fa-bars'></i></button>
+	  <ul class="menuItems" id="menuu" >
 	    <li id="currentLink" xml:lang="en">Home</li>
-	    <li><a href="corsi.html">Attivit&aacute;</a></li>
-	    <li><a href="">Orari</a></li>
-	    <li><a href="" xml:lang="en">Staff</a></li>
+	    <li><a href="corsi.php">Corsi</a></li>
+	    <li><a href="galleria.php">Galleria</a></li>
+	    <li><a href="staff.html" xml:lang="en">Staff</a></li>
 	    <li><a href="contatti.html">Contatti</a></li>
+			<li><a href="registrazione.php">Registrazione</a></li>
+			<li><a href="login.php">Accedi</a></li>
 	  </ul>
 	</div>
 	<div id="header">
@@ -60,7 +62,7 @@
 			<p>Ti trovi in: <span xml:lang="en">Home</span></p>
 		</div>
 
-		<div class="divDx">
+		<div class="divSx">
 			<h1>Chi siamo</h1>
 			<img src="IMG/foto1.jpg" alt=""/>
 			<p>Il Centro Natatorio Comunale <span xml:lang="en">"Freestyle"</span> offre numerose opportunità per sfruttare i benefici garantiti dal movimento in acqua, in un ambiente accogliente e confortevole, sotto la guida di uno staff di Istruttori Federali preparati e disponibili.</p>
@@ -68,7 +70,7 @@
 			<p>Lo schema didattico prevede diversi gradi di apprendimento delle tecniche di base e di perfezionamento sia nel nuoto che nelle altre attivit&aacute;.</p>
 		</div>
 
-		<div class="divSx">
+		<div class="divDx">
 			<h1>La nostra storia</h1>
 			<img src="IMG/foto2.jpg" alt="Interno della palestra"/>
 			<p>La struttura, nata nel 1981, ospita da molti anni competizioni natatorie a livello regionale.</p>
@@ -109,33 +111,6 @@
 		<p>Matteo</p>
 		<p>Franconetti Simone</p>
 	</div>
-
-
-
-
-	<button id="scrollUp"><i class="fa fa-arrow-up"></i></button>
-
-
-
-
-	<!-- <script>
-		var body, scroll;
-		body=document.getElementsByTagName("body");
-		scroll=document.getElementById("scrollUp");
-		window.onscroll=Scroll();
-
-
-		function Scroll(){
-			var altezza=0.5*window.innerHeight;
-			if (body.scrollTop>altezza){
-				scroll.classList.add("show");
-			}
-			else {
-				scroll.classList.remove("show");
-			}
-		}
-	</script> -->
-
 
 
 

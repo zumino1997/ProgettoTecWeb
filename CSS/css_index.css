@@ -4,10 +4,8 @@
 }
 
 body{
+	line-height: 1.5em;
 	margin: auto;
-	/* margin-top:1em;
-	margin-bottom:1em; */
-
 	background: #E4E4E4;
 	max-width: 1200px;
 	font-family: 'Montserrat',sans-serif;
@@ -16,6 +14,7 @@ body{
 h1{
 	font-size:2em;
 	margin-bottom: 1em;
+	margin-top: 1em;
 }
 
 h2{
@@ -26,6 +25,20 @@ h2{
 p{
 	font-size: 1.1em;
 	margin:0.8em 0 0.8em 0;
+}
+
+.center {
+	/* padding: 0.5em; */
+	text-align: center;
+}
+
+.clearfix{
+	clear:both;
+}
+
+a{
+	color: #044B5D;
+	font-weight: bold;
 }
 
 
@@ -40,7 +53,6 @@ MENU
 	padding-right: 2%;
 	text-align: right;
 	background-color: #fff;
-	color:#fff;
 }
 
 #logo {
@@ -55,12 +67,11 @@ MENU
 
 #nav li{
 	display: inline-block;
-	padding: 1.8em 1% 1.8em 1%;
+	padding: 1.8em 0.8% 1.8em 0.8%;
 }
 
 #nav li>a {
-	font-weight: bold;
-	border-radius: 15px;
+	border-radius: 0.8em;
 	padding: 0.5em;
 	color: #044B5D;
 }
@@ -75,10 +86,13 @@ MENU
 	background-color: #E4E4E4;
 }
 
+#nav li:nth-child(6), #nav li:nth-child(7){
+	display:none;
+}
+
 #nav #currentLink{
 	height: 100%;
-	padding:0;
-	border-radius: 15px;
+	border-radius: 0.8em;
 	padding: 0.5em;
 	cursor:default;
 	color: #fff;
@@ -136,6 +150,36 @@ USERBAR
 CONTENUTO
 ******/
 
+#primoPiano{
+	padding:0 5% 0 0 ;
+	width:60%;
+	float:left;
+	text-align: center;
+}
+
+#primoPiano p{
+	text-align: justify;
+}
+
+#secondoPiano {
+	text-align: center;
+	float:right;
+	width: 35%;
+}
+
+#secondoPiano p{
+	/* padding:0 5%; */
+	text-align: justify;
+}
+
+#primoPiano img {
+	width:60%;
+}
+
+#secondoPiano img{
+	width: 90%;
+}
+
 #content{
 	padding:2em 5% 2em 5%;
 	background: #fff;
@@ -144,13 +188,35 @@ CONTENUTO
 }
 
 .divDx, .divSx {
-	padding-top: 3em;
-	min-height: 20em;
+	clear: both;
+	padding-top: 1.5em;
+	min-height: 23em;
 }
 
 .divGenerico{
 	margin-top: 4em;
-	overflow: auto;
+}
+
+.divGenerico ul{
+	padding-left: 3em;
+	line-height: 1.7em;
+	list-style:none;
+}
+
+.divGenerico ul>li:before {
+  content: "+";
+	padding-right: 2em;
+  color: #044B5D;
+}
+
+.divGenerico img{
+	max-width: 50%;
+}
+
+.evidenza{
+	padding: 1.5em;
+	background-color: #f2efef;
+	text-align: center;
 }
 
 #Banner{
@@ -200,18 +266,22 @@ CONTENUTO
 	font-weight: bold;
 }
 
-.divSx h1{
+.divDx h1{
 	text-align:right;
 }
 
-.divDx img{
+.divSx img{
 	float:left;
 	width: 35%;
 	margin: 0 1.2em 1.2em 0;
 	text-align: left;
 }
+/*
+.divSx p{
+	float: right;
+} */
 
-.divSx img{
+.divDx img{
 	float:right;
 	width: 35%;
 	margin: 0 0 1.2em 1.2em;
@@ -251,13 +321,19 @@ CONTENUTO
 /*******
 CSS CONTATTI
 *******/
+#map {
+	margin-top: 1.5em;
+}
+
 
 #contatti {
-	margin-top:2em;
+	/* margin-top:2em; */
+	float:left;
+	min-height: 29em;
 }
 
 #contatti p,#contatti h1, #contatti h2 {
-	margin-left: 55%;
+	margin-left: 0%;
 }
 
 #contatti p{
@@ -274,11 +350,14 @@ CSS CONTATTI
 	margin-bottom: 0.5em;
 }
 
+#map {
+}
+
 #map iframe{
-	width: 50%;
 	height: 25em;
 	border: 0;
-	float: left;
+	width: 50%;
+	float:right;
 }
 
 
@@ -291,9 +370,9 @@ CSS CORSI
 *******/
 
 
-
 .box img{
-	width: 70%;
+	max-height: 12em;
+	max-width: 70%;
 }
 
 .box p{
@@ -302,13 +381,51 @@ CSS CORSI
 }
 
 .box{
+	min-height: 30em;
 	text-align: center;
 	width: 50%;
 }
 
+.pagination{
+	text-align: center;
+	clear: both;
+	padding: 2em 0 2em 0;
+}
+
+.pagination a {
+  color: black;
+  padding: 0.5em 1em;
+  text-decoration: none;
+}
+
+.pagination span.active {
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background-color: #044B5D;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+
 /******FINE CSS CORSI******/
 
-<<<<<<< HEAD
+
+/***STAFF***/
+
+#fila{
+	float: left;
+	display: inline-block;
+	text-align: center;
+	width: 25%;
+	padding-top: 5%;
+}
+#fila img{
+	width: 50%;
+	border-radius: 50%;
+}
+
+/***FINE STAFF***/
 
 /*******
 CSS LOGIN
@@ -363,23 +480,64 @@ CSS LOGIN
 fieldset{
 	margin-bottom: 3em;
 }
-=======
-/***STAFF***/
 
-#fila{
-	float: left;
-	display: inline-block;
-	text-align: center;
-	width: 25%;
-	padding-top: 5%;
-}
-#fila img{
-	width: 50%;
-	border-radius: 50%;
+
+
+/*GALLERY*/
+
+
+#column{
+	width:23%;
+	float:left;
+	padding:1%;
 }
 
-/***FINE STAFF***/
->>>>>>> 6f09b291869eeefa82b954fb9972519e03b4727f
+#column img{
+	width:100%;
+	cursor:pointer;
+}
+
+#showImage {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: black;
+}
+
+#imageContent{
+  position: relative;
+  margin:auto;
+  text-align:center;
+  width:60%;
+}
+
+#showImage img{
+	position:fixed;
+	width:50%;
+	margin:auto;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+}
+
+#closeImage {
+  color: white;
+  position: absolute;
+  top: 2%;
+  right: 4%;
+  font-size: 2em;
+  font-weight: bold;
+  cursor:pointer;
+}
+
+
+/*FINE GALLERY*/
+
 
 /*****
 FOOTER
@@ -412,7 +570,7 @@ FOOTER
 /****************
 PULSANTE SCROLL
 *****************/
-
+/*
 #scrollUp{
 	font-size: 2.5em;
 	height: 1.5em;
@@ -430,7 +588,7 @@ PULSANTE SCROLL
 
 #scrollUp.show{
 	visibility: hidden;
-}
+} */
 
 #menuIcon{
 	border:0;

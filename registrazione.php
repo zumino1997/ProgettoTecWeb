@@ -1,113 +1,20 @@
 <?php
 
+
+require_once __DIR__ . DIRECTORY_SEPARATOR . "connection.php";
+use DB\DBConnection;
+require_once __DIR__ . DIRECTORY_SEPARATOR . "PHP" . DIRECTORY_SEPARATOR . "val_registrazione.php";
+
+
 if (session_status() == PHP_SESSION_NONE) {
   session_start();
 }
 
-if ($_SESSION["loggedIn"] && $_SESSION["email"]){
+if (isset($_SESSION["email"])){
 	header("Location: index.html");
+
 	exit();
 }
-
-require_once __DIR__ . DIRECTORY_SEPARATOR . "connection.php";
-use DB\DBConnection;
-
-$connection = new DBConnection();
-$dbOpen=$connection->openConnection();
-
-$_SESSION["error"] = "";
-$nomeErr = $cognomeErr = $cittaErr = $nascitaErr = $indirizzoErr = $emailErr = $passwordErr = "";
-
-if (isset($_POST["registrati"])){
-	if ($dbOpen){
-    $nome=mysqli_real_escape_string($connection->conn,$_POST["nome"]);
-    $cognome=mysqli_real_escape_string($connection->conn,$_POST["cognome"]);
-    $citta=mysqli_real_escape_string($connection->conn,$_POST["citta"]);
-    $nascita=mysqli_real_escape_string($connection->conn,$_POST["nascita"]);
-    $indirizzo=mysqli_real_escape_string($connection->conn,$_POST["indirizzo"]);
-    $emailR=mysqli_real_escape_string($connection->conn,$_POST["emailR"]);
-    $passwordR=mysqli_real_escape_string($connection->conn,$_POST["passwordR"]);
-    $passwordR1=mysqli_real_escape_string($connection->conn,$_POST["passwordR1"]);
-
-    if (empty($nome)){
-      $nomeErr="Nome non inserito";
-    }
-    else if (!preg_match("/^[a-zA-Z ]*$/",$nome)) {
-        $nomeErr = "Sono consentite solo lettere e spazi bianchi";
-    }
-
-    if (empty($cognome)){
-      $cognomeErr="Cognome non inserito";
-    }
-    else if (!preg_match("/^[a-zA-Z ]*$/",$cognome)) {
-        $cognomeErr = "Sono consentite solo lettere e spazi bianchi";
-    }
-
-    if (empty($citta)){
-      $cittaErr="Cittá non inserita";
-    }
-    else if (!preg_match("/^[a-zA-Z ]*$/",$citta)) {
-        $cittaErr = "Sono consentite solo lettere e spazi bianchi";
-    }
-
-    if (empty($nascita)){
-      $nascitaErr="Data di nascita non inserita";
-    }
-    else{
-      $nascita = date('Y-m-d', strtotime($nascita));
-    }
-
-    if (empty($indirizzo)){
-      $indirizzoErr="Indirizzo non inserito";
-    }
-    else if (!preg_match("/^[A-Za-z0-9\-\/ ,.]+$/",$indirizzo)) {
-        $indirizzoErr = "Sono consentite solo lettere, spazi bianchi e alcuni simboli ('-', '/', ',') ";
-    }
-
-    if (empty($emailR)){
-      $emailErr="Indirizzo mail non inserito";
-    }
-    else if (!filter_var($emailR, FILTER_VALIDATE_EMAIL)) {
-      $emailErr = "Formato della mail non valido";
-    }
-
-    if (empty($passwordR) && empty($passwordR1)){
-      $passwordErr="password non inserita";
-    }
-    else if ($passwordR!=$passwordR1) {
-      echo $passwordR,$passwordR1;
-      $passwordErr = "Le password non corrispondono";
-    }
-
-
-    if (!$nomeErr && !$cognomeErr && !$cittaErr && !$indirizzoErr && !$nascitaErr && !$emailErr && !$passwordErr){
-      $passwordR=md5($passwordR);
-      if (!$connection->getUser2($emailR,$passwordR))
-		    $reg=$connection->insertUser($nome,$cognome,$citta,$indirizzo,$nascita,$emailR,$passwordR);
-    }
-
-		if ($reg){
-			$_SESSION["loggedIn"]=1;
-			$_SESSION["email"]=$emailR;
-			$_SESSION["error"] = "";
-			header("Location: profilo.php");
-			exit();
-		}
-		else{
-      if ($connection->getUser2($emailR,$passwordR)){
-        $_SESSION["error"] = "Indirizzo email giá esistente";
-      }
-      else
-			   $_SESSION["error"] = "Registrazione non riuscita";
-		}
-
-	}
-	else {
-		echo "Connessione non stabilita correttamente";
-	}
-}
-
-
 
 
 ?>
@@ -136,19 +43,22 @@ if (isset($_POST["registrati"])){
 
 <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
+<script type="text/javascript" src="JS/script.js"> </script>
 
 
 </head>
 <body>
 	<div id="nav">
 	  <div id="logo"><img src="IMG/logo2.png" alt="Logo Energya"/></div>
-	  <button id="menuIcon"><i class='fas fa-bars'></i></button>
-	  <ul>
-			<li><a href="index.html" xml:lang="en">Home</a></li>
-	    <li><a href="corsi.html">Attivit&aacute;</a></li>
-	    <li><a href="">Orari</a></li>
-	    <li><a href="" xml:lang="en">Staff</a></li>
+    <button id="menuIcon" onclick="menuHamburger()"><i class='fas fa-bars'></i></button>
+	  <ul class="menuItems" id="menuu" >
+      <li><a href="index.html" xml:lang="en">Home</a></li>
+	    <li><a href="corsi.php">Corsi</a></li>
+	    <li><a href="">Galleria</a></li>
+      <li><a href="galleria.php">Galleria</a></li>
 	    <li><a href="contatti.html">Contatti</a></li>
+      <li><a href="registrazione.php">Registrazione</a></li>
+      <li><a href="login.php">Accedi</a></li>
 	  </ul>
 	</div>
 	<div id="header">
@@ -172,34 +82,34 @@ if (isset($_POST["registrati"])){
 		<div id="breadcrumb">
 			<p>Ti trovi in: <span xml:lang="en">Registrazione</span></p>
 		</div>
-		<form action="registrazione.php" method="post" id="login-register-form">
+		<form  action="post_registrazione.php" method="post" id="login-register-form">
 			<fieldset>
 				<legend> <span xml:lang="en">Dati anagrafici</span></legend>
 				<ul>
           <li class="error">
 						<label for="nome">Nome</label>:
-						<input id="nome" name="nome" type="text" placeholder="Nome" <?php if (isset($nome)) echo "value=\"$nome\""; ?>/>
-            <?php if($nomeErr) echo '<p>'. $nomeErr .'</p>'; ?>
+						<input id="nome" name="nome" type="text" <?php if (isset($nome)) echo "value=\"$nome\""; ?>/>
+            <?php if(isset($nomeErr)) echo '<span>'. $nomeErr .'</span>'; ?>
 					</li>
           <li class="error">
 						<label for="cognome">Cognome</label>:
-						<input id="cognome" name="cognome" type="text" placeholder="Cognome" <?php if (isset($cognome)) echo "value=\"$cognome\""; ?>/>
-            <?php if($cognomeErr) echo '<p>'. $cognomeErr .'</p>'; ?>
+						<input id="cognome" name="cognome" type="text" <?php if (isset($cognome)) echo "value=\"$cognome\""; ?>/>
+            <?php if(isset($cognomeErr)) echo '<span>'. $cognomeErr .'</span>'; ?>
 					</li>
           <li class="error">
 						<label for="citta">Citt&aacute;</label>:
-						<input id="citta" name="citta" type="text" placeholder="Cittá" <?php if (isset($citta)) echo "value=\"$citta\""; ?>/>
-            <?php if($cittaErr) echo '<p>'. $cittaErr .'</p>'; ?>
+						<input id="citta" name="citta" type="text" <?php if (isset($citta)) echo "value=\"$citta\""; ?>/>
+            <?php if(isset($cittaErr)) echo '<span>'. $cittaErr .'</span>'; ?>
 					</li>
           <li class="error">
 						<label for="indirizzo">Indirizzo</label>:
-						<input id="indirizzo" name="indirizzo" type="text" placeholder="Via" <?php if (isset($indirizzo)) echo "value=\"$indirizzo\""; ?>/>
-            <?php if($indirizzoErr) echo '<p>'. $indirizzoErr .'</p>'; ?>
+						<input id="indirizzo" name="indirizzo" type="text"  <?php if (isset($indirizzo)) echo "value=\"$indirizzo\""; ?>/>
+            <?php if(isset($indirizzoErr)) echo '<span>'. $indirizzoErr .'</span>'; ?>
 					</li>
           <li class="error">
 						<label for="nascita">Data di nascita</label>:
-						<input id="nascita" name="nascita" type="text" placeholder="Data di nascita" <?php if (isset($nascita)) echo "value=\"$nascita\""; ?>/>
-            <?php if($nascitaErr) echo '<p>'. $nascitaErr .'</p>'; ?>
+						<input id="nascita" name="nascita" type="text"  <?php if (isset($nascita)) echo "value=\"$nascita\""; ?>/>
+            <?php if(isset($nascitaErr)) echo '<span>'. $nascitaErr .'</span>'; ?>
 					</li>
 				</ul>
 			</fieldset>
@@ -207,19 +117,20 @@ if (isset($_POST["registrati"])){
 				<legend> <span xml:lang="en">Dati per l'accesso</span></legend>
 				<ul>
           <li class="error">
-						<label for="emailR">Indirizzo email</label>:
-						<input id="emailR" name="emailR" type="email" placeholder="Email" <?php if (isset($emailR)) echo "value=\"$emailR\""; ?>/>
-            <?php if($emailErr) echo '<p class="error">'. $emailErr .'</p>'; ?>
+						<label for="emailR">Indirizzo <span xml:lang="en">email</span></label>:
+						<input id="emailR" name="emailR" type="email"  <?php if (isset($emailR)) echo "value=\"$emailR\""; ?>/>
+            <?php if(isset($emailErr)) echo '<span class="error">'. $emailErr .'</span>'; ?>
 					</li>
           <li class="error">
-						<label for="passwordR1"><span xml:lang="en">Password</span></label>:
-						<input id="passwordR1" name="passwordR1" type="password" placeholder="Password" />
+						<label for="passwordR"><span xml:lang="en">Password</span></label>:
+						<input id="passwordR" name="passwordR" type="password"  />
 					</li>
           <li class="error">
-						<label for="passwordR">Conferma la <span xml:lang="en">password</span</label>:
-						<input id="passwordR" name="passwordR" type="password" placeholder="Password" />
-            <?php if($passwordErr) echo '<p class="error">'. $passwordErr .'</p>'; ?>
-            <?php if($_SESSION["error"]) echo '<p class="error">'. $_SESSION["error"] .'</p>'; ?>
+						<label for="passwordR1">Conferma la <span xml:lang="en">password</span></label>:
+						<input id="passwordR1" name="passwordR1" type="password" />
+            <?php if(isset($passwordErr)) echo '<span class="error">'. $passwordErr .'</span>'; ?>
+            <?php if(isset($passwordErr1)) echo '<span class="error">'. $passwordErr1 .'</span>'; ?>
+            <?php if(isset($_SESSION["error"])) echo '<span class="error">'. $_SESSION["error"] .'</span>'; ?>
 					</li>
 					<li id="buttons-login">
 						<input value="Registrati" class="button" id="registrati" name="registrati" type="submit" />
@@ -238,10 +149,6 @@ if (isset($_POST["registrati"])){
 	</div>
 
 
-
-
-	<button id="scrollUp"><i class="fa fa-arrow-up"></i></button>
-
  <script>
 	function myFunction() {
 	  var x = document.getElementById("password");
@@ -254,27 +161,7 @@ if (isset($_POST["registrati"])){
 </script>
 
 
-	<!-- <script>
-		var body, scroll;
-		body=document.getElementsByTagName("body");
-		scroll=document.getElementById("scrollUp");
-		window.onscroll=Scroll();
-
-
-		function Scroll(){
-			var altezza=0.5*window.innerHeight;
-			if (body.scrollTop>altezza){
-				scroll.classList.add("show");
-			}
-			else {
-				scroll.classList.remove("show");
-			}
-		}
-	</script> -->
-
-
-
-<?php mysql_close($dbOpen); ?>
+<?php mysqli_close($dbOpen); ?>
 
 </body>
 </html>
