@@ -1,10 +1,6 @@
 <?php
-
-
 require_once __DIR__ . DIRECTORY_SEPARATOR . "connection.php";
 use DB\DBConnection;
-require_once __DIR__ . DIRECTORY_SEPARATOR . "PHP" . DIRECTORY_SEPARATOR . "val_registrazione.php";
-
 
 if (session_status() == PHP_SESSION_NONE) {
   session_start();
@@ -12,10 +8,8 @@ if (session_status() == PHP_SESSION_NONE) {
 
 if (isset($_SESSION["email"])){
 	header("Location: index.html");
-
 	exit();
 }
-
 
 ?>
 
@@ -38,7 +32,7 @@ if (isset($_SESSION["email"])){
 <link rel="stylesheet" type="text/css" href="CSS/css_index_small_720px.css" media="handheld, screen and (max-width:768px),only screen and (max-device-width:720px)"/>
 <link rel="stylesheet" type="text/css" href="CSS/css_index_small_480px.css" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css'>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.2/css/all.css'>
 
 
 <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"/>
@@ -54,8 +48,7 @@ if (isset($_SESSION["email"])){
 	  <ul class="menuItems" id="menuu" >
       <li><a href="index.html" xml:lang="en">Home</a></li>
 	    <li><a href="corsi.php">Corsi</a></li>
-	    <li><a href="">Galleria</a></li>
-      <li><a href="galleria.php">Galleria</a></li>
+	    <li><a href="galleria.php">Galleria</a></li>
 	    <li><a href="contatti.html">Contatti</a></li>
       <li><a href="registrazione.php">Registrazione</a></li>
       <li><a href="login.php">Accedi</a></li>
@@ -72,7 +65,7 @@ if (isset($_SESSION["email"])){
 	      <span>Registrati</span>
 	    </li>
 	    <li>
-	      <span><i class="far fa-user-circle"></i></span>
+	      <span><i class="far fa-door-closed"></i></span>
         <a href="login.php">Accedi</a>
 	    </li>
 	  </ul>
@@ -82,55 +75,56 @@ if (isset($_SESSION["email"])){
 		<div id="breadcrumb">
 			<p>Ti trovi in: <span xml:lang="en">Registrazione</span></p>
 		</div>
-		<form  action="post_registrazione.php" method="post" id="login-register-form">
+		<form onsubmit="return checkAll()" action="post_registrazione.php" method="post" id="login-register-form">
 			<fieldset>
-				<legend> <span xml:lang="en">Dati anagrafici</span></legend>
+				<legend>Dati anagrafici</legend>
 				<ul>
-          <li class="error">
-						<label for="nome">Nome</label>:
-						<input id="nome" name="nome" type="text" <?php if (isset($nome)) echo "value=\"$nome\""; ?>/>
-            <?php if(isset($nomeErr)) echo '<span>'. $nomeErr .'</span>'; ?>
+          <li>
+						<label for="nome">Nome</label>
+            <?php //if (isset($_POST["nome"])) echo "value=\"$_POST[\"nome\"]\""; ?>
+						<input id="nome" name="nome" type="text" <?php if(isset ($_SESSION['var']['nome'])) {$nome = $_SESSION['var']['nome']; echo "value=\"$nome\"";} else echo "value=\"\"";?>/>
+            <?php if(isset($_SESSION['error']['nomeErr'])) { echo '<span class="error">'. $_SESSION['error']['nomeErr'] .'</span>'; unset($_SESSION['error']['nomeErr']); } else {echo "";} ?>
 					</li>
-          <li class="error">
-						<label for="cognome">Cognome</label>:
-						<input id="cognome" name="cognome" type="text" <?php if (isset($cognome)) echo "value=\"$cognome\""; ?>/>
-            <?php if(isset($cognomeErr)) echo '<span>'. $cognomeErr .'</span>'; ?>
+          <li>
+						<label for="cognome">Cognome</label>
+						<input id="cognome" name="cognome" type="text" <?php if(isset ($_SESSION['var']['cognome'])) {$cognome=$_SESSION['var']['cognome'];echo "value=\"$cognome\"";} else echo "value=\"\"";?>/>
+            <?php if(isset($_SESSION['error']['cognomeErr'])) { echo '<span class="error">'. $_SESSION['error']['cognomeErr'] .'</span>'; unset($_SESSION['error']['cognomeErr']); } else echo ""; ?>
 					</li>
-          <li class="error">
-						<label for="citta">Citt&aacute;</label>:
-						<input id="citta" name="citta" type="text" <?php if (isset($citta)) echo "value=\"$citta\""; ?>/>
-            <?php if(isset($cittaErr)) echo '<span>'. $cittaErr .'</span>'; ?>
+          <li>
+						<label for="citta">Citt&aacute;</label>
+						<input id="citta" name="citta" type="text" <?php if(isset ($_SESSION['var']['citta'])) {$citta=$_SESSION['var']['citta'];echo "value=\"$citta\"";} else echo "value=\"\"";?>/>
+            <?php if(isset($_SESSION['error']['cittaErr'])) { echo '<span class="error">'. $_SESSION['error']['cittaErr'] .'</span>'; unset($_SESSION['error']['cittaErr']); } else echo ""; ?>
 					</li>
-          <li class="error">
-						<label for="indirizzo">Indirizzo</label>:
-						<input id="indirizzo" name="indirizzo" type="text"  <?php if (isset($indirizzo)) echo "value=\"$indirizzo\""; ?>/>
-            <?php if(isset($indirizzoErr)) echo '<span>'. $indirizzoErr .'</span>'; ?>
+          <li>
+						<label for="indirizzo">Indirizzo</label>
+						<input id="indirizzo" name="indirizzo" type="text"  <?php if(isset ($_SESSION['var']['indirizzo'])) {$indirizzo=$_SESSION['var']['indirizzo']; echo "value=\"$indirizzo\"";} else echo "value=\"\"";?>/>
+            <?php if(isset($_SESSION['error']['indirizzoErr'])) { echo '<span class="error">'. $_SESSION['error']['indirizzoErr'] .'</span>'; unset($_SESSION['error']['indirizzoErr']); } else echo ""; ?>
 					</li>
-          <li class="error">
-						<label for="nascita">Data di nascita</label>:
-						<input id="nascita" name="nascita" type="text"  <?php if (isset($nascita)) echo "value=\"$nascita\""; ?>/>
-            <?php if(isset($nascitaErr)) echo '<span>'. $nascitaErr .'</span>'; ?>
+          <li>
+						<label for="nascita">Data di nascita</label>
+						<input id="nascita" name="nascita" type="text"  <?php if(isset ($_SESSION['var']['nascita'])) {$nascita=$_SESSION['var']['nascita']; echo "value=\"$nascita\"";} else echo "value=\"\"";?>/>
+            <?php if(isset($_SESSION['error']['nascitaErr'])) { echo '<span class="error">'. $_SESSION['error']['nascitaErr'] .'</span>'; unset($_SESSION['error']['nascitaErr']); } else echo ""; ?>
 					</li>
 				</ul>
 			</fieldset>
       <fieldset>
-				<legend> <span xml:lang="en">Dati per l'accesso</span></legend>
+				<legend>Dati per l'accesso</legend>
 				<ul>
-          <li class="error">
+          <li>
 						<label for="emailR">Indirizzo <span xml:lang="en">email</span></label>:
-						<input id="emailR" name="emailR" type="email"  <?php if (isset($emailR)) echo "value=\"$emailR\""; ?>/>
-            <?php if(isset($emailErr)) echo '<span class="error">'. $emailErr .'</span>'; ?>
+						<input id="emailR" name="emailR" type="text"  <?php if(isset ($_SESSION['var']['email'])) {$email=$_SESSION['var']['email']; echo "value=\"$email\"";} else echo "value=\"\"";?>/>
+            <?php if(isset($_SESSION['error']['emailErr'])) { echo '<span class="error">'. $_SESSION['error']['emailErr'] .'</span>'; unset($_SESSION['error']['emailErr']); } else echo ""; ?>
 					</li>
-          <li class="error">
+          <li>
 						<label for="passwordR"><span xml:lang="en">Password</span></label>:
-						<input id="passwordR" name="passwordR" type="password"  />
+						<input id="passwordR" name="passwordR" type="password"/>
 					</li>
-          <li class="error">
+          <li>
 						<label for="passwordR1">Conferma la <span xml:lang="en">password</span></label>:
 						<input id="passwordR1" name="passwordR1" type="password" />
-            <?php if(isset($passwordErr)) echo '<span class="error">'. $passwordErr .'</span>'; ?>
-            <?php if(isset($passwordErr1)) echo '<span class="error">'. $passwordErr1 .'</span>'; ?>
-            <?php if(isset($_SESSION["error"])) echo '<span class="error">'. $_SESSION["error"] .'</span>'; ?>
+            <?php if(isset($_SESSION['error']['passwordErr'])) {echo '<span class="error">'. $_SESSION['error']['passwordErr'] .'</span>'; unset($_SESSION['error']['passwordErr']);}?>
+            <?php if(isset($_SESSION['error']['passwordErr1'])) {echo '<span class="error">'. $_SESSION['error']['passwordErr1'] .'</span>'; unset($_SESSION['error']['passwordErr1']);}?>
+            <?php if(isset($_SESSION['error']['mailErr'])) {echo '<span class="error">'. $_SESSION['error']['mailErr'] .'</span>';} ?>
 					</li>
 					<li id="buttons-login">
 						<input value="Registrati" class="button" id="registrati" name="registrati" type="submit" />
@@ -161,7 +155,7 @@ if (isset($_SESSION["email"])){
 </script>
 
 
-<?php mysqli_close($dbOpen); ?>
+<!-- <?php mysqli_close($dbOpen); ?> -->
 
 </body>
 </html>

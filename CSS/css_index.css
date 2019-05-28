@@ -472,7 +472,7 @@ CSS LOGIN
 	font-weight: bold;
 }
 
-.error p{
+.error{
 	font-size: 0.9em;
 	color: red;
 }
@@ -554,7 +554,6 @@ FOOTER
 
 #footer p{
 	margin: 0.4em 0 0.4em 0;
-	font-size: 1em;
 }
 
 #imgValidCode{

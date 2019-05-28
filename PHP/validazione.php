@@ -86,9 +86,11 @@ function valPassword1($passwordR,$passwordR1){
   return $passwordErr1;
 }
 
-function valReg(){
+function valReg($nomeErr,$cognomeErr,$cittaErr,$nascitaErr,$indirizzoErr,$emailErr,$passwordErr,$passwordErr1){
   if (empty($nomeErr) && empty($cognomeErr) && empty($cittaErr) && empty($nascitaErr) && empty($indirizzoErr) && empty($emailErr) && empty($passwordErr) && empty($passwordErr1)  )
-    return true;
+    {
+      return true;
+    }
     else {
       return false;
     }
