@@ -115,6 +115,36 @@ function checkPassword(passwordInput) {
     }
   }
 
+  function checkTitolo(titoloInput) {
+      var pattern=/^.{5,30}$/;
+      if (pattern.test(titoloInput.value)){
+        togliErrore(titoloInput);
+        return true;
+      }
+      else{
+        if (passwordInput.value=="")
+          mostraErrore(titoloInput, "Il campo titolo non può essere vuoto")
+        else
+          mostraErrore(titoloInput, "Il testo inserito deve avere almeno 5 caratteri e una massimo di 30")
+        return false;
+      }
+    }
+
+  function checkTesto(testoInput) {
+      var pattern=/^.{40,300}$/;
+      if (pattern.test(testoInput.value)){
+        togliErrore(testoInput);
+        return true;
+      }
+      else{
+        if (testoInput.value=="")
+          mostraErrore(testoInput, "Il campo testo non può essere vuoto")
+        else
+          mostraErrore(testoInput, "Il testo inserito deve avere almeno 40 caratteri e una massimo di 300")
+        return false;
+      }
+    }
+
 function checkRepeatPassword(passwordInput,passwordInput2){
   if (passwordInput.value==passwordInput2.value){
     togliErrore(passwordInput2);
@@ -142,7 +172,7 @@ function mostraErrore (input,testo){
 }
 
 
-function checkAll(){
+function checkReg(){
   var nome = document.getElementById("nome");
   var cognome = document.getElementById("cognome");
   var citta = document.getElementById("citta");
@@ -162,6 +192,20 @@ function checkAll(){
   var risultatoTestPassword1 = checkRepeatPassword(password,password1);
 
   if (risultatoTestNome && risultatoTestCognome && risultatoTestCitta && risultatoTestIndirizzo && risultatoTestMail && risultatoTestNascita && risultatoTestPassword && risultatoTestPassword1)
+    return true;
+  else {
+    return false;
+  }
+}
+
+function checkInsCorsi(){
+  var titolo = document.getElementById("titolo");
+  var testo = document.getElementById("testo");
+
+  var risultatoTestTitolo = checkTitolo(titolo);            //utilizzo la funzione checkNome per nome,cognome e città percchè hanno la stessa RegExp
+  var risultatoTestTesto = checkTesto(testo);
+
+  if (risultatoTestTitolo && risultatoTestTesto)
     return true;
   else {
     return false;

@@ -144,6 +144,17 @@ class DBConnection
     mysqli_close($this->conn);
   }
 
+  public function insertCorsi($titolo,$testo,$fileToUpload){
+    $query1 = "INSERT INTO corsi(titolo,descrizione,immagine) VALUES ('$titolo','$testo','$fileToUpload')";
+    $queryResult1 = mysqli_query($this->conn, $query1);
+    if (mysqli_affected_rows($this->conn)==0){
+      return false;
+    }
+    else{
+      return true;
+    }
+  }
+
 
 };
 ?>

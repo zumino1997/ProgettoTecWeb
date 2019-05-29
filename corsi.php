@@ -104,7 +104,7 @@ else {
   	<?php foreach ($listaCorsi as $corso) {
   		echo '<div class="box Sx">';
   		echo '<h2>'.$corso['Titolo'].'</h2>';
-      echo '<img src="data:image/jpeg;base64,'.base64_encode($corso['Immagine']).'"/>';
+      echo '<img src="'.$corso['Immagine'].'"/>';
   		echo '<p>'.$corso['Descrizione'].'</p>';
       echo '<a href="corsoSingolo.php?id='.$corso['Id'].'">Scopri il corso "'.$corso['Titolo'].'"</a>';
   		echo '</div>';

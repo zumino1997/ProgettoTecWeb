@@ -9,7 +9,7 @@ if(isset($_POST['invia'])){
     if(!valEmail($from)) {
         $subject = "Richiesta informazioni Azienda Cavallin";
         $message = $_POST['messaggio'];
-        $headers = "Messaggio da:" . $from;
+        $headers = "From:" . $from;
         mail($to,$subject,$message,$headers);
     }
     // header("Location: contattaci.html");

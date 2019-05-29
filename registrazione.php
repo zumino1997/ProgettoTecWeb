@@ -74,7 +74,7 @@ if (isset($_SESSION["email"])){
 		<div id="breadcrumb">
 			<p>Ti trovi in: <span xml:lang="en">Registrazione</span></p>
 		</div>
-		<form onsubmit="return checkAll()" action="post_registrazione.php" method="post" id="login-register-form">
+		<form onsubmit="return checkReg()" action="post_registrazione.php" method="post" id="login-register-form">
 			<fieldset>
 				<legend>Dati anagrafici</legend>
 				<ul>
