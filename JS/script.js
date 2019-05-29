@@ -30,7 +30,7 @@ function closeImage() {
 }
 
 
-//VALIDAZIONE FORM REGISTRAZIONE
+//VALIDAZIONE FORM
 
 function checkNome(nomeInput){
   var pattern= /^[a-zA-Z]{3,}$/;
@@ -122,7 +122,7 @@ function checkPassword(passwordInput) {
         return true;
       }
       else{
-        if (passwordInput.value=="")
+        if (titoloInput.value=="")
           mostraErrore(titoloInput, "Il campo titolo non può essere vuoto")
         else
           mostraErrore(titoloInput, "Il testo inserito deve avere almeno 5 caratteri e una massimo di 30")

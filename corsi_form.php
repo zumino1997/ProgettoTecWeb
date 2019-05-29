@@ -75,7 +75,7 @@ if (isset($_SESSION["email"])){
 		<div id="breadcrumb">
 			<p>Ti trovi in: <span xml:lang="en">Registrazione</span></p>
 		</div>
-		<form onsubmit="checkInsCorsi()" action="post_corsi.php" method="post" id="login-register-form" enctype="multipart/form-data">
+		<form onsubmit="return checkInsCorsi()" action="post_corsi.php" method="post" id="login-register-form" enctype="multipart/form-data">
 			<fieldset>
 				<legend>Inserisci un nuovo corso</legend>
 				<ul>
