@@ -116,9 +116,7 @@ $dbOpen=$connection->openConnection();
 	}
 </script>
 
-
-
-<?php mysqli_close($dbOpen); ?>
+<?php $connection->closeConnection();?>
 
 </body>
 </html>

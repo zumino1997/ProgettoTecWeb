@@ -140,5 +140,10 @@ class DBConnection
     }
   }
 
+  public function closeConnection()  {
+    mysqli_close($this->conn);
+  }
+
+
 };
 ?>

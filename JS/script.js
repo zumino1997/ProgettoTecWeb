@@ -6,15 +6,50 @@ function menuHamburger() {
     element.className = "menuItems";
 }
 
+function mostraPassword() {
+  var x = document.getElementById("password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+
+
+//FUNZIONI PER "GALLERIA.PHP"
+
+function show(img) {
+  var imgExp = document.getElementById("imgExp");
+  imgExp.src = img.src;
+  document.getElementById('showImage').style.display = "block";
+}
+
+
+function closeImage() {
+  document.getElementById('showImage').style.display = "none";
+}
+
+
+//VALIDAZIONE FORM REGISTRAZIONE
+
 function checkNome(nomeInput){
   var pattern= /^[a-zA-Z]{3,}$/;
+  var name = nomeInput.getAttribute("name");
   if (pattern.test(nomeInput.value)){
   togliErrore(nomeInput);
     return true;
   }
   else{
-    //mostrare errore
-    mostraErrore(nomeInput, "Inserire almeno 3 lettere. I numeri non sono consentiti.")
+    if (nomeInput.value==""){
+      if (name=="nome")
+        mostraErrore(nomeInput, "Il campo \"nome\" non può essere vuoto");
+      if (name=="cognome")
+        mostraErrore(nomeInput, "Il campo \"cognome\" non può essere vuoto");
+      if (name=="citta")
+        mostraErrore(nomeInput, "Il campo \"città\" non può essere vuoto");
+    }
+    else
+      mostraErrore(nomeInput, "Inserire almeno 3 lettere. I numeri non sono consentiti.");
     return false;
   }
 }
@@ -26,8 +61,10 @@ function checkIndirizzo(indirizzoInput){
     return true;
   }
   else{
-    //mostrare errore
-    mostraErrore(indirizzoInput, "Inserire almeno 3 lettere. I numeri non sono consentiti.")
+    if (indirizzoInput.value=="")
+      mostraErrore(indirizzoInput, "Il campo indirizzo non può essere vuoto")
+    else
+      mostraErrore(indirizzoInput, "Inserire almeno 3 caratteri")
     return false;
   }
 }
@@ -40,7 +77,9 @@ function checkNascita(nascitaInput) {
     return true;
   }
   else{
-    //mostrare errore
+    if (nascitaInput.value=="")
+      mostraErrore(nascitaInput, "Il campo nascita non può essere vuoto")
+    else
     mostraErrore(nascitaInput, "Data inserita non valida. (dd/mm/yyyy) ")
     return false;
   }
@@ -53,8 +92,10 @@ function checkMail(mailInput) {
       return true;
     }
     else{
-      //mostrare errore
-      mostraErrore(mailInput, "Indirizzo mail inserito non valido.  ")
+      if (mailInput.value=="")
+        mostraErrore(mailInput, "Il campo email non può essere vuoto")
+      else
+        mostraErrore(mailInput, "Indirizzo mail inserito non valido.  ")
       return false;
     }
     }
@@ -66,8 +107,10 @@ function checkPassword(passwordInput) {
       return true;
     }
     else{
-      //mostrare errore
-      mostraErrore(passwordInput, "Password inserita non valida. Inserire almeno 8 caratteri")
+      if (passwordInput.value=="")
+        mostraErrore(passwordInput, "Il campo password non può essere vuoto")
+      else
+        mostraErrore(passwordInput, "Password inserita non valida. Inserire almeno 8 caratteri")
       return false;
     }
   }
@@ -85,7 +128,6 @@ function checkRepeatPassword(passwordInput,passwordInput2){
 
 function togliErrore (input){
   var li= input.parentNode;
-  // window.alert(li.childElementCount);
   if (li.childElementCount>=3)
     li.removeChild(li.lastChild);
 }
@@ -110,8 +152,7 @@ function checkAll(){
   var password = document.getElementById("passwordR");
   var password1 = document.getElementById("passwordR1");
 
-  var risultatoTestNome = checkNome(nome);
-  // return false;
+  var risultatoTestNome = checkNome(nome);            //utilizzo la funzione checkNome per nome,cognome e città percchè hanno la stessa RegExp
   var risultatoTestCognome = checkNome(cognome);
   var risultatoTestCitta = checkNome(citta);
   var risultatoTestIndirizzo = checkIndirizzo(indirizzo);
@@ -120,7 +161,6 @@ function checkAll(){
   var risultatoTestPassword = checkPassword(password);
   var risultatoTestPassword1 = checkRepeatPassword(password,password1);
 
-  // window.alert(risultatoTestNascita);
   if (risultatoTestNome && risultatoTestCognome && risultatoTestCitta && risultatoTestIndirizzo && risultatoTestMail && risultatoTestNascita && risultatoTestPassword && risultatoTestPassword1)
     return true;
   else {

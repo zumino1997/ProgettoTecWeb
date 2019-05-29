@@ -4,8 +4,6 @@ if (session_status() == PHP_SESSION_NONE) {
   session_start();
 }
 
-
-
 require_once __DIR__ . DIRECTORY_SEPARATOR . "connection.php";
 use DB\DBConnection;
 
@@ -20,9 +18,6 @@ if ($dbOpen){
 else {
 		$_SESSION["error"] = "Connessione non stabilita correttamente";
 	}
-
-
-
 
 ?>
 
@@ -114,6 +109,7 @@ else {
 </div>
 
 
+<?php $connection->closeConnection();?>
 
 
 </body>

@@ -49,6 +49,7 @@ if ($dbOpen){
     $passwordR=md5($passwordR);
     if (!$connection->getUser2($emailR)){         //se la mail non è già esistente
       $regi=$connection->insertUser($nome,$cognome,$citta,$indirizzo,$nascita,$emailR,$passwordR);
+      $connection->closeConnection();
       $_SESSION["email"]=$emailR;
       $_SESSION["error"] = "";
       header("Location: profilo.php");

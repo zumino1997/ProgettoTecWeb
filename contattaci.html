@@ -1,35 +1,4 @@
-<?php
-
-if (session_status() == PHP_SESSION_NONE) {
-  session_start();
-}
-
-require_once __DIR__ . DIRECTORY_SEPARATOR . "connection.php";
-use DB\DBConnection;
-
-$connection = new DBConnection();
-$dbOpen=$connection->openConnection();
-
-$_SESSION["error"] = "";
-
-if ($dbOpen){
-		$number_of_results=$connection->numImg();
-    $results_per_page = 4;
-    $number_of_pages = ceil($number_of_results/$results_per_page);
-    if (!isset($_GET['page']) || $_GET['page']>$number_of_pages || $_GET['page']<0) {
-      $_GET['page']=1;
-      $page = 1;
-    } else {
-      $page = $_GET['page'];
-    }
-    $this_page_first_result = ($page-1)*$results_per_page;
-    $listaImg=$connection->getImg($this_page_first_result,$results_per_page);
-	}
-else {
-		$_SESSION["error"] = "Connessione non stabilita correttamente";
-	}
-
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it"><!-- il comando html permette di importare un namespace, contenente tutto l'insieme dei tag utilizzabili -->
 
 <head>
@@ -45,26 +14,26 @@ else {
 
 <link rel="stylesheet" type="text/css" href="CSS/css_index.css" media="handheld, screen"/>
 <link rel="stylesheet" type="text/css" href="CSS/css_index_small_1200px.css" media="handheld, screen and (max-width:1200px),only screen and (max-device-width:1200px)"/>
-<link rel="stylesheet" type="text/css" href="CSS/css_index_small_720px.css" media="handheld, screen and (max-width:768px),only screen and (max-device-width:768px)"/>
+<link rel="stylesheet" type="text/css" href="CSS/css_index_small_720px.css" media="handheld, screen and (max-width:768px),only screen and (max-device-width:720px)"/>
 <link rel="stylesheet" type="text/css" href="CSS/css_index_small_480px.css" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css'>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.2/css/all.css'>
 
 
 <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
 <script type="text/javascript" src="JS/script.js"> </script>
 
+
 </head>
 <body>
-
-	<div id="nav">
+  <div id="nav">
 	  <div id="logo"><img src="IMG/logo2.png" alt="Logo Energya"/></div>
 	  <button id="menuIcon" onclick="menuHamburger()"><i class='fas fa-bars'></i></button>
 	  <ul class="menuItems" id="menuu" >
-	    <li><a href="index.html">Home</a></li>
+	    <li><a href="index.html" xml:lang="en">Home</a></li>
 	    <li><a href="corsi.php">Corsi</a></li>
-	    <li id="currentLink">Galleria</li>
+	    <li><a href="galleria.php">Galleria</a></li>
 	    <li><a href="staff.html" xml:lang="en">Staff</a></li>
 	    <li><a href="contatti.html">Contatti</a></li>
 			<li><a href="registrazione.php">Registrazione</a></li>
@@ -79,39 +48,41 @@ else {
 	  <ul>
 	    <li>
 	      <span><i class="far fa-user-circle" alt="user"></i></span>
-	      <a href="registrazione.php">Registrati</a>
+	      <span>Registrati</span>
 	    </li>
 	    <li>
-	      <span><i class="far fa-user-circle"></i></span>
-	      <a href="login.php">Accedi</a>
+	      <span><i class="far fa-door-closed"></i></span>
+        <a href="login.php">Accedi</a>
 	    </li>
 	  </ul>
 	</div>
 
-
 	<div id="content">
-		<?php foreach ($listaImg as $img) {
-  		echo '<div id="column">';
-      echo '<img src="data:image/jpeg;base64,'.base64_encode($img['Immagine']).'" onclick="show(this)" alt=""/>';
-  		echo '</div>';
-  	} ?>
-
-    <div class="pagination"><?php
-    for ($page=1;$page<=$number_of_pages;$page++) {
-      if ($_GET['page']!=$page)
-        echo '<a href="galleria.php?page=' . $page . '">' . $page . '</a> ';
-      else {
-        echo '<span class="active"' . $page . '">' . $page . '</span> ';
-      }
-    }
-    ?>
-
-		<div id="showImage">
-			  <span id="closeImage" onclick="closeImage()">&times;</span>
-				<img id="imgExp" alt=""/>
+		<div id="breadcrumb">
+			<p>Ti trovi in: <span xml:lang="en">Contattaci</span></p>
 		</div>
-	</div>
-
+    <form id="login-register-form" action="post_contattaci.php" method="post" >
+      <fieldset>
+				<legend>Dati anagrafici</legend>
+        <ul>
+          <li>
+            <label for="name">Nome:</label>
+            <input type="text" name="nome" id="nome" />
+          </li>
+          <li>
+            <label for="email" xml:lang="en">E-mail:</label>
+            <input type="text" name="email" id="email"/>
+          </li>
+          <li>
+            <label for="message-text">Messaggio:</label>
+            <textarea name="messaggio" id="messaggio" rows="30"></textarea>
+          </li>
+          <li id="buttons-login">
+            <input type="submit" class="button" name="invia" value="Invia"/>
+          </li>
+        </ul>
+      </fieldset>
+    </form>
 	</div>
 
 	<div id="footer">
@@ -120,6 +91,8 @@ else {
 		<p>Matteo</p>
 		<p>Franconetti Simone</p>
 	</div>
+
+
 
 </body>
 </html>

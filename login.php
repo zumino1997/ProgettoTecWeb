@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . DIRECTORY_SEPARATOR . "connection.php";
+use DB\DBConnection;
 
 if (session_status() == PHP_SESSION_NONE) {
   session_start();
@@ -8,53 +10,6 @@ if (isset($_SESSION["email"])){
 	header("Location: index.html");
 	exit();
 }
-
-require_once __DIR__ . DIRECTORY_SEPARATOR . "connection.php";
-use DB\DBConnection;
-
-$connection = new DBConnection();
-$dbOpen=$connection->openConnection();
-
-$_SESSION["error"] = "";
-
-if (isset($_POST["login"])){
-	if ($dbOpen){
-
-		if (empty($_POST["password"])){
-			$_SESSION["error"] = "Password non immessa";
-		}
-		else{
-			$psw=$_POST["password"];
-		}
-
-		if (empty($_POST["email"])){
-			$_SESSION["error"] = "Email non immessa";
-		}
-		else{
-			$email=$_POST["email"];
-		}
-
-		if (!empty($_POST["email"]) && !empty($_POST["password"])){
-			$psw=md5($psw);
-			$accesso=$connection->getUser($email,$psw);
-			if ($accesso){
-				$_SESSION["email"]=$email;
-				$_SESSION["error"] = "";
-				header("Location: profilo.php");
-				exit();
-			}
-			else{
-				$_SESSION["error"] = "Accesso non riuscito, verificare che le credenziali siano corrette";
-			}
-		}
-	}
-	else {
-		echo "Connessione non stabilita correttamente";
-	}
-}
-
-
-
 
 ?>
 
@@ -87,17 +42,17 @@ if (isset($_POST["login"])){
 
 </head>
 <body>
-	<div id="nav">
+  <div id="nav">
 	  <div id="logo"><img src="IMG/logo2.png" alt="Logo Energya"/></div>
-    <button id="menuIcon" onclick="menuHamburger()"><i class='fas fa-bars'></i></button>
+	  <button id="menuIcon" onclick="menuHamburger()"><i class='fas fa-bars'></i></button>
 	  <ul class="menuItems" id="menuu" >
-      <li><a href="index.html" xml:lang="en">Home</a></li>
+	    <li><a href="index.html" xml:lang="en">Home</a></li>
 	    <li><a href="corsi.php">Corsi</a></li>
-      <li><a href="galleria.php">Galleria</a></li>
-	    <li><a href="" xml:lang="en">Staff</a></li>
+	    <li><a href="galleria.php">Galleria</a></li>
+	    <li><a href="staff.html" xml:lang="en">Staff</a></li>
 	    <li><a href="contatti.html">Contatti</a></li>
-      <li><a href="registrazione.php">Registrazione</a></li>
-      <li><a href="login.php">Accedi</a></li>
+			<li><a href="registrazione.php">Registrazione</a></li>
+			<li><a href="login.php">Accedi</a></li>
 	  </ul>
 	</div>
 	<div id="header">
@@ -121,21 +76,21 @@ if (isset($_POST["login"])){
 		<div id="breadcrumb">
 			<p>Ti trovi in: <span xml:lang="en">Login</span></p>
 		</div>
-		<form action="login.php" method="post" id="login-register-form">
+		<form action="post_login.php" method="post" id="login-register-form">
 			<fieldset>
 				<legend> <span xml:lang="en">Login</span></legend>
 				<ul>
 					<li>
 						<label for="email">Email</label>:
-						<input id="email" name="email" type="email"/>
+						<input id="email" name="email" type="text"/>
 					</li>
 					<li>
 						<label for="password"><span xml:lang="en">Password</span></label>:
 						<input id="password" name="password" type="password"/>
+            <?php if(isset($_SESSION['error']['mailErr'])) {echo '<span class="error">'. $_SESSION['error']['mailErr'] .'</span>';} ?>
 					</li>
-					<?php if($_SESSION["error"]) echo '<li class="error"><p>' . $_SESSION['error'] . '</p></li>';?>
 					<li>
-						<input type="checkbox" onclick="myFunction()"/> Mostra <span xml:lang="en">password</span>
+						<input type="checkbox" onclick="mostraPassword()"/> Mostra <span xml:lang="en">password</span>
 					</li>
 					<li id="buttons-login">
 						<input value="Login" class="button" id="login" name="login" type="submit" />
@@ -152,21 +107,6 @@ if (isset($_POST["login"])){
 		<p>Matteo</p>
 		<p>Franconetti Simone</p>
 	</div>
-
-
-
- <script>
-	function myFunction() {
-	  var x = document.getElementById("password");
-	  if (x.type === "password") {
-	    x.type = "text";
-	  } else {
-	    x.type = "password";
-	  }
-	}
-</script>
-
-
 
 <?php mysqli_close($dbOpen); ?>
 

@@ -453,7 +453,8 @@ CSS LOGIN
 	text-align: center;
 }
 
-#login-register-form li input[type=email], #login-register-form li input[type=password],#login-register-form li input[type=text]{
+#login-register-form li input[type=email], #login-register-form li input[type=password],
+#login-register-form li input[type=text], #login-register-form li textarea{
 	width: 100%;
 	display: block;
   padding: 0.7em;
@@ -464,7 +465,8 @@ CSS LOGIN
   outline: none;
 }
 
-#login-register-form input[type=email]:focus, #login-register-form input[type=password]:focus,#login-register-form li input[type=text]:focus {
+#login-register-form input[type=email]:focus, #login-register-form input[type=password]:focus,
+#login-register-form li input[type=text]:focus, #login-register-form li textarea:focus {
   border: 2px solid #555;
 }
 
@@ -563,31 +565,6 @@ FOOTER
 #imgValidCSS{
 	float:right;
 }
-
-
-
-/****************
-PULSANTE SCROLL
-*****************/
-/*
-#scrollUp{
-	font-size: 2.5em;
-	height: 1.5em;
-	width: 1.5em;
-	border:0;
-	border-radius: 50%;
-	position: fixed;
-	bottom: 5%;
-	right: 8%;
-	cursor: pointer;
-	background-color: #044B5D;
-	color: #fff;
-	visibility: visible;
-}
-
-#scrollUp.show{
-	visibility: hidden;
-} */
 
 #menuIcon{
 	border:0;

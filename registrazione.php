@@ -1,6 +1,4 @@
 <?php
-require_once __DIR__ . DIRECTORY_SEPARATOR . "connection.php";
-use DB\DBConnection;
 
 if (session_status() == PHP_SESSION_NONE) {
   session_start();
@@ -42,16 +40,17 @@ if (isset($_SESSION["email"])){
 
 </head>
 <body>
-	<div id="nav">
+  <div id="nav">
 	  <div id="logo"><img src="IMG/logo2.png" alt="Logo Energya"/></div>
-    <button id="menuIcon" onclick="menuHamburger()"><i class='fas fa-bars'></i></button>
+	  <button id="menuIcon" onclick="menuHamburger()"><i class='fas fa-bars'></i></button>
 	  <ul class="menuItems" id="menuu" >
-      <li><a href="index.html" xml:lang="en">Home</a></li>
+	    <li><a href="index.html" xml:lang="en">Home</a></li>
 	    <li><a href="corsi.php">Corsi</a></li>
 	    <li><a href="galleria.php">Galleria</a></li>
+	    <li><a href="staff.html" xml:lang="en">Staff</a></li>
 	    <li><a href="contatti.html">Contatti</a></li>
-      <li><a href="registrazione.php">Registrazione</a></li>
-      <li><a href="login.php">Accedi</a></li>
+			<li><a href="registrazione.php">Registrazione</a></li>
+			<li><a href="login.php">Accedi</a></li>
 	  </ul>
 	</div>
 	<div id="header">
@@ -101,7 +100,7 @@ if (isset($_SESSION["email"])){
             <?php if(isset($_SESSION['error']['indirizzoErr'])) { echo '<span class="error">'. $_SESSION['error']['indirizzoErr'] .'</span>'; unset($_SESSION['error']['indirizzoErr']); } else echo ""; ?>
 					</li>
           <li>
-						<label for="nascita">Data di nascita</label>
+						<label for="nascita">Data di nascita (dd/mm/yyyy)</label>
 						<input id="nascita" name="nascita" type="text"  <?php if(isset ($_SESSION['var']['nascita'])) {$nascita=$_SESSION['var']['nascita']; echo "value=\"$nascita\"";} else echo "value=\"\"";?>/>
             <?php if(isset($_SESSION['error']['nascitaErr'])) { echo '<span class="error">'. $_SESSION['error']['nascitaErr'] .'</span>'; unset($_SESSION['error']['nascitaErr']); } else echo ""; ?>
 					</li>
@@ -142,20 +141,6 @@ if (isset($_SESSION["email"])){
 		<p>Franconetti Simone</p>
 	</div>
 
-
- <script>
-	function myFunction() {
-	  var x = document.getElementById("password");
-	  if (x.type === "password") {
-	    x.type = "text";
-	  } else {
-	    x.type = "password";
-	  }
-	}
-</script>
-
-
-<!-- <?php mysqli_close($dbOpen); ?> -->
 
 </body>
 </html>
