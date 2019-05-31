@@ -96,5 +96,50 @@ function valReg($nomeErr,$cognomeErr,$cittaErr,$nascitaErr,$indirizzoErr,$emailE
     }
 }
 
+function valTitolo($titolo){
+  $titoloErr="";
+  if (!preg_match("/^.{5,30}$/",$titolo)) {
+    $titoloErr = "Il titolo deve essere di minimo 5 e massimo 30 caratteri";
+  }
+  return $titoloErr;
+}
+
+function valTesto($testo){
+  $testoErr="";
+  if (!preg_match("/^.{40,300}$/",$testo)) {
+    $testoErr = "La descrizione corta deve essere di minimo 40 e massimo 300 caratteri";
+  }
+  return $testoErr;
+}
+
+function valTestoLong($testoLong){
+  $testoLongErr="";
+  if (!preg_match("/^.{40,900}$/",$testoLong)) {
+    $testoLongErr = "La descrizione corta di minimo 40 e massimo 900 caratteri";
+  }
+  return $testoLongErr;
+}
+
+function valAlt($alt){
+  $altErr="";
+  if (!preg_match("/^.{0,20}$/",$alt)) {
+    $altErr = "L'alt dell'immagine deve essere di massimo 20 caratteri";
+  }
+  return $altErr;
+}
+
+function valCorsi($titoloErr,$testoErr,$altErr,$testoLong){
+  if(empty($titoloErr) && empty($testoErr) && empty($altErr) && empty($testoLong))
+    return true;
+  else
+    return false;
+}
+
+function valNews($titoloErr,$testoErr,$altErr){
+  if(empty($titoloErr) && empty($testoErr) && empty($altErr))
+    return true;
+  else
+    return false;
+}
 
  ?>
