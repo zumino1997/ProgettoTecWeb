@@ -56,6 +56,7 @@ class DBConnection
           'Id'=>$row['corsi_id'],
           'Titolo'=>$row['titolo'],
           'Descrizione'=>$row['descrizione'],
+          'Alt'=>$row['alt'],
           'Immagine'=>$row['immagine']
         );
         array_push($result,$arrayCorso);
@@ -74,8 +75,8 @@ class DBConnection
         $arrayCorso=array(
           'Id'=>$row['corsi_id'],
           'Titolo'=>$row['titolo'],
-          'Descrizione'=>$row['descrizione'],
           'DescrizioneL'=>$row['descrizione_long'],
+          'Alt'=>$row['alt'],
           'Immagine'=>$row['immagine']
         );
       }
@@ -132,7 +133,9 @@ class DBConnection
           'Immagine'=>$row['immagine'],
           'Id'=>$row['id'],
           'Titolo'=>$row['titolo'],
-          'Testo'=>$row['testo']
+          'Testo'=>$row['testo'],
+          'Alt'=>$row['alt'],
+          'Data'=>$row['data']
         );
         array_push($result,$arrayNews);
       }
@@ -140,12 +143,32 @@ class DBConnection
     }
   }
 
-  public function closeConnection()  {
-    mysqli_close($this->conn);
+
+
+  public function insertCorsi($titolo,$testo,$fileToUpload,$testoLong,$alt){
+    $query1 = "INSERT INTO corsi(titolo,descrizione,immagine,descrizione_long,alt) VALUES ('$titolo','$testo','$fileToUpload','$testoLong','$alt')";
+    $queryResult1 = mysqli_query($this->conn, $query1);
+    if (mysqli_affected_rows($this->conn)==0){
+      return false;
+    }
+    else{
+      return true;
+    }
   }
 
-  public function insertCorsi($titolo,$testo,$fileToUpload){
-    $query1 = "INSERT INTO corsi(titolo,descrizione,immagine) VALUES ('$titolo','$testo','$fileToUpload')";
+  public function insertNews($titolo,$testo,$fileToUpload,$alt){
+    $query1 = "INSERT INTO news(immagine,titolo,testo,alt) VALUES ('$fileToUpload','$titolo','$testo','$alt')";
+    $queryResult1 = mysqli_query($this->conn, $query1);
+    if (mysqli_affected_rows($this->conn)==0){
+      return false;
+    }
+    else{
+      return true;
+    }
+  }
+
+  public function insertGalleria($testo,$fileToUpload,$alt){
+    $query1 = "INSERT INTO galleria(immagine,alt,didascalia) VALUES ('$fileToUpload','$testo','$alt')";
     $queryResult1 = mysqli_query($this->conn, $query1);
     if (mysqli_affected_rows($this->conn)==0){
       return false;
@@ -156,5 +179,8 @@ class DBConnection
   }
 
 
+  public function closeConnection()  {
+    mysqli_close($this->conn);
+  }
 };
 ?>

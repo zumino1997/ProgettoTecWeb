@@ -31,11 +31,11 @@
 	  <div id="logo"><img src="IMG/logo2.png" alt="Logo Energya"/></div>
 	  <button id="menuIcon" onclick="menuHamburger()"><i class='fas fa-bars'></i></button>
 	  <ul class="menuItems" id="menuu" >
-	    <li><a href="index.html" xml:lang="en">Home</a></li>
+	    <li><a href="index.php" xml:lang="en">Home</a></li>
 	    <li><a href="corsi.php">Corsi</a></li>
 	    <li><a href="galleria.php">Galleria</a></li>
-	    <li><a href="staff.html" xml:lang="en">Staff</a></li>
-	    <li><a href="contatti.html">Contatti</a></li>
+	    <li><a href="staff.php" xml:lang="en">Staff</a></li>
+	    <li><a href="contatti.php">Contatti</a></li>
 			<li><a href="registrazione.php">Registrazione</a></li>
 			<li><a href="login.php">Accedi</a></li>
 	  </ul>
@@ -44,22 +44,23 @@
 		<img src="IMG/logo1.png" alt=""/>
 	</div>
 
-	<div id="userBar">
-	  <ul>
-	    <li>
-	      <span><i class="far fa-user-circle" alt="user"></i></span>
-	      <span>Registrati</span>
-	    </li>
-	    <li>
-	      <span><i class="far fa-door-closed"></i></span>
+  <div id="userBar">
+    <ul>
+      <li>
+        <span><i class="far fa-user-circle" alt="user"></i></span>
+        <a href="registrazione.php">Registrati</a>
+      </li>
+      <li>
+        <span><i class="far fa-user-circle"></i></span>
         <a href="login.php">Accedi</a>
-	    </li>
-	  </ul>
-	</div>
+      </li>
+    </ul>
+  </div>
+
 
 	<div id="content">
 		<div id="breadcrumb">
-			<p>Ti trovi in: <span xml:lang="en">Contattaci</span></p>
+			<p>Ti trovi in: <a href="contatti.php">Contatti</a> >> Contattaci</p>
 		</div>
     <form id="login-register-form" action="post_contattaci.php" method="post" >
       <fieldset>

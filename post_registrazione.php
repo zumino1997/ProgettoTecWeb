@@ -29,7 +29,7 @@ if ($dbOpen){
         'citta' => $citta,
         'nascita' => $nascita,
         'indirizzo' => $indirizzo,
-        'email' => $emailR,
+        'emailR' => $emailR,
         'password' => $passwordR,
         'password1' => $passwordR1
       );
@@ -79,5 +79,5 @@ else {
 }
 header("Location: registrazione.php");
 exit();
-
+$connection->closeConnection();
 ?>

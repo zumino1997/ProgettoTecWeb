@@ -32,6 +32,8 @@ function closeImage() {
 
 //VALIDAZIONE FORM
 
+
+
 function checkNome(nomeInput){
   var pattern= /^[a-zA-Z]{3,}$/;
   var name = nomeInput.getAttribute("name");
@@ -62,9 +64,9 @@ function checkIndirizzo(indirizzoInput){
   }
   else{
     if (indirizzoInput.value=="")
-      mostraErrore(indirizzoInput, "Il campo indirizzo non può essere vuoto")
+      mostraErrore(indirizzoInput, "Il campo indirizzo non può essere vuoto");
     else
-      mostraErrore(indirizzoInput, "Inserire almeno 3 caratteri")
+      mostraErrore(indirizzoInput, "Inserire almeno 3 caratteri");
     return false;
   }
 }
@@ -78,9 +80,9 @@ function checkNascita(nascitaInput) {
   }
   else{
     if (nascitaInput.value=="")
-      mostraErrore(nascitaInput, "Il campo nascita non può essere vuoto")
+      mostraErrore(nascitaInput, "Il campo nascita non può essere vuoto");
     else
-    mostraErrore(nascitaInput, "Data inserita non valida. (dd/mm/yyyy) ")
+    mostraErrore(nascitaInput, "Data inserita non valida. (dd/mm/yyyy) ");
     return false;
   }
 }
@@ -93,9 +95,9 @@ function checkMail(mailInput) {
     }
     else{
       if (mailInput.value=="")
-        mostraErrore(mailInput, "Il campo email non può essere vuoto")
+        mostraErrore(mailInput, "Il campo email non può essere vuoto");
       else
-        mostraErrore(mailInput, "Indirizzo mail inserito non valido.  ")
+        mostraErrore(mailInput, "Indirizzo mail inserito non valido.  ");
       return false;
     }
     }
@@ -108,42 +110,103 @@ function checkPassword(passwordInput) {
     }
     else{
       if (passwordInput.value=="")
-        mostraErrore(passwordInput, "Il campo password non può essere vuoto")
+        mostraErrore(passwordInput, "Il campo password non può essere vuoto");
       else
-        mostraErrore(passwordInput, "Password inserita non valida. Inserire almeno 8 caratteri")
+        mostraErrore(passwordInput, "Password inserita non valida. Inserire almeno 8 caratteri");
       return false;
     }
   }
 
-  function checkTitolo(titoloInput) {
-      var pattern=/^.{5,30}$/;
-      if (pattern.test(titoloInput.value)){
-        togliErrore(titoloInput);
-        return true;
-      }
-      else{
-        if (titoloInput.value=="")
-          mostraErrore(titoloInput, "Il campo titolo non può essere vuoto")
-        else
-          mostraErrore(titoloInput, "Il testo inserito deve avere almeno 5 caratteri e una massimo di 30")
-        return false;
-      }
+function checkTitolo(titoloInput) {
+    var pattern=/^.{5,30}$/;
+    if (pattern.test(titoloInput.value)){
+      togliErrore(titoloInput);
+      return true;
     }
+    else{
+      if (titoloInput.value=="")
+        mostraErrore(titoloInput, "Il campo titolo non può essere vuoto");
+      else
+        mostraErrore(titoloInput, "Il testo inserito deve avere almeno 5 caratteri e una massimo di 30");
+      return false;
+    };
+  }
 
-  function checkTesto(testoInput) {
-      var pattern=/^.{40,300}$/;
+function checkTesto(testoInput) {
+    var pattern=/^.{40,300}$/;
+    if (pattern.test(testoInput.value)){
+      togliErrore(testoInput);
+      return true;
+    }
+    else{
+      if (testoInput.value=="")
+        mostraErrore(testoInput, "Il campo testo non può essere vuoto");
+      else
+        mostraErrore(testoInput, "La descrizione corta deve avere almeno 40 caratteri e una massimo di 300");
+      return false;
+    }
+  }
+
+function checkTestoLong(testoInput) {
+    var pattern=/^.{40,900}$/;
+    if (pattern.test(testoInput.value)){
+      togliErrore(testoInput);
+      return true;
+    }
+    else{
+      if (testoInput.value=="")
+        mostraErrore(testoInput, "Il campo testo non può essere vuoto");
+      else
+        mostraErrore(testoInput, "La descrizione lunga deve avere almeno 40 caratteri e una massimo di 900");
+      return false;
+    }
+  }
+
+function checkAlt(testoInput) {
+    var pattern=/^.{0,20}$/;
+    if (pattern.test(testoInput.value)){
+      togliErrore(testoInput);
+      return true;
+    }
+    else{
+      mostraErrore(testoInput, "L'alt dell'immagine deve essere di massimo 20 caratteri");
+      return false;
+    }
+  }
+
+  function checkDidascalia(testoInput) {
+      var pattern=/^.{1,40}$/;
       if (pattern.test(testoInput.value)){
         togliErrore(testoInput);
         return true;
       }
       else{
         if (testoInput.value=="")
-          mostraErrore(testoInput, "Il campo testo non può essere vuoto")
-        else
-          mostraErrore(testoInput, "Il testo inserito deve avere almeno 40 caratteri e una massimo di 300")
+          mostraErrore(testoInput, "Il campo testo non può essere vuoto");
+        else {
+          mostraErrore(testoInput, "La didascalia dell'immagine deve essere di massimo 40 caratteri");
+          }
         return false;
       }
     }
+
+function checkFile(testoInput){
+    var fileName = testoInput.value,
+        idxDot = fileName.lastIndexOf(".") + 1,
+        extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+    if (!fileName){
+      mostraErrore(testoInput,"Non hai caricato alcuna immagine");
+      return false;
+    }
+    if (fileName && (extFile!="jpg" && extFile!="jpeg" && extFile!="png")){
+      mostraErrore(testoInput,"Non hai caricato alcuna immagine");
+      return false;
+    }
+    if (fileName){
+      togliErrore(testoInput);
+      return true;
+    }
+}
 
 function checkRepeatPassword(passwordInput,passwordInput2){
   if (passwordInput.value==passwordInput2.value){
@@ -151,7 +214,7 @@ function checkRepeatPassword(passwordInput,passwordInput2){
     return true;
   }
   else{
-    mostraErrore(passwordInput2, "Le password non corrispondono")
+    mostraErrore(passwordInput2, "Le password non corrispondono");
     return false;
   }
 }
@@ -201,13 +264,55 @@ function checkReg(){
 function checkInsCorsi(){
   var titolo = document.getElementById("titolo");
   var testo = document.getElementById("testo");
+  var testoLong = document.getElementById("testoLong");
+  var alt = document.getElementById("alt");
+  var file = document.getElementById("fileToUpload");
+
 
   var risultatoTestTitolo = checkTitolo(titolo);            //utilizzo la funzione checkNome per nome,cognome e città percchè hanno la stessa RegExp
   var risultatoTestTesto = checkTesto(testo);
+  var risultatoTestAlt = checkAlt(alt);            //utilizzo la funzione checkNome per nome,cognome e città percchè hanno la stessa RegExp
+  var risultatoTestTestoLong = checkTestoLong(testoLong);
+  var risultatoTestFile = checkFile(file);
 
-  if (risultatoTestTitolo && risultatoTestTesto)
+  if (risultatoTestTitolo && risultatoTestTesto && risultatoTestAlt && risultatoTestTestoLong && risultatoTestFile)
     return true;
   else {
     return false;
   }
 }
+
+  function checkInsNews(){
+    var titolo = document.getElementById("titolo");
+    var testo = document.getElementById("testo");
+    var alt = document.getElementById("alt");
+    var file = document.getElementById("fileToUpload");
+
+
+    var risultatoTestTitolo = checkTitolo(titolo);            //utilizzo la funzione checkNome per nome,cognome e città percchè hanno la stessa RegExp
+    var risultatoTestTesto = checkTesto(testo);
+    var risultatoTestAlt = checkAlt(alt);            //utilizzo la funzione checkNome per nome,cognome e città percchè hanno la stessa RegExp
+    var risultatoTestFile = checkFile(file);
+
+    if (risultatoTestTitolo && risultatoTestTesto && risultatoTestAlt && risultatoTestFile)
+      return true;
+    else {
+      return false;
+    }
+  }
+
+  function checkInsGalleria(){
+    var testo = document.getElementById("testo");
+    var alt = document.getElementById("alt");
+    var file = document.getElementById("fileToUpload");
+
+    var risultatoTestTesto = checkDidascalia(testo);
+    var risultatoTestAlt = checkAlt(alt);            //utilizzo la funzione checkNome per nome,cognome e città percchè hanno la stessa RegExp
+    var risultatoTestFile = checkFile(file);
+
+    if (risultatoTestTesto && risultatoTestAlt && risultatoTestFile)
+      return true;
+    else {
+      return false;
+    }
+  }

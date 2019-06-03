@@ -62,17 +62,12 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 
 	<div id="content">
 		<div id="breadcrumb">
-			<p>Ti trovi in: Pannello di amministrazione >> Inserimento corsi</p>
+			<p>Ti trovi in: Pannello di amministrazione >> Inserimento galleria</p>
 		</div>
-		<form onsubmit="return checkInsCorsi()" action="post_corsi.php" method="post" id="login-register-form" enctype="multipart/form-data">
+		<form onsubmit="return checkInsGalleria()" action="post_galleria.php" method="post" id="login-register-form" enctype="multipart/form-data">
 			<fieldset>
-				<legend>Inserisci un nuovo corso</legend>
+				<legend>Inserisci una nuova foto</legend>
 				<ul>
-          <li>
-						<label for="titolo">Titolo</label>
-						<input id="titolo" name="titolo" type="text" <?php if(isset($_SESSION['error']['titoloErr'])) if(isset ($_SESSION['var']['titolo'])) {$titolo = $_SESSION['var']['titolo']; echo "value=\"$titolo\"";} else echo "value=\"\"";?>/>
-            <?php if(isset($_SESSION['error']['titoloErr'])) { echo '<span class="error">'. $_SESSION['error']['titoloErr'] .'</span>'; unset($_SESSION['error']['titoloErr']); } else {echo "";} ?>
-          </li>
           <li>
             <label for="fileToUpload">Inserisci Immagine</label>
             <input id="fileToUpload" name="fileToUpload" type="file" />
@@ -84,14 +79,9 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
             <?php if(isset($_SESSION['error']['altErr'])) { echo '<span class="error">'. $_SESSION['error']['altErr'] .'</span>'; unset($_SESSION['error']['altErr']); } else {echo "";} ?>
           </li>
           <li>
-						<label for="testo">Inserisci la descrizione corta</label>
+						<label for="testo">Inserisci la didascalia</label>
 						<textarea name="testo" id="testo" rows="10"<?php if(isset($_SESSION['error']['testoErr']))if(isset ($_SESSION['var']['testo'])) {$testo = $_SESSION['var']['testo']; echo "value=\"$testo\"";} else echo "value=\"\"";?>></textarea>
             <?php if(isset($_SESSION['error']['testoErr'])) { echo '<span class="error">'. $_SESSION['error']['testoErr'] .'</span>'; unset($_SESSION['error']['testoErr']); } else {echo "";} ?>
-          </li>
-          <li>
-						<label for="testo">Inserisci la descrizione lunga</label>
-						<textarea name="testoLong" id="testoLong" rows="25"<?php if(isset($_SESSION['error']['testoLongErr']))if(isset ($_SESSION['var']['testoLong'])) {$testoLong = $_SESSION['var']['testoLong']; echo "value=\"$testoLong\"";} else echo "value=\"\"";?>></textarea>
-            <?php if(isset($_SESSION['error']['testoLongErr'])) { echo '<span class="error">'. $_SESSION['error']['testoLongErr'] .'</span>'; unset($_SESSION['error']['testoLongErr']); } else {echo "";} ?>
           </li>
 				</ul>
 			</fieldset>

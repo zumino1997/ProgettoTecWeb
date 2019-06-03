@@ -4,8 +4,11 @@ if (session_status() == PHP_SESSION_NONE) {
   session_start();
 }
 
+if (!isset($_SESSION["email"]) || $_SESSION["email"]=="admin@admin.it"){
+	header("Location: index.php");
+	exit();
+}
 
-include __DIR__ . DIRECTORY_SEPARATOR . "checklogin.php";
 require_once __DIR__ . DIRECTORY_SEPARATOR . "connection.php";
 use DB\DBConnection;
 
@@ -47,11 +50,11 @@ $dbOpen=$connection->openConnection();
 	  <div id="logo"><img src="IMG/logo2.png" alt="Logo Energya"/></div>
     <button id="menuIcon" onclick="menuHamburger()"><i class='fas fa-bars'></i></button>
     <ul class="menuItems" id="menuu" >
-      <li><a href="index.html" xml:lang="en">Home</a></li>
+      <li><a href="index.php" xml:lang="en">Home</a></li>
 	    <li><a href="corsi.php">Corsi</a></li>
       <li><a href="galleria.php">Galleria</a></li>
-	    <li><a href="staff.html" xml:lang="en">Staff</a></li>
-	    <li><a href="contatti.html">Contatti</a></li>
+	    <li><a href="staff.php" xml:lang="en">Staff</a></li>
+	    <li><a href="contatti.php">Contatti</a></li>
       <li><a href="registrazione.php">Registrazione</a></li>
       <li><a href="login.php">Accedi</a></li>
 	  </ul>
@@ -60,32 +63,8 @@ $dbOpen=$connection->openConnection();
 		<img src="IMG/logo1.png" alt=""/>
 	</div>
 
-	<?php if(!isset($_SESSION["email"])) {?>
-	<div id="userBar">
-	  <ul>
-	    <li>
-	      <span><i class="far fa-user-circle" alt="user"></i></span>
-	      <a href="#">Registrati</a>
-	    </li>
-	    <li>
-	      <span><i class="far fa-user-circle"></i></span>
-	      <span>Accedi</span>
-	    </li>
-	  </ul>
-	</div>
-
-<?php } else {?>
-
-	<div id="userBar">
-		<ul>
-			<li>
-				<span><i class="far fa-user-circle" alt="user"></i></span>
-				<a href="logout.php">Esci</a>
-			</li>
-		</ul>
-	</div>
-
-	<?php } ?>
+  <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "userbar.php";
+   ?>
 
 	<div id="content">
 		<div id="breadcrumb">
@@ -103,18 +82,6 @@ $dbOpen=$connection->openConnection();
 		<p>Matteo</p>
 		<p>Franconetti Simone</p>
 	</div>
-
-
- <script>
-	function myFunction() {
-	  var x = document.getElementById("password");
-	  if (x.type === "password") {
-	    x.type = "text";
-	  } else {
-	    x.type = "password";
-	  }
-	}
-</script>
 
 <?php $connection->closeConnection();?>
 

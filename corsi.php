@@ -64,11 +64,11 @@ else {
 		<div id="logo"><img src="IMG/logo2.png" alt="Logo Energya"/></div>
     <button id="menuIcon" onclick="menuHamburger()"><i class='fas fa-bars'></i></button>
     <ul class="menuItems" id="menuu" >
-			<li xml:lang="en"><a href="index.html">Home</a></li>
+			<li xml:lang="en"><a href="index.php">Home</a></li>
 			<li id="currentLink">Corsi</li>
       <li><a href="galleria.php">Galleria</a></li>
-			<li><a href="staff.html" xml:lang="en">Staff</a></li>
-			<li><a href="contatti.html">Contatti</a></li>
+			<li><a href="staff.php" xml:lang="en">Staff</a></li>
+			<li><a href="contatti.php">Contatti</a></li>
       <li><a href="registrazione.php">Registrazione</a></li>
       <li><a href="login.php">Accedi</a></li>
 		</ul>
@@ -80,18 +80,8 @@ else {
 		<img src="IMG/logo1.png" alt=""/>
 	</div>
 
-  <div id="userBar">
-    <ul>
-      <li>
-        <span><i class="far fa-user-circle" alt="user"></i></span>
-        <a href="registrazione.php">Registrati</a>
-      </li>
-      <li>
-        <span><i class="far fa-user-circle"></i></span>
-        <a href="login.php">Accedi</a>
-      </li>
-    </ul>
-  </div>
+  <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "userbar.php";
+   ?>
 
 	<div id="content">
 
@@ -104,7 +94,7 @@ else {
   	<?php foreach ($listaCorsi as $corso) {
   		echo '<div class="box Sx">';
   		echo '<h2>'.$corso['Titolo'].'</h2>';
-      echo '<img src="'.$corso['Immagine'].'"/>';
+      echo '<img src="'.$corso['Immagine'].'" alt="'.$corso['Alt'].'"/>';
   		echo '<p>'.$corso['Descrizione'].'</p>';
       echo '<a href="corsoSingolo.php?id='.$corso['Id'].'">Scopri il corso "'.$corso['Titolo'].'"</a>';
   		echo '</div>';

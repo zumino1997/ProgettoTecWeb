@@ -149,6 +149,10 @@ USERBAR
 /*****
 CONTENUTO
 ******/
+#time{
+	font-size: 0.8em;
+	font-style: italic;
+}
 
 #primoPiano{
 	padding:0 5% 0 0 ;
@@ -156,10 +160,10 @@ CONTENUTO
 	float:left;
 	text-align: center;
 }
-
+/*
 #primoPiano p{
-	text-align: justify;
-}
+	text-align: center;
+} */
 
 #secondoPiano {
 	text-align: center;
@@ -465,9 +469,14 @@ CSS LOGIN
   outline: none;
 }
 
-#login-register-form input[type=email]:focus, #login-register-form input[type=password]:focus,
+#login-register-form li input[type=email]:focus, #login-register-form li input[type=password]:focus,
 #login-register-form li input[type=text]:focus, #login-register-form li textarea:focus {
   border: 2px solid #555;
+}
+
+#fileToUpload{
+	width: 100%;
+	display: block;
 }
 
 #login-button{
@@ -477,6 +486,7 @@ CSS LOGIN
 .error{
 	font-size: 0.9em;
 	color: red;
+	display
 }
 
 fieldset{
@@ -547,7 +557,6 @@ FOOTER
 
 #footer{
 	text-align: center;
-	font-size:0.9em;
 	background-color: #343434;
 	color:#fff;
 	padding: 1em;
@@ -555,6 +564,7 @@ FOOTER
 }
 
 #footer p{
+	font-size:0.9em;
 	margin: 0.4em 0 0.4em 0;
 }
 

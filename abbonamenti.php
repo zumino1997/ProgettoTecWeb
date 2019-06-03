@@ -26,16 +26,15 @@
 
 </head>
 <body>
-
-	<div id="nav">
+  <div id="nav">
 	  <div id="logo"><img src="IMG/logo2.png" alt="Logo Energya"/></div>
 	  <button id="menuIcon" onclick="menuHamburger()"><i class='fas fa-bars'></i></button>
 	  <ul class="menuItems" id="menuu" >
-	    <li id="currentLink" xml:lang="en">Home</li>
+	    <li><a href="index.php" xml:lang="en">Home</a></li>
 	    <li><a href="corsi.php">Corsi</a></li>
 	    <li><a href="galleria.php">Galleria</a></li>
-	    <li><a href="staff.html" xml:lang="en">Staff</a></li>
-	    <li><a href="contatti.html">Contatti</a></li>
+	    <li><a href="staff.php" xml:lang="en">Staff</a></li>
+	    <li><a href="contatti.php">Contatti</a></li>
 			<li><a href="registrazione.php">Registrazione</a></li>
 			<li><a href="login.php">Accedi</a></li>
 	  </ul>
@@ -44,64 +43,45 @@
 		<img src="IMG/logo1.png" alt=""/>
 	</div>
 
-	<div id="userBar">
-	  <ul>
-	    <li>
-	      <span><i class="far fa-user-circle" alt="user"></i></span>
-	      <a href="registrazione.php">Registrati</a>
-	    </li>
-	    <li>
-	      <span><i class="far fa-user-circle"></i></span>
-	      <a href="login.php">Accedi</a>
-	    </li>
-	  </ul>
-	</div>
+	<?php require_once __DIR__ . DIRECTORY_SEPARATOR . "userbar.php";
+	 ?>
 
 	<div id="content">
 		<div id="breadcrumb">
-			<p>Ti trovi in: <span xml:lang="en">Home</span></p>
-		</div>
-
-		<div class="divSx">
-			<h1>Chi siamo</h1>
-			<img src="IMG/foto1.jpg" alt=""/>
-			<p>Il Centro Natatorio Comunale <span xml:lang="en">"Freestyle"</span> offre numerose opportunità per sfruttare i benefici garantiti dal movimento in acqua, in un ambiente accogliente e confortevole, sotto la guida di uno staff di Istruttori Federali preparati e disponibili.</p>
-			<p>Le attività didattiche sono organizzate secondo le norme della Scuola Nuoto Federale e programmate nell'intero arco dell'anno sportivo. </p>
-			<p>Lo schema didattico prevede diversi gradi di apprendimento delle tecniche di base e di perfezionamento sia nel nuoto che nelle altre attivit&aacute;.</p>
-		</div>
-
-		<div class="divDx">
-			<h1>La nostra storia</h1>
-			<img src="IMG/foto2.jpg" alt="Interno della palestra"/>
-			<p>La struttura, nata nel 1981, ospita da molti anni competizioni natatorie a livello regionale.</p>
-			<p>Nel 1983 l'impianto aderir&aacute; ufficialmente alle norme della <abbr title="Federazione Italiana Nuoto">FIN</abbr>, avendo l'obbligo di formare i propri istruttori e collaboratori con relativi corsi indetti dalla federazione. </p>
-			<p>Nel 2016 verr&aacute; premiata come centro natatorio migliore in Veneto</p>
-		</div>
-
-		<div id="Banner">
-			<div>
-				<h1>Iscriviti ai corsi</h1>
-				<p>Tanti istruttori formati professionalmente, pronti a fornirti il loro supporto in ogni attivit&aacute;</p>
-				<button class="button">Iscriviti</button>
-			</div>
+			<p>Ti trovi in: <span xml:lang="en">Abbonamenti</span></p>
 		</div>
 
 		<div class="divGenerico">
 
-			<h1> I nostri punti di forza </h1>
-			<div class="Card Sx">
-				<img src="IMG/woman.png" alt="Icona persona con manubri"/>
-				<h2>Professionalit&aacute;</h2>
-				<p>La struttura, nata nel 1981, ospita da molti anni competizioni natatorie a livello regionale.</p>
-			</div>
-
-			<div class="Card Dx">
-				<img src="IMG/gym.png" alt="Icona manubrio"/>
-				<h2>Benessere</h2>
-				<p>La struttura, nata nel 1981, ospita da molti anni competizioni natatorie a livello regionale.</p>
-			</div>
-
+			<h1> I nostri abbonamenti </h1>
+			<p>All’interno del Club gli abbonati potranno usufruire dei numerosi ed
+         esclusivi servizi compresi nell’ abbonamento, sentendosi così in vacanza
+         ogni giorno dell’anno in completo relax:
+      <ul>
+        <li>Possibilità di usufruire di tutte le sale e macchinari all'avanguardia </li>
+        <li>Disponibilità di un ampio parcheggio gratuito</li>
+        <li>Servizio Personal Trainer e cambio scheda</li>
+        <li>Thermarium – Piscina Coperta – Terrazza Estiva</li>
+      </ul>
+      </p>
 		</div>
+
+    <div class="divGenerico">
+    <div class="Card Sx">
+      <h2>Abbonamento Mensile</h2>
+      <p><b>Costo: 60 euro</b></p>
+      <p>Con l'abbonamento mensile sarà possibile accedere alle nostre strutture tutti i giorni della settimana
+      durante gli orari indicati nella sezione "Contatti".  </p>
+    </div>
+
+    <div class="Card Dx">
+      <h2>Abbonamento Trimestrale</h2>
+      <p><b>Costo: 150 euro</b></p>
+      <p>Con l'abbonamento trimestrale sarà possibile ottenere un'esperienza completa presso la nostra struttura risparmiando
+      più del 15%! Inoltre, in omaggio per i clienti che sottoscriveranno questo abbonamento, sarà possibile ricevere in omaggio
+      una ingresso presso il centro Benessere "Pincopallino" </p>
+    </div>
+    </div>
 
 	</div>
 

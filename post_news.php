@@ -12,20 +12,17 @@ $dbOpen=$connection->openConnection();
 
 $titolo=$_POST["titolo"];
 $testo=$_POST["testo"];
-$testoLong=$_POST["testoLong"];
 $alt=$_POST["alt"];
 
 
 $titoloErr=valTitolo($titolo);
 $testoErr=valTesto($testo);
-$testoLongErr=valTestoLong($testoLong);
 $altErr=valAlt($alt);
-$cor=valCorsi($titoloErr,$testoErr,$testoLongErr,$altErr);
+$news=valNews($titoloErr,$testoErr,$altErr);
 
 $_SESSION["var"] = array(
     'titolo' => $titolo,
     'testo' => $testo,
-    'testoLong' => $testoLong,
     'alt'=> $alt
 );
 
@@ -53,20 +50,19 @@ if(isset($_POST["inserisci"])) {
         $err = "Inserire un'immagine";
     }
 
-    if ($uploadOk == 1 && move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file) && $cor) {
-        $connection->insertCorsi($titolo,$testo,$target_file,$testoLong,$alt);
+    if ($uploadOk == 1 && move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file && $news)) {
+        $connection->insertNews($titolo,$testo,$target_file,$alt);
       }
 }
 
 $_SESSION["error"] = array(
     'titoloErr' => $titoloErr,
     'testoErr' => $testoErr,
-    'testoLongErr' => $testoLongErr,
     'altErr'=> $altErr,
     'err' => $err
 );
 
-  header("Location: corsi_form.php");
+  header("Location: news_form.php");
   exit();
 
 $connection->closeConnection();

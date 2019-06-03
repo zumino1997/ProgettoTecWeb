@@ -32,11 +32,11 @@
 	  <div id="logo"><img src="IMG/logo2.png" alt="Logo Energya"/></div>
 		<button id="menuIcon" onclick="menuHamburger()"><i class='fas fa-bars'></i></button>
 	  <ul class="menuItems" id="menuu" >
-	    <li><a href="index.html" xml:lang="en">Home</a></li>
+	    <li><a href="index.php" xml:lang="en">Home</a></li>
 	    <li><a href="corsi.php">Corsi</a></li>
 			<li><a href="galleria.php">Galleria</a></li>
 	    <li id="currentLink" xml:lang="en">Staff</li>
-	    <li><a href="contatti.html">Contatti</a></li>
+	    <li><a href="contatti.php">Contatti</a></li>
 			<li><a href="registrazione.php">Registrazione</a></li>
 			<li><a href="login.php">Accedi</a></li>
 	  </ul>
@@ -45,18 +45,8 @@
 		<img src="IMG/logo1.png" alt=""/>
 	</div>
 
-	<div id="userBar">
-	  <ul>
-	    <li>
-	      <span><i class="far fa-user-circle" alt="user"></i></span>
-	      <a href="#">Registrati</a>
-	    </li>
-	    <li>
-	      <span><i class="far fa-user-circle"></i></span>
-	      <a href="#">Accedi</a>
-	    </li>
-	  </ul>
-	</div>
+	<?php require_once __DIR__ . DIRECTORY_SEPARATOR . "userbar.php";
+	 ?>
 
 	<div id="content">
 		<div id="breadcrumb">

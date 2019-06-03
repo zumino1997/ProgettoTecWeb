@@ -7,7 +7,7 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 if (isset($_SESSION["email"])){
-	header("Location: index.html");
+	header("Location: index.php");
 	exit();
 }
 
@@ -46,11 +46,11 @@ if (isset($_SESSION["email"])){
 	  <div id="logo"><img src="IMG/logo2.png" alt="Logo Energya"/></div>
 	  <button id="menuIcon" onclick="menuHamburger()"><i class='fas fa-bars'></i></button>
 	  <ul class="menuItems" id="menuu" >
-	    <li><a href="index.html" xml:lang="en">Home</a></li>
+	    <li><a href="index.php" xml:lang="en">Home</a></li>
 	    <li><a href="corsi.php">Corsi</a></li>
 	    <li><a href="galleria.php">Galleria</a></li>
-	    <li><a href="staff.html" xml:lang="en">Staff</a></li>
-	    <li><a href="contatti.html">Contatti</a></li>
+	    <li><a href="staff.php" xml:lang="en">Staff</a></li>
+	    <li><a href="contatti.php">Contatti</a></li>
 			<li><a href="registrazione.php">Registrazione</a></li>
 			<li><a href="login.php">Accedi</a></li>
 	  </ul>
@@ -59,18 +59,8 @@ if (isset($_SESSION["email"])){
 		<img src="IMG/logo1.png" alt=""/>
 	</div>
 
-	<div id="userBar">
-	  <ul>
-	    <li>
-	      <span><i class="far fa-user-circle" alt="user"></i></span>
-	      <a href="registrazione.php">Registrati</a>
-	    </li>
-	    <li>
-	      <span><i class="far fa-user-circle"></i></span>
-	      <span>Accedi</span>
-	    </li>
-	  </ul>
-	</div>
+  <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "userbar.php";
+   ?>
 
 	<div id="content">
 		<div id="breadcrumb">
@@ -87,7 +77,7 @@ if (isset($_SESSION["email"])){
 					<li>
 						<label for="password"><span xml:lang="en">Password</span></label>:
 						<input id="password" name="password" type="password"/>
-            <?php if(isset($_SESSION['error']['mailErr'])) {echo '<span class="error">'. $_SESSION['error']['mailErr'] .'</span>';} ?>
+            <?php if(isset($_SESSION['error']['mailErr2'])) {echo '<span class="error">'. $_SESSION['error']['mailErr2'] .'</span>'; unset($_SESSION['error']['mailErr2']); } else {echo "";} ?>
 					</li>
 					<li>
 						<input type="checkbox" onclick="mostraPassword()"/> Mostra <span xml:lang="en">password</span>

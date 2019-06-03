@@ -1,34 +1,7 @@
 <?php
-
 if (session_status() == PHP_SESSION_NONE) {
   session_start();
 }
-
-require_once __DIR__ . DIRECTORY_SEPARATOR . "connection.php";
-use DB\DBConnection;
-
-$connection = new DBConnection();
-$dbOpen=$connection->openConnection();
-
-$_SESSION["error"] = "";
-
-if ($dbOpen){
-		$number_of_results=$connection->numImg();
-    $results_per_page = 4;
-    $number_of_pages = ceil($number_of_results/$results_per_page);
-    if (!isset($_GET['page']) || $_GET['page']>$number_of_pages || $_GET['page']<0) {
-      $_GET['page']=1;
-      $page = 1;
-    } else {
-      $page = $_GET['page'];
-    }
-    $this_page_first_result = ($page-1)*$results_per_page;
-    $listaImg=$connection->getImg($this_page_first_result,$results_per_page);
-	}
-else {
-		$_SESSION["error"] = "Connessione non stabilita correttamente";
-	}
-
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it"><!-- il comando html permette di importare un namespace, contenente tutto l'insieme dei tag utilizzabili -->
 
@@ -62,9 +35,9 @@ else {
 	  <div id="logo"><img src="IMG/logo2.png" alt="Logo Energya"/></div>
 	  <button id="menuIcon" onclick="menuHamburger()"><i class='fas fa-bars'></i></button>
 	  <ul class="menuItems" id="menuu" >
-	    <li><a href="index.php">Home</a></li>
+	    <li id="currentLink" xml:lang="en">Home</li>
 	    <li><a href="corsi.php">Corsi</a></li>
-	    <li id="currentLink">Galleria</li>
+	    <li><a href="galleria.php">Galleria</a></li>
 	    <li><a href="staff.php" xml:lang="en">Staff</a></li>
 	    <li><a href="contatti.php">Contatti</a></li>
 			<li><a href="registrazione.php">Registrazione</a></li>
@@ -75,32 +48,54 @@ else {
 		<img src="IMG/logo1.png" alt=""/>
 	</div>
 
-  <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "userbar.php";
-   ?>
-
+<?php require_once __DIR__ . DIRECTORY_SEPARATOR . "userbar.php";
+ ?>
 
 	<div id="content">
-		<?php foreach ($listaImg as $img) {
-  		echo '<div id="column">';
-      echo '<img src="'.$img['Immagine'].'" onclick="show(this)" alt=""/>';
-  		echo '</div>';
-  	} ?>
-
-    <div class="pagination"><?php
-    for ($page=1;$page<=$number_of_pages;$page++) {
-      if ($_GET['page']!=$page)
-        echo '<a href="galleria.php?page=' . $page . '">' . $page . '</a> ';
-      else {
-        echo '<span class="active"' . $page . '">' . $page . '</span> ';
-      }
-    }
-    ?>
-
-		<div id="showImage">
-			  <span id="closeImage" onclick="closeImage()">&times;</span>
-				<img id="imgExp" alt=""/>
+		<div id="breadcrumb">
+			<p>Ti trovi in: <span xml:lang="en">Home</span></p>
 		</div>
-	</div>
+
+		<div class="divSx">
+			<h1>Chi siamo</h1>
+			<img src="IMG/foto1.jpg" alt=""/>
+			<p>Il Centro Natatorio Comunale <span xml:lang="en">"Freestyle"</span> offre numerose opportunità per sfruttare i benefici garantiti dal movimento in acqua, in un ambiente accogliente e confortevole, sotto la guida di uno staff di Istruttori Federali preparati e disponibili.</p>
+			<p>Le attività didattiche sono organizzate secondo le norme della Scuola Nuoto Federale e programmate nell'intero arco dell'anno sportivo. </p>
+			<p>Lo schema didattico prevede diversi gradi di apprendimento delle tecniche di base e di perfezionamento sia nel nuoto che nelle altre attivit&aacute;.</p>
+		</div>
+
+		<div class="divDx">
+			<h1>La nostra storia</h1>
+			<img src="IMG/foto2.jpg" alt="Interno della palestra"/>
+			<p>La struttura, nata nel 1981, ospita da molti anni competizioni natatorie a livello regionale.</p>
+			<p>Nel 1983 l'impianto aderir&aacute; ufficialmente alle norme della <abbr title="Federazione Italiana Nuoto">FIN</abbr>, avendo l'obbligo di formare i propri istruttori e collaboratori con relativi corsi indetti dalla federazione. </p>
+			<p>Nel 2016 verr&aacute; premiata come centro natatorio migliore in Veneto</p>
+		</div>
+
+		<div id="Banner">
+			<div>
+				<h1>Iscriviti ai corsi</h1>
+				<p>Tanti istruttori formati professionalmente, pronti a fornirti il loro supporto in ogni attivit&aacute;</p>
+				<button class="button">Iscriviti</button>
+			</div>
+		</div>
+
+		<div class="divGenerico">
+
+			<h1> I nostri punti di forza </h1>
+			<div class="Card Sx">
+				<img src="IMG/woman.png" alt="Icona persona con manubri"/>
+				<h2>Professionalit&aacute;</h2>
+				<p>La struttura, nata nel 1981, ospita da molti anni competizioni natatorie a livello regionale.</p>
+			</div>
+
+			<div class="Card Dx">
+				<img src="IMG/gym.png" alt="Icona manubrio"/>
+				<h2>Benessere</h2>
+				<p>La struttura, nata nel 1981, ospita da molti anni competizioni natatorie a livello regionale.</p>
+			</div>
+
+		</div>
 
 	</div>
 
@@ -110,6 +105,9 @@ else {
 		<p>Matteo</p>
 		<p>Franconetti Simone</p>
 	</div>
+
+
+
 
 </body>
 </html>

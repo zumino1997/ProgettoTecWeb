@@ -36,10 +36,10 @@ function valCitta($citta){
 function valNascita($nascita){
   $nascitaErr="";
   if (empty($nascita)){
-    $nascitaErr="Data di nascita non inserita";
+    $nascitaErr="Data non inserita";
   }
   else{
-    $nascita = date('Y-m-d', strtotime($nascita));
+    $nascita = date('d-m-Y', strtotime($nascita));
   }
   return $nascitaErr;
 }
@@ -112,6 +112,14 @@ function valTesto($testo){
   return $testoErr;
 }
 
+function valDidascalia($testo){
+  $testoErr="";
+  if (!preg_match("/^.{0,40}$/",$testo)) {
+    $testoErr = "La didascalia dell'immagine deve essere di massimo 40 caratteri";
+  }
+  return $testoErr;
+}
+
 function valTestoLong($testoLong){
   $testoLongErr="";
   if (!preg_match("/^.{40,900}$/",$testoLong)) {
@@ -137,6 +145,13 @@ function valCorsi($titoloErr,$testoErr,$altErr,$testoLong){
 
 function valNews($titoloErr,$testoErr,$altErr){
   if(empty($titoloErr) && empty($testoErr) && empty($altErr))
+    return true;
+  else
+    return false;
+}
+
+function valGalleria($testoErr,$altErr){
+  if(empty($testoErr) && empty($altErr))
     return true;
   else
     return false;

@@ -31,7 +31,7 @@ if ($dbOpen){
     exit();
   }
   else{
-    $_SESSION['error']['mailErr']= "Email o password non corretti";
+    $_SESSION['error']['mailErr2']= "Email o password non corretti";
   }
 }
 else {

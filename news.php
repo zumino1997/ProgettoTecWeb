@@ -58,8 +58,8 @@ else {
 	    <li id="currentLink" xml:lang="en">Home</li>
 	    <li><a href="corsi.php">Corsi</a></li>
 	    <li><a href="galleria.php">Galleria</a></li>
-	    <li><a href="staff.html" xml:lang="en">Staff</a></li>
-	    <li><a href="contatti.html">Contatti</a></li>
+	    <li><a href="staff.php" xml:lang="en">Staff</a></li>
+	    <li><a href="contatti.php">Contatti</a></li>
 			<li><a href="registrazione.php">Registrazione</a></li>
 			<li><a href="login.php">Accedi</a></li>
 	  </ul>
@@ -68,18 +68,8 @@ else {
 		<img src="IMG/logo1.png" alt=""/>
 	</div>
 
-	<div id="userBar">
-	  <ul>
-	    <li>
-	      <span><i class="far fa-user-circle" alt="user"></i></span>
-	      <a href="registrazione.php">Registrati</a>
-	    </li>
-	    <li>
-	      <span><i class="far fa-user-circle"></i></span>
-	      <a href="login.php">Accedi</a>
-	    </li>
-	  </ul>
-	</div>
+  <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "userbar.php";
+   ?>
 
 	<div id="content">
 		<div id="breadcrumb">
@@ -93,21 +83,24 @@ else {
       if ($i==0){
         echo '<div id="primoPiano">';
         echo '<h1>'.$news['Titolo'].'</h1>';
-        echo '<img src="data:image/jpeg;base64,'.base64_encode($news['Immagine']).'"/>';
+        echo '<img src="'.$news['Immagine'].'" alt="'.$news['Alt'].'"/>';
+        echo '<p id="time">'.$news['Data'].'</p>';
         echo '<p>'.$news['Testo'].'</p>';
         echo '</div>';
       }
       if ($i==1){
         echo '<div id="secondoPiano">';
         echo '<h1>'.$news['Titolo'].'</h1>';
-        echo '<img src="data:image/jpeg;base64,'.base64_encode($news['Immagine']).'"/>';
+        echo '<img src="'.$news['Immagine'].'" alt="'.$news['Alt'].'"/>';
+        echo '<p id="time">'.$news['Data'].'</p>';
         echo '<p>'.$news['Testo'].'</p>';
         echo '</div>';
       }
       if ($i>1 && $i<=6){
         echo '<div class="divSx clearfix">';
         echo '<h1>'.$news['Titolo'].'</h1>';
-        echo '<img src="data:image/jpeg;base64,'.base64_encode($news['Immagine']).'"/>';
+        echo '<img src="'.$news['Immagine'].'" alt="'.$news['Alt'].'"/>';
+        echo '<p id="time">'.$news['Data'].'</p>';
         echo '<p>'.$news['Testo'].'</p>';
         echo '</div>';
       }

@@ -1,6 +1,4 @@
 <?php
-require_once __DIR__ . DIRECTORY_SEPARATOR . "connection.php";
-use DB\DBConnection;
 
 if (session_status() == PHP_SESSION_NONE) {
   session_start();
@@ -41,16 +39,17 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 
 </head>
 <body>
-	<div id="nav">
+  <div id="nav">
 	  <div id="logo"><img src="IMG/logo2.png" alt="Logo Energya"/></div>
-    <button id="menuIcon" onclick="menuHamburger()"><i class='fas fa-bars'></i></button>
+	  <button id="menuIcon" onclick="menuHamburger()"><i class='fas fa-bars'></i></button>
 	  <ul class="menuItems" id="menuu" >
-      <li><a href="index.php" xml:lang="en">Home</a></li>
+	    <li><a href="index.php" xml:lang="en">Home</a></li>
 	    <li><a href="corsi.php">Corsi</a></li>
 	    <li><a href="galleria.php">Galleria</a></li>
+	    <li><a href="staff.php" xml:lang="en">Staff</a></li>
 	    <li><a href="contatti.php">Contatti</a></li>
-      <li><a href="registrazione.php">Registrazione</a></li>
-      <li><a href="login.php">Accedi</a></li>
+			<li><a href="registrazione.php">Registrazione</a></li>
+			<li><a href="login.php">Accedi</a></li>
 	  </ul>
 	</div>
 	<div id="header">
@@ -62,11 +61,11 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 
 	<div id="content">
 		<div id="breadcrumb">
-			<p>Ti trovi in: Pannello di amministrazione >> Inserimento corsi</p>
+			<p>Ti trovi in: Pannello di amministrazione >> Inserimento <span xml:lang="en">News</span></p>
 		</div>
-		<form onsubmit="return checkInsCorsi()" action="post_corsi.php" method="post" id="login-register-form" enctype="multipart/form-data">
+		<form onsubmit="return checkInsNews()" action="post_news.php" method="post" id="login-register-form" enctype="multipart/form-data">
 			<fieldset>
-				<legend>Inserisci un nuovo corso</legend>
+				<legend>Inserisci una nuova news</legend>
 				<ul>
           <li>
 						<label for="titolo">Titolo</label>
@@ -75,28 +74,23 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
           </li>
           <li>
             <label for="fileToUpload">Inserisci Immagine</label>
-            <input id="fileToUpload" name="fileToUpload" type="file" />
+            <input id="fileToUpload" name="fileToUpload" type="file"/>
             <?php if(isset($_SESSION['error']['err'])) { echo '<span class="error">'. $_SESSION['error']['err'] .'</span>'; unset($_SESSION['error']['err']); } else {echo "";} ?>
           </li>
           <li>
 						<label for="titolo">Alt immagine (facoltativo)</label>
-						<input id="alt" name="alt" type="text" <?php if(isset($_SESSION['error']['altErr']))if(isset ($_SESSION['var']['alt'])) {$alt = $_SESSION['var']['alt']; echo "value=\"$alt\"";} else echo "value=\"\"";?>/>
+						<input id="alt" name="alt" type="text" <?php if(isset($_SESSION['error']['altErr'])) if(isset ($_SESSION['var']['alt'])) {$alt = $_SESSION['var']['alt']; echo "value=\"$alt\"";} else echo "value=\"\"";?>/>
             <?php if(isset($_SESSION['error']['altErr'])) { echo '<span class="error">'. $_SESSION['error']['altErr'] .'</span>'; unset($_SESSION['error']['altErr']); } else {echo "";} ?>
           </li>
           <li>
-						<label for="testo">Inserisci la descrizione corta</label>
-						<textarea name="testo" id="testo" rows="10"<?php if(isset($_SESSION['error']['testoErr']))if(isset ($_SESSION['var']['testo'])) {$testo = $_SESSION['var']['testo']; echo "value=\"$testo\"";} else echo "value=\"\"";?>></textarea>
+						<label for="testo">Inserisci il testo della <span xml:lang="en">News</span></label>
+            <textarea name="testo" id="testo" rows="30" <?php if(isset($_SESSION['error']['testoErr'])) if(isset ($_SESSION['var']['testo'])) {$testo = $_SESSION['var']['testo']; echo "value=\"$testo\"";} else echo "value=\"\"";?>/> ></textarea>
             <?php if(isset($_SESSION['error']['testoErr'])) { echo '<span class="error">'. $_SESSION['error']['testoErr'] .'</span>'; unset($_SESSION['error']['testoErr']); } else {echo "";} ?>
-          </li>
-          <li>
-						<label for="testo">Inserisci la descrizione lunga</label>
-						<textarea name="testoLong" id="testoLong" rows="25"<?php if(isset($_SESSION['error']['testoLongErr']))if(isset ($_SESSION['var']['testoLong'])) {$testoLong = $_SESSION['var']['testoLong']; echo "value=\"$testoLong\"";} else echo "value=\"\"";?>></textarea>
-            <?php if(isset($_SESSION['error']['testoLongErr'])) { echo '<span class="error">'. $_SESSION['error']['testoLongErr'] .'</span>'; unset($_SESSION['error']['testoLongErr']); } else {echo "";} ?>
           </li>
 				</ul>
 			</fieldset>
 					<li id="buttons-login">
-						<input value="Inserisci" class="button" id="inserisci" name="inserisci" type="submit" />
+						<input value="Inserisci" class="button" id="inserisci" name="inserisci" type="submit" onclick="showSuccess()"/>
 						<input value="Cancella" class="button" id="delete-login-button" type="reset" />
 					</li>
 				</ul>
@@ -110,9 +104,6 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 		<p>Matteo</p>
 		<p>Franconetti Simone</p>
 	</div>
-
-
-<!-- <?php mysqli_close($dbOpen); ?> -->
 
 </body>
 </html>

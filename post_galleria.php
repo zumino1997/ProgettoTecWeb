@@ -10,22 +10,16 @@ if (session_status() == PHP_SESSION_NONE) {
 $connection = new DBConnection();
 $dbOpen=$connection->openConnection();
 
-$titolo=$_POST["titolo"];
 $testo=$_POST["testo"];
-$testoLong=$_POST["testoLong"];
 $alt=$_POST["alt"];
 
 
-$titoloErr=valTitolo($titolo);
-$testoErr=valTesto($testo);
-$testoLongErr=valTestoLong($testoLong);
+$testoErr=valDidascalia($testo);
 $altErr=valAlt($alt);
-$cor=valCorsi($titoloErr,$testoErr,$testoLongErr,$altErr);
+$gal=valGalleria($testoErr,$altErr);
 
 $_SESSION["var"] = array(
-    'titolo' => $titolo,
     'testo' => $testo,
-    'testoLong' => $testoLong,
     'alt'=> $alt
 );
 
@@ -53,20 +47,18 @@ if(isset($_POST["inserisci"])) {
         $err = "Inserire un'immagine";
     }
 
-    if ($uploadOk == 1 && move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file) && $cor) {
-        $connection->insertCorsi($titolo,$testo,$target_file,$testoLong,$alt);
+    if ($uploadOk == 1 && move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file) && $gal) {
+        $connection->insertGalleria($testo,$target_file,$alt);
       }
 }
 
 $_SESSION["error"] = array(
-    'titoloErr' => $titoloErr,
     'testoErr' => $testoErr,
-    'testoLongErr' => $testoLongErr,
     'altErr'=> $altErr,
     'err' => $err
 );
 
-  header("Location: corsi_form.php");
+  header("Location: galleria_form.php");
   exit();
 
 $connection->closeConnection();
