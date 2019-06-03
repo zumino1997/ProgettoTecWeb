@@ -35,18 +35,16 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 
 </head>
 <body>
-
-	<div id="nav">
+  <div id="nav">
 	  <div id="logo"><img src="IMG/logo2.png" alt="Logo Energya"/></div>
 	  <button id="menuIcon" onclick="menuHamburger()"><i class='fas fa-bars'></i></button>
 	  <ul class="menuItems" id="menuu" >
-	    <li id="currentLink" xml:lang="en">Home</li>
+	    <li><a href="index.php" xml:lang="en">Home</a></li>
 	    <li><a href="corsi.php">Corsi</a></li>
 	    <li><a href="galleria.php">Galleria</a></li>
 	    <li><a href="staff.php" xml:lang="en">Staff</a></li>
 	    <li><a href="contatti.php">Contatti</a></li>
-			<li><a href="registrazione.php">Registrazione</a></li>
-			<li><a href="login.php">Accedi</a></li>
+			<?php require_once __DIR__ . DIRECTORY_SEPARATOR . "userbar_mobile.php";?>
 	  </ul>
 	</div>
 	<div id="header">
@@ -68,7 +66,8 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 			i contenuti che verranno visualizzati all'interno del sito <abbr xml:lang="en" xml:title="World Wide Web">web</abbr></p>
 			<ul>
 				<li><a href="corsi_form.php">Pagina inserimento corsi</a></li>
-				<li><a href="corsi_news.php">Pagina inserimento news</a></li>
+				<li><a href="news_form.php">Pagina inserimento news</a></li>
+				<li><a href="galleria_form.php">Pagina inserimento news</a></li>
 			</ul>
 		</div>
 

@@ -1,4 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?php
+
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it"><!-- il comando html permette di importare un namespace, contenente tutto l'insieme dei tag utilizzabili -->
 
 <head>
@@ -37,8 +41,7 @@
 			<li><a href="galleria.php">Galleria</a></li>
 	    <li><a href="staff.php" xml:lang="en">Staff</a></li>
 			<li id="currentLink">Contatti</li>
-			<li><a href="registrazione.php">Registrazione</a></li>
-			<li><a href="login.php">Accedi</a></li>
+			<?php require_once __DIR__ . DIRECTORY_SEPARATOR . "userbar_mobile.php";?>
 	  </ul>
 	</div>
 	<div id="header">

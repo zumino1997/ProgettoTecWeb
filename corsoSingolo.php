@@ -59,8 +59,7 @@ else {
       <li><a href="galleria.php">Galleria</a></li>
 			<li><a href="staff.php" xml:lang="en">Staff</a></li>
 			<li><a href="contatti.php">Contatti</a></li>
-      <li><a href="registrazione.php">Registrazione</a></li>
-      <li><a href="login.php">Accedi</a></li>
+      <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "userbar_mobile.php";?>
 		</ul>
 	</div>
 
