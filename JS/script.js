@@ -262,12 +262,12 @@ function checkReg(){
 }
 
 function checkInsCorsi(){
+
   var titolo = document.getElementById("titolo");
   var testo = document.getElementById("testo");
   var testoLong = document.getElementById("testoLong");
   var alt = document.getElementById("alt");
   var file = document.getElementById("fileToUpload");
-
 
   var risultatoTestTitolo = checkTitolo(titolo);            //utilizzo la funzione checkNome per nome,cognome e città percchè hanno la stessa RegExp
   var risultatoTestTesto = checkTesto(testo);
@@ -276,6 +276,25 @@ function checkInsCorsi(){
   var risultatoTestFile = checkFile(file);
 
   if (risultatoTestTitolo && risultatoTestTesto && risultatoTestAlt && risultatoTestTestoLong && risultatoTestFile)
+    return true;
+  else {
+    return false;
+  }
+}
+
+function checkModCorsi(){
+
+  var titolo = document.getElementById("titolo");
+  var testo = document.getElementById("testo");
+  var testoLong = document.getElementById("testoLong");
+  var alt = document.getElementById("alt");
+
+  var risultatoTestTitolo = checkTitolo(titolo);            //utilizzo la funzione checkNome per nome,cognome e città percchè hanno la stessa RegExp
+  var risultatoTestTesto = checkTesto(testo);
+  var risultatoTestAlt = checkAlt(alt);            //utilizzo la funzione checkNome per nome,cognome e città percchè hanno la stessa RegExp
+  var risultatoTestTestoLong = checkTestoLong(testoLong);
+
+  if (risultatoTestTitolo && risultatoTestTesto && risultatoTestAlt && risultatoTestTestoLong)
     return true;
   else {
     return false;
@@ -312,6 +331,36 @@ function checkInsCorsi(){
 
     if (risultatoTestTesto && risultatoTestAlt && risultatoTestFile)
       return true;
+    else {
+      return false;
+    }
+  }
+
+
+  function checkDataOra(dataInput,oraInput){
+    var patternData= /^(((0[1-9]|[12]\d|3[01])\/(0[13578]|1[02])\/((19|[2-9]\d)\d{2}))|((0[1-9]|[12]\d|30)\/(0[13456789]|1[012])\/((19|[2-9]\d)\d{2}))|((0[1-9]|1\d|2[0-8])\/02\/((19|[2-9]\d)\d{2}))|(29\/02\/((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$/;
+    var patternOra = /^(0[0-9]|1[0-9]|2[0-3]|[0-9]):[0-5][0-9]$/;
+    if (patternData.test(dataInput.value) && patternOra.test(oraInput.value)){
+    togliErrore(oraInput);
+      return true;
+    }
+    else{
+      if (dataInput.value == "" || oraInput.value=="")
+        mostraErrore(oraInput, "Inserire tutti i campi")
+      else
+        mostraErrore(oraInput, "Data (dd/mm/YYYY) oppure Ora (HH:mm:ss) non valide.")
+      return false;
+    }
+  }
+
+  function checkInsPrenotazioni(){
+    var data = document.getElementById("data");
+    var ora = document.getElementById("ora");
+
+    if (checkDataOra(data,ora))
+    {
+      return true;
+    }
     else {
       return false;
     }

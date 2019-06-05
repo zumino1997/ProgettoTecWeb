@@ -38,6 +38,26 @@ class DBConnection
     }
   }
 
+  public function getNewsId($id){
+    $querySelect= 'SELECT * FROM  news WHERE id="'.$id.'" ';
+    $queryResult= mysqli_query ($this->conn,$querySelect) or die (mysqli_error($this->conn));
+    if (mysqli_num_rows($queryResult)==0)
+      return null;
+    else{
+      while ($row=mysqli_fetch_assoc($queryResult)){
+        $arrayNews=array(
+          'Immagine'=>$row['immagine'],
+          'Id'=>$row['id'],
+          'Titolo'=>$row['titolo'],
+          'Descrizione'=>$row['testo'],
+          'Data'=>$row['data'],
+          'Alt'=>$row['alt']
+        );
+      }
+      return $arrayNews;
+    }
+  }
+
   public function numCorsi(){
     $querySelect= "SELECT * FROM  corsi";
     $queryResult= mysqli_query ($this->conn,$querySelect) or die (mysqli_error($this->conn));
@@ -65,8 +85,27 @@ class DBConnection
     }
   }
 
-  public function getCorso(){
-    $querySelect= 'SELECT * FROM  corsi WHERE corsi_id="'.$_GET['id'].'"';
+  // public function getCorso(){
+  //   $querySelect= 'SELECT * FROM  corsi WHERE corsi_id="'.$_GET['id'].'"';
+  //   $queryResult= mysqli_query ($this->conn,$querySelect) or die (mysqli_error($this->conn));
+  //   if (mysqli_num_rows($queryResult)==0)
+  //     return null;
+  //   else{
+  //     while ($row=mysqli_fetch_assoc($queryResult)){
+  //       $arrayCorso=array(
+  //         'Id'=>$row['corsi_id'],
+  //         'Titolo'=>$row['titolo'],
+  //         'DescrizioneL'=>$row['descrizione_long'],
+  //         'Alt'=>$row['alt'],
+  //         'Immagine'=>$row['immagine']
+  //       );
+  //     }
+  //     return $arrayCorso;
+  //   }
+  // }
+
+  public function getCorso($id){
+    $querySelect= 'SELECT * FROM  corsi WHERE corsi_id="'.$id.'" ';
     $queryResult= mysqli_query ($this->conn,$querySelect) or die (mysqli_error($this->conn));
     if (mysqli_num_rows($queryResult)==0)
       return null;
@@ -75,6 +114,7 @@ class DBConnection
         $arrayCorso=array(
           'Id'=>$row['corsi_id'],
           'Titolo'=>$row['titolo'],
+          'Descrizione'=>$row['descrizione'],
           'DescrizioneL'=>$row['descrizione_long'],
           'Alt'=>$row['alt'],
           'Immagine'=>$row['immagine']
@@ -178,9 +218,133 @@ class DBConnection
     }
   }
 
+  public function removePrenotazione($email){
+    $query = 'DELETE FROM prenotazioni WHERE email="'.$email.'"';
+    mysqli_query($this->conn,$query);
+    if (mysqli_affected_rows($this->conn)==0){
+      return false;
+    }
+    else{
+      return true;
+    }
+  }
+  public function removeCorsi($id){
+    $query = 'DELETE FROM corsi WHERE corsi_id="'.$id.'"';
+    mysqli_query($this->conn,$query);
+    if (mysqli_affected_rows($this->conn)==0){
+      return false;
+    }
+    else{
+      return true;
+    }
+  }
+  public function removeNews($id){
+    $query = 'DELETE FROM news WHERE id="'.$id.'"';
+    mysqli_query($this->conn,$query);
+    if (mysqli_affected_rows($this->conn)==0){
+      return false;
+    }
+    else{
+      return true;
+    }
+  }
+
+  public function removeGalleria($id){
+    $query = 'DELETE FROM galleria WHERE id="'.$id.'"';
+    mysqli_query($this->conn,$query);
+    if (mysqli_affected_rows($this->conn)==0){
+      return false;
+    }
+    else{
+      return true;
+    }
+  }
 
   public function closeConnection()  {
     mysqli_close($this->conn);
   }
+
+  public function getUtente($email){
+      $query = 'SELECT * FROM anagrafica where mail = "'.$email.'"';
+      $queryResult = mysqli_query ($this->conn,$query) or die (mysqli_error($this->conn));
+      if (mysqli_num_rows($queryResult)==0)
+        return null;
+      else{
+        $result = array();
+        while ($row=mysqli_fetch_assoc($queryResult)){
+          $arrayUtente=array(
+            'nome'=>$row['nome'],
+            'cognome'=>$row['cognome'],
+            'citta'=>$row['citta'],
+            'indirizzo'=>$row['indirizzo'],
+            'nascita'=>$row['nascita'],
+            'email'=>$row['mail']
+          );
+          array_push($result,$arrayUtente);
+        }
+        return $result;
+      }
+    }
+  public function getPrenotazioni($email){
+      $query = 'SELECT * FROM prenotazioni where email = "'.$email.'"';
+      $queryResult = mysqli_query ($this->conn,$query) or die (mysqli_error($this->conn));
+      if (mysqli_num_rows($queryResult)==0)
+        return null;
+      else{
+        $result = array();
+        while ($row=mysqli_fetch_assoc($queryResult)){
+          $arrayPrenotazioni=array(
+            'corso'=>$row['corso'],
+            'data'=>$row['data'],
+            'ora'=>$row['ora']
+          );
+          array_push($result,$arrayPrenotazioni);
+        }
+        return $result;
+      }
+    }
+
+    public function getGalleria(){
+      $query = 'SELECT * FROM galleria';
+      $queryResult = mysqli_query ($this->conn,$query) or die (mysqli_error($this->conn));
+      if (mysqli_num_rows($queryResult)==0)
+        return null;
+      else{
+        $result = array();
+        while ($row=mysqli_fetch_assoc($queryResult)){
+          $arrayGalleria=array(
+            'Id'=>$row['id'],
+            'Immagine'=>$row['immagine']
+          );
+          array_push($result,$arrayGalleria);
+        }
+        return $result;
+      }
+    }
+
+    public function updateCorsi($id,$titolo,$testo,$testoLong,$alt){
+      $query = 'UPDATE corsi SET titolo="'.$titolo.'", descrizione="'.$testo.'", descrizione_long="'.$testoLong.'", alt="'.$alt.'" WHERE corsi_id="'.$id.'"';
+      mysqli_query($this->conn,$query);
+      if (mysqli_affected_rows($this->conn)==0){
+        return false;
+      }
+      else{
+        return true;
+      }
+    }
+
+    public function updateNews($id,$titolo,$testo,$alt){
+      $query = 'UPDATE news SET titolo="'.$titolo.'", testo="'.$testo.'", alt="'.$alt.'" WHERE id="'.$id.'"';
+      mysqli_query($this->conn,$query);
+      if (mysqli_affected_rows($this->conn)==0){
+        return false;
+      }
+      else{
+        return true;
+      }
+    }
+
+
+
 };
 ?>

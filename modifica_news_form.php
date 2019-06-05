@@ -9,8 +9,25 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 	exit();
 }
 
-if (!isset($_SESSION["successo"]))
-  $_SESSION["successo"]=0;
+require_once __DIR__ . DIRECTORY_SEPARATOR . "connection.php";
+use DB\DBConnection;
+
+$connection = new DBConnection();
+$dbOpen=$connection->openConnection();
+
+
+
+if ($dbOpen){
+  $news = $connection->getNewsId($_GET['modifica']);
+  $id=$news['Id'];
+  $titolo=$news['Titolo'];
+  $immagine=$news['Immagine'];
+  $testo=$news['Descrizione'];
+  $alt=$news['Alt'];
+}
+else {
+		echo "Connessione non stabilita correttamente";     //if (dbOpen)
+}
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -62,46 +79,39 @@ if (!isset($_SESSION["successo"]))
 
 	<div id="content">
 		<div id="breadcrumb">
-			<p>Ti trovi in: Pannello di amministrazione >> Inserimento galleria</p>
+			<p>Ti trovi in: Pannello di amministrazione >> Form modifica news</p>
 		</div>
-    <?php
-    if ($_SESSION ['successo']){
-      echo "<h1 class=\"center\">Inserimento avvenuto con successo</h1>";
-      $_SESSION ['successo']=0;
-    }
-    else{
-      echo "<p></p>";
-    }
-   ?>
-		<form onsubmit="return checkInsGalleria()" action="post_galleria.php" method="post" id="login-register-form" enctype="multipart/form-data">
-			<fieldset>
-				<legend>Inserisci una nuova foto</legend>
-				<ul>
+
+   <form onclick="return checkInsNews()" action="post_modifica_news.php?id=<?php $id ?>" id="login-register-form" enctype="multipart/form-data">
+      <fieldset>
+       <legend>Modifica la News</legend>
+       <ul>
           <li>
-            <label for="fileToUpload">Inserisci Immagine</label>
-            <input id="fileToUpload" name="fileToUpload" type="file" />
-            <?php if(isset($_SESSION['error']['err'])) { echo '<span class="error">'. $_SESSION['error']['err'] .'</span>'; unset($_SESSION['error']['err']); } else {echo "";} ?>
+           <label for="titolo">Titolo</label>
+           <input id="titolo" name="titolo" type="text" <?php echo "value=\"$titolo\"";?>/>
+            <?php if(isset($_SESSION['error']['titoloErr'])) { echo '<span class="error">'. $_SESSION['error']['titoloErr'] .'</span>'; unset($_SESSION['error']['titoloErr']); } else {echo "";} ?>
           </li>
           <li>
-						<label for="titolo">Alt immagine (facoltativo)</label>
-						<input id="alt" name="alt" type="text" <?php if(isset($_SESSION['error']['altErr']))if(isset ($_SESSION['var']['alt'])) {$alt = $_SESSION['var']['alt']; echo "value=\"$alt\"";} else echo "value=\"\"";?>/>
+           <label for="testo">Inserisci l'alt della immagine</label>
+           <input id="alt" name="alt" type="text" <?php echo "value=\"$alt\"";?> />
             <?php if(isset($_SESSION['error']['altErr'])) { echo '<span class="error">'. $_SESSION['error']['altErr'] .'</span>'; unset($_SESSION['error']['altErr']); } else {echo "";} ?>
           </li>
           <li>
-						<label for="testo">Inserisci la didascalia</label>
-						<textarea name="testo" id="testo" rows="10"><?php if(isset($_SESSION['error']['testoErr'])) if(isset ($_SESSION['var']['testo'])) {$testo = $_SESSION['var']['testo']; echo $testo;} ?></textarea>
+           <label for="testo">Inserisci la notizia</label>
+           <input id="testo" name="testo" type="text" <?php echo "value=\"$testo\"";?> />
             <?php if(isset($_SESSION['error']['testoErr'])) { echo '<span class="error">'. $_SESSION['error']['testoErr'] .'</span>'; unset($_SESSION['error']['testoErr']); } else {echo "";} ?>
           </li>
-				</ul>
-			</fieldset>
-					<li id="buttons-login">
-						<input value="Inserisci" class="button" id="inserisci" name="inserisci" type="submit" />
-						<input value="Cancella" class="button" id="delete-login-button" type="reset" />
-					</li>
-				</ul>
-			</fieldset>
-		</form>
-	</div>
+       </ul>
+     </fieldset>
+         <li id="buttons-login">
+            <?php echo '<input type="hidden" value="'.$news['Id'].'" name="update" />' ?>
+           <input value="Modifica" class="button" id="modifica" name="modifica" type="submit"/>
+           <input value="Cancella" class="button" id="delete-login-button" type="reset" />
+         </li>
+       </ul>
+     </fieldset>
+   </form>
+ </div>
 
 	<div id="footer">
 		<p>Sito <span xml:lang="en" xml:abbr title="World Wide Web">Web</abbr>  realizzato da: </p>
@@ -109,6 +119,8 @@ if (!isset($_SESSION["successo"]))
 		<p>Matteo</p>
 		<p>Franconetti Simone</p>
 	</div>
+
+<?php $connection->openConnection(); ?>
 
 </body>
 </html>

@@ -1,7 +1,4 @@
 <?php
-require_once __DIR__ . DIRECTORY_SEPARATOR . "connection.php";
-use DB\DBConnection;
-
 if (session_status() == PHP_SESSION_NONE) {
   session_start();
 }
@@ -10,6 +7,8 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 	header("Location: index.php");
 	exit();
 }
+if (!isset($_SESSION["successo"]))
+  $_SESSION["successo"]=0;
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -28,7 +27,7 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 
 <link rel="stylesheet" type="text/css" href="CSS/css_index.css" media="handheld, screen"/>
 <link rel="stylesheet" type="text/css" href="CSS/css_index_small_1200px.css" media="handheld, screen and (max-width:1200px),only screen and (max-device-width:1200px)"/>
-<link rel="stylesheet" type="text/css" href="CSS/css_index_small_720px.css" media="handheld, screen and (max-width:768px),only screen and (max-device-width:720px)"/>
+<link rel="stylesheet" type="text/css" href="CSS/css_index_small_768px.css" media="handheld, screen and (max-width:768px),only screen and (max-device-width:720px)"/>
 <link rel="stylesheet" type="text/css" href="CSS/css_index_small_480px.css" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.2/css/all.css'>
@@ -63,6 +62,15 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 		<div id="breadcrumb">
 			<p>Ti trovi in: Pannello di amministrazione >> Inserimento corsi</p>
 		</div>
+    <?php
+    if ($_SESSION ['successo']){
+      echo "<h1 class=\"center\">Inserimento avvenuto con successo</h1>";
+      $_SESSION ['successo']=0;
+    }
+    else{
+      echo "<p></p>";
+    }
+   ?>
 		<form onsubmit="return checkInsCorsi()" action="post_corsi.php" method="post" id="login-register-form" enctype="multipart/form-data">
 			<fieldset>
 				<legend>Inserisci un nuovo corso</legend>
@@ -84,12 +92,12 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
           </li>
           <li>
 						<label for="testo">Inserisci la descrizione corta</label>
-						<textarea name="testo" id="testo" rows="10"<?php if(isset($_SESSION['error']['testoErr']))if(isset ($_SESSION['var']['testo'])) {$testo = $_SESSION['var']['testo']; echo "value=\"$testo\"";} else echo "value=\"\"";?>></textarea>
+						<textarea name="testo" id="testo" rows="10"><?php if(isset($_SESSION['error']['testoErr'])) if(isset ($_SESSION['var']['testo'])) {$testo = $_SESSION['var']['testo']; echo $testo;} ?></textarea>
             <?php if(isset($_SESSION['error']['testoErr'])) { echo '<span class="error">'. $_SESSION['error']['testoErr'] .'</span>'; unset($_SESSION['error']['testoErr']); } else {echo "";} ?>
           </li>
           <li>
 						<label for="testo">Inserisci la descrizione lunga</label>
-						<textarea name="testoLong" id="testoLong" rows="25"<?php if(isset($_SESSION['error']['testoLongErr']))if(isset ($_SESSION['var']['testoLong'])) {$testoLong = $_SESSION['var']['testoLong']; echo "value=\"$testoLong\"";} else echo "value=\"\"";?>></textarea>
+						<textarea name="testoLong" id="testoLong" rows="25"><?php if(isset($_SESSION['error']['testoLongErr'])) if(isset ($_SESSION['var']['testoLong'])) {$testo = $_SESSION['var']['testoLong']; echo $testo;} ?></textarea>
             <?php if(isset($_SESSION['error']['testoLongErr'])) { echo '<span class="error">'. $_SESSION['error']['testoLongErr'] .'</span>'; unset($_SESSION['error']['testoLongErr']); } else {echo "";} ?>
           </li>
 				</ul>
@@ -103,15 +111,13 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 		</form>
 	</div>
 
+
 	<div id="footer">
 		<p>Sito <span xml:lang="en" xml:abbr title="World Wide Web">Web</abbr>  realizzato da: </p>
 		<p>Luca</p>
 		<p>Matteo</p>
 		<p>Franconetti Simone</p>
 	</div>
-
-
-<!-- <?php mysqli_close($dbOpen); ?> -->
 
 </body>
 </html>

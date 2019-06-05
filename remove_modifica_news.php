@@ -9,11 +9,15 @@ if (session_status() == PHP_SESSION_NONE) {
   session_start();
 }
 
+if (!isset($_SESSION["successo"]))
+  $_SESSION["successo"]=0;
+
 if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 	header("Location: index.php");
 	exit();
 }
 	if ($dbOpen){
+    $listaNews=$connection->getNews();
 		}
 	else {
 			$_SESSION["error"] = "Connessione non stabilita correttamente";
@@ -67,24 +71,52 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 
 	<div id="content">
 		<div id="breadcrumb">
-			<p>Ti trovi in: Pannello di amministrazione</span></p>
+			<p>Ti trovi in: Pannello di amministrazione >> Rimozione <span xml:lang="en">news</span></p>
 		</div>
 
 
-		<div class="divGenerico">
-			<h1>Pannello di amministrazione</h1>
-			<p>Dal pannello di amministrazione è possibile inserire, modificare e rimuovere
-			i contenuti che verranno visualizzati all'interno del sito <abbr xml:lang="en" xml:title="World Wide Web">web</abbr></p>
-			<ul>
-				<li><a href="corsi_form.php">Pagina inserimento corsi</a></li>
-				<li><a href="news_form.php">Pagina inserimento news</a></li>
-				<li><a href="galleria_form.php">Pagina inserimento galleria</a></li>
-        <li><a href="remove_modifica_corsi.php">Pagina rimozione e modifica corsi</a></li>
-				<li><a href="remove_galleria.php">Pagina rimozione galleria</a></li>
-        <li><a href="remove_modifica_news.php">Pagina rimozione <span xml:lang="en">news</span></a></li>
-			</ul>
+		<div class="Card Sx">
+      <h1>Elimina <span xml:lang="en">News</span></h1>
+      <p class="center">Per eliminare una delle <span xml:lang="en">news</span> all'interno della sezione "<span xml:lang="en">News</span>",
+         premere il pulsante elimina al fianco del titolo corrispondente.</p>
+         <?php
+           if(!empty($listaNews))
+             foreach ($listaNews as $news) {
+               echo'
+                 <form id="rem" action="post_remove_modifica_news.php?id='.$news['Id'].'">
+                   <p id="remP">'.$news['Titolo'].'</p><input type="hidden" value="'.$news['Id'].'" name="rimuovi"/>
+                   <input type="submit" class="button" value="Rimuovi '.$news['Titolo'].'" name="submit"/>
+                 </form>';
+             }
+          ?>
+    </div>
 
-
+    <div class="Card Dx">
+      <h1>Modifica <span xml:lang="en">News</span></h1>
+      <p class="center">Per modificare una delle <span xml:lang="en">news</span> all'interno della sezione "<span xml:lang="en">News</span>",
+         premere il pulsante elimina al fianco del titolo corrispondente.</p>
+      <h2 class="successo">
+         <?php
+          if ($_SESSION ['successo']){
+            echo "<h1 class=\"center\">Modifica avvenuta con successo</h1>";
+            $_SESSION ['successo']=0;
+          }
+          else{
+            echo "<p></p>";
+          }
+         ?>
+       </h2>
+         <?php
+         if(!empty($listaNews)){
+           foreach ($listaNews as $news) {
+             echo'
+               <form id="rem" action="modifica_news_form.php?id='.$news['Id'].'">
+                 <p id="remP">'.$news['Titolo'].'</p><input type="hidden" value="'.$news['Id'].'" name="modifica"/>
+                 <input type="submit" class="button" value="Modifica '.$news['Titolo'].'" name="submit"/>
+               </form>';
+           }
+         }
+          ?>
 		</div>
 	</div>
 

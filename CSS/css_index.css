@@ -112,7 +112,7 @@ HEADER
 	color:white;
 	background-color: black;
 	background-image: url("../IMG/banner.jpg");
-	height: 20em;
+	height: 16em;
 	background-size:cover;
 	background-position: center;
 	text-align: center;
@@ -149,6 +149,14 @@ USERBAR
 /*****
 CONTENUTO
 ******/
+#linkSfondoScuro{
+	color:white;
+	padding:1em;
+	background-color: #0074e4;
+	border-radius: 1em;
+	line-height: 4em;
+}
+
 #time{
 	font-size: 0.8em;
 	font-style: italic;
@@ -199,6 +207,7 @@ CONTENUTO
 
 .divGenerico{
 	margin-top: 4em;
+	clear:both;
 }
 
 .divGenerico ul{
@@ -209,7 +218,7 @@ CONTENUTO
 
 .divGenerico ul>li:before {
   content: "+";
-	padding-right: 2em;
+	padding-right: 1em;
   color: #044B5D;
 }
 
@@ -458,7 +467,7 @@ CSS LOGIN
 }
 
 #login-register-form li input[type=email], #login-register-form li input[type=password],
-#login-register-form li input[type=text], #login-register-form li textarea{
+#login-register-form li input[type=text], #login-register-form li textarea,  #login-register-form li select{
 	width: 100%;
 	display: block;
   padding: 0.7em;
@@ -549,6 +558,49 @@ fieldset{
 
 
 /*FINE GALLERY*/
+
+
+/*****
+PROFILO
+******/
+
+.anagrafica{
+	padding:2%;
+	width: 46%;
+	float:left;
+	text-align: left;
+}
+.anagrafica span{
+	font-weight: bold;
+}
+
+/* #prenota legend{
+	margin:auto;
+}
+#prenota{
+	padding:2em;
+}
+
+#pren{
+	text-align:center;
+	font-size:1.2em;
+} */
+
+#rem{
+	margin:auto;
+	width:100%;
+	/* text-align:center;  */
+	float:left;
+}
+
+#remP{
+	width:50%;
+	float:left;
+}
+
+#utenteButt{
+	margin-top: 1em;
+}
 
 
 /*****

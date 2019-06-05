@@ -33,18 +33,6 @@ function valCitta($citta){
   return $cittaErr;
 }
 
-function valNascita($nascita){
-  $nascitaErr="";
-  if (empty($nascita)){
-    $nascitaErr="Data non inserita";
-  }
-  else{
-    $nascita = date('d-m-Y', strtotime($nascita));
-  }
-  return $nascitaErr;
-}
-
-
 function valIndirizzo($indirizzo){
   $indirizzoErr="";
   if (empty($indirizzo)){
@@ -152,6 +140,36 @@ function valNews($titoloErr,$testoErr,$altErr){
 
 function valGalleria($testoErr,$altErr){
   if(empty($testoErr) && empty($altErr))
+    return true;
+  else
+    return false;
+}
+
+function valNascita($nascita){
+  $nascitaErr="";
+  $text = explode('-',$nascita);
+  if(count($text)==3)
+    if(checkdate($text[1],$text[0],$text[2])){
+      $nascitaErr="";
+    }
+    else
+      $nascitaErr="Data non corretta (dd/mm/YYYY).";
+  else
+    $nascitaErr="Formato non valido (dd/mm/YYYY).";
+
+return $nascitaErr;
+}
+function valOra($ora){
+  $oraErr="";
+  if (empty($ora)){
+    $oraErr=" Ora non inserita.";
+  }
+  else if(!preg_match("/^(0[0-9]|1[0-9]|2[0-3]|[0-9]):[0-5][0-9]$/",$ora))
+    $oraErr=" Ora non corretta (hh:mm:ss).";
+  return $oraErr;
+}
+function valPrenotazioni($data,$ora){
+  if(empty($data) && empty($ora))
     return true;
   else
     return false;

@@ -15,7 +15,7 @@ $testo=$_POST["testo"];
 $testoLong=$_POST["testoLong"];
 $alt=$_POST["alt"];
 
-
+$_SESSION["successo"]="";
 $titoloErr=valTitolo($titolo);
 $testoErr=valTesto($testo);
 $testoLongErr=valTestoLong($testoLong);
@@ -55,6 +55,7 @@ if(isset($_POST["inserisci"])) {
 
     if ($uploadOk == 1 && move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file) && $cor) {
         $connection->insertCorsi($titolo,$testo,$target_file,$testoLong,$alt);
+        $_SESSION["successo"]=1;
       }
 }
 

@@ -8,6 +8,10 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 	header("Location: index.php");
 	exit();
 }
+
+
+if (!isset($_SESSION["successo"]))
+  $_SESSION["successo"]=0;
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -26,7 +30,7 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 
 <link rel="stylesheet" type="text/css" href="CSS/css_index.css" media="handheld, screen"/>
 <link rel="stylesheet" type="text/css" href="CSS/css_index_small_1200px.css" media="handheld, screen and (max-width:1200px),only screen and (max-device-width:1200px)"/>
-<link rel="stylesheet" type="text/css" href="CSS/css_index_small_720px.css" media="handheld, screen and (max-width:768px),only screen and (max-device-width:720px)"/>
+<link rel="stylesheet" type="text/css" href="CSS/css_index_small_768px.css" media="handheld, screen and (max-width:768px),only screen and (max-device-width:720px)"/>
 <link rel="stylesheet" type="text/css" href="CSS/css_index_small_480px.css" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.2/css/all.css'>
@@ -62,6 +66,15 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 		<div id="breadcrumb">
 			<p>Ti trovi in: Pannello di amministrazione >> Inserimento <span xml:lang="en">News</span></p>
 		</div>
+    <?php
+    if ($_SESSION ['successo']){
+      echo "<h1 class=\"center\">Inserimento avvenuto con successo</h1>";
+      $_SESSION ['successo']=0;
+    }
+    else{
+      echo "<p></p>";
+    }
+   ?>
 		<form onsubmit="return checkInsNews()" action="post_news.php" method="post" id="login-register-form" enctype="multipart/form-data">
 			<fieldset>
 				<legend>Inserisci una nuova news</legend>
@@ -83,13 +96,13 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
           </li>
           <li>
 						<label for="testo">Inserisci il testo della <span xml:lang="en">News</span></label>
-            <textarea name="testo" id="testo" rows="30" <?php if(isset($_SESSION['error']['testoErr'])) if(isset ($_SESSION['var']['testo'])) {$testo = $_SESSION['var']['testo']; echo "value=\"$testo\"";} else echo "value=\"\"";?>/> ></textarea>
+            <textarea name="testo" id="testo" rows="30"/><?php if(isset($_SESSION['error']['testoErr'])) if(isset ($_SESSION['var']['testo'])) {$testo = $_SESSION['var']['testo']; echo $testo;} ?></textarea>
             <?php if(isset($_SESSION['error']['testoErr'])) { echo '<span class="error">'. $_SESSION['error']['testoErr'] .'</span>'; unset($_SESSION['error']['testoErr']); } else {echo "";} ?>
           </li>
 				</ul>
 			</fieldset>
 					<li id="buttons-login">
-						<input value="Inserisci" class="button" id="inserisci" name="inserisci" type="submit" onclick="showSuccess()"/>
+						<input value="Inserisci" class="button" id="inserisci" name="inserisci" type="submit"/>
 						<input value="Cancella" class="button" id="delete-login-button" type="reset" />
 					</li>
 				</ul>

@@ -49,6 +49,7 @@ if(isset($_POST["inserisci"])) {
 
     if ($uploadOk == 1 && move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file) && $gal) {
         $connection->insertGalleria($testo,$target_file,$alt);
+        $_SESSION["successo"]=1;
       }
 }
 
