@@ -50,18 +50,7 @@
 }
 
 #nav li:nth-child(8), #nav li:nth-child(9){
-	display:block;
-	font-weight: bold;
-	background-color: #044B5D;
-}
-
-#nav li:nth-child(8)>a, #nav li:nth-child(9)>a, #nav li:nth-child(8)>a:hover, #nav li:nth-child(9)>a:hover{
-	background-color: #044B5D;
-	color:#fff;
-}
-
-#nav li:nth-child(8):hover, #nav li:nth-child(9):hover{
-	background-color: #044B5D;
+	display:none;
 }
 
 #nav #currentLink{

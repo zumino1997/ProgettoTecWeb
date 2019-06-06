@@ -1,30 +1,52 @@
 <?php
 
 if (!isset($_SESSION["email"])){
-echo "<div id=\"userBar\">";
-echo "<ul>";
-echo "<li>";
-echo "<span><i class=\"far fa-user-circle\" alt=\"user\"></i></span>";
-echo "<a href=\"registrazione.php\">Registrati</a>";
-echo "</li>";
-echo "<li>";
-echo "<span><i class=\"far fa-user-circle\" alt=\"user\"></i></span>";
-echo "<a href=\"login.php\">Accedi</a>";
-echo "</li>";
-echo "</ul>";
-echo "</div>";
+  if ($_SESSION ['paginaCorr']=="registrazione"){
+    echo "<div id=\"userBar\">";
+    echo "<ul>";
+    echo "<li id=\"currentLink2\">";
+    echo "<span>Registrati</span>";
+    echo "</li>";
+    echo "<li>";
+    echo "<a href=\"login.php\">Accedi</a>";
+    echo "</li>";
+    echo "</ul>";
+    echo "</div>";
+  }
+  else if ($_SESSION ['paginaCorr']=="login") {
+    echo "<div id=\"userBar\">";
+    echo "<ul>";
+    echo "<li>";
+    echo "<a href=\"registrazione.php\">Registrati</a>";
+    echo "</li>";
+    echo "<li id=\"currentLink2\">";
+    echo "<span>Accedi</span>";
+    echo "</li>";
+    echo "</ul>";
+    echo "</div>";
+  }
+  else{
+    echo "<div id=\"userBar\">";
+    echo "<ul>";
+    echo "<li>";
+    echo "<a href=\"registrazione.php\">Registrati</a>";
+    echo "</li>";
+    echo "<li>";
+    echo "<a href=\"login.php\">Accedi</a>";
+    echo "</li>";
+    echo "</ul>";
+    echo "</div>";
+  }
 }
 else{
   if ($_SESSION["email"]=="admin@admin.it"){
-    if ($_SESSION ['paginaCorr']="amministrazione"){
+    if ($_SESSION ['paginaCorr']=="amministrazione"){
       echo "<div id=\"userBar\">";
       echo "<ul>";
-      echo "<li>";
-      echo "<span id=\"currentLink2\"><i class=\"far fa-user-circle\" alt=\"user\"></i></span>";
-      echo "<a href=\"amministrazione.php\">Pannello</a>";
+      echo "<li id=\"currentLink2\">";
+      echo "<span>Pannello</span>";
       echo "</li>";
       echo "<li>";
-      echo "<span><i class=\"far fa-user-circle\" alt=\"user\"></i></span>";
       echo "<a href=\"logout.php\" xml:lang=\"en\">Logout</a>";
       echo "</li>";
       echo "</ul>";
@@ -34,11 +56,9 @@ else{
       echo "<div id=\"userBar\">";
       echo "<ul>";
       echo "<li>";
-      echo "<span id=\"prova\"><i class=\"far fa-user-circle\" alt=\"user\"></i></span>";
       echo "<a href=\"amministrazione.php\">Pannello</a>";
       echo "</li>";
       echo "<li>";
-      echo "<span><i class=\"far fa-user-circle\" alt=\"user\"></i></span>";
       echo "<a href=\"logout.php\" xml:lang=\"en\">Logout</a>";
       echo "</li>";
       echo "</ul>";
@@ -46,18 +66,30 @@ else{
     }
   }
   else {
-    echo "<div id=\"userBar\">";
-    echo "<ul>";
-    echo "<li>";
-    echo "<span><i class=\"far fa-user-circle\" alt=\"user\"></i></span>";
-    echo "<a href=\"profilo.php\">Profilo</a>";
-    echo "</li>";
-    echo "<li>";
-    echo "<span><i class=\"far fa-user-circle\" alt=\"user\"></i></span>";
-    echo "<a href=\"logout.php\" xml:lang=\"en\">Logout</a>";
-    echo "</li>";
-    echo "</ul>";
-    echo "</div>";
+    if ($_SESSION ['paginaCorr']=="profilo"){
+      echo "<div id=\"userBar\">";
+      echo "<ul>";
+      echo "<li id=\"currentLink2\">";
+      echo "<span>Profilo</span>";
+      echo "</li>";
+      echo "<li>";
+      echo "<a href=\"logout.php\" xml:lang=\"en\">Logout</a>";
+      echo "</li>";
+      echo "</ul>";
+      echo "</div>";
+    }
+    else{
+      echo "<div id=\"userBar\">";
+      echo "<ul>";
+      echo "<li>";
+      echo "<a href=\"profilo.php\">Profilo</a>";
+      echo "</li>";
+      echo "<li>";
+      echo "<a href=\"logout.php\" xml:lang=\"en\">Logout</a>";
+      echo "</li>";
+      echo "</ul>";
+      echo "</div>";
+    }
   }
 }
 

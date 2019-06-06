@@ -4,6 +4,8 @@ if (session_status() == PHP_SESSION_NONE) {
   session_start();
 }
 
+$_SESSION ['paginaCorr']="";
+
 require_once __DIR__ . DIRECTORY_SEPARATOR . "connection.php";
 use DB\DBConnection;
 
@@ -49,6 +51,7 @@ else {
 <link rel="stylesheet" type="text/css" href="CSS/css_index_small_480px.css" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css'>
+<link rel="stylesheet" type="text/css" href="CSS/print.css" media="print"/>
 
 
 <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"/>
@@ -62,7 +65,7 @@ else {
 	  <div id="logo"><img src="IMG/logo2.png" alt="Logo Energya"/></div>
 	  <button id="menuIcon" onclick="menuHamburger()"><i class='fas fa-bars'></i></button>
 	  <ul class="menuItems" id="menuu" >
-	    <li><a href="index.php">Home</a></li>
+	    <li><a href="index.php" xml:lang="en">Home</a></li>
 	    <li><a href="corsi.php">Corsi</a></li>
       <li><a href="abbonamenti.php">Abbonamenti</a></li>
       <li><a href="news.php">News</a></li>
@@ -111,12 +114,8 @@ else {
 
 	</div>
 
-	<div id="footer">
-		<p>Sito <span xml:lang="en" xml:abbr title="World Wide Web">Web</abbr>  realizzato da: </p>
-		<p>Luca</p>
-		<p>Matteo</p>
-		<p>Franconetti Simone</p>
-	</div>
+  <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "footer.html"; ?>
+
 
 </body>
 </html>

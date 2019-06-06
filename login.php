@@ -9,6 +9,8 @@ if (isset($_SESSION["email"])){
 	exit();
 }
 
+$_SESSION ['paginaCorr']="login";
+
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -31,6 +33,7 @@ if (isset($_SESSION["email"])){
 <link rel="stylesheet" type="text/css" href="CSS/css_index_small_480px.css" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css'>
+<link rel="stylesheet" type="text/css" href="CSS/print.css" media="print"/>
 
 
 <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"/>
@@ -90,12 +93,8 @@ if (isset($_SESSION["email"])){
 		</form>
 	</div>
 
-	<div id="footer">
-		<p>Sito <span xml:lang="en" xml:abbr title="World Wide Web">Web</abbr>  realizzato da: </p>
-		<p>Luca</p>
-		<p>Matteo</p>
-		<p>Franconetti Simone</p>
-	</div>
+  <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "footer.html"; ?>
+
 
 </body>
 </html>

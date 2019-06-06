@@ -96,12 +96,6 @@ MENU
 	font-weight: bold;
 }
 
-#currentLink2{
-background-color: red;
-}
-
-
-
 
 /*****
 HEADER
@@ -131,18 +125,23 @@ USERBAR
 #userBar{
 	text-align: right;
 	background-color: #343434;
-	width: 98%;
+	width: 100%;
 	color:white;
-	padding:1%;
 }
 
 #userBar li{
 	display: inline-block;
-	margin: 0 0.5em;
+	padding:1%;
 }
 
 #userBar li>a {
 	color:white;
+}
+
+#currentLink2{
+	background-color: white;
+	color:black;
+	font-weight: bold;
 }
 
 
