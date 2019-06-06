@@ -55,8 +55,10 @@ else {
 	  <div id="logo"><img src="IMG/logo2.png" alt="Logo Energya"/></div>
 	  <button id="menuIcon" onclick="menuHamburger()"><i class='fas fa-bars'></i></button>
 	  <ul class="menuItems" id="menuu" >
-	    <li id="currentLink" xml:lang="en">Home</li>
+	    <li><a href="index.php" xml:lang="en">Home</a></li>
 	    <li><a href="corsi.php">Corsi</a></li>
+      <li><a href="abbonamenti.php">Abbonamenti</a></li>
+			<li id="currentLink" xml:lang="en">News</li>
 	    <li><a href="galleria.php">Galleria</a></li>
 	    <li><a href="staff.php" xml:lang="en">Staff</a></li>
 	    <li><a href="contatti.php">Contatti</a></li>

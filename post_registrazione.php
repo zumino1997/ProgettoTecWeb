@@ -23,6 +23,9 @@ if ($dbOpen){
     $passwordR=$_POST["passwordR"];
     $passwordR1=$_POST["passwordR1"];
 
+    $data2 = str_replace('/', '-', $nascita );
+    $newDate = date("Y-m-d", strtotime($data2));
+
     $_SESSION["var"] = array(
         'nome' => $nome,
         'cognome' => $cognome,
@@ -37,14 +40,13 @@ if ($dbOpen){
     $nomeErr=valNome($nome);
     $cognomeErr=valCognome($cognome);
     $cittaErr=valCitta($citta);
-    $nascitaErr=valNascita($nascita);
+    $nascitaErr=valNascita($data2);
     $indirizzoErr=valIndirizzo($indirizzo);
     $emailErr=valEmail($emailR);
     $passwordErr=valPassword($passwordR);
     $passwordErr1=valPassword1($passwordR,$passwordR1);
     $reg=valReg($nomeErr,$cognomeErr,$cittaErr,$nascitaErr,$indirizzoErr,$emailErr,$passwordErr,$passwordErr1);
-    $data2 = str_replace('/', '-', $data );
-    $newDate = date("Y-m-d", strtotime($data2));
+
   }
   if ($reg){      //se non c'è alcun errore negli input
     $passwordR=md5($passwordR);

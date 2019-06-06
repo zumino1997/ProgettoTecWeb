@@ -46,7 +46,10 @@ if (!isset($_SESSION["successo"]))
 	  <ul class="menuItems" id="menuu" >
       <li><a href="index.php" xml:lang="en">Home</a></li>
 	    <li><a href="corsi.php">Corsi</a></li>
+      <li><a href="abbonamenti.php">Abbonamenti</a></li>
+      <li><a href="news.php">News</a></li>
 	    <li><a href="galleria.php">Galleria</a></li>
+      <li><a href="staff.php" xml:lang="en">Staff</a></li>
 	    <li><a href="contatti.php">Contatti</a></li>
       <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "userbar_mobile.php";?>
 	  </ul>

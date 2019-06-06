@@ -1,0 +1,119 @@
+﻿html, body{
+	font-family: Georgia, 'Times New Roman', serif;
+}
+
+img, #nav, #userBar, #Banner, #scrollUp {
+	display: none;
+}
+
+h1 {
+	margin: 0.1em 0em;
+	padding:0em;
+}
+
+h2{
+	margin:0;
+}
+
+li{
+	list-style-type: none;
+}
+
+#content p{
+	margin:0;
+	padding:0;
+}
+/*da mettere solo nel caso decidessimo di mettere il titolo al sito al posto del logo
+
+#header {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	padding-bottom: 1.0em;
+}*/
+
+#breadcrumb{
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+	font-size: 0.8em;
+}
+
+#footer p{
+	margin:0;
+}
+
+#footer {
+	margin-top:2em;
+	border-top:	1px solid #000;
+	font-style: italic;
+}
+
+
+
+/*****
+CONTATTI
+*****/
+
+#contatti h2{
+	margin-top: 0.1em;
+	margin-bottom: 0.1em;
+}
+
+/*assegnare un id a "salta la mappa" nel css per poterlo nascondere in questo file*/
+/*sistemare la mappa*/
+
+#map iframe{
+	width:100%;
+	height:400px;
+}
+
+/*****
+STAFF
+*****/
+
+#fila{
+	padding:0.5em 0;
+}
+
+/*#fila img {
+	display: block; se attivato mostra le foto degli allenatori
+}
+*/
+/*****
+GALLERIA
+*****/
+
+#column img {
+	display: block; /*le foto della galleria vengono volutamente mostrate in quanto lo scopo principale della pagina è quello*/
+	width: 23%;
+	float:left;
+	padding:1%;
+}
+
+.pagination{
+	clear:both;
+}
+
+#closeImage{
+	display:none;
+}
+
+/*****
+CORSI
+*****/
+
+.box, .pagination {
+	padding:0.5em 0;
+}
+
+/*****
+LOGIN
+*****/
+
+#login-register-form {
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+/*****
+NEWS
+*****/

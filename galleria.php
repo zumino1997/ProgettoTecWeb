@@ -64,6 +64,8 @@ else {
 	  <ul class="menuItems" id="menuu" >
 	    <li><a href="index.php">Home</a></li>
 	    <li><a href="corsi.php">Corsi</a></li>
+      <li><a href="abbonamenti.php">Abbonamenti</a></li>
+      <li><a href="news.php">News</a></li>
 	    <li id="currentLink">Galleria</li>
 	    <li><a href="staff.php" xml:lang="en">Staff</a></li>
 	    <li><a href="contatti.php">Contatti</a></li>
@@ -79,6 +81,11 @@ else {
 
 
 	<div id="content">
+
+    <div id="breadcrumb">
+      <p>Ti trovi in: Galleria</p>
+    </div>
+
 		<?php foreach ($listaImg as $img) {
   		echo '<div id="column">';
       echo '<img src="'.$img['Immagine'].'" onclick="show(this)" alt=""/>';
@@ -98,6 +105,7 @@ else {
 		<div id="showImage">
 			  <span id="closeImage" onclick="closeImage()">&times;</span>
 				<img id="imgExp" alt=""/>
+        <p id=did><?php echo $img['Didascalia']; ?></p>
 		</div>
 	</div>
 

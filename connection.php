@@ -85,25 +85,6 @@ class DBConnection
     }
   }
 
-  // public function getCorso(){
-  //   $querySelect= 'SELECT * FROM  corsi WHERE corsi_id="'.$_GET['id'].'"';
-  //   $queryResult= mysqli_query ($this->conn,$querySelect) or die (mysqli_error($this->conn));
-  //   if (mysqli_num_rows($queryResult)==0)
-  //     return null;
-  //   else{
-  //     while ($row=mysqli_fetch_assoc($queryResult)){
-  //       $arrayCorso=array(
-  //         'Id'=>$row['corsi_id'],
-  //         'Titolo'=>$row['titolo'],
-  //         'DescrizioneL'=>$row['descrizione_long'],
-  //         'Alt'=>$row['alt'],
-  //         'Immagine'=>$row['immagine']
-  //       );
-  //     }
-  //     return $arrayCorso;
-  //   }
-  // }
-
   public function getCorso($id){
     $querySelect= 'SELECT * FROM  corsi WHERE corsi_id="'.$id.'" ';
     $queryResult= mysqli_query ($this->conn,$querySelect) or die (mysqli_error($this->conn));
@@ -153,7 +134,9 @@ class DBConnection
       while ($row=mysqli_fetch_assoc($queryResult)){
         $arrayGalleria=array(
           'Id'=>$row['id'],
-          'Immagine'=>$row['immagine']
+          'Immagine'=>$row['immagine'],
+          'Alt'=>$row['alt'],
+          'Didascalia'=>$row['didascalia']
         );
         array_push($result,$arrayGalleria);
       }
@@ -208,7 +191,7 @@ class DBConnection
   }
 
   public function insertGalleria($testo,$fileToUpload,$alt){
-    $query1 = "INSERT INTO galleria(immagine,alt,didascalia) VALUES ('$fileToUpload','$testo','$alt')";
+    $query1 = "INSERT INTO galleria(immagine,alt,didascalia) VALUES ('$fileToUpload','$alt',''$testo')";
     $queryResult1 = mysqli_query($this->conn, $query1);
     if (mysqli_affected_rows($this->conn)==0){
       return false;
@@ -314,7 +297,9 @@ class DBConnection
         while ($row=mysqli_fetch_assoc($queryResult)){
           $arrayGalleria=array(
             'Id'=>$row['id'],
-            'Immagine'=>$row['immagine']
+            'Immagine'=>$row['immagine'],
+            'Alt'=>$row['alt'],
+            'Didascalia'=>$row['didascalia']
           );
           array_push($result,$arrayGalleria);
         }

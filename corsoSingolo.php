@@ -13,7 +13,7 @@ $dbOpen=$connection->openConnection();
 $_SESSION["error"] = "";
 
 if ($dbOpen){
-    $corso=$connection->getCorso();
+    $corso=$connection->getCorso($_GET['id']);
 	}
 else {
 		$_SESSION["error"] = "Connessione non stabilita correttamente";

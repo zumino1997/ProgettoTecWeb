@@ -59,7 +59,9 @@ else {
 	  <button id="menuIcon" onclick="menuHamburger()"><i class='fas fa-bars'></i></button>
 	  <ul class="menuItems" id="menuu" >
 	    <li id="currentLink" xml:lang="en">Home</li>
-	    <li><a href="corsi.php">Corsi</a></li>
+	    <li><a href="corsi.php">Corsi</a></li>-
+      <li><a href="abbonamenti.php">Abbonamenti</a></li>
+			<li><a href="news.php">News</a></li>
 	    <li><a href="galleria.php">Galleria</a></li>
 	    <li><a href="staff.php" xml:lang="en">Staff</a></li>
 	    <li><a href="contatti.php">Contatti</a></li>
@@ -101,7 +103,7 @@ else {
         </ul>
         <ul class="anagrafica">
           <li><span>Indirizzo:</span> <?php echo $indirizzo;?></li>
-          <li><span>Data di Nascita:</span> <?php echo date("d-m-Y", strtotime($nascita));?></li>
+          <li><span>Data di Nascita:</span> <?php echo date("d/m/Y", strtotime($nascita));?></li>
           <li><span>Indirizzo</span> <span xml:lang="en">email</span>: <?php echo $email;?></li>
     		</ul>
       </div>
@@ -119,7 +121,7 @@ else {
         </select>
       </li>
       <li>
-        <label for="data">Data:</label>
+        <label for="data">Data: (dd/mm/YYYY) </label>
         <input id="data" name="data" type="text" />
         <?php $errorData=""; if(isset($_SESSION['error']['dataErr'])) { $errorData = $_SESSION['error']['dataErr']; unset($_SESSION['error']['dataErr']); } ?>
       </li>
@@ -143,7 +145,7 @@ else {
         echo '<h1>La tua prenotazione gratuita</h1>';
         foreach ($listaPrenotazioni as $prenotazioni) {
           echo '<p id="pren">Nome Corso: '.$prenotazioni['corso'].'</p>';
-          echo '<p id="pren">Data Corso: '.date("d-m-Y", strtotime($prenotazioni['data'])).'</p>';
+          echo '<p id="pren">Data Corso: (dd/mm/YYYY) '.date("d/m/Y", strtotime($prenotazioni['data'])).'</p>';
           echo '<p id="pren">Ora Corso: '.$prenotazioni['ora'].'</p>';
         }
         echo '<form action="remove_prenotazione.php" method="post">

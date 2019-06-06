@@ -38,6 +38,8 @@ if (session_status() == PHP_SESSION_NONE) {
 	  <ul class="menuItems" id="menuu" >
 			<li><a href="index.php" xml:lang="en">Home</a></li>
 	    <li><a href="corsi.php">Corsi</a></li>
+			<li><a href="abbonamenti.php">Abbonamenti</a></li>
+			<li><a href="news.php">News</a></li>
 			<li><a href="galleria.php">Galleria</a></li>
 	    <li><a href="staff.php" xml:lang="en">Staff</a></li>
 			<li id="currentLink">Contatti</li>
@@ -67,7 +69,7 @@ if (session_status() == PHP_SESSION_NONE) {
 			<p>Cellulare: 347 1234567</p>
 			<h2>I nostri orari</h2>
 			<p>Lunedi - Venerdi: 10:00 - 20:00</p>
-			<a href="#contatti">Salta la mappa</a>
+			<a id="screenReader" href="#nav">Salta la mappa</a>
 		</div>
 
 		<div id="map">
@@ -76,9 +78,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
 		<div class="divGenerico evidenza clearfix">
 			<h1>Come trovarci</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor rhoncus posuere. Integer pellentesque eu nulla eu elementum. Vestibulum molestie risus eu nisl rhoncus suscipit. Aliquam nisi orci, feugiat sit amet nulla in, sodales interdum mi. Sed in felis eget odio cursus ullamcorper ut eu ipsum. Nullam sed ante cursus, facilisis ligula sed, lobortis augue. Nam consequat nibh quis lectus tristique, sit amet varius dui aliquet. Etiam tortor magna, fringilla vel magna eget, viverra convallis turpis. Quisque sit amet neque sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor rhoncus posuere. Integer pellentesque eu nulla eu elementum. Vestibulum molestie risus eu nisl rhoncus suscipit. Aliquam nisi orci, feugiat sit amet nulla in, sodales interdum mi. Sed in felis eget odio cursus ullamcorper ut eu ipsum. Nullam sed ante cursus, facilisis ligula sed, lobortis augue. Nam consequat nibh quis lectus tristique, sit amet varius dui aliquet.</p>
 		</div>
 
 	</div>

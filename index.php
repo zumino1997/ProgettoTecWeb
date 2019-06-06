@@ -5,6 +5,10 @@
 if (session_status() == PHP_SESSION_NONE) {
   session_start();
 }
+
+unset($_SESSION ['paginaCorr']);
+$_SESSION ['paginaCorr']=" ";
+
 ?>
 
 <head>
@@ -24,6 +28,7 @@ if (session_status() == PHP_SESSION_NONE) {
 <link rel="stylesheet" type="text/css" href="CSS/css_index_small_480px.css" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css'/>
+<link rel="stylesheet" type="text/css" href="print.css" media="print"/>
 
 
 <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"/>
@@ -39,6 +44,8 @@ if (session_status() == PHP_SESSION_NONE) {
 	  <ul class="menuItems" id="menuu" >
 	    <li id="currentLink" xml:lang="en">Home</li>
 	    <li><a href="corsi.php">Corsi</a></li>
+			<li><a href="abbonamenti.php">Abbonamenti</a></li>
+			<li><a href="news.php">News</a></li>
 	    <li><a href="galleria.php">Galleria</a></li>
 	    <li><a href="staff.php" xml:lang="en">Staff</a></li>
 	    <li><a href="contatti.php">Contatti</a></li>
@@ -100,12 +107,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
 	</div>
 
-	<div id="footer">
-		<p>Sito <abbr xml:lang="en" title="World Wide Web">Web</abbr> realizzato da: </p>
-		<p>Luca</p>
-		<p>Matteo</p>
-		<p>Franconetti Simone</p>
-	</div>
+<?php require_once __DIR__ . DIRECTORY_SEPARATOR . "footer.html"; ?>
 
 
 

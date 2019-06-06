@@ -69,7 +69,10 @@ else {
 	  <ul class="menuItems" id="menuu" >
       <li><a href="index.php" xml:lang="en">Home</a></li>
 	    <li><a href="corsi.php">Corsi</a></li>
+      <li><a href="abbonamenti.php">Abbonamenti</a></li>
+			<li><a href="news.php">News</a></li>
 	    <li><a href="galleria.php">Galleria</a></li>
+      <li><a href="staff.php" xml:lang="en">Staff</a></li>
 	    <li><a href="contatti.php">Contatti</a></li>
       <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "userbar_mobile.php";?>
 	  </ul>
@@ -85,15 +88,7 @@ else {
 		<div id="breadcrumb">
 			<p>Ti trovi in: Pannello di amministrazione >> Form modifica corsi</p>
 		</div>
-    <?php
-    if ($_SESSION ['successo']){
-      echo "<h1 class=\"center\">Modifica avvenuta con successo</h1>";
-      $_SESSION ['successo']=0;
-    }
-    else{
-      echo "<p></p>";
-    }
-   ?>
+
    <form onsubmit="return checkModCorsi()" action="post_modifica_corsi.php?id=<?php $id ?>" id="login-register-form" enctype="multipart/form-data">
      <fieldset>
        <legend>Modifica il corso</legend>

@@ -24,11 +24,10 @@ h2{
 
 p{
 	font-size: 1.1em;
-	margin:0.8em 0 0.8em 0;
+	margin:0.8em 0;
 }
 
 .center {
-	/* padding: 0.5em; */
 	text-align: center;
 }
 
@@ -48,26 +47,23 @@ MENU
 ******/
 
 #nav {
-	margin:0;
-	padding-left: 2%;
-	padding-right: 2%;
 	text-align: right;
 	background-color: #fff;
 }
 
 #logo {
 	float:left;
-	padding: 0.5em 0 0.5em 0;
+	padding: 1em 0 0 0;
 }
 
 #logo img {
-	max-height: 3.8em;
+	max-height: 3em;
 	vertical-align:middle;
 }
 
 #nav li{
 	display: inline-block;
-	padding: 1.8em 0.8% 1.8em 0.8%;
+	padding: 1.8em 0.25%;
 }
 
 #nav li>a {
@@ -86,7 +82,7 @@ MENU
 	background-color: #E4E4E4;
 }
 
-#nav li:nth-child(6), #nav li:nth-child(7){
+#nav li:nth-child(8), #nav li:nth-child(9){
 	display:none;
 }
 
@@ -98,6 +94,10 @@ MENU
 	color: #fff;
 	background-color: #343434;
 	font-weight: bold;
+}
+
+#currentLink2{
+background-color: red;
 }
 
 
@@ -119,7 +119,7 @@ HEADER
 }
 
 #header img{
-	margin: 1em 0 1em 0;
+	margin: 1em 0;
 	width: 70%;
 	display: none;
 }
@@ -138,7 +138,7 @@ USERBAR
 
 #userBar li{
 	display: inline-block;
-	margin: 0 0.5em 0 0.5em;
+	margin: 0 0.5em;
 }
 
 #userBar li>a {
@@ -163,15 +163,15 @@ CONTENUTO
 }
 
 #primoPiano{
-	padding:0 5% 0 0 ;
+	padding-right:5%;
 	width:60%;
 	float:left;
 	text-align: center;
 }
-/*
+
 #primoPiano p{
 	text-align: center;
-} */
+}
 
 #secondoPiano {
 	text-align: center;
@@ -180,7 +180,6 @@ CONTENUTO
 }
 
 #secondoPiano p{
-	/* padding:0 5%; */
 	text-align: justify;
 }
 
@@ -193,7 +192,7 @@ CONTENUTO
 }
 
 #content{
-	padding:2em 5% 2em 5%;
+	padding:2em 5%;
 	background: #fff;
 	text-align:left;
 	overflow: hidden;
@@ -207,7 +206,7 @@ CONTENUTO
 
 .divGenerico{
 	margin-top: 4em;
-	clear:both;
+	clear:both;						//mettere cleafix su html
 }
 
 .divGenerico ul{
@@ -314,10 +313,12 @@ CONTENUTO
 
 .Sx {
 	float:left;
+	list-style-type: none;
 }
 
 .Dx{
 	display:inline-block;
+	list-style-type: none;
 }
 
 .Card img{
@@ -338,9 +339,7 @@ CSS CONTATTI
 	margin-top: 1.5em;
 }
 
-
 #contatti {
-	/* margin-top:2em; */
 	float:left;
 	min-height: 29em;
 }
@@ -350,8 +349,7 @@ CSS CONTATTI
 }
 
 #contatti p{
-	margin-top: 0.2em;
-	margin-bottom: 0.2em;
+	margin: 0.2em 0;
 }
 
 #contatti h1{
@@ -361,9 +359,6 @@ CSS CONTATTI
 #contatti h2{
 	margin-top: 0.8em;
 	margin-bottom: 0.5em;
-}
-
-#map {
 }
 
 #map iframe{
@@ -401,8 +396,8 @@ CSS CORSI
 
 .pagination{
 	text-align: center;
-	clear: both;
-	padding: 2em 0 2em 0;
+	clear: both;						//mettere clearfix in html
+	padding: 2em 0;
 }
 
 .pagination a {
@@ -448,6 +443,10 @@ CSS LOGIN
 	margin-top: 1.5em;
 	margin-bottom: 1.5em;
 	text-align: center;
+}
+
+#login-register-form legend {
+	margin:auto;
 }
 
 #login-register-form ul {
@@ -574,22 +573,9 @@ PROFILO
 	font-weight: bold;
 }
 
-/* #prenota legend{
-	margin:auto;
-}
-#prenota{
-	padding:2em;
-}
-
-#pren{
-	text-align:center;
-	font-size:1.2em;
-} */
-
 #rem{
 	margin:auto;
 	width:100%;
-	/* text-align:center;  */
 	float:left;
 }
 
@@ -603,6 +589,17 @@ PROFILO
 }
 
 
+
+
+
+#did{
+	color:white;
+	position: absolute;
+	bottom:0;
+	left:0;
+	right:0;
+	font-style: italic;
+}
 /*****
 FOOTER
 ******/
@@ -637,4 +634,10 @@ FOOTER
 	cursor: pointer;
 	background-color: #fff;
 	display: none;
+}
+
+#screenReader{
+	position: absolute;
+	height: 0;
+	overflow:hidden;
 }

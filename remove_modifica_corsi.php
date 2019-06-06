@@ -54,6 +54,8 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 	  <ul class="menuItems" id="menuu" >
 	    <li><a href="index.php" xml:lang="en">Home</a></li>
 	    <li><a href="corsi.php">Corsi</a></li>
+      <li><a href="abbonamenti.php">Abbonamenti</a></li>
+			<li><a href="news.php">News</a></li>
 	    <li><a href="galleria.php">Galleria</a></li>
 	    <li><a href="staff.php" xml:lang="en">Staff</a></li>
 	    <li><a href="contatti.php">Contatti</a></li>

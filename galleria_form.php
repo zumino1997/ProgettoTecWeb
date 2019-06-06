@@ -49,6 +49,7 @@ if (!isset($_SESSION["successo"]))
       <li><a href="index.php" xml:lang="en">Home</a></li>
 	    <li><a href="corsi.php">Corsi</a></li>
 	    <li><a href="galleria.php">Galleria</a></li>
+      <li><a href="staff.php" xml:lang="en">Staff</a></li>
 	    <li><a href="contatti.php">Contatti</a></li>
       <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "userbar_mobile.php";?>
 	  </ul>

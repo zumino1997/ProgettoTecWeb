@@ -66,6 +66,8 @@ else {
     <ul class="menuItems" id="menuu" >
 			<li xml:lang="en"><a href="index.php">Home</a></li>
 			<li id="currentLink">Corsi</li>
+      <li><a href="abbonamenti.php">Abbonamenti</a></li>
+      <li><a href="news.php">News</a></li>
       <li><a href="galleria.php">Galleria</a></li>
 			<li><a href="staff.php" xml:lang="en">Staff</a></li>
 			<li><a href="contatti.php">Contatti</a></li>
