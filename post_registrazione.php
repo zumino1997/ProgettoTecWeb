@@ -43,12 +43,13 @@ if ($dbOpen){
     $passwordErr=valPassword($passwordR);
     $passwordErr1=valPassword1($passwordR,$passwordR1);
     $reg=valReg($nomeErr,$cognomeErr,$cittaErr,$nascitaErr,$indirizzoErr,$emailErr,$passwordErr,$passwordErr1);
-
+    $data2 = str_replace('/', '-', $data );
+    $newDate = date("Y-m-d", strtotime($data2));
   }
   if ($reg){      //se non c'è alcun errore negli input
     $passwordR=md5($passwordR);
     if (!$connection->getUser2($emailR)){         //se la mail non è già esistente
-      $regi=$connection->insertUser($nome,$cognome,$citta,$indirizzo,$nascita,$emailR,$passwordR);
+      $regi=$connection->insertUser($nome,$cognome,$citta,$indirizzo,$newDate,$emailR,$passwordR);
       $connection->closeConnection();
       $_SESSION["email"]=$emailR;
       $_SESSION["error"] = "";
