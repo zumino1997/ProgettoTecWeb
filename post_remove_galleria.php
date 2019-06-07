@@ -11,8 +11,8 @@ $connection = new DBConnection();
 $dbOpen=$connection->openConnection();
 
 if ($dbOpen){
-    echo $_GET['rimuovi'];
     $connection->removeGalleria($_GET['rimuovi']);
+    $_SESSION["successoR"]=1;
   }
   else {
   		echo "Connessione non stabilita correttamente";     //if (dbOpen)

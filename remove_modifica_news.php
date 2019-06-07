@@ -11,8 +11,11 @@ if (session_status() == PHP_SESSION_NONE) {
 
 $_SESSION ['paginaCorr']="";
 
-if (!isset($_SESSION["successo"]))
-  $_SESSION["successo"]=0;
+if (!isset($_SESSION["successoM"]))
+  $_SESSION["successoM"]=0;
+
+if (!isset($_SESSION["successoR"]))
+    $_SESSION["successoR"]=0;
 
 if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 	header("Location: index.php");
@@ -84,11 +87,22 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
       <h1>Elimina <span xml:lang="en">News</span></h1>
       <p class="center">Per eliminare una delle <span xml:lang="en">news</span> all'interno della sezione "<span xml:lang="en">News</span>",
          premere il pulsante elimina al fianco del titolo corrispondente.</p>
+     <h2 class="successo">
+        <?php
+         if ($_SESSION ['successoR']){
+           echo "Rimozione avvenuta con successo";
+           $_SESSION ['successoR']=0;
+         }
+         else{
+           echo "<p></p>";
+         }
+        ?>
+      </h2>
          <?php
            if(!empty($listaNews))
              foreach ($listaNews as $news) {
                echo'
-                 <form id="rem" action="post_remove_modifica_news.php?id='.$news['Id'].'">
+                 <form id="rem" action="post_remove_news.php?id='.$news['Id'].'">
                    <p id="remP">'.$news['Titolo'].'</p><input type="hidden" value="'.$news['Id'].'" name="rimuovi"/>
                    <input type="submit" class="button" value="Rimuovi '.$news['Titolo'].'" name="submit"/>
                  </form>';
@@ -102,9 +116,9 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
          premere il pulsante elimina al fianco del titolo corrispondente.</p>
       <h2 class="successo">
          <?php
-          if ($_SESSION ['successo']){
-            echo "<h1 class=\"center\">Modifica avvenuta con successo</h1>";
-            $_SESSION ['successo']=0;
+          if ($_SESSION ['successoM']){
+            echo "Modifica avvenuta con successo";
+            $_SESSION ['successoM']=0;
           }
           else{
             echo "<p></p>";

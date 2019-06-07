@@ -32,8 +32,10 @@ $_SESSION["error"] = array(
 
 
 if ($dbOpen)
-  if($cor)
+  if($cor){
     $connection->updateCorsi($_GET['update'],$_GET['titolo'],$_GET['testo'],$_GET['testoLong'],$_GET['alt']);
+    $_SESSION["successoM"]=1;
+  }
   else {
     header("Location: modifica_corsi_form.php?modifica=".$id);
     exit();

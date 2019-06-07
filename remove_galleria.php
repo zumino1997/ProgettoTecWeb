@@ -11,6 +11,9 @@ if (session_status() == PHP_SESSION_NONE) {
 
 $_SESSION ['paginaCorr']="";
 
+if (!isset($_SESSION["successoR"]))
+    $_SESSION["successoR"]=0;
+
 if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 	header("Location: index.php");
 	exit();
@@ -81,6 +84,17 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
       <h1>Elimina foto galleria</h1>
       <p class="center">Per eliminare una delle immagini inserite all'interno della sezione "Galleria",
          premere il pulsante elimina al fianco del percorso dellà immagine corrispondente.</p>
+      <h2 class="successo">
+         <?php
+          if ($_SESSION ['successoR']){
+            echo "Rimozione avvenuta con successo";
+            $_SESSION ['successoR']=0;
+          }
+          else{
+            echo "<p></p>";
+          }
+        ?>
+      </h2>
          <?php
              if(!empty($listaGalleria))
                foreach ($listaGalleria as $galleria) {

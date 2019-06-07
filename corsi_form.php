@@ -69,15 +69,7 @@ $_SESSION ['paginaCorr']="";
 		<div id="breadcrumb">
 			<p>Ti trovi in: Pannello di amministrazione >> Inserimento corsi</p>
 		</div>
-    <?php
-    if ($_SESSION ['successo']){
-      echo "<h1 class=\"center\">Inserimento avvenuto con successo</h1>";
-      $_SESSION ['successo']=0;
-    }
-    else{
-      echo "<p></p>";
-    }
-   ?>
+
 		<form onsubmit="return checkInsCorsi()" action="post_corsi.php" method="post" id="login-register-form" enctype="multipart/form-data">
 			<fieldset>
 				<legend>Inserisci un nuovo corso</legend>

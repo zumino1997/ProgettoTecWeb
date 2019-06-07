@@ -12,6 +12,7 @@ $dbOpen=$connection->openConnection();
 
 if ($dbOpen){
   $connection->removeCorsi($_GET['rimuovi']);
+  $_SESSION["successoR"]=1;
 }
 else {
 		echo "Connessione non stabilita correttamente";     //if (dbOpen)

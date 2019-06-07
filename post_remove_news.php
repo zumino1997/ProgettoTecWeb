@@ -13,8 +13,8 @@ $dbOpen=$connection->openConnection();
 
 
 if ($dbOpen){
-echo $_GET['rimuovi'];
-$connection->removeNews($_GET['rimuovi']);
+  $connection->removeNews($_GET['rimuovi']);
+  $_SESSION["successoR"]=1;
 }
 else {
 		echo "Connessione non stabilita correttamente";     //if (dbOpen)

@@ -1,9 +1,13 @@
 body{
-	line-height: 1.4em;
+	line-height: 1.7em;
+}
+
+h1{
+	margin:0;
 }
 
 #header{
-	padding: 6em 0 3em 0;
+	padding: 5em 0 2em 0;
 }
 
 #header img{
@@ -15,12 +19,21 @@ body{
 	display:none;
 }
 
+#content {
+	padding-top:1em;
+}
+
 #content #breadcrumb p{
 	font-size: 0.9em;
 }
 
 .divGenerico{
 	margin-top: 0;
+	padding:1em;
+}
+
+.divGenerico ul{
+	padding-left: 0;
 }
 
 .divDx, .divSx {
@@ -31,7 +44,14 @@ body{
 	display:none;
 }
 
-.Card img {display: none;}
+.Card{
+	padding:1em 0 0 0 ;
+	width: 100%;
+}
+
+.Card img {
+	display: none;
+}
 
 #footer p {
 	font-size: 0.9em;
@@ -105,4 +125,13 @@ h1{
 /*contatti*/
 #map {
 	display: none;
+}
+
+#rem{
+	text-align: right;
+}
+
+#remP{
+	display:inline;
+	width: auto;
 }

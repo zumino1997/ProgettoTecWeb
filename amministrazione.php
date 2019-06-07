@@ -80,7 +80,16 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 			<h1>Pannello di amministrazione</h1>
 			<p>Dal pannello di amministrazione è possibile inserire, modificare e rimuovere
 			i contenuti che verranno visualizzati all'interno del sito <abbr xml:lang="en" xml:title="World Wide Web">web</abbr></p>
-			<ul>
+      <?php
+      if ($_SESSION ['successo']){
+        echo "<h2 class=\"successo\">Inserimento avvenuto con successo</h1>";
+        $_SESSION ['successo']=0;
+      }
+      else{
+        echo "<p></p>";
+      }
+      ?>
+      <ul>
 				<li><a href="corsi_form.php">Pagina inserimento corsi</a></li>
 				<li><a href="news_form.php">Pagina inserimento news</a></li>
 				<li><a href="galleria_form.php">Pagina inserimento galleria</a></li>
@@ -92,7 +101,7 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 
 		</div>
 	</div>
-  
+
   <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "footer.html"; ?>
 
 

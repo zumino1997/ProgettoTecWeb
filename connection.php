@@ -191,7 +191,7 @@ class DBConnection
   }
 
   public function insertGalleria($testo,$fileToUpload,$alt){
-    $query1 = "INSERT INTO galleria(immagine,alt,didascalia) VALUES ('$fileToUpload','$alt',''$testo')";
+    $query1 = "INSERT INTO galleria(immagine,alt,didascalia) VALUES ('$fileToUpload','$alt','$testo')";
     $queryResult1 = mysqli_query($this->conn, $query1);
     if (mysqli_affected_rows($this->conn)==0){
       return false;
@@ -321,6 +321,17 @@ class DBConnection
     public function updateNews($id,$titolo,$testo,$alt){
       $query = 'UPDATE news SET titolo="'.$titolo.'", testo="'.$testo.'", alt="'.$alt.'" WHERE id="'.$id.'"';
       mysqli_query($this->conn,$query);
+      if (mysqli_affected_rows($this->conn)==0){
+        return false;
+      }
+      else{
+        return true;
+      }
+    }
+
+    public function insertPrenotazione($email,$corso,$data,$ora){
+      $query1 = "INSERT INTO prenotazioni(email,corso,data,ora) VALUES ('$email','$corso','$data','$ora')";
+      $queryResult1 = mysqli_query($this->conn, $query1);
       if (mysqli_affected_rows($this->conn)==0){
         return false;
       }

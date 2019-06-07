@@ -67,7 +67,7 @@ $_SESSION["error"] = array(
     'err' => $err
 );
 
-  header("Location: corsi_form.php");
+  header("Location: amministrazione.php");
   exit();
 
 $connection->closeConnection();

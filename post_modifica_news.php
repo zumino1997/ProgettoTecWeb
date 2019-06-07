@@ -31,7 +31,7 @@ $_SESSION["error"] = array(
 if ($dbOpen)
   if($news){
     $connection->updateNews($_GET['update'],$_GET['titolo'],$_GET['testo'],$_GET['alt']);
-    $_SESSION["successo"]=1;
+    $_SESSION["successoM"]=1;
   }
   else {
     header("Location: modifica_news_form.php?modifica=".$id);

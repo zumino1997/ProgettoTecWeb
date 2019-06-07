@@ -98,19 +98,19 @@ else {
 
  ?>
 
-      <div id="divGenerico">
-    		<h1 class="center">Informazioni Utente</h1>
-        <ul class="anagrafica">
-          <li><span>Nome:</span> <?php echo $nome;?></li>
-          <li><span>Cognome:</span> <?php echo $cognome;?></li>
-          <li><span>Citt&agrave;</span>: <?php echo $citta;?></li>
-        </ul>
-        <ul class="anagrafica">
-          <li><span>Indirizzo:</span> <?php echo $indirizzo;?></li>
-          <li><span>Data di Nascita:</span> <?php echo date("d/m/Y", strtotime($nascita));?></li>
-          <li><span>Indirizzo</span> <span xml:lang="en">email</span>: <?php echo $email;?></li>
-    		</ul>
-      </div>
+  <div id="divGenerico">
+		<h1 class="center">Informazioni Utente</h1>
+    <ul class="anagrafica">
+      <li><span>Nome:</span> <?php echo $nome;?></li>
+      <li><span>Cognome:</span> <?php echo $cognome;?></li>
+      <li><span>Citt&agrave;</span>: <?php echo $citta;?></li>
+    </ul>
+    <ul class="anagrafica">
+      <li><span>Indirizzo:</span> <?php echo $indirizzo;?></li>
+      <li><span>Data di Nascita:</span> <?php echo date("d/m/Y", strtotime($nascita));?></li>
+      <li><span>Indirizzo</span> <span xml:lang="en">email</span>: <?php echo $email;?></li>
+		</ul>
+  </div>
 
   <form onsubmit="return checkInsPrenotazioni()" action="post_utente.php" method="post" id="login-register-form" enctype="multipart/form-data">
     <fieldset>
@@ -148,9 +148,9 @@ else {
       if(!empty($listaPrenotazioni)){
         echo '<h1>La tua prenotazione gratuita</h1>';
         foreach ($listaPrenotazioni as $prenotazioni) {
-          echo '<p id="pren">Nome Corso: '.$prenotazioni['corso'].'</p>';
-          echo '<p id="pren">Data Corso: (dd/mm/YYYY) '.date("d/m/Y", strtotime($prenotazioni['data'])).'</p>';
-          echo '<p id="pren">Ora Corso: '.$prenotazioni['ora'].'</p>';
+          echo '<p><span class="pren">Nome Corso: </span>'.$prenotazioni['corso'].'</p>';
+          echo '<p><span class="pren">Data Corso (dd/mm/YYYY): </span>'.date("d/m/Y", strtotime($prenotazioni['data'])).'</p>';
+          echo '<p><span class="pren">Ora Corso: </span>'.$prenotazioni['ora'].'</p>';
         }
         echo '<form action="remove_prenotazione.php" method="post">
                 <input class="button" value ="Elimina Prenotazione" type="submit"/>

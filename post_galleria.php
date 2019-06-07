@@ -59,7 +59,7 @@ $_SESSION["error"] = array(
     'err' => $err
 );
 
-  header("Location: galleria_form.php");
+  header("Location: amministrazione.php");
   exit();
 
 $connection->closeConnection();

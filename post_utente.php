@@ -30,10 +30,10 @@ if ($dbOpen){
         'ora' => $ora
     );
 
-    echo count($listaPrenotazioni);
+    // echo count($listaPrenotazioni);
 
     if(valPrenotazioni($dataErr,$oraErr))
-      if(!count($listaPrenotazioni))
+      if(empty($listaPrenotazioni))
         $connection->insertPrenotazione($email,$corso,$newDate,$ora);
       else
         $emailErr="Lezione gratuita già prenotata";
@@ -48,7 +48,7 @@ if ($dbOpen){
 
 }
 
-header("Location: utente.php");
+header("Location: profilo.php");
 exit();
 $connection->closeConnection();
 

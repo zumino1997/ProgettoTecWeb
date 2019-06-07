@@ -148,6 +148,15 @@ USERBAR
 /*****
 CONTENUTO
 ******/
+
+.successo{
+	color:red;
+}
+
+.pren{
+	font-weight: bold;
+}
+
 #linkSfondoScuro{
 	color:white;
 	padding:1em;
@@ -493,7 +502,7 @@ CSS LOGIN
 .error{
 	font-size: 0.9em;
 	color: red;
-	display
+	display:block;
 }
 
 fieldset{

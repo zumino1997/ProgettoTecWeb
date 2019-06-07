@@ -11,6 +11,12 @@ if (session_status() == PHP_SESSION_NONE) {
 
 $_SESSION ['paginaCorr']="";
 
+if (!isset($_SESSION["successoM"]))
+  $_SESSION["successoM"]=0;
+
+if (!isset($_SESSION["successoR"]))
+    $_SESSION["successoR"]=0;
+
 if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 	header("Location: index.php");
 	exit();
@@ -82,11 +88,22 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
       <h1>Elimina Corsi</h1>
       <p class="center">Per eliminare uno dei corsi inseriti all'interno della sezione "Corsi",
          premere il pulsante elimina al fianco del titolo corrispondente.</p>
+     <h2 class="successo">
+        <?php
+         if ($_SESSION ['successoR']){
+           echo "Rimozione avvenuta con successo";
+           $_SESSION ['successoR']=0;
+         }
+         else{
+           echo "<p></p>";
+         }
+        ?>
+      </h2>
       <?php
           if(!empty($listaCorsi))
             foreach ($listaCorsi as $corsi) {
               echo'
-                <form id="rem" action="post_remove_modifica_corsi.php?id='.$corsi['Id'].'">
+                <form id="rem" action="post_remove_corsi.php?id='.$corsi['Id'].'">
                   <p id="remP">'.$corsi['Titolo'].'</p><input type="hidden" value="'.$corsi['Id'].'" name="rimuovi"/>
                   <input type="submit" class="button" value="Rimuovi  '.$corsi['Titolo'].'" name="submit"/>
                 </form>';
@@ -96,6 +113,17 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
       <h1>Modifica Corsi</h1>
       <p class="center">Per modificare uno dei corsi inseriti all'interno della sezione "Corsi",
          premere il pulsante elimina al fianco del titolo corrispondente.</p>
+     <h2 class="successo">
+        <?php
+         if ($_SESSION ['successoM']){
+           echo "Modifica avvenuta con successo";
+           $_SESSION ['successoM']=0;
+         }
+         else{
+           echo "<p></p>";
+         }
+        ?>
+      </h2>
       <?php
       if(!empty($listaCorsi))
         foreach ($listaCorsi as $corsi) {

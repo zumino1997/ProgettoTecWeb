@@ -71,15 +71,6 @@ if (!isset($_SESSION["successo"]))
 		<div id="breadcrumb">
 			<p>Ti trovi in: Pannello di amministrazione >> Inserimento <span xml:lang="en">News</span></p>
 		</div>
-    <?php
-    if ($_SESSION ['successo']){
-      echo "<h1 class=\"center\">Inserimento avvenuto con successo</h1>";
-      $_SESSION ['successo']=0;
-    }
-    else{
-      echo "<p></p>";
-    }
-   ?>
 		<form onsubmit="return checkInsNews()" action="post_news.php" method="post" id="login-register-form" enctype="multipart/form-data">
 			<fieldset>
 				<legend>Inserisci una nuova news</legend>

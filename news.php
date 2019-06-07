@@ -83,32 +83,37 @@ else {
 
     <?php
     $i=0;
-    foreach ($listaNews as $news) {
-      if ($i==0){
-        echo '<div id="primoPiano">';
-        echo '<h1>'.$news['Titolo'].'</h1>';
-        echo '<img src="'.$news['Immagine'].'" alt="'.$news['Alt'].'"/>';
-        echo '<p id="time">'.$news['Data'].'</p>';
-        echo '<p>'.$news['Testo'].'</p>';
-        echo '</div>';
+    if (!empty($listaNews)){
+      foreach ($listaNews as $news) {
+        if ($i==0){
+          echo '<div id="primoPiano">';
+          echo '<h1>'.$news['Titolo'].'</h1>';
+          echo '<img src="'.$news['Immagine'].'" alt="'.$news['Alt'].'"/>';
+          echo '<p id="time">'.$news['Data'].'</p>';
+          echo '<p>'.$news['Testo'].'</p>';
+          echo '</div>';
+        }
+        if ($i==1){
+          echo '<div id="secondoPiano">';
+          echo '<h1>'.$news['Titolo'].'</h1>';
+          echo '<img src="'.$news['Immagine'].'" alt="'.$news['Alt'].'"/>';
+          echo '<p id="time">'.$news['Data'].'</p>';
+          echo '<p>'.$news['Testo'].'</p>';
+          echo '</div>';
+        }
+        if ($i>1 && $i<=6){
+          echo '<div class="divSx clearfix">';
+          echo '<h1>'.$news['Titolo'].'</h1>';
+          echo '<img src="'.$news['Immagine'].'" alt="'.$news['Alt'].'"/>';
+          echo '<p id="time">'.$news['Data'].'</p>';
+          echo '<p>'.$news['Testo'].'</p>';
+          echo '</div>';
+        }
+        $i++;
       }
-      if ($i==1){
-        echo '<div id="secondoPiano">';
-        echo '<h1>'.$news['Titolo'].'</h1>';
-        echo '<img src="'.$news['Immagine'].'" alt="'.$news['Alt'].'"/>';
-        echo '<p id="time">'.$news['Data'].'</p>';
-        echo '<p>'.$news['Testo'].'</p>';
-        echo '</div>';
-      }
-      if ($i>1 && $i<=6){
-        echo '<div class="divSx clearfix">';
-        echo '<h1>'.$news['Titolo'].'</h1>';
-        echo '<img src="'.$news['Immagine'].'" alt="'.$news['Alt'].'"/>';
-        echo '<p id="time">'.$news['Data'].'</p>';
-        echo '<p>'.$news['Testo'].'</p>';
-        echo '</div>';
-      }
-      $i++;
+    }
+    else {
+      echo '<h1>Non &egrave; disponibile alcuna <span xml:lang="en">news</span> </h1>';
     } ?>
 
 	</div>
