@@ -76,21 +76,19 @@ $_SESSION ['paginaCorr']="";
       </p>
 		</div>
 
-    <div class="divGenerico">
     <div class="Card Sx">
-      <h2>Abbonamento Mensile</h2>
-      <p><b>Costo: 60 euro</b></p>
+      <h2>Abbonamento<br/>Mensile</h2>
+      <p class="bold">Costo: 60 euro</p>
       <p>Con l'abbonamento mensile sarà possibile accedere alle nostre strutture tutti i giorni della settimana
       durante gli orari indicati nella sezione "Contatti".  </p>
     </div>
 
     <div class="Card Dx">
-      <h2>Abbonamento Trimestrale</h2>
-      <p><b>Costo: 150 euro</b></p>
+      <h2>Abbonamento<br/>Trimestrale</h2>
+      <p class="bold">Costo: 150 euro</p>
       <p>Con l'abbonamento trimestrale sarà possibile ottenere un'esperienza completa presso la nostra struttura risparmiando
       più del 15%! Inoltre, in omaggio per i clienti che sottoscriveranno questo abbonamento, sarà possibile ricevere in omaggio
       una ingresso presso il centro Benessere "Pincopallino" </p>
-    </div>
     </div>
 
 	</div>

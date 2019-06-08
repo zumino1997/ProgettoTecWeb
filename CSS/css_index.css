@@ -31,6 +31,14 @@ p{
 	text-align: center;
 }
 
+.bold{
+	font-weight: bold;
+}
+
+.under{
+	text-decoration: underline;
+}
+
 .clearfix{
 	clear:both;
 }
@@ -69,17 +77,16 @@ MENU
 #nav li>a {
 	border-radius: 0.8em;
 	padding: 0.5em;
-	color: #044B5D;
+	color: #343434;
 }
 
 #nav li>a:link {
-	color: #044B5D;
+	color: #343434;
 	text-decoration: none;
 }
 
 #nav li>a:hover{
-	color: #000;
-	background-color: #E4E4E4;
+	color: #FFAF56;
 }
 
 #nav li:nth-child(8), #nav li:nth-child(9){
@@ -91,7 +98,7 @@ MENU
 	border-radius: 0.8em;
 	padding: 0.5em;
 	cursor:default;
-	color: #fff;
+	color:#FFAF56;
 	background-color: #343434;
 	font-weight: bold;
 }
@@ -104,7 +111,7 @@ HEADER
 
 #header{
 	color:white;
-	background-color: black;
+	background-color: #343434;
 	background-image: url("../IMG/banner.jpg");
 	height: 16em;
 	background-size:cover;
@@ -138,6 +145,10 @@ USERBAR
 	color:white;
 }
 
+#userBar li>a:hover {
+	color:#FFAF56;
+}
+
 #currentLink2{
 	background-color: white;
 	color:black;
@@ -158,9 +169,9 @@ CONTENUTO
 }
 
 #linkSfondoScuro{
-	color:white;
+	color:#044B5D;
 	padding:1em;
-	background-color: #0074e4;
+	background-color: #FFAF56;
 	border-radius: 1em;
 	line-height: 4em;
 }
@@ -174,10 +185,6 @@ CONTENUTO
 	padding-right:5%;
 	width:60%;
 	float:left;
-	text-align: center;
-}
-
-#primoPiano p{
 	text-align: center;
 }
 
@@ -220,13 +227,6 @@ CONTENUTO
 .divGenerico ul{
 	padding-left: 3em;
 	line-height: 1.7em;
-	list-style:none;
-}
-
-.divGenerico ul>li:before {
-  content: "+";
-	padding-right: 1em;
-  color: #044B5D;
 }
 
 .divGenerico img{
@@ -257,7 +257,7 @@ CONTENUTO
 	height: 100%;
 	width: 50%;
 	background-color: #343434;
-	color:#fff;
+	color:#FFAF56;
 	padding: 0 2% 0 2%;
 }
 
@@ -437,7 +437,8 @@ CSS CORSI
 	padding-top: 5%;
 }
 #fila img{
-	width: 50%;
+	height: 7em;
+	width: 7em;
 	border-radius: 50%;
 }
 
