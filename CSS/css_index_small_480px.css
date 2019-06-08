@@ -6,6 +6,9 @@ h1{
 	margin:0;
 }
 
+p{
+	margin-bottom:0;
+}
 
 #header{
 	padding: 5em 0 2em 0;
@@ -31,6 +34,12 @@ h1{
 .divGenerico{
 	margin-top: 0;
 	padding:1em;
+	text-align: center;
+}
+
+.divGenerico img{
+	margin-top: 0.5em;
+	width:60%;
 }
 
 .divGenerico ul{
@@ -52,6 +61,10 @@ h1{
 
 .Card img {
 	display: none;
+}
+
+.Card h2{
+	margin:0;
 }
 
 #footer p {
@@ -96,6 +109,33 @@ h1{
 }
 /*CORSI*/
 
+/*NEWS*/
+
+#primoPiano{
+	float: none;
+	padding: 0;
+	width: 100%;
+	margin-bottom: 1em;
+}
+
+#primoPiano img{
+	margin-top: 0.5em;
+}
+
+#secondoPiano{
+	float: none;
+	width: 100%;
+}
+
+#secondoPiano p {
+	text-align: center;
+}
+
+#secondoPiano img{
+	width: 60%;
+	margin-top: 0.5em;
+}
+
 /*LOGIN*/
 #delete-login-button{
 	display:none;
@@ -104,7 +144,8 @@ h1{
 
 /*STAFF*/
 #fila img{
-	width: 40%;
+	height: 5em;
+	width: 5em;
 }
 /*STAFF*/
 
@@ -126,6 +167,10 @@ h1{
 /*contatti*/
 #map {
 	display: none;
+}
+
+#contatti{
+	margin-bottom: 1em;
 }
 
 #rem{

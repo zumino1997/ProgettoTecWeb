@@ -50,7 +50,7 @@ if(isset($_POST["inserisci"])) {
         $err = "Inserire un'immagine";
     }
 
-    if ($uploadOk == 1 && move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file && $news)) {
+    if ($uploadOk == 1 && move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file) && $news) {
         $connection->insertNews($titolo,$testo,$target_file,$alt);
         $_SESSION["successo"]=1;
       }
