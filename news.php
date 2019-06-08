@@ -77,7 +77,7 @@ else {
 
 	<div id="content">
 		<div id="breadcrumb">
-			<p>Ti trovi in: <span xml:lang="en">Home</span></p>
+			<p>Ti trovi in: <span xml:lang="en">News</span></p>
 		</div>
 
 
