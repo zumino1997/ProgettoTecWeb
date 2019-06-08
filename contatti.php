@@ -83,7 +83,7 @@ $_SESSION ['paginaCorr']="";
 
 		<div class="divGenerico evidenza clearfix">
 			<h1>Come trovarci</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor rhoncus posuere. Integer pellentesque eu nulla eu elementum. Vestibulum molestie risus eu nisl rhoncus suscipit. Aliquam nisi orci, feugiat sit amet nulla in, sodales interdum mi. Sed in felis eget odio cursus ullamcorper ut eu ipsum. Nullam sed ante cursus, facilisis ligula sed, lobortis augue. Nam consequat nibh quis lectus tristique, sit amet varius dui aliquet.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor rhoncus posuere. Integer pellentesque eu nulla eu elementum. Vestibulum molestie risus eu nisl rhoncus suscipit. Aliquam nisi orci, feugiat sit amet nulla in, sodales interdum mi.</p>
 		</div>
 
 	</div>

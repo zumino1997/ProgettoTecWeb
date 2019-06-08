@@ -85,24 +85,16 @@ else {
     $i=0;
     if (!empty($listaNews)){
       foreach ($listaNews as $news) {
-        if ($i==0){
-          echo '<div id="primoPiano">';
+        if ($i%2==0){
+          echo '<div class="divSx">';
           echo '<h1>'.$news['Titolo'].'</h1>';
           echo '<img src="'.$news['Immagine'].'" alt="'.$news['Alt'].'"/>';
           echo '<p id="time">'.$news['Data'].'</p>';
           echo '<p>'.$news['Testo'].'</p>';
           echo '</div>';
         }
-        if ($i==1){
-          echo '<div id="secondoPiano">';
-          echo '<h1>'.$news['Titolo'].'</h1>';
-          echo '<img src="'.$news['Immagine'].'" alt="'.$news['Alt'].'"/>';
-          echo '<p id="time">'.$news['Data'].'</p>';
-          echo '<p>'.$news['Testo'].'</p>';
-          echo '</div>';
-        }
-        if ($i>1 && $i<=6){
-          echo '<div class="divSx clearfix">';
+        else{
+          echo '<div class="divDx">';
           echo '<h1>'.$news['Titolo'].'</h1>';
           echo '<img src="'.$news['Immagine'].'" alt="'.$news['Alt'].'"/>';
           echo '<p id="time">'.$news['Data'].'</p>';

@@ -66,64 +66,64 @@ $_SESSION ['paginaCorr']="";
     <div id="staff">
       <div id="fila">
         <img src="IMG/p1" alt="personal trainer" />
-        <p>Anna Zanon</p>
-        <p xml:lang="en">Step &amp; total body</p>
+        <p class="bold">Anna Zanon</p>
+        <p class="under" xml:lang="en">Step &amp; total body</p>
         <p>
           Telefono: 3334455666
         </p>
       </div>
       <div id="fila">
         <img src="IMG/p2" alt="personal trainer" />
-        <p>Valerio Rossi</p>
-        <p xml:lang="en">Funktional</p>
+        <p class="bold">Valerio Rossi</p>
+        <p class="under" xml:lang="en">Funktional</p>
         <p>
           Telefono: 3334455666
         </p>
       </div>
       <div id="fila">
         <img src="IMG/p3" alt="personal trainer" />
-        <p>Giorgio Bassini</p>
-        <p xml:lang="en">Personal Trainer</p>
+        <p class="bold">Giorgio Bassini</p>
+        <p class="under" xml:lang="en">Personal Trainer</p>
         <p>
           Telefono: 3334455666
         </p>
       </div>
       <div id="fila">
         <img src="IMG/p4" alt="personal trainer" />
-        <p>Elena Ferrari</p>
-        <p>Ginnastica dolce</p>
+        <p class="bold">Elena Ferrari</p>
+        <p class="under" >Ginnastica dolce</p>
         <p>
           Telefono: 3334455666
         </p>
       </div>
       <div id="fila">
         <img src="IMG/p5" alt="personal trainer" />
-        <p>Sofia Verdi</p>
-        <p xml:lang="en">Pound</p>
+        <p class="bold">Sofia Verdi</p>
+        <p class="under" xml:lang="en">Pound</p>
         <p>
           Telefono: 3334455666
         </p>
       </div>
       <div id="fila">
         <img src="IMG/p6" alt="personal trainer" />
-        <p>Riccardo Moro</p>
-        <p xml:lang="en">Personal Trainer</p>
+        <p class="bold">Riccardo Moro</p>
+        <p class="under" xml:lang="en">Personal Trainer</p>
         <p>
           Telefono: 3334455666
         </p>
       </div>
       <div id="fila">
         <img src="IMG/p7" alt="personal trainer" />
-        <p>Beatrice Lana</p>
-        <p xml:abbr title="Glutei, addominali, glutei">G.A.G</p>
+        <p class="bold">Beatrice Lana</p>
+        <p class="under" xml:abbr title="Glutei, addominali, glutei">G.A.G</p>
         <p>
           Telefono: 3334455666
         </p>
       </div>
       <div id="fila">
         <img src="IMG/p8" alt="personal trainer" />
-        <p>Simone Peruzzo</p>
-        <p xml:lang="en">Fitboxe</p>
+        <p class="bold">Simone Peruzzo</p>
+        <p class="under" xml:lang="en">Fitboxe</p>
         <p>
           Telefono: 3334455666
         </p>
