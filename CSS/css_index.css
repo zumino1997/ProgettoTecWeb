@@ -385,8 +385,9 @@ CSS CONTATTI
 CSS CORSI
 *******/
 .box h1{
+	font-size: 1.5em;
 	margin: 0;
-	padding-top: 1em;
+	padding-bottom: 1em;
 }
 
 .box img{

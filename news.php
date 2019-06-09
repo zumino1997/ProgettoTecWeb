@@ -89,7 +89,7 @@ else {
           echo '<div class="divSx">';
           echo '<h1>'.$news['Titolo'].'</h1>';
           echo '<img src="'.$news['Immagine'].'" alt="'.$news['Alt'].'"/>';
-          echo '<p id="time">'.$news['Data'].'</p>';
+          echo '<p id="time">'.date("d/m/Y H:m", strtotime($news['Data'])).'</p>';
           echo '<p>'.$news['Testo'].'</p>';
           echo '</div>';
         }
@@ -97,7 +97,7 @@ else {
           echo '<div class="divDx">';
           echo '<h1>'.$news['Titolo'].'</h1>';
           echo '<img src="'.$news['Immagine'].'" alt="'.$news['Alt'].'"/>';
-          echo '<p id="time">'.$news['Data'].'</p>';
+          echo '<p id="time">'.date("d/m/Y H:m", strtotime($news['Data'])).'</p>';
           echo '<p>'.$news['Testo'].'</p>';
           echo '</div>';
         }
