@@ -98,6 +98,8 @@ class DBConnection
           'Descrizione'=>$row['descrizione'],
           'DescrizioneL'=>$row['descrizione_long'],
           'Alt'=>$row['alt'],
+          'Giorno' => $row['giorno'],
+          'Ora' => $row['ora'],
           'Immagine'=>$row['immagine']
         );
       }
@@ -168,8 +170,8 @@ class DBConnection
 
 
 
-  public function insertCorsi($titolo,$testo,$fileToUpload,$testoLong,$alt){
-    $query1 = "INSERT INTO corsi(titolo,descrizione,immagine,descrizione_long,alt) VALUES ('$titolo','$testo','$fileToUpload','$testoLong','$alt')";
+  public function insertCorsi($titolo,$testo,$fileToUpload,$testoLong,$alt,$ora,$giorno){
+    $query1 = "INSERT INTO corsi(titolo,descrizione,immagine,descrizione_long,alt,ora,giorno) VALUES ('$titolo','$testo','$fileToUpload','$testoLong','$alt','$ora','$giorno')";
     $queryResult1 = mysqli_query($this->conn, $query1);
     if (mysqli_affected_rows($this->conn)==0){
       return false;
@@ -307,8 +309,8 @@ class DBConnection
       }
     }
 
-    public function updateCorsi($id,$titolo,$testo,$testoLong,$alt){
-      $query = 'UPDATE corsi SET titolo="'.$titolo.'", descrizione="'.$testo.'", descrizione_long="'.$testoLong.'", alt="'.$alt.'" WHERE corsi_id="'.$id.'"';
+    public function updateCorsi($id,$titolo,$testo,$testoLong,$alt,$giorno,$ora){
+      $query = 'UPDATE corsi SET titolo="'.$titolo.'", descrizione="'.$testo.'", descrizione_long="'.$testoLong.'", alt="'.$alt.'", ora="'.$ora.'", giorno="'.$giorno.'" WHERE corsi_id="'.$id.'"';
       mysqli_query($this->conn,$query);
       if (mysqli_affected_rows($this->conn)==0){
         return false;

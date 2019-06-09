@@ -47,7 +47,7 @@ if (!isset($_SESSION["successo"]))
 <body>
 	<div id="nav">
 	  <div id="logo"><img src="IMG/logo2.png" alt="Logo Energya"/></div>
-    <button id="menuIcon" onclick="menuHamburger()"><i class='fas fa-bars'></i></button>
+    <button id="menuIcon" onclick="menuHamburger()" aria-label="menu icon"><img src="IMG/hamburger_icon.png" alt="menu icon"/></button>
 	  <ul class="menuItems" id="menuu" >
       <li><a href="index.php" xml:lang="en">Home</a></li>
 	    <li><a href="corsi.php">Corsi</a></li>
@@ -70,7 +70,7 @@ if (!isset($_SESSION["successo"]))
 		<div id="breadcrumb">
 			<p>Ti trovi in: Pannello di amministrazione >> Inserimento galleria</p>
 		</div>
-    
+
 		<form onsubmit="return checkInsGalleria()" action="post_galleria.php" method="post" id="login-register-form" enctype="multipart/form-data">
 			<fieldset>
 				<legend>Inserisci una nuova foto</legend>

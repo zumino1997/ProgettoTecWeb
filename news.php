@@ -56,7 +56,7 @@ else {
 
 	<div id="nav">
 	  <div id="logo"><img src="IMG/logo2.png" alt="Logo Energya"/></div>
-	  <button id="menuIcon" onclick="menuHamburger()"><i class='fas fa-bars'></i></button>
+    <button id="menuIcon" onclick="menuHamburger()" aria-label="menu icon"><img src="IMG/hamburger_icon.png" alt="menu icon"/></button>
 	  <ul class="menuItems" id="menuu" >
 	    <li><a href="index.php" xml:lang="en">Home</a></li>
 	    <li><a href="corsi.php">Corsi</a></li>
@@ -89,7 +89,7 @@ else {
           echo '<div class="divSx">';
           echo '<h1>'.$news['Titolo'].'</h1>';
           echo '<img src="'.$news['Immagine'].'" alt="'.$news['Alt'].'"/>';
-          echo '<p id="time">'.date("d/m/Y H:m", strtotime($news['Data'])).'</p>';
+          echo '<p class="time">'.date("d/m/Y H:m", strtotime($news['Data'])).'</p>';
           echo '<p>'.$news['Testo'].'</p>';
           echo '</div>';
         }
@@ -97,7 +97,7 @@ else {
           echo '<div class="divDx">';
           echo '<h1>'.$news['Titolo'].'</h1>';
           echo '<img src="'.$news['Immagine'].'" alt="'.$news['Alt'].'"/>';
-          echo '<p id="time">'.date("d/m/Y H:m", strtotime($news['Data'])).'</p>';
+          echo '<p class="time">'.date("d/m/Y H:m", strtotime($news['Data'])).'</p>';
           echo '<p>'.$news['Testo'].'</p>';
           echo '</div>';
         }

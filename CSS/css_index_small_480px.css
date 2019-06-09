@@ -100,6 +100,7 @@ h1{
 .box{
 	width: 100%;
 	min-height: auto;
+	margin-bottom: 1em;
 }
 
 .box img{

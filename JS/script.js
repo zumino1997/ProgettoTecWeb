@@ -261,27 +261,6 @@ function checkReg(){
   }
 }
 
-function checkInsCorsi(){
-
-  var titolo = document.getElementById("titolo");
-  var testo = document.getElementById("testo");
-  var testoLong = document.getElementById("testoLong");
-  var alt = document.getElementById("alt");
-  var file = document.getElementById("fileToUpload");
-
-  var risultatoTestTitolo = checkTitolo(titolo);            //utilizzo la funzione checkNome per nome,cognome e città percchè hanno la stessa RegExp
-  var risultatoTestTesto = checkTesto(testo);
-  var risultatoTestAlt = checkAlt(alt);            //utilizzo la funzione checkNome per nome,cognome e città percchè hanno la stessa RegExp
-  var risultatoTestTestoLong = checkTestoLong(testoLong);
-  var risultatoTestFile = checkFile(file);
-
-  if (risultatoTestTitolo && risultatoTestTesto && risultatoTestAlt && risultatoTestTestoLong && risultatoTestFile)
-    return true;
-  else {
-    return false;
-  }
-}
-
 function checkModCorsi(){
 
   var titolo = document.getElementById("titolo");
@@ -353,6 +332,21 @@ function checkModCorsi(){
     }
   }
 
+  function checkOra(oraInput){
+    var patternOra = /^(0[0-9]|1[0-9]|2[0-3]|[0-9]):[0-5][0-9]$/;
+    if (patternOra.test(oraInput.value)){
+      togliErrore(oraInput);
+      return true;
+    }
+    else{
+      if (oraInput.value=="")
+        mostraErrore(oraInput, "Inserire tutti i campi")
+      else
+        mostraErrore(oraInput, "Ora (HH:mm:ss) non valida")
+      return false;
+    }
+  }
+
   function checkInsPrenotazioni(){
     var data = document.getElementById("data");
     var ora = document.getElementById("ora");
@@ -361,6 +355,29 @@ function checkModCorsi(){
     {
       return true;
     }
+    else {
+      return false;
+    }
+  }
+
+  function checkInsCorsi(){
+
+    var titolo = document.getElementById("titolo");
+    var testo = document.getElementById("testo");
+    var testoLong = document.getElementById("testoLong");
+    var alt = document.getElementById("alt");
+    var file = document.getElementById("fileToUpload");
+    var ora = document.getElementById("ora");
+
+    var risultatoTestTitolo = checkTitolo(titolo);            //utilizzo la funzione checkNome per nome,cognome e città percchè hanno la stessa RegExp
+    var risultatoTestTesto = checkTesto(testo);
+    var risultatoTestAlt = checkAlt(alt);            //utilizzo la funzione checkNome per nome,cognome e città percchè hanno la stessa RegExp
+    var risultatoTestTestoLong = checkTestoLong(testoLong);
+    var risultatoTestFile = checkFile(file);
+    var risultatoTestOra = checkOra(ora);
+
+    if (risultatoTestTitolo && risultatoTestTesto && risultatoTestAlt && risultatoTestTestoLong && risultatoTestFile && risultatoTestOra)
+      return true;
     else {
       return false;
     }

@@ -46,7 +46,7 @@ $_SESSION ['paginaCorr']="";
 <body>
 	<div id="nav">
 	  <div id="logo"><img src="IMG/logo2.png" alt="Logo Energya"/></div>
-    <button id="menuIcon" onclick="menuHamburger()"><i class='fas fa-bars'></i></button>
+    <button id="menuIcon" onclick="menuHamburger()" aria-label="menu icon"><img src="IMG/hamburger_icon.png" alt="menu icon"/></button>
 	  <ul class="menuItems" id="menuu" >
       <li><a href="index.php" xml:lang="en">Home</a></li>
 	    <li><a href="corsi.php">Corsi</a></li>
@@ -90,14 +90,31 @@ $_SESSION ['paginaCorr']="";
             <?php if(isset($_SESSION['error']['altErr'])) { echo '<span class="error">'. $_SESSION['error']['altErr'] .'</span>'; unset($_SESSION['error']['altErr']); } else {echo "";} ?>
           </li>
           <li>
-						<label for="testo">Inserisci la descrizione corta</label>
+						<label for="testo">Descrizione corta</label>
 						<textarea name="testo" id="testo" rows="10"><?php if(isset($_SESSION['error']['testoErr'])) if(isset ($_SESSION['var']['testo'])) {$testo = $_SESSION['var']['testo']; echo $testo;} ?></textarea>
             <?php if(isset($_SESSION['error']['testoErr'])) { echo '<span class="error">'. $_SESSION['error']['testoErr'] .'</span>'; unset($_SESSION['error']['testoErr']); } else {echo "";} ?>
           </li>
           <li>
-						<label for="testo">Inserisci la descrizione lunga</label>
+						<label for="testo">Descrizione lunga</label>
 						<textarea name="testoLong" id="testoLong" rows="25"><?php if(isset($_SESSION['error']['testoLongErr'])) if(isset ($_SESSION['var']['testoLong'])) {$testo = $_SESSION['var']['testoLong']; echo $testo;} ?></textarea>
             <?php if(isset($_SESSION['error']['testoLongErr'])) { echo '<span class="error">'. $_SESSION['error']['testoLongErr'] .'</span>'; unset($_SESSION['error']['testoLongErr']); } else {echo "";} ?>
+          </li>
+          <li>
+            <label for="giorno">Giorno</label>
+            <select id="giorno" name="giorno">
+              <option value="lunedi">Luned&iacute;</option>
+              <option value="martedi">Martedi&iacute;</option>
+              <option value="mercoledi">Mercoled&iacute;</option>
+              <option value="giovedi">Gioved&iacute;</option>
+              <option value="venerdi">Venerd&iacute;</option>
+              <option value="sabato">Sabato</option>
+              <option value="domenica">Domenica</option>
+            </select>
+          </li>
+          <li>
+            <label for="ora">Orario (HH:mm)</label>
+            <input id="ora" name="ora" type="text" <?php if(isset($_SESSION['error']['oraErr'])) if(isset ($_SESSION['var']['ora'])) {$testo = $_SESSION['var']['ora']; echo $testo;} ?> />
+            <?php if(isset($_SESSION['error']['oraErr'])) { echo '<span class="error">'. $_SESSION['error']['oraErr'] .'</span>'; unset($_SESSION['error']['oraErr']); } else {echo "";} ?>
           </li>
 				</ul>
 			</fieldset>

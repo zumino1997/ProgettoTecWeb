@@ -20,7 +20,7 @@ if ($dbOpen){
     $data2 = str_replace('/', '-', $data );
     $newDate = date("Y-m-d", strtotime($data2));
     $nowD = date("Y-m-d");
-    $nowT = date("H:m:s");
+    $nowT = date("H:i:s");
 
     $dataErr = valNascita($data2);
     $oraErr = valOra($ora);
