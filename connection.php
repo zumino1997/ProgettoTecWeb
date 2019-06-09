@@ -330,7 +330,7 @@ class DBConnection
     }
 
     public function insertPrenotazione($email,$corso,$data,$ora){
-      $query1 = "INSERT INTO prenotazioni(email,corso,data,ora) VALUES ('$email','$corso','$data','$ora')";
+      $query1 = "INSERT INTO prenotazioni(corso,data,ora,email) VALUES ('$corso','$data','$ora','$email')";
       $queryResult1 = mysqli_query($this->conn, $query1);
       if (mysqli_affected_rows($this->conn)==0){
         return false;

@@ -125,12 +125,12 @@ else {
         </select>
       </li>
       <li>
-        <label for="data">Data: (dd/mm/YYYY) </label>
+        <label for="data">Data (dd/mm/YYYY): </label>
         <input id="data" name="data" type="text" />
         <?php $errorData=""; if(isset($_SESSION['error']['dataErr'])) { $errorData = $_SESSION['error']['dataErr']; unset($_SESSION['error']['dataErr']); } ?>
       </li>
       <li>
-        <label for="ora">Ora:</label>
+        <label for="ora">Ora (HH:mm):</label>
         <input id="ora" name="ora" type="text" />
         <?php $errorOra=""; if(isset($_SESSION['error']['oraErr'])) { $errorOra = $_SESSION['error']['oraErr']; unset($_SESSION['error']['oraErr']); } ?>
         <?php echo '<span class="error">'.$errorData.$errorOra.'</span>'?>
@@ -149,7 +149,7 @@ else {
         echo '<h1>La tua prenotazione gratuita</h1>';
         foreach ($listaPrenotazioni as $prenotazioni) {
           echo '<p><span class="pren">Nome Corso: </span>'.$prenotazioni['corso'].'</p>';
-          echo '<p><span class="pren">Data Corso (dd/mm/YYYY): </span>'.date("d/m/Y", strtotime($prenotazioni['data'])).'</p>';
+          echo '<p><span class="pren">Data Corso: </span>'.date("d/m/Y", strtotime($prenotazioni['data'])).'</p>';
           echo '<p><span class="pren">Ora Corso: </span>'.$prenotazioni['ora'].'</p>';
         }
         echo '<form action="remove_prenotazione.php" method="post">

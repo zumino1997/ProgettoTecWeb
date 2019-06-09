@@ -19,6 +19,8 @@ if ($dbOpen){
     $ora = $_POST["ora"];
     $data2 = str_replace('/', '-', $data );
     $newDate = date("Y-m-d", strtotime($data2));
+    $nowD = date("Y-m-d");
+    $nowT = date("H:m:s");
 
     $dataErr = valNascita($data2);
     $oraErr = valOra($ora);
@@ -32,12 +34,27 @@ if ($dbOpen){
 
     // echo count($listaPrenotazioni);
 
-    if(valPrenotazioni($dataErr,$oraErr))
-      if(empty($listaPrenotazioni))
-        $connection->insertPrenotazione($email,$corso,$newDate,$ora);
-      else
+    if(valPrenotazioni($dataErr,$oraErr)){
+      if (empty($listaPrenotazioni)){
+        if($newDate>$nowD){
+          $connection->insertPrenotazione($email,$corso,$newDate,$ora);
+        }
+        if($newDate==$nowD){
+          if ($ora>$nowT){
+            $connection->insertPrenotazione($email,$corso,$newDate,$ora);
+          }
+          else {
+            $emailErr="Ora già trascorsa";
+          }
+        }
+        if($newDate<$nowD) {
+          $emailErr="Data già trascorsa";
+        }
+      }
+      else {
         $emailErr="Lezione gratuita già prenotata";
-
+      }
+    }
 
       $_SESSION["error"] = array(
         'dataErr' => $dataErr,

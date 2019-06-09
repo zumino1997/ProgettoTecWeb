@@ -48,6 +48,7 @@ p{
 
 .divDx, .divSx {
 	padding:1em;
+	min-height: auto;
 }
 
 .divDx img, .divSx img{
@@ -74,16 +75,16 @@ p{
 #nav li:nth-child(8), #nav li:nth-child(9){
 	display:block;
 	font-weight: bold;
-	background-color: #044B5D;
+	background-color: #C45500;
 }
 
 #nav li:nth-child(8)>a, #nav li:nth-child(9)>a, #nav li:nth-child(8)>a:hover, #nav li:nth-child(9)>a:hover{
-	background-color: #044B5D;
+	background-color: #C45500;
 	color:#fff;
 }
 
 #nav li:nth-child(8):hover, #nav li:nth-child(9):hover{
-	background-color: #044B5D;
+	background-color: #C45500;
 }
 
 /*CORSI*/
@@ -106,6 +107,10 @@ h1{
 }
 .box p{
 	padding: 0 0 0.5em 0;
+}
+
+.box h1{
+	font-size: 1.5em;
 }
 /*CORSI*/
 
