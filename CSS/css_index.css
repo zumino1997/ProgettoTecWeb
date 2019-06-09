@@ -44,7 +44,7 @@ p{
 }
 
 a{
-	color: #044B5D;
+	color: #C45500;
 	font-weight: bold;
 }
 
@@ -86,7 +86,7 @@ MENU
 }
 
 #nav li>a:hover{
-	color: #FFAF56;
+	color: #C45500;
 }
 
 #nav li:nth-child(8), #nav li:nth-child(9){
@@ -384,7 +384,11 @@ CSS CONTATTI
 /*******
 CSS CORSI
 *******/
-
+.box h1{
+	font-size: 1.5em;
+	margin: 0;
+	padding-bottom: 1em;
+}
 
 .box img{
 	max-height: 12em;
@@ -417,7 +421,7 @@ CSS CORSI
 .pagination span.active {
   padding: 0.5em 1em;
   text-decoration: none;
-  background-color: #044B5D;
+  background-color: #C45500;
   color: white;
 }
 
