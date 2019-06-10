@@ -14,7 +14,7 @@ $_SESSION ['paginaCorr']="";
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> <!--metatag che permette di dire che cosa ci sara' all'interno della pagina. Consiglio e' sempre quello di utilizzare la codifica utf-8 perche' e' univoco per la codifica degli accenti-->
 <title>Energya Fitness Club</title>
 <meta name="title" content="Energya Fitness Club"/>
-<meta name="description" content=""/>
+<meta name="description" content="Energya Fitness Club"/>
 <meta name="keywords" content="Energya, fitness, palestra, sport"/>
 <meta name="language" content="italian it"/>
 <meta name="author" content="Franconetti Simone"/>
@@ -39,7 +39,7 @@ $_SESSION ['paginaCorr']="";
 
 	<div id="nav">
 	  <div id="logo"><img src="IMG/logo2.png" alt="Logo Energya"/></div>
-	  <button id="menuIcon" onclick="menuHamburger()"><i class='fas fa-bars'></i></button>
+	  <button aria-label="menu button" id="menuIcon" onclick="menuHamburger()"><i class='fas fa-bars'></i></button>
 	  <ul class="menuItems" id="menuu" >
 	    <li id="currentLink" xml:lang="en">Home</li>
 	    <li><a href="corsi.php">Corsi</a></li>
