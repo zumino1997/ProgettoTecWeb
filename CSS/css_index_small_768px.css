@@ -90,6 +90,7 @@
 .divDx img, .divSx img{
 	width: 50%;
 	float: none;
+	margin:0;
 }
 
  h1{

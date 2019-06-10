@@ -14,7 +14,7 @@ $_SESSION ['paginaCorr']="";
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> <!--metatag che permette di dire che cosa ci sara' all'interno della pagina. Consiglio e' sempre quello di utilizzare la codifica utf-8 perche' e' univoco per la codifica degli accenti-->
 <title>Energya Fitness Club</title>
 <meta name="title" content="Energya Fitness Club"/>
-<meta name="description" content=""/>
+<meta name="description" content="Energya Fitness Club"/>
 <meta name="keywords" content="Energya, fitness, palestra, sport"/>
 <meta name="language" content="italian it"/>
 <meta name="author" content="Franconetti Simone"/>
