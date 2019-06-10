@@ -39,7 +39,7 @@ $_SESSION ['paginaCorr']="";
 
 	<div id="nav">
 	  <div id="logo"><img src="IMG/logo2.png" alt="Logo Energya"/></div>
-	  <button aria-label="menu button" id="menuIcon" onclick="menuHamburger()"><i class='fas fa-bars'></i></button>
+	  <button id="menuIcon" onclick="menuHamburger()" aria-label="menu icon"><img src="IMG/hamburger_icon.png" alt="menu icon"/></button>
 	  <ul class="menuItems" id="menuu" >
 	    <li id="currentLink" xml:lang="en">Home</li>
 	    <li><a href="corsi.php">Corsi</a></li>

@@ -14,19 +14,25 @@ $titolo=$_POST["titolo"];
 $testo=$_POST["testo"];
 $testoLong=$_POST["testoLong"];
 $alt=$_POST["alt"];
+$giorno=$_POST["giorno"];
+$ora=$_POST["ora"];
+
 
 $_SESSION["successo"]="";
 $titoloErr=valTitolo($titolo);
 $testoErr=valTesto($testo);
 $testoLongErr=valTestoLong($testoLong);
 $altErr=valAlt($alt);
-$cor=valCorsi($titoloErr,$testoErr,$testoLongErr,$altErr);
+$oraErr=valOra($ora);
+$cor=valCorsi($titoloErr,$testoErr,$altErr,$testoLongErr,$oraErr);
 
 $_SESSION["var"] = array(
     'titolo' => $titolo,
     'testo' => $testo,
     'testoLong' => $testoLong,
-    'alt'=> $alt
+    'alt'=> $alt,
+    'ora'=> $ora,
+    'giorno'=> $giorno
 );
 
 $err ="";
@@ -54,7 +60,7 @@ if(isset($_POST["inserisci"])) {
     }
 
     if ($uploadOk == 1 && move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file) && $cor) {
-        $connection->insertCorsi($titolo,$testo,$target_file,$testoLong,$alt);
+        $connection->insertCorsi($titolo,$testo,$target_file,$testoLong,$alt,$ora,$giorno);
         $_SESSION["successo"]=1;
       }
 }
@@ -64,11 +70,12 @@ $_SESSION["error"] = array(
     'testoErr' => $testoErr,
     'testoLongErr' => $testoLongErr,
     'altErr'=> $altErr,
+    'oraErr'=> $oraErr,
     'err' => $err
 );
 
-  header("Location: amministrazione.php");
-  exit();
+header("Location: amministrazione.php");
+exit();
 
 $connection->closeConnection();
 
