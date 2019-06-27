@@ -159,6 +159,7 @@ function valNascita($nascita){
 
 return $nascitaErr;
 }
+
 function valOra($ora){
   $oraErr="";
   if (empty($ora)){
