@@ -52,8 +52,8 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 </head>
 <body>
   <div id="nav">
-	  <div id="logo"><img src="IMG/logo2.png" alt="Logo Energya"/></div>
-    <button id="menuIcon" onclick="menuHamburger()" aria-label="menu icon"><img src="IMG/hamburger_icon.png" alt="menu icon"/></button>
+	  <div id="logo"><img src="IMG/logo1.png" alt="Logo Energya"/></div>
+	  <button id="menuIcon" onclick="menuHamburger()"><i class='fas fa-bars'></i></button>
 	  <ul class="menuItems" id="menuu" >
 	    <li><a href="index.php" xml:lang="en">Home</a></li>
 	    <li><a href="corsi.php">Corsi</a></li>
@@ -83,7 +83,7 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 			<p>Dal pannello di amministrazione è possibile inserire, modificare e rimuovere
 			i contenuti che verranno visualizzati all'interno del sito <abbr xml:lang="en" xml:title="World Wide Web">web</abbr></p>
       <?php
-      if ($_SESSION ['successo']){
+      if (isset($_SESSION['successo']) && $_SESSION ['successo']){
         echo "<h2 class=\"successo\">Inserimento avvenuto con successo</h1>";
         $_SESSION ['successo']=0;
       }
