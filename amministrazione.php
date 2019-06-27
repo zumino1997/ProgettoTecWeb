@@ -8,6 +8,8 @@ $dbOpen=$connection->openConnection();
 if (session_status() == PHP_SESSION_NONE) {
   session_start();
 }
+if (!isset($_SESSION["successo"]))
+  $_SESSION["successo"]=0;
 
 $_SESSION ['paginaCorr']="amministrazione";
 

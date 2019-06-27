@@ -30,6 +30,8 @@ if ($dbOpen){
   $testo=$corso['Descrizione'];
   $testoLong=$corso['DescrizioneL'];
   $alt=$corso['Alt'];
+  $ora=$corso['Ora'];
+  $giorno=$corso['Giorno'];
 }
 else {
 		echo "Connessione non stabilita correttamente";     //if (dbOpen)
@@ -115,6 +117,23 @@ else {
            <label for="alt">Inserisci l'alt dell'immagine</label>
            <input id="alt" name="alt" type="text" <?php echo "value=\"$alt\"";?> />
            <?php if(isset($_SESSION['error']['altErr'])) { echo '<span class="error">'. $_SESSION['error']['altErr'] .'</span>'; unset($_SESSION['error']['altErr']); } else {echo "";} ?>
+         </li>
+         <li>
+           <label for="giorno">Giorno</label>
+           <select id="giorno" name="giorno">
+             <option value="lunedi"<?php if ($giorno=="lunedi") echo "selected=\"selected\";" ?>>Luned&iacute;</option>
+             <option value="martedi"<?php if ($giorno=="martedi") echo "selected=\"selected\";" ?>>Martedi&iacute;</option>
+             <option value="mercoledi"<?php if ($giorno=="mercoledi") echo "selected=\"selected\";" ?>>Mercoled&iacute;</option>
+             <option value="giovedi"<?php if ($giorno=="giovedi") echo "selected=\"selected\";" ?>>Gioved&iacute;</option>
+             <option value="venerdi"<?php if ($giorno=="venerdi") echo "selected=\"selected\";" ?>>Venerd&iacute;</option>
+             <option value="sabato"<?php if ($giorno=="sabato") echo "selected=\"selected\";" ?>>Sabato</option>
+             <option value="domenica"<?php if ($giorno=="domenica") echo "selected=\"selected\";" ?>>Domenica</option>
+           </select>
+         </li>
+         <li>
+           <label for="ora">Orario (HH:mm)</label>
+           <input id="ora" name="ora" type="text" <?php echo "value=\"".date("H:i", strtotime($ora))."\"";?> />
+           <?php if(isset($_SESSION['error']['oraErr'])) { echo '<span class="error">'. $_SESSION['error']['oraErr'] .'</span>'; unset($_SESSION['error']['oraErr']); } else {echo "";} ?>
          </li>
        </ul>
      </fieldset>

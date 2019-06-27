@@ -88,6 +88,7 @@ else {
   	<?php
       echo '<div class="divGenerico center">';
       echo '<img src="'.$corso['Immagine'].'" alt="'.$corso['Alt'].'"/>';
+      echo '<p class="time">'.$corso['Giorno'].' alle ore '.$corso['Ora'].'</p>';
       echo '<p>'.$corso['DescrizioneL'].'</p>';
       echo '</div>';
     ?>

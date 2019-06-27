@@ -124,8 +124,8 @@ function valAlt($alt){
   return $altErr;
 }
 
-function valCorsi($titoloErr,$testoErr,$altErr,$testoLong){
-  if(empty($titoloErr) && empty($testoErr) && empty($altErr) && empty($testoLong))
+function valCorsi($titoloErr,$testoErr,$altErr,$testoLongErr,$oraErr){
+  if(empty($titoloErr) && empty($testoErr) && empty($altErr) && empty($testoLongErr) && empty($oraErr))
     return true;
   else
     return false;

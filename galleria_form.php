@@ -70,7 +70,7 @@ if (!isset($_SESSION["successo"]))
 		<div id="breadcrumb">
 			<p>Ti trovi in: Pannello di amministrazione >> Inserimento galleria</p>
 		</div>
-    
+
 		<form onsubmit="return checkInsGalleria()" action="post_galleria.php" method="post" id="login-register-form" enctype="multipart/form-data">
 			<fieldset>
 				<legend>Inserisci una nuova foto</legend>

@@ -53,6 +53,10 @@ a{
 /*****
 MENU
 ******/
+#menuIcon img{
+	width: 70%;
+}
+
 
 #nav {
 	text-align: right;
@@ -159,7 +163,7 @@ CONTENUTO
 ******/
 
 .successo{
-	color:red;
+	color:green;
 }
 
 .pren{
@@ -174,7 +178,7 @@ CONTENUTO
 	line-height: 4em;
 }
 
-#time{
+.time{
 	font-size: 0.8em;
 	font-style: italic;
 }
@@ -635,9 +639,7 @@ FOOTER
 
 #menuIcon{
 	border:0;
-	height: 1.5em;
-	width: 1.5em;
-	font-size:2em;
+	padding:0;
 	color:#000;
 	cursor: pointer;
 	background-color: #fff;
