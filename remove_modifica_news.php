@@ -57,7 +57,7 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 </head>
 <body>
   <div id="nav">
-	  <div id="logo"><img src="IMG/logo2.png" alt="Logo Energya"/></div>
+	  <div id="logo"><img src="IMG/logo1.png" alt="Logo Energya"/></div>
 	  <button id="menuIcon" onclick="menuHamburger()"><i class='fas fa-bars'></i></button>
 	  <ul class="menuItems" id="menuu" >
 	    <li><a href="index.php" xml:lang="en">Home</a></li>

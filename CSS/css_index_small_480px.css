@@ -75,17 +75,24 @@ p{
 #nav li:nth-child(8), #nav li:nth-child(9){
 	display:block;
 	font-weight: bold;
-	background-color: #C45500;
 }
 
-#nav li:nth-child(8)>a, #nav li:nth-child(9)>a, #nav li:nth-child(8)>a:hover, #nav li:nth-child(9)>a:hover{
-	background-color: #C45500;
-	color:#fff;
+#nav li:nth-child(8)>a, #nav li:nth-child(8)>a:hover, #nav li:nth-child(9)>a, #nav li:nth-child(9)>a:hover{
+	background-color: #FFAF56;
+	color:#343434;
+	margin-bottom: 1%;
 }
 
-#nav li:nth-child(8):hover, #nav li:nth-child(9):hover{
-	background-color: #C45500;
+{
+	background-color: #FFAF56;
+	color:#343434;
+	margin-bottom: 1%;
 }
+
+#currentLink{
+	margin-bottom: 1%;
+}
+
 
 /*CORSI*/
 
