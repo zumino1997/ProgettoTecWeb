@@ -44,9 +44,15 @@ p{
 }
 
 a{
-	color: #343434;
+	color: #BA5C00;
 	font-weight: bold;
 }
+
+a:visited{
+	color: #D57C00;
+}
+
+
 
 
 
@@ -431,14 +437,14 @@ CSS CORSI
 
 /***STAFF***/
 
-#fila{
+.fila{
 	float: left;
 	display: inline-block;
 	text-align: center;
 	width: 25%;
 	padding-top: 5%;
 }
-#fila img{
+.fila img{
 	height: 7em;
 	width: 7em;
 	border-radius: 50%;

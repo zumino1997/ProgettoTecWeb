@@ -17,7 +17,7 @@ $_SESSION ['paginaCorr']="";
 <meta name="keywords" content="Energya, fitness, palestra, sport"/>
 <meta name="language" content="italian it"/>
 <meta name="author" content="Franconetti Simone, Infantino Matteo, Marcon Luca"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 
 
@@ -35,7 +35,7 @@ $_SESSION ['paginaCorr']="";
 <body>
   <div id="nav">
 	  <div id="logo"><img src="IMG/logo1.png" alt="Logo Energya"/></div>
-    <button id="menuIcon" onclick="menuHamburger()" aria-label="menu icon"><img src="IMG/hamburger_icon.png" alt="menu icon"/></button>
+    <button id="menuIcon" onclick="menuHamburger()" ><img src="IMG/hamburger_icon.png" alt="menu icon"/></button>
 	  <ul class="menuItems" id="menuu" >
 	    <li><a href="index.php" xml:lang="en">Home</a></li>
 	    <li><a href="corsi.php">Corsi</a></li>
@@ -65,13 +65,14 @@ $_SESSION ['paginaCorr']="";
 			<p>All’interno del Club gli abbonati potranno usufruire dei numerosi ed
          esclusivi servizi compresi nell’ abbonamento, sentendosi così in vacanza
          ogni giorno dell’anno in completo relax:
+         </p>
       <ul>
         <li>Possibilità di usufruire di tutte le sale e macchinari all'avanguardia </li>
         <li>Disponibilità di un ampio parcheggio gratuito</li>
         <li>Servizio Personal Trainer e cambio scheda</li>
         <li>Thermarium – Piscina Coperta – Terrazza Estiva</li>
       </ul>
-      </p>
+
 		</div>
 
     <div class="Card Sx">

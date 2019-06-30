@@ -70,11 +70,11 @@ CONTATTI
 STAFF
 *****/
 
-#fila{
+.fila{
 	padding:0.5em 0;
 }
 
-/*#fila img {
+/*.fila img {
 	display: block; se attivato mostra le foto degli allenatori
 }
 */

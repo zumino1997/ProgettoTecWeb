@@ -25,7 +25,7 @@ $_SESSION ['paginaCorr']="";
 <meta name="keywords" content="Energya, fitness, palestra, sport"/>
 <meta name="language" content="italian it"/>
 <meta name="author" content="Franconetti Simone, Infantino Matteo, Marcon Luca"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 
 
@@ -44,7 +44,7 @@ $_SESSION ['paginaCorr']="";
 <body>
 	<div id="nav">
 	  <div id="logo"><img src="IMG/logo1.png" alt="Logo Energya"/></div>
-    <button id="menuIcon" onclick="menuHamburger()" aria-label="menu icon"><img src="IMG/hamburger_icon.png" alt="icona menu"/></button>
+    <button id="menuIcon" onclick="menuHamburger()" ><img src="IMG/hamburger_icon.png" alt="icona menu"/></button>
 	  <ul class="menuItems" id="menuu" >
       <li><a href="index.php" xml:lang="en">Home</a></li>
 	    <li><a href="corsi.php">Corsi</a></li>
@@ -101,7 +101,7 @@ $_SESSION ['paginaCorr']="";
             <label for="giorno">Giorno</label>
             <select id="giorno" name="giorno">
               <option value="lunedi">Luned&iacute;</option>
-              <option value="martedi">Martedi&iacute;</option>
+              <option value="martedi">Marted&iacute;</option>
               <option value="mercoledi">Mercoled&iacute;</option>
               <option value="giovedi">Gioved&iacute;</option>
               <option value="venerdi">Venerd&iacute;</option>
@@ -115,7 +115,6 @@ $_SESSION ['paginaCorr']="";
             <?php if(isset($_SESSION['error']['oraErr'])) { echo '<span class="error">'. $_SESSION['error']['oraErr'] .'</span>'; unset($_SESSION['error']['oraErr']); } else {echo "";} ?>
           </li>
 				</ul>
-			</fieldset>
 					<li id="buttons-login">
 						<input value="Inserisci" class="button" id="inserisci" name="inserisci" type="submit" />
 						<input value="Cancella" class="button" id="delete-login-button" type="reset" />
