@@ -33,7 +33,7 @@ $_SESSION ['paginaCorr']="";
 <body>
   <div id="nav">
 	  <div id="logo"><img src="IMG/logo1.png" alt="Logo Energya"/></div>
-    <button id="menuIcon" onclick="menuHamburger()" ><img src="IMG/hamburger_icon.png" alt="menu icon"/></button>
+    <button id="menuIcon" title="menuIcon" onclick="menuHamburger()" ><img src="IMG/hamburger_icon.png" alt="menu icon"/></button>
 	  <ul class="menuItems" id="menuu" >
 	    <li><a href="index.php" xml:lang="en">Home</a></li>
 	    <li><a href="corsi.php">Corsi</a></li>
@@ -46,7 +46,7 @@ $_SESSION ['paginaCorr']="";
 	  </ul>
 	</div>
 	<div id="header">
-		<img src="IMG/logo1.png" alt=""/>
+		<img src="IMG/logo1.png" alt="Logo Energya"/>
 	</div>
 
 	<?php require_once __DIR__ . DIRECTORY_SEPARATOR . "userbar.php";
@@ -91,6 +91,20 @@ $_SESSION ['paginaCorr']="";
 	</div>
 
   <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "footer.html"; ?>
+
+  <noscript>
+  	  <ul id="NoJS">
+        <li><a href="index.php" xml:lang="en">Home</a></li>
+  	    <li><a href="corsi.php">Corsi</a></li>
+        <li>Abbonamenti</li>
+        <li><a href="news.php" xml:lang="en">News</a></li>
+  	    <li><a href="galleria.php">Galleria</a></li>
+  	    <li><a href="staff.php" xml:lang="en">Staff</a></li>
+  	    <li><a href="contatti.php">Contatti</a></li>
+  			<?php require_once __DIR__ . DIRECTORY_SEPARATOR . "userbar_mobile.php";?>
+        <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "userbar.php";?>
+  	  </ul>
+  </noscript>
 
 </body>
 </html>

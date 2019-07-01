@@ -41,6 +41,7 @@ else {
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript"/>
 <title>Energya Fitness Club</title>
 <meta name="title" content="Energya Fitness Club"/>
 <meta name="description" content="Energya - un luogo per tutti quelli che amano la palestra e vogliono sentirsi come in famiglia!"/>
@@ -62,7 +63,7 @@ else {
 <body>
 	<div id="nav">
 	  <div id="logo"><img src="IMG/logo1.png" alt="Logo Energya"/></div>
-    <button id="menuIcon" onclick="menuHamburger()" ><img src="IMG/hamburger_icon.png" alt="icona menu"/></button>
+    <button id="menuIcon" title="menuIcon" onclick="menuHamburger()" ><img src="IMG/hamburger_icon.png" alt="icona menu"/></button>
 	  <ul class="menuItems" id="menuu" >
       <li><a href="index.php" xml:lang="en">Home</a></li>
 	    <li><a href="corsi.php">Corsi</a></li>
@@ -75,7 +76,7 @@ else {
 	  </ul>
 	</div>
 	<div id="header">
-		<img src="IMG/logo1.png" alt=""/>
+		<img src="IMG/logo1.png" alt="Logo Energya"/>
 	</div>
 
   <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "userbar.php";?>
@@ -140,7 +141,20 @@ else {
 
  <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "footer.html"; ?>
 
- <?php $connection->closeConnection();?>
+ <noscript>
+ 	  <ul id="NoJS">
+      <li><a href="index.php" xml:lang="en">Home</a></li>
+	    <li><a href="corsi.php">Corsi</a></li>
+      <li><a href="abbonamenti.php">Abbonamenti</a></li>
+			<li><a href="news.php">News</a></li>
+	    <li><a href="galleria.php">Galleria</a></li>
+	    <li><a href="staff.php" xml:lang="en">Staff</a></li>
+	    <li><a href="contatti.php">Contatti</a></li>
+ 			<?php require_once __DIR__ . DIRECTORY_SEPARATOR . "userbar_mobile.php";?>
+       <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "userbar.php";?>
+ 	  </ul>
+ </noscript>
 
+<?php $connection->closeConnection();?>
 </body>
 </html>
