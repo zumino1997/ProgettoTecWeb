@@ -5,15 +5,13 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 $_SESSION ['paginaCorr']="";
-
+$_SESSION["error"] = "";
 
 require_once __DIR__ . DIRECTORY_SEPARATOR . "connection.php";
 use DB\DBConnection;
 
 $connection = new DBConnection();
 $dbOpen=$connection->openConnection();
-
-$_SESSION["error"] = "";
 
 if ($dbOpen){
 		$number_of_results=$connection->numCorsi();
@@ -47,17 +45,14 @@ else {
 <meta name="author" content="Franconetti Simone, Infantino Matteo, Marcon Luca"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-
 <link rel="stylesheet" type="text/css" href="CSS/css_index.css" media="handheld, screen"/>
 <link rel="stylesheet" type="text/css" href="CSS/css_index_small_768px.css" media="handheld, screen and (max-width:768px),only screen and (max-device-width:768px)"/>
 <link rel="stylesheet" type="text/css" href="CSS/css_index_small_480px.css" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)"/>
 <link rel="stylesheet" type="text/css" href="CSS/print.css" media="print"/>
 
-
 <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
 <script type="text/javascript" src="JS/script.js"> </script>
-
 
 </head>
 <body>
@@ -77,14 +72,11 @@ else {
 		</ul>
 	</div>
 
-
-
 	<div id="header">
 		<img src="IMG/logo1.png" alt=""/>
 	</div>
 
-  <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "userbar.php";
-   ?>
+  <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "userbar.php";?>
 
 	<div id="content">
 
@@ -94,14 +86,21 @@ else {
 
   	<h1 class="center">Corsi</h1>
 
-  	<?php foreach ($listaCorsi as $corso) {
-  		echo '<div class="box Sx">';
-  		echo '<h1>'.$corso['Titolo'].'</h1>';
-      echo '<img src="'.$corso['Immagine'].'" alt="'.$corso['Alt'].'"/>';
-  		echo '<p>'.$corso['Descrizione'].'</p>';
-      echo '<a href="corsoSingolo.php?id='.$corso['Id'].'">Scopri il corso "'.$corso['Titolo'].'"</a>';
-  		echo '</div>';
-  	} ?>
+  	<?php
+    if(!empty($listaCorsi)){
+      foreach ($listaCorsi as $corso) {
+    		echo '<div class="box Sx">';
+    		echo '<h1>'.$corso['Titolo'].'</h1>';
+        echo '<img src="'.$corso['Immagine'].'" alt="'.$corso['Alt'].'"/>';
+    		echo '<p>'.$corso['Descrizione'].'</p>';
+        echo '<a href="corsoSingolo.php?id='.$corso['Id'].'">Scopri il corso "'.$corso['Titolo'].'"</a>';
+    		echo '</div>';
+    	}
+    }
+    else{
+      echo '<h1>Non &egrave; disponibile alcun corso</h1>';
+    }
+    ?>
 
     <div class="pagination"><?php
     for ($page=1;$page<=$number_of_pages;$page++) {
@@ -117,9 +116,7 @@ else {
 
 <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "footer.html"; ?>
 
-
 <?php $connection->closeConnection();?>
-
 
 </body>
 </html>

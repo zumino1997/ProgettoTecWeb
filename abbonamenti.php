@@ -6,7 +6,8 @@ if (session_status() == PHP_SESSION_NONE) {
 
 $_SESSION ['paginaCorr']="";
 
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
 <head>
@@ -19,13 +20,10 @@ $_SESSION ['paginaCorr']="";
 <meta name="author" content="Franconetti Simone, Infantino Matteo, Marcon Luca"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-
-
 <link rel="stylesheet" type="text/css" href="CSS/css_index.css" media="handheld, screen"/>
 <link rel="stylesheet" type="text/css" href="CSS/css_index_small_768px.css" media="handheld, screen and (max-width:768px),only screen and (max-device-width:768px)"/>
 <link rel="stylesheet" type="text/css" href="CSS/css_index_small_480px.css" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)"/>
 <link rel="stylesheet" type="text/css" href="CSS/print.css" media="print"/>
-
 
 <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
@@ -76,14 +74,14 @@ $_SESSION ['paginaCorr']="";
 		</div>
 
     <div class="Card Sx">
-      <h2>Abbonamento<br/>Mensile</h2>
+      <h2>Abbonamento Mensile</h2>
       <p class="bold">Costo: 60 euro</p>
       <p>Con l'abbonamento mensile sarà possibile accedere alle nostre strutture tutti i giorni della settimana
       durante gli orari indicati nella sezione "Contatti".  </p>
     </div>
 
     <div class="Card Dx">
-      <h2>Abbonamento<br/>Trimestrale</h2>
+      <h2>Abbonamento Trimestrale</h2>
       <p class="bold">Costo: 150 euro</p>
       <p>Con l'abbonamento trimestrale sarà possibile ottenere un'esperienza completa presso la nostra struttura risparmiando
       più del 15%! Inoltre, in omaggio per i clienti che sottoscriveranno questo abbonamento, sarà possibile ricevere in omaggio
@@ -93,7 +91,6 @@ $_SESSION ['paginaCorr']="";
 	</div>
 
   <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "footer.html"; ?>
-
 
 </body>
 </html>

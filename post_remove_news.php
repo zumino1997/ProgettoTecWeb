@@ -10,8 +10,6 @@ use DB\DBConnection;
 $connection = new DBConnection();
 $dbOpen=$connection->openConnection();
 
-
-
 if ($dbOpen){
   $connection->removeNews($_GET['rimuovi']);
   $_SESSION["successoR"]=1;

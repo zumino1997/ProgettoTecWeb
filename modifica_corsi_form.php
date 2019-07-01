@@ -20,8 +20,6 @@ use DB\DBConnection;
 $connection = new DBConnection();
 $dbOpen=$connection->openConnection();
 
-
-
 if ($dbOpen){
   $corso = $connection->getCorso($_GET['modifica']);
   $id=$corso['Id'];
@@ -51,18 +49,14 @@ else {
 <meta name="author" content="Franconetti Simone, Infantino Matteo, Marcon Luca"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-
-
 <link rel="stylesheet" type="text/css" href="CSS/css_index.css" media="handheld, screen"/>
 <link rel="stylesheet" type="text/css" href="CSS/css_index_small_768px.css" media="handheld, screen and (max-width:768px),only screen and (max-device-width:720px)"/>
 <link rel="stylesheet" type="text/css" href="CSS/css_index_small_480px.css" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)"/>
 <link rel="stylesheet" type="text/css" href="CSS/print.css" media="print"/>
 
-
 <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
 <script type="text/javascript" src="JS/script.js"> </script>
-
 
 </head>
 <body>
@@ -84,8 +78,7 @@ else {
 		<img src="IMG/logo1.png" alt=""/>
 	</div>
 
-  <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "userbar.php";
-   ?>
+  <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "userbar.php";?>
 
 	<div id="content">
 		<div id="breadcrumb">
@@ -147,6 +140,7 @@ else {
 
  <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "footer.html"; ?>
 
+ <?php $connection->closeConnection();?>
 
 </body>
 </html>

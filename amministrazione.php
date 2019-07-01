@@ -1,9 +1,4 @@
 <?php
-require_once __DIR__ . DIRECTORY_SEPARATOR . "connection.php";
-use DB\DBConnection;
-
-$connection = new DBConnection();
-$dbOpen=$connection->openConnection();
 
 if (session_status() == PHP_SESSION_NONE) {
   session_start();
@@ -17,12 +12,8 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 	header("Location: index.php");
 	exit();
 }
-	if ($dbOpen){
-		}
-	else {
-			$_SESSION["error"] = "Connessione non stabilita correttamente";
-}
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
 <head>
@@ -35,13 +26,10 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 <meta name="author" content="Franconetti Simone, Infantino Matteo, Marcon Luca"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-
-
 <link rel="stylesheet" type="text/css" href="CSS/css_index.css" media="handheld, screen"/>
 <link rel="stylesheet" type="text/css" href="CSS/css_index_small_768px.css" media="handheld, screen and (max-width:768px),only screen and (max-device-width:768px)"/>
 <link rel="stylesheet" type="text/css" href="CSS/css_index_small_480px.css" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)"/>
 <link rel="stylesheet" type="text/css" href="CSS/print.css" media="print"/>
-
 
 <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
@@ -75,7 +63,6 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 			<p>Ti trovi in: Pannello di amministrazione</p>
 		</div>
 
-
 		<div class="divGenerico">
 			<h1>Pannello di amministrazione</h1>
 			<p>Dal pannello di amministrazione è possibile inserire, modificare e rimuovere
@@ -97,13 +84,10 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 				<li><a href="remove_galleria.php">Pagina rimozione galleria</a></li>
         <li><a href="remove_modifica_news.php">Pagina rimozione e modifica <span xml:lang="en">news</span></a></li>
 			</ul>
-
-
 		</div>
 	</div>
 
   <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "footer.html"; ?>
-
 
 </body>
 </html>

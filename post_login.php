@@ -41,4 +41,6 @@ else {
 header("Location: login.php");
 exit();
 
+$connection->closeConnection();
+
 ?>
