@@ -89,12 +89,12 @@ $_SESSION ['paginaCorr']="";
           </li>
           <li>
 						<label for="testo">Descrizione corta</label>
-						<textarea name="testo" id="testo" rows="10"><?php if(isset($_SESSION['error']['testoErr'])) if(isset ($_SESSION['var']['testo'])) {$testo = $_SESSION['var']['testo']; echo $testo;} ?></textarea>
+						<textarea name="testo" id="testo" cols="1" rows="10"><?php if(isset($_SESSION['error']['testoErr'])) if(isset ($_SESSION['var']['testo'])) {$testo = $_SESSION['var']['testo']; echo $testo;} ?></textarea>
             <?php if(isset($_SESSION['error']['testoErr'])) { echo '<span class="error">'. $_SESSION['error']['testoErr'] .'</span>'; unset($_SESSION['error']['testoErr']); } else {echo "";} ?>
           </li>
           <li>
 						<label for="testo">Descrizione lunga</label>
-						<textarea name="testoLong" id="testoLong" rows="25"><?php if(isset($_SESSION['error']['testoLongErr'])) if(isset ($_SESSION['var']['testoLong'])) {$testo = $_SESSION['var']['testoLong']; echo $testo;} ?></textarea>
+						<textarea name="testoLong" id="testoLong"  cols="1" rows="25"><?php if(isset($_SESSION['error']['testoLongErr'])) if(isset ($_SESSION['var']['testoLong'])) {$testo = $_SESSION['var']['testoLong']; echo $testo;} ?></textarea>
             <?php if(isset($_SESSION['error']['testoLongErr'])) { echo '<span class="error">'. $_SESSION['error']['testoLongErr'] .'</span>'; unset($_SESSION['error']['testoLongErr']); } else {echo "";} ?>
           </li>
           <li>
@@ -114,7 +114,6 @@ $_SESSION ['paginaCorr']="";
             <input id="ora" name="ora" type="text" <?php if(isset($_SESSION['error']['oraErr'])) if(isset ($_SESSION['var']['ora'])) {$testo = $_SESSION['var']['ora']; echo $testo;} ?> />
             <?php if(isset($_SESSION['error']['oraErr'])) { echo '<span class="error">'. $_SESSION['error']['oraErr'] .'</span>'; unset($_SESSION['error']['oraErr']); } else {echo "";} ?>
           </li>
-				</ul>
 					<li id="buttons-login">
 						<input value="Inserisci" class="button" id="inserisci" name="inserisci" type="submit" />
 						<input value="Cancella" class="button" id="delete-login-button" type="reset" />

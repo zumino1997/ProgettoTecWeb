@@ -79,17 +79,15 @@ if (!isset($_SESSION["successo"]))
             <?php if(isset($_SESSION['error']['err'])) { echo '<span class="error">'. $_SESSION['error']['err'] .'</span>'; unset($_SESSION['error']['err']); } else {echo "";} ?>
           </li>
           <li>
-						<label for="titolo">Alt immagine (facoltativo)</label>
+						<label for="alt">Alt immagine (facoltativo)</label>
 						<input id="alt" name="alt" type="text" <?php if(isset($_SESSION['error']['altErr']))if(isset ($_SESSION['var']['alt'])) {$alt = $_SESSION['var']['alt']; echo "value=\"$alt\"";} else echo "value=\"\"";?>/>
             <?php if(isset($_SESSION['error']['altErr'])) { echo '<span class="error">'. $_SESSION['error']['altErr'] .'</span>'; unset($_SESSION['error']['altErr']); } else {echo "";} ?>
           </li>
           <li>
 						<label for="testo">Inserisci la didascalia</label>
-						<textarea name="testo" id="testo" rows="10"><?php if(isset($_SESSION['error']['testoErr'])) if(isset ($_SESSION['var']['testo'])) {$testo = $_SESSION['var']['testo']; echo $testo;} ?></textarea>
+						<textarea name="testo" id="testo" cols="1" rows="10"><?php if(isset($_SESSION['error']['testoErr'])) if(isset ($_SESSION['var']['testo'])) {$testo = $_SESSION['var']['testo']; echo $testo;} ?></textarea>
             <?php if(isset($_SESSION['error']['testoErr'])) { echo '<span class="error">'. $_SESSION['error']['testoErr'] .'</span>'; unset($_SESSION['error']['testoErr']); } else {echo "";} ?>
           </li>
-				</ul>
-			</fieldset>
 					<li id="buttons-login">
 						<input value="Inserisci" class="button" id="inserisci" name="inserisci" type="submit" />
 						<input value="Cancella" class="button" id="delete-login-button" type="reset" />

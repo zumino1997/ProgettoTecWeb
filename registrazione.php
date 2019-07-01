@@ -64,7 +64,7 @@ $_SESSION ['paginaCorr']="registrazione";
 
 	<div id="content">
 		<div id="breadcrumb">
-			<p>Ti trovi in: <span xml:lang="en">Registrazione</span></p>
+			<p>Ti trovi in: Registrazione</p>
 		</div>
 		<form onsubmit="return checkReg()" action="post_registrazione.php" method="post" id="login-register-form">
 			<fieldset>

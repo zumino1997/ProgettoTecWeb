@@ -151,7 +151,9 @@ else {
           echo '<p><span class="pren">Ora Corso: </span>'.$prenotazioni['ora'].'</p>';
         }
         echo '<form action="remove_prenotazione.php" method="post">
+              <fieldset>
                 <input class="button" value ="Elimina Prenotazione" type="submit"/>
+              </fieldset>
               </form>';
       }
       else echo '<h1>Devi ancora effettura la tua prenotazione</h1>';

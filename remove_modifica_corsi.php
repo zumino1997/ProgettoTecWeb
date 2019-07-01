@@ -93,7 +93,7 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
            $_SESSION ['successoR']=0;
          }
          else{
-           echo "<p></p>";
+           echo "";
          }
         ?>
       </h2>
@@ -101,9 +101,11 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
           if(!empty($listaCorsi))
             foreach ($listaCorsi as $corsi) {
               echo'
-                <form id="rem" action="post_remove_corsi.php?id='.$corsi['Id'].'">
-                  <p id="remP">'.$corsi['Titolo'].'</p><input type="hidden" value="'.$corsi['Id'].'" name="rimuovi"/>
-                  <input type="submit" class="button" value="Rimuovi  '.$corsi['Titolo'].'" name="submit"/>
+                <form class="rem" action="post_remove_corsi.php?id='.$corsi['Id'].'">
+                <fieldset>
+                  <label class="remP">'.$corsi['Titolo'].'</label><input type="hidden" value="'.$corsi['Id'].'" name="rimuovi"></input>
+                  <input type="submit" class="button" value="Rimuovi  '.$corsi['Titolo'].'" name="submit"></input>
+                </fieldset>
                 </form>';
           }?>
     </div>
@@ -118,7 +120,7 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
            $_SESSION ['successoM']=0;
          }
          else{
-           echo "<p></p>";
+           echo "";
          }
         ?>
       </h2>
@@ -126,9 +128,11 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
       if(!empty($listaCorsi))
         foreach ($listaCorsi as $corsi) {
           echo'
-            <form id="rem" action="modifica_corsi_form.php?id='.$corsi['Id'].'">
-              <p id="remP">'.$corsi['Titolo'].'</p><input type="hidden" value="'.$corsi['Id'].'" name="modifica"/>
-              <input type="submit" class="button" value="Modifica  '.$corsi['Titolo'].'" name="submit"/>
+            <form class="rem" action="modifica_corsi_form.php?id='.$corsi['Id'].'">
+            <fieldset>
+              <label class="remP">'.$corsi['Titolo'].'</label><input type="hidden" value="'.$corsi['Id'].'" name="modifica"></input>
+              <input type="submit" class="button" value="Modifica '.$corsi['Titolo'].'" name="submit"></input>
+            </fieldset>
             </form>';
           }
         ?>

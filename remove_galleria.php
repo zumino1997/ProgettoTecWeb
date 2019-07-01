@@ -89,7 +89,7 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
             $_SESSION ['successoR']=0;
           }
           else{
-            echo "<p></p>";
+            echo "";
           }
         ?>
       </h2>
@@ -97,9 +97,11 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
              if(!empty($listaGalleria))
                foreach ($listaGalleria as $galleria) {
                  echo'
-                   <form id="rem" action="post_remove_galleria.php?id='.$galleria['Id'].'">
-                     <p id="remP">'.$galleria['Immagine'].'</p><input type="hidden" value="'.$galleria['Id'].'" name="rimuovi"/>
+                   <form class="rem" action="post_remove_galleria.php?id='.$galleria['Id'].'">
+                   <fieldset>
+                     <label class="remP">'.$galleria['Immagine'].'</label><input type="hidden" value="'.$galleria['Id'].'" name="rimuovi"/>
                      <input type="submit" class="button" value="Rimuovi Immagine'.$galleria['Immagine'].'" name="submit"/>
+                   </fieldset>
                    </form>';
                }
           ?>

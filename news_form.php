@@ -15,7 +15,7 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 if (!isset($_SESSION["successo"]))
   $_SESSION["successo"]=0;
 ?>
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
 <head>
@@ -89,11 +89,9 @@ if (!isset($_SESSION["successo"]))
           </li>
           <li>
 						<label for="testo">Inserisci il testo della <span xml:lang="en">News</span></label>
-            <textarea name="testo" id="testo" rows="30"/><?php if(isset($_SESSION['error']['testoErr'])) if(isset ($_SESSION['var']['testo'])) {$testo = $_SESSION['var']['testo']; echo $testo;} ?></textarea>
+            <textarea name="testo" id="testo" cols="1" rows="30"><?php if(isset($_SESSION['error']['testoErr'])) if(isset ($_SESSION['var']['testo'])) {$testo = $_SESSION['var']['testo']; echo $testo;} ?></textarea>
             <?php if(isset($_SESSION['error']['testoErr'])) { echo '<span class="error">'. $_SESSION['error']['testoErr'] .'</span>'; unset($_SESSION['error']['testoErr']); } else {echo "";} ?>
           </li>
-				</ul>
-			</fieldset>
 					<li id="buttons-login">
 						<input value="Inserisci" class="button" id="inserisci" name="inserisci" type="submit"/>
 						<input value="Cancella" class="button" id="delete-login-button" type="reset" />

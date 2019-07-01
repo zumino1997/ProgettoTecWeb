@@ -92,7 +92,7 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
            $_SESSION ['successoR']=0;
          }
          else{
-           echo "<p></p>";
+           echo "";
          }
         ?>
       </h2>
@@ -100,9 +100,11 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
            if(!empty($listaNews))
              foreach ($listaNews as $news) {
                echo'
-                 <form id="rem" action="post_remove_news.php?id='.$news['Id'].'">
-                   <p id="remP">'.$news['Titolo'].'</p><input type="hidden" value="'.$news['Id'].'" name="rimuovi"/>
+                 <form class="rem" action="post_remove_news.php?id='.$news['Id'].'">
+                 <fieldset>
+                   <label class="remP">'.$news['Titolo'].'</label><input type="hidden" value="'.$news['Id'].'" name="rimuovi"/>
                    <input type="submit" class="button" value="Rimuovi '.$news['Titolo'].'" name="submit"/>
+                 </fieldset>
                  </form>';
              }
           ?>
@@ -127,9 +129,11 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
          if(!empty($listaNews)){
            foreach ($listaNews as $news) {
              echo'
-               <form id="rem" action="modifica_news_form.php?id='.$news['Id'].'">
-                 <p id="remP">'.$news['Titolo'].'</p><input type="hidden" value="'.$news['Id'].'" name="modifica"/>
+               <form class="rem" action="modifica_news_form.php?id='.$news['Id'].'">
+               <fieldset>
+                 <label class="remP">'.$news['Titolo'].'</label><input type="hidden" value="'.$news['Id'].'" name="modifica"/>
                  <input type="submit" class="button" value="Modifica '.$news['Titolo'].'" name="submit"/>
+               </fieldset>
                </form>';
            }
          }

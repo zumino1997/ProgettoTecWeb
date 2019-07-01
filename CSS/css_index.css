@@ -591,13 +591,23 @@ PROFILO
 	font-weight: bold;
 }
 
-#rem{
+.rem{
 	margin:auto;
 	width:100%;
 	float:left;
 }
 
-#remP{
+.rem fieldset{
+	border:0;
+	margin: 0;
+	padding:0.8em 0;
+}
+
+.rem label{
+	padding:0.6em 0;
+}
+
+.remP{
 	width:50%;
 	float:left;
 }
