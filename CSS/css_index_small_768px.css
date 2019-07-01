@@ -21,6 +21,16 @@ button:focus{
 	color:#fff;
 }
 
+#NoJS{
+	display: block;
+	text-align: center;
+	background-color: #343434;
+	color:#fff;
+	padding: 1em;
+	clear: both;
+	list-style-type: none;
+}
+
 #nav{
 	position:absolute;
 	width: 100%;

@@ -63,6 +63,9 @@ MENU
 	width: 70%;
 }
 
+#NoJS{
+	display:none;
+}
 
 #nav {
 	text-align: right;
