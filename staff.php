@@ -17,7 +17,7 @@ $_SESSION ['paginaCorr']="";
 <meta name="keywords" content="Energya, fitness, palestra, sport"/>
 <meta name="language" content="italian it"/>
 <meta name="author" content="Franconetti Simone, Infantino Matteo, Marcon Luca"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 
 
@@ -38,7 +38,7 @@ $_SESSION ['paginaCorr']="";
 
 	<div id="nav">
 	  <div id="logo"><img src="IMG/logo1.png" alt="Logo Energya"/></div>
-    <button id="menuIcon" onclick="menuHamburger()" aria-label="menu icon"><img src="IMG/hamburger_icon.png" alt="icona menu"/></button>
+    <button id="menuIcon" onclick="menuHamburger()" ><img src="IMG/hamburger_icon.png" alt="icona menu"/></button>
 	  <ul class="menuItems" id="menuu" >
 	    <li><a href="index.php" xml:lang="en">Home</a></li>
 	    <li><a href="corsi.php">Corsi</a></li>
@@ -63,7 +63,7 @@ $_SESSION ['paginaCorr']="";
 		</div>
 
     <div id="staff">
-      <div id="fila">
+      <div class="fila">
         <img src="IMG/p1" alt="personal trainer" />
         <p class="bold">Anna Zanon</p>
         <p class="under" xml:lang="en">Step &amp; total body</p>
@@ -71,7 +71,7 @@ $_SESSION ['paginaCorr']="";
           Telefono: 3334455666
         </p>
       </div>
-      <div id="fila">
+      <div class="fila">
         <img src="IMG/p2" alt="personal trainer" />
         <p class="bold">Valerio Rossi</p>
         <p class="under" xml:lang="en">Funktional</p>
@@ -79,7 +79,7 @@ $_SESSION ['paginaCorr']="";
           Telefono: 3334455666
         </p>
       </div>
-      <div id="fila">
+      <div class="fila">
         <img src="IMG/p3" alt="personal trainer" />
         <p class="bold">Giorgio Bassini</p>
         <p class="under" xml:lang="en">Personal Trainer</p>
@@ -87,7 +87,7 @@ $_SESSION ['paginaCorr']="";
           Telefono: 3334455666
         </p>
       </div>
-      <div id="fila">
+      <div class="fila">
         <img src="IMG/p4" alt="personal trainer" />
         <p class="bold">Elena Ferrari</p>
         <p class="under" >Ginnastica dolce</p>
@@ -95,7 +95,7 @@ $_SESSION ['paginaCorr']="";
           Telefono: 3334455666
         </p>
       </div>
-      <div id="fila">
+      <div class="fila">
         <img src="IMG/p5" alt="personal trainer" />
         <p class="bold">Sofia Verdi</p>
         <p class="under" xml:lang="en">Pound</p>
@@ -103,7 +103,7 @@ $_SESSION ['paginaCorr']="";
           Telefono: 3334455666
         </p>
       </div>
-      <div id="fila">
+      <div class="fila">
         <img src="IMG/p6" alt="personal trainer" />
         <p class="bold">Riccardo Moro</p>
         <p class="under" xml:lang="en">Personal Trainer</p>
@@ -111,15 +111,15 @@ $_SESSION ['paginaCorr']="";
           Telefono: 3334455666
         </p>
       </div>
-      <div id="fila">
+      <div class="fila">
         <img src="IMG/p7" alt="personal trainer" />
         <p class="bold">Beatrice Lana</p>
-        <p class="under" xml:abbr title="Glutei, addominali, glutei">G.A.G</p>
+        <p class="under"><abbr title="Glutei, addominali, glutei">G.A.G</abbr></p>
         <p>
           Telefono: 3334455666
         </p>
       </div>
-      <div id="fila">
+      <div class="fila">
         <img src="IMG/p8" alt="personal trainer" />
         <p class="bold">Simone Peruzzo</p>
         <p class="under" xml:lang="en">Fitboxe</p>

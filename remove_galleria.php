@@ -35,7 +35,7 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 <meta name="keywords" content="Energya, fitness, palestra, sport"/>
 <meta name="language" content="italian it"/>
 <meta name="author" content="Franconetti Simone, Infantino Matteo, Marcon Luca"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 
 
@@ -53,7 +53,7 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 <body>
   <div id="nav">
 	  <div id="logo"><img src="IMG/logo1.png" alt="Logo Energya"/></div>
-    <button id="menuIcon" onclick="menuHamburger()" aria-label="menu icon"><img src="IMG/hamburger_icon.png" alt="icona menu"/></button>
+    <button id="menuIcon" onclick="menuHamburger()" ><img src="IMG/hamburger_icon.png" alt="icona menu"/></button>
 	  <ul class="menuItems" id="menuu" >
 	    <li><a href="index.php" xml:lang="en">Home</a></li>
 	    <li><a href="corsi.php">Corsi</a></li>
@@ -89,7 +89,7 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
             $_SESSION ['successoR']=0;
           }
           else{
-            echo "<p></p>";
+            echo "";
           }
         ?>
       </h2>
@@ -97,9 +97,11 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
              if(!empty($listaGalleria))
                foreach ($listaGalleria as $galleria) {
                  echo'
-                   <form id="rem" action="post_remove_galleria.php?id='.$galleria['Id'].'">
-                     <p id="remP">'.$galleria['Immagine'].'</p><input type="hidden" value="'.$galleria['Id'].'" name="rimuovi"/>
+                   <form class="rem" action="post_remove_galleria.php?id='.$galleria['Id'].'">
+                   <fieldset>
+                     <label class="remP">'.$galleria['Immagine'].'</label><input type="hidden" value="'.$galleria['Id'].'" name="rimuovi"/>
                      <input type="submit" class="button" value="Rimuovi Immagine'.$galleria['Immagine'].'" name="submit"/>
+                   </fieldset>
                    </form>';
                }
           ?>

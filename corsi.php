@@ -45,7 +45,7 @@ else {
 <meta name="keywords" content="Energya, fitness, palestra, sport"/>
 <meta name="language" content="italian it"/>
 <meta name="author" content="Franconetti Simone, Infantino Matteo, Marcon Luca"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 
 <link rel="stylesheet" type="text/css" href="CSS/css_index.css" media="handheld, screen"/>
@@ -64,7 +64,7 @@ else {
 
 	<div id="nav">
 		<div id="logo"><img src="IMG/logo1.png" alt="Logo Energya"/></div>
-    <button id="menuIcon" onclick="menuHamburger()" aria-label="menu icon"><img src="IMG/hamburger_icon.png" alt="icona menu"/></button>
+    <button id="menuIcon" onclick="menuHamburger()" ><img src="IMG/hamburger_icon.png" alt="icona menu"/></button>
     <ul class="menuItems" id="menuu" >
       <li><a href="index.php" xml:lang="en">Home</a></li>
 			<li id="currentLink">Corsi</li>
@@ -108,10 +108,10 @@ else {
       if ($_GET['page']!=$page)
         echo '<a href="corsi.php?page=' . $page . '">' . $page . '</a> ';
       else {
-        echo '<span class="active"' . $page . '">' . $page . '</span> ';
+        echo '<span class="active">' . $page . '</span> ';
       }
     }
-    ?></div>
+    ?>
 		</div>
 </div>
 

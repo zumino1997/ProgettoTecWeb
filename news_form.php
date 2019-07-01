@@ -15,7 +15,7 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 if (!isset($_SESSION["successo"]))
   $_SESSION["successo"]=0;
 ?>
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
 <head>
@@ -26,7 +26,7 @@ if (!isset($_SESSION["successo"]))
 <meta name="keywords" content="Energya, fitness, palestra, sport"/>
 <meta name="language" content="italian it"/>
 <meta name="author" content="Franconetti Simone, Infantino Matteo, Marcon Luca"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 
 
@@ -45,7 +45,7 @@ if (!isset($_SESSION["successo"]))
 <body>
   <div id="nav">
 	  <div id="logo"><img src="IMG/logo1.png" alt="Logo Energya"/></div>
-    <button id="menuIcon" onclick="menuHamburger()" aria-label="menu icon"><img src="IMG/hamburger_icon.png" alt="icona menu"/></button>
+    <button id="menuIcon" onclick="menuHamburger()" ><img src="IMG/hamburger_icon.png" alt="icona menu"/></button>
 	  <ul class="menuItems" id="menuu" >
 	    <li><a href="index.php" xml:lang="en">Home</a></li>
 	    <li><a href="corsi.php">Corsi</a></li>
@@ -89,11 +89,9 @@ if (!isset($_SESSION["successo"]))
           </li>
           <li>
 						<label for="testo">Inserisci il testo della <span xml:lang="en">News</span></label>
-            <textarea name="testo" id="testo" rows="30"/><?php if(isset($_SESSION['error']['testoErr'])) if(isset ($_SESSION['var']['testo'])) {$testo = $_SESSION['var']['testo']; echo $testo;} ?></textarea>
+            <textarea name="testo" id="testo" cols="1" rows="30"><?php if(isset($_SESSION['error']['testoErr'])) if(isset ($_SESSION['var']['testo'])) {$testo = $_SESSION['var']['testo']; echo $testo;} ?></textarea>
             <?php if(isset($_SESSION['error']['testoErr'])) { echo '<span class="error">'. $_SESSION['error']['testoErr'] .'</span>'; unset($_SESSION['error']['testoErr']); } else {echo "";} ?>
           </li>
-				</ul>
-			</fieldset>
 					<li id="buttons-login">
 						<input value="Inserisci" class="button" id="inserisci" name="inserisci" type="submit"/>
 						<input value="Cancella" class="button" id="delete-login-button" type="reset" />

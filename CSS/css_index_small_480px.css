@@ -157,7 +157,7 @@ h1{
 
 
 /*STAFF*/
-#fila img{
+.fila img{
 	height: 5em;
 	width: 5em;
 }
@@ -191,11 +191,11 @@ h1{
 	margin-bottom: 1em;
 }
 
-#rem{
+.rem{
 	text-align: right;
 }
 
-#remP{
+.remP{
 	display:inline;
 	width: auto;
 }

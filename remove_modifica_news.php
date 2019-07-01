@@ -38,7 +38,7 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 <meta name="keywords" content="Energya, fitness, palestra, sport"/>
 <meta name="language" content="italian it"/>
 <meta name="author" content="Franconetti Simone, Infantino Matteo, Marcon Luca"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 
 
@@ -56,7 +56,7 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 <body>
   <div id="nav">
 	  <div id="logo"><img src="IMG/logo1.png" alt="Logo Energya"/></div>
-    <button id="menuIcon" onclick="menuHamburger()" aria-label="menu icon"><img src="IMG/hamburger_icon.png" alt="icona menu"/></button>
+    <button id="menuIcon" onclick="menuHamburger()" ><img src="IMG/hamburger_icon.png" alt="icona menu"/></button>
 	  <ul class="menuItems" id="menuu" >
 	    <li><a href="index.php" xml:lang="en">Home</a></li>
 	    <li><a href="corsi.php">Corsi</a></li>
@@ -92,7 +92,7 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
            $_SESSION ['successoR']=0;
          }
          else{
-           echo "<p></p>";
+           echo "";
          }
         ?>
       </h2>
@@ -100,9 +100,11 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
            if(!empty($listaNews))
              foreach ($listaNews as $news) {
                echo'
-                 <form id="rem" action="post_remove_news.php?id='.$news['Id'].'">
-                   <p id="remP">'.$news['Titolo'].'</p><input type="hidden" value="'.$news['Id'].'" name="rimuovi"/>
+                 <form class="rem" action="post_remove_news.php?id='.$news['Id'].'">
+                 <fieldset>
+                   <label class="remP">'.$news['Titolo'].'</label><input type="hidden" value="'.$news['Id'].'" name="rimuovi"/>
                    <input type="submit" class="button" value="Rimuovi '.$news['Titolo'].'" name="submit"/>
+                 </fieldset>
                  </form>';
              }
           ?>
@@ -127,9 +129,11 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
          if(!empty($listaNews)){
            foreach ($listaNews as $news) {
              echo'
-               <form id="rem" action="modifica_news_form.php?id='.$news['Id'].'">
-                 <p id="remP">'.$news['Titolo'].'</p><input type="hidden" value="'.$news['Id'].'" name="modifica"/>
+               <form class="rem" action="modifica_news_form.php?id='.$news['Id'].'">
+               <fieldset>
+                 <label class="remP">'.$news['Titolo'].'</label><input type="hidden" value="'.$news['Id'].'" name="modifica"/>
                  <input type="submit" class="button" value="Modifica '.$news['Titolo'].'" name="submit"/>
+               </fieldset>
                </form>';
            }
          }

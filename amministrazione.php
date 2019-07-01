@@ -33,7 +33,7 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 <meta name="keywords" content="Energya, fitness, palestra, sport"/>
 <meta name="language" content="italian it"/>
 <meta name="author" content="Franconetti Simone, Infantino Matteo, Marcon Luca"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 
 
@@ -51,7 +51,7 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 <body>
   <div id="nav">
 	  <div id="logo"><img src="IMG/logo1.png" alt="Logo Energya"/></div>
-    <button id="menuIcon" onclick="menuHamburger()" aria-label="menu icon"><img src="IMG/hamburger_icon.png" alt="icona menu"/></button>
+    <button id="menuIcon" onclick="menuHamburger()" ><img src="IMG/hamburger_icon.png" alt="icona menu"/></button>
 	  <ul class="menuItems" id="menuu" >
 	    <li><a href="index.php" xml:lang="en">Home</a></li>
 	    <li><a href="corsi.php">Corsi</a></li>
@@ -72,14 +72,14 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 
 	<div id="content">
 		<div id="breadcrumb">
-			<p>Ti trovi in: Pannello di amministrazione</span></p>
+			<p>Ti trovi in: Pannello di amministrazione</p>
 		</div>
 
 
 		<div class="divGenerico">
 			<h1>Pannello di amministrazione</h1>
 			<p>Dal pannello di amministrazione è possibile inserire, modificare e rimuovere
-			i contenuti che verranno visualizzati all'interno del sito <abbr xml:lang="en" xml:title="World Wide Web">web</abbr></p>
+			i contenuti che verranno visualizzati all'interno del sito <abbr xml:lang="en" title="World Wide Web">web</abbr></p>
       <?php
       if (isset($_SESSION['successo']) && $_SESSION ['successo']){
         echo "<h2 class=\"successo\">Inserimento avvenuto con successo</h1>";

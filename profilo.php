@@ -39,7 +39,7 @@ else {
 <meta name="keywords" content="Energya, fitness, palestra, sport"/>
 <meta name="language" content="italian it"/>
 <meta name="author" content="Franconetti Simone, Infantino Matteo, Marcon Luca"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 
 
@@ -58,7 +58,7 @@ else {
 <body>
   <div id="nav">
 	  <div id="logo"><img src="IMG/logo1.png" alt="Logo Energya"/></div>
-    <button id="menuIcon" onclick="menuHamburger()" aria-label="menu icon"><img src="IMG/hamburger_icon.png" alt="icona menu"/></button>
+    <button id="menuIcon" onclick="menuHamburger()" ><img src="IMG/hamburger_icon.png" alt="icona menu"/></button>
 	  <ul class="menuItems" id="menuu" >
       <li><a href="index.php" xml:lang="en">Home</a></li>
 	    <li><a href="corsi.php">Corsi</a></li>
@@ -151,7 +151,9 @@ else {
           echo '<p><span class="pren">Ora Corso: </span>'.$prenotazioni['ora'].'</p>';
         }
         echo '<form action="remove_prenotazione.php" method="post">
+              <fieldset>
                 <input class="button" value ="Elimina Prenotazione" type="submit"/>
+              </fieldset>
               </form>';
       }
       else echo '<h1>Devi ancora effettura la tua prenotazione</h1>';
