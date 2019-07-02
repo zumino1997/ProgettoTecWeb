@@ -46,7 +46,6 @@ if ($dbOpen){
     $passwordErr=valPassword($passwordR);
     $passwordErr1=valPassword1($passwordR,$passwordR1);
     $reg=valReg($nomeErr,$cognomeErr,$cittaErr,$nascitaErr,$indirizzoErr,$emailErr,$passwordErr,$passwordErr1);
-
   }
   if ($reg){      //se non c'è alcun errore negli input
     $passwordR=md5($passwordR);

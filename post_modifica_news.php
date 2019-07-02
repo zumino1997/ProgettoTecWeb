@@ -27,7 +27,6 @@ $_SESSION["error"] = array(
     'altErr' => $altErr,
 );
 
-
 if ($dbOpen)
   if($news){
     $connection->updateNews($_GET['update'],$_GET['titolo'],$_GET['testo'],$_GET['alt']);

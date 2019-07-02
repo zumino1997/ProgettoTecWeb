@@ -19,4 +19,6 @@ else {
 header("Location: profilo.php");
 exit();
 
+php $connection->closeConnection();
+
 ?>

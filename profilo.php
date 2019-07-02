@@ -11,7 +11,6 @@ if (session_status() == PHP_SESSION_NONE) {
 
 $_SESSION ['paginaCorr']="profilo";
 
-
 if ((!isset($_SESSION["email"]))||($_SESSION["email"]=="admin@admin.it")){
 	header("Location: index.php");
 	exit();
@@ -27,7 +26,6 @@ else {
 	}
 
 ?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
@@ -42,18 +40,14 @@ else {
 <meta name="author" content="Franconetti Simone, Infantino Matteo, Marcon Luca"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-
-
 <link rel="stylesheet" type="text/css" href="CSS/css_index.css" media="handheld, screen"/>
 <link rel="stylesheet" type="text/css" href="CSS/css_index_small_768px.css" media="handheld, screen and (max-width:768px),only screen and (max-device-width:720px)"/>
 <link rel="stylesheet" type="text/css" href="CSS/css_index_small_480px.css" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)"/>
 <link rel="stylesheet" type="text/css" href="CSS/print.css" media="print"/>
 
-
 <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
 <script type="text/javascript" src="JS/script.js"> </script>
-
 
 </head>
 <body>
@@ -75,8 +69,7 @@ else {
 		<img src="IMG/logo1.png" alt="Logo Energya"/>
 	</div>
 
-  <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "userbar.php";
-   ?>
+  <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "userbar.php";?>
 
 	<div id="content">
 		<div id="breadcrumb">
@@ -84,14 +77,16 @@ else {
 		</div>
 
 <?php
-  foreach ($listaUtente as $utente){
-    if(isset($_SESSION['email'])){
-      $nome = $utente['nome'];
-      $cognome = $utente['cognome'];
-      $citta = $utente['citta'];
-      $indirizzo = $utente['indirizzo'];
-      $nascita = $utente['nascita'];
-      $email = $utente['email'];
+  if(!empty($listaUtente)){
+    foreach ($listaUtente as $utente){
+      if(isset($_SESSION['email'])){
+        $nome = $utente['nome'];
+        $cognome = $utente['cognome'];
+        $citta = $utente['citta'];
+        $indirizzo = $utente['indirizzo'];
+        $nascita = $utente['nascita'];
+        $email = $utente['email'];
+      }
     }
   }
 
@@ -159,9 +154,7 @@ else {
       }
       else echo '<h1>Devi ancora effettura la tua prenotazione</h1>';
     ?>
-
   </div>
-
 	</div>
 
   <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "footer.html"; ?>
@@ -181,6 +174,5 @@ else {
   </noscript>
 
 <?php $connection->closeConnection();?>
-
 </body>
 </html>

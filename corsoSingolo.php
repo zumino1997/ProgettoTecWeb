@@ -42,11 +42,9 @@ else {
 <link rel="stylesheet" type="text/css" href="CSS/css_index_small_480px.css" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)"/>
 <link rel="stylesheet" type="text/css" href="CSS/print.css" media="print"/>
 
-
 <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
 <script type="text/javascript" src="JS/script.js"> </script>
-
 
 </head>
 <body>
@@ -66,14 +64,11 @@ else {
 		</ul>
 	</div>
 
-
-
 	<div id="header">
 		<img src="IMG/logo1.png" alt="Logo Energya"/>
 	</div>
 
-  <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "userbar.php";
-   ?>
+  <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "userbar.php";?>
 
 	<div id="content">
 
@@ -110,7 +105,6 @@ else {
 </noscript>
 
 <?php $connection->closeConnection();?>
-
 
 </body>
 </html>

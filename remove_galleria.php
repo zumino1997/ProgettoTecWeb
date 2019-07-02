@@ -24,7 +24,8 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 	else {
 			$_SESSION["error"] = "Connessione non stabilita correttamente";
 }
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
 <head>
@@ -38,13 +39,10 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 <meta name="author" content="Franconetti Simone, Infantino Matteo, Marcon Luca"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-
-
 <link rel="stylesheet" type="text/css" href="CSS/css_index.css" media="handheld, screen"/>
 <link rel="stylesheet" type="text/css" href="CSS/css_index_small_768px.css" media="handheld, screen and (max-width:768px),only screen and (max-device-width:768px)"/>
 <link rel="stylesheet" type="text/css" href="CSS/css_index_small_480px.css" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)"/>
 <link rel="stylesheet" type="text/css" href="CSS/print.css" media="print"/>
-
 
 <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
@@ -78,7 +76,6 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 			<p>Ti trovi in: Pannello di amministrazione >> Rimozione corsi</p>
 		</div>
 
-
 		<div class="divGenerico">
       <h1>Elimina foto galleria</h1>
       <p class="center">Per eliminare una delle immagini inserite all'interno della sezione "Galleria",
@@ -106,11 +103,11 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
                    </form>';
                }
           ?>
-
 		</div>
 	</div>
 
   <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "footer.html"; ?>
+  <?php $connection->closeConnection();?>
 
   <noscript>
   	  <ul id="NoJS">

@@ -21,10 +21,8 @@ else {
 		$_SESSION["error"] = "Connessione non stabilita correttamente";
 	}
 
-
-
-
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
 <head>
@@ -38,13 +36,10 @@ else {
 <meta name="author" content="Franconetti Simone, Infantino Matteo, Marcon Luca"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-
-
 <link rel="stylesheet" type="text/css" href="CSS/css_index.css" media="handheld, screen"/>
 <link rel="stylesheet" type="text/css" href="CSS/css_index_small_768px.css" media="handheld, screen and (max-width:768px),only screen and (max-device-width:768px)"/>
 <link rel="stylesheet" type="text/css" href="CSS/css_index_small_480px.css" media="handheld, screen and (max-width:480px),only screen and (max-device-width:480px)"/>
 <link rel="stylesheet" type="text/css" href="CSS/print.css" media="print"/>
-
 
 <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
@@ -79,34 +74,32 @@ else {
 			<p>Ti trovi in: <span xml:lang="en">News</span></p>
 		</div>
 
-
     <?php
-    $i=0;
-    if (!empty($listaNews)){
-      foreach ($listaNews as $news) {
-        if ($i%2==0){
+    if(!empty($listaNews)){
+      for($i=count($listaNews); $i>0; $i--){
+        $n=$listaNews[$i-1];
+        if ((count($listaNews)-$i)%2==0){
           echo '<div class="divSx">';
-          echo '<h1>'.$news['Titolo'].'</h1>';
-          echo '<img src="'.$news['Immagine'].'" alt="'.$news['Alt'].'"/>';
-          echo '<p class="time">'.date("d/m/Y H:m", strtotime($news['Data'])).'</p>';
-          echo '<p>'.$news['Testo'].'</p>';
+          echo '<h1>'.$n['Titolo'].'</h1>';
+          echo '<img src="'.$n['Immagine'].'" alt="'.$n['Alt'].'"/>';
+          echo '<p class="time">'.date("d/m/Y H:m", strtotime($n['Data'])).'</p>';
+          echo '<p>'.$n['Testo'].'</p>';
           echo '</div>';
         }
         else{
           echo '<div class="divDx">';
-          echo '<h1>'.$news['Titolo'].'</h1>';
-          echo '<img src="'.$news['Immagine'].'" alt="'.$news['Alt'].'"/>';
-          echo '<p class="time">'.date("d/m/Y H:m", strtotime($news['Data'])).'</p>';
-          echo '<p>'.$news['Testo'].'</p>';
+          echo '<h1>'.$n['Titolo'].'</h1>';
+          echo '<img src="'.$n['Immagine'].'" alt="'.$n['Alt'].'"/>';
+          echo '<p class="time">'.date("d/m/Y H:m", strtotime($n['Data'])).'</p>';
+          echo '<p>'.$n['Testo'].'</p>';
           echo '</div>';
         }
-        $i++;
       }
     }
     else {
       echo '<h1>Non &egrave; disponibile alcuna <span xml:lang="en">news</span> </h1>';
-    } ?>
-
+    }
+    ?>
 	</div>
 
   <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "footer.html"; ?>
@@ -126,6 +119,5 @@ else {
   </noscript>
 
 <?php $connection->closeConnection();?>
-
 </body>
 </html>

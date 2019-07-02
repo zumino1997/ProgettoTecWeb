@@ -34,7 +34,6 @@ $_SESSION["error"] = array(
     'oraErr'=> $oraErr,
 );
 
-
 if ($dbOpen)
   if($cor){
     $connection->updateCorsi($_GET['update'],$_GET['titolo'],$_GET['testo'],$_GET['testoLong'],$_GET['alt'],$_GET['giorno'],$_GET['ora']);

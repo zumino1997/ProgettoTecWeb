@@ -14,7 +14,6 @@ $titolo=$_POST["titolo"];
 $testo=$_POST["testo"];
 $alt=$_POST["alt"];
 
-
 $titoloErr=valTitolo($titolo);
 $testoErr=valTesto($testo);
 $altErr=valAlt($alt);
