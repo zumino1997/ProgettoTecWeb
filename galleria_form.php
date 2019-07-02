@@ -104,8 +104,8 @@ if (!isset($_SESSION["successo"]))
   	    <li><a href="galleria.php">Galleria</a></li>
         <li><a href="staff.php" xml:lang="en">Staff</a></li>
   	    <li><a href="contatti.php">Contatti</a></li>
-  			<?php require_once __DIR__ . DIRECTORY_SEPARATOR . "userbar_mobile.php";?>
-        <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "userbar.php";?>
+        <?php include __DIR__ . DIRECTORY_SEPARATOR . "userbar_mobile.php";?>
+        <?php include __DIR__ . DIRECTORY_SEPARATOR . "userbar.php";?>
   	  </ul>
   </noscript>
 
