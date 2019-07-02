@@ -31,6 +31,14 @@ button:focus{
 	list-style-type: none;
 }
 
+#menuNoScript{
+	display: block;
+}
+
+#NoJS li:nth-child(8), #NoJS li:nth-child(9){
+	display:none;
+}
+
 #nav{
 	position:absolute;
 	width: 100%;

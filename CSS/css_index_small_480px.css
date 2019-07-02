@@ -93,6 +93,10 @@ p{
 	margin-bottom: 1%;
 }
 
+#NoJS li:nth-child(8), #NoJS li:nth-child(9){
+	display:block;
+}
+
 
 /*CORSI*/
 
