@@ -67,6 +67,10 @@ MENU
 	display:none;
 }
 
+#menuNoScript{
+	display: none;
+}
+
 #nav {
 	text-align: right;
 	background-color: #343434;
@@ -112,6 +116,7 @@ MENU
 	color:#FFAF56;
 	font-weight: bold;
 	border:1px solid #FFAF56;
+	margin: 3px;
 }
 
 
