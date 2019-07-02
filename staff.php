@@ -138,8 +138,8 @@ $_SESSION ['paginaCorr']="";
   			<li><a href="galleria.php">Galleria</a></li>
   	    <li id="currentLink" xml:lang="en">Staff</li>
   	    <li><a href="contatti.php">Contatti</a></li>
-  			<?php require_once __DIR__ . DIRECTORY_SEPARATOR . "userbar_mobile.php";?>
-        <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "userbar.php";?>
+        <?php include __DIR__ . DIRECTORY_SEPARATOR . "userbar_mobile.php";?>
+        <?php include __DIR__ . DIRECTORY_SEPARATOR . "userbar.php";?>
   	  </ul>
   </noscript>
 
