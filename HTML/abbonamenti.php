@@ -104,7 +104,12 @@ $_SESSION ['paginaCorr']="";
   	    <li><a href="galleria.php">Galleria</a></li>
   	    <li><a href="staff.php" xml:lang="en">Staff</a></li>
   	    <li><a href="contatti.php">Contatti</a></li>
+<<<<<<< HEAD:HTML/abbonamenti.php
         <?php include __DIR__ . DIRECTORY_SEPARATOR . "../PHP" . DIRECTORY_SEPARATOR . "userbar_mobile.php";?>
+=======
+        <?php include __DIR__ . DIRECTORY_SEPARATOR . "userbar_mobile.php";?>
+        <?php include __DIR__ . DIRECTORY_SEPARATOR . "userbar.php";?>
+>>>>>>> 16a6a108681aed5d6133df308c0ffc07a685dec5:abbonamenti.php
   	  </ul>
   </noscript>
 
