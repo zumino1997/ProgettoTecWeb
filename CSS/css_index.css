@@ -116,7 +116,7 @@ MENU
 	color:#FFAF56;
 	font-weight: bold;
 	border:1px solid #FFAF56;
-	margin: 3px;
+	margin: 0.1em;
 }
 
 
@@ -669,4 +669,8 @@ FOOTER
 	cursor: pointer;
 	background-color: #fff;
 	display: none;
+}
+
+#hideFieldset{
+	border:0;
 }

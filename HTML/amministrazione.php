@@ -76,7 +76,7 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
         $_SESSION ['successo']=0;
       }
       else{
-        echo "<p></p>";
+        echo "";
       }
       ?>
       <ul>

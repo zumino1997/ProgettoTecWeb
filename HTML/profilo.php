@@ -150,7 +150,7 @@ else {
           echo '<p><span class="pren">Ora Corso: </span>'.$prenotazioni['ora'].'</p>';
         }
         echo '<form action="../PHP/remove_prenotazione.php" method="post">
-              <fieldset>
+              <fieldset id="hideFieldset">
                 <input class="button" value ="Elimina Prenotazione" type="submit"/>
               </fieldset>
               </form>';
