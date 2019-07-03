@@ -53,8 +53,8 @@ button:focus{
 #nav li{
 	clear: both;
 	display: block;
-	background-color: #343434;
-	color: #fff;
+	/* background-color: #343434;
+	color: #fff; */
 	padding: 0;
 }
 
@@ -181,14 +181,6 @@ button:focus{
 #contatti{
 	min-height: auto;
 	margin-bottom: 3em;
-}
-
-#map iframe{
-	margin-bottom: 3em;
-	width: 100%;
-	height: 25em;
-	border: 0;
-	float: left;
 }
 
 #contatti p,#contatti h1, #contatti h2 {

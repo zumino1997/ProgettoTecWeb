@@ -116,7 +116,7 @@ MENU
 	color:#FFAF56;
 	font-weight: bold;
 	border:1px solid #FFAF56;
-	margin: 3px;
+	margin: 0.1em;
 }
 
 
@@ -355,37 +355,38 @@ CONTENUTO
 /*******
 CSS CONTATTI
 *******/
-#map {
-	margin-top: 1.5em;
-}
 
 #contatti {
 	float:left;
 	min-height: 29em;
 }
 
-#contatti p,#contatti h1, #contatti h2 {
+#info{
+	width: 40%;
+	float:left;
+}
+
+#info p,#info h1, #info h2 {
 	margin-left: 0%;
 }
 
-#contatti p{
+#info p{
 	margin: 0.2em 0;
 }
 
-#contatti h1{
+#info h1{
 	margin-bottom: 0em;
 }
 
-#contatti h2{
+#info h2{
 	margin-top: 0.8em;
 	margin-bottom: 0.5em;
 }
 
-#map iframe{
-	height: 25em;
-	border: 0;
-	width: 50%;
-	float:right;
+#contatti img{
+	margin-top: 0.8em;
+	width: 40%;
+	float: right;
 }
 
 
@@ -670,8 +671,6 @@ FOOTER
 	display: none;
 }
 
-#screenReader{
-	position: absolute;
-	height: 0;
-	overflow:hidden;
+#hideFieldset{
+	border:0;
 }
