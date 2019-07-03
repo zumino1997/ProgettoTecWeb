@@ -52,6 +52,7 @@ if(isset($_POST["inserisci"])) {
     if ($uploadOk == 1 && move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file) && $news) {
         $connection->insertNews($titolo,$testo,$target_file,$alt);
         $_SESSION["successo"]=1;
+        header("Location: ../HTML/amministrazione.php");
       }
 }
 
@@ -62,7 +63,7 @@ $_SESSION["error"] = array(
     'err' => $err
 );
 
-  header("Location: ../HTML/amministrazione.php");
+  header("Location: ../HTML/news_form.php");
   exit();
 
 $connection->closeConnection();

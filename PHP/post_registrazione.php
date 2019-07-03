@@ -54,7 +54,10 @@ if ($dbOpen){
       $connection->closeConnection();
       $_SESSION["email"]=$emailR;
       $_SESSION["error"] = "";
-      header("Location: ../HTML/profilo.php");
+      if($_SESSION["email"]=="admin@admin.it")
+        header("Location: ../HTML/amministrazione.php");
+      else
+        header("Location: ../HTML/profilo.php");
       exit();
     }
     else{
