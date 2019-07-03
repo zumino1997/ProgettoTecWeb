@@ -9,7 +9,6 @@ class DBConnection
 
   public $conn;
 
-  /* Apre una connessione con il db con le variabili impostate precedentemente */
   public function openConnection()  {
     $this->conn = mysqli_connect(static::host, static::user, static::pwd, static::db);
     if (!$this->conn) {

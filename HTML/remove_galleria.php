@@ -101,7 +101,7 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
                    <form class="rem" action="../PHP/post_remove_galleria.php?id='.$galleria['Id'].'">
                    <fieldset>
                      <label class="remP">'.$galleria['Immagine'].'</label><input type="hidden" value="'.$galleria['Id'].'" name="rimuovi"/>
-                     <input type="submit" class="button" value="Rimuovi Immagine'.$galleria['Immagine'].'" name="submit"/>
+                     <input type="submit" class="button" value="Rimuovi Immagine '.$galleria['Immagine'].'" name="submit"/>
                    </fieldset>
                    </form>';
                }
