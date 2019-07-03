@@ -53,6 +53,7 @@ if(isset($_POST["inserisci"])) {
         $connection->insertNews($titolo,$testo,$target_file,$alt);
         $_SESSION["successo"]=1;
         header("Location: ../HTML/amministrazione.php");
+        exit();
       }
 }
 

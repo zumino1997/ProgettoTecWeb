@@ -90,7 +90,7 @@ else {
     if(!empty($listaImg)){
       foreach ($listaImg as $img) {
     		echo '<div id="column">';
-        echo '<img src="'.$img['Immagine'].'" onclick="show(this)" alt=""/>';
+        echo '<img src="'.$img['Immagine'].'" onclick="show(this)" alt="'.$img['Alt'].'"/>';
     		echo '</div>';
     	}
     }

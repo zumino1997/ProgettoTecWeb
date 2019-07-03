@@ -63,6 +63,7 @@ if(isset($_POST["inserisci"])) {
         $connection->insertCorsi($titolo,$testo,$target_file,$testoLong,$alt,$ora,$giorno);
         $_SESSION["successo"]=1;
         header("Location: ../HTML/amministrazione.php");
+        exit();
       }
 }
 

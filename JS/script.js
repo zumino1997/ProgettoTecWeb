@@ -22,6 +22,7 @@ function show(img) {
   var imgExp = document.getElementById("imgExp");
   imgExp.src = img.src;
   document.getElementById('showImage').style.display = "block";
+  imgExp.alt = img.alt;
 }
 
 
