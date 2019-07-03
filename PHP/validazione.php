@@ -5,7 +5,7 @@ function valNome($nome){
   if (empty($nome)){
     $nomeErr="Nome non inserito";
   }
-  else if (!preg_match("/^[a-zA-Z ]{3,}$/",$nome)) {
+  else if (!preg_match("/^[a-zA-Z -]{3,}$/",$nome)) {
     $nomeErr = "Sono consentite solo lettere e spazi bianchi";
   }
   return $nomeErr;
@@ -16,7 +16,7 @@ function valCognome($cognome){
   if (empty($cognome)){
     $cognomeErr="Cognome non inserito";
   }
-  else if (!preg_match("/^[a-zA-Z ]{3,}$/",$cognome)) {
+  else if (!preg_match("/^[a-zA-Z '-]{3,}$/",$cognome)) {
       $cognomeErr = "Sono consentite solo lettere e spazi bianchi";
   }
   return $cognomeErr;

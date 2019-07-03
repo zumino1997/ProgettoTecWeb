@@ -36,7 +36,7 @@ function closeImage() {
 
 
 function checkNome(nomeInput){
-  var pattern= /^[a-zA-Z]{3,}$/;
+  var pattern= /^[a-zA-Z '-]{3,}$/;
   var name = nomeInput.getAttribute("name");
   if (pattern.test(nomeInput.value)){
   togliErrore(nomeInput);
@@ -52,7 +52,7 @@ function checkNome(nomeInput){
         mostraErrore(nomeInput, "Il campo \"città\" non può essere vuoto");
     }
     else
-      mostraErrore(nomeInput, "Inserire almeno 3 lettere. I numeri non sono consentiti.");
+      mostraErrore(nomeInput, "Inserire almeno 3 lettere. I numeri e i caratteri speciali non sono consentiti.");
     return false;
   }
 }
