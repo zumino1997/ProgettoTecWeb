@@ -54,7 +54,7 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 </head>
 <body>
   <noscript>
-    <span id="menuNoScript"><span xml:lang="en">Javascript</span> Disabilitato: Il <a href="#NoJS">menu</a> &egrave; visualizzabile in fondo alla pagina</span>
+    <p id="menuNoScript"><span xml:lang="en">Javascript</p> Disabilitato: Il <a href="#NoJS">menu</a> &egrave; visualizzabile in fondo alla pagina</span>
   </noscript>
   <div id="nav">
 	  <div id="logo"><img src="../IMG/logo1.png" alt="Logo Energya"/></div>
