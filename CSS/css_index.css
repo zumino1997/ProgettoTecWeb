@@ -55,7 +55,7 @@ a:visited{
 #hideLink{
 	position:absolute;
 	height: 0;
-	overflow: hidden;	
+	overflow: hidden;
 }
 
 
@@ -332,8 +332,8 @@ CONTENUTO
 
 .Card{
 	text-align: center;
-	width: 40%;
-	padding:5%;
+	width: 45%;
+	padding:2.5%;
 }
 
 .Sx {
