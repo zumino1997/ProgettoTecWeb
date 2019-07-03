@@ -78,13 +78,13 @@ else {
 
     <?php
     if(!empty($listaNews)){
-      for($i=count($listaNews); $i>0; $i--){
+      for($i=7; $i>1; $i--){
         $n=$listaNews[$i-1];
         if ((count($listaNews)-$i)%2==0){
           echo '<div class="divSx">';
           echo '<h1>'.$n['Titolo'].'</h1>';
           echo '<img src="'.$n['Immagine'].'" alt="'.$n['Alt'].'"/>';
-          echo '<p class="time">'.date("d/m/Y H:m", strtotime($n['Data'])).'</p>';
+          echo '<p class="time">'.date("d/m/Y H:i", strtotime($n['Data'])).'</p>';
           echo '<p>'.$n['Testo'].'</p>';
           echo '</div>';
         }
@@ -92,7 +92,7 @@ else {
           echo '<div class="divDx">';
           echo '<h1>'.$n['Titolo'].'</h1>';
           echo '<img src="'.$n['Immagine'].'" alt="'.$n['Alt'].'"/>';
-          echo '<p class="time">'.date("d/m/Y H:m", strtotime($n['Data'])).'</p>';
+          echo '<p class="time">'.date("d/m/Y H:i", strtotime($n['Data'])).'</p>';
           echo '<p>'.$n['Testo'].'</p>';
           echo '</div>';
         }
@@ -111,7 +111,7 @@ else {
         <li><a href="index.php" xml:lang="en">Home</a></li>
   	    <li><a href="corsi.php">Corsi</a></li>
         <li><a href="abbonamenti.php">Abbonamenti</a></li>
-  			<li xml:lang="en">News</li>
+  			<liixml:lang="en">News</li>
   	    <li><a href="galleria.php">Galleria</a></li>
   	    <li><a href="staff.php" xml:lang="en">Staff</a></li>
   	    <li><a href="contatti.php">Contatti</a></li>

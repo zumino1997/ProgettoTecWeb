@@ -47,11 +47,16 @@ a{
 	/* color: #BA5C00; */
 	font-weight: bold;
 }
-/* 
+/*
 a:visited{
 	color: #D57C00;
 } */
 
+#hideLink{
+	position:absolute;
+	height: 0;
+	overflow: hidden;	
+}
 
 
 

@@ -33,6 +33,7 @@ $_SESSION ['paginaCorr']="";
 
 </head>
 <body>
+  <a id="hideLink"href="#content">Vai al contenuto</a>
   <noscript>
     <span id="menuNoScript"><span xml:lang="en">Javascript</span> Disabilitato: Il <a href="#NoJS">menu</a> &egrave; visualizzabile in fondo alla pagina</span>
   </noscript>

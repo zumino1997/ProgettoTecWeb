@@ -108,6 +108,12 @@ class DBConnection
   }
 
   public function insertUser($nome,$cognome,$citta,$indirizzo,$nascita,$emailR,$passwordR){
+    $nome = mysqli_real_escape_string($this->conn, $nome);
+    $cognome = mysqli_real_escape_string($this->conn, $cognome);
+    $citta = mysqli_real_escape_string($this->conn, $citta);
+    $indirizzo = mysqli_real_escape_string($this->conn, $indirizzo);
+    $emailR = mysqli_real_escape_string($this->conn, $emailR);
+    $passwordR = mysqli_real_escape_string($this->conn, $passwordR);
     $query1 = "INSERT INTO anagrafica (nome, cognome, citta, indirizzo, nascita, mail) VALUES ('$nome','$cognome','$citta','$indirizzo','$nascita','$emailR')";
     $query2 = "INSERT INTO utenti (mail,password) VALUES ('$emailR','$passwordR')";
     $queryResult1 = mysqli_query($this->conn, $query1);
@@ -171,6 +177,11 @@ class DBConnection
 
 
   public function insertCorsi($titolo,$testo,$fileToUpload,$testoLong,$alt,$ora,$giorno){
+    $fileToUpload = mysqli_real_escape_string($this->conn, $fileToUpload);
+    $titolo = mysqli_real_escape_string($this->conn, $titolo);
+    $testo = mysqli_real_escape_string($this->conn, $testo);
+    $testoLong = mysqli_real_escape_string($this->conn, $testoLong);
+    $alt = mysqli_real_escape_string($this->conn, $alt);
     $query1 = "INSERT INTO corsi(titolo,descrizione,immagine,descrizione_long,alt,ora,giorno) VALUES ('$titolo','$testo','$fileToUpload','$testoLong','$alt','$ora','$giorno')";
     $queryResult1 = mysqli_query($this->conn, $query1);
     if (mysqli_affected_rows($this->conn)==0){
@@ -182,6 +193,10 @@ class DBConnection
   }
 
   public function insertNews($titolo,$testo,$fileToUpload,$alt){
+    $fileToUpload = mysqli_real_escape_string($this->conn, $fileToUpload);
+    $titolo = mysqli_real_escape_string($this->conn, $titolo);
+    $testo = mysqli_real_escape_string($this->conn, $testo);
+    $alt = mysqli_real_escape_string($this->conn, $alt);
     $query1 = "INSERT INTO news(immagine,titolo,testo,alt) VALUES ('$fileToUpload','$titolo','$testo','$alt')";
     $queryResult1 = mysqli_query($this->conn, $query1);
     if (mysqli_affected_rows($this->conn)==0){
@@ -193,6 +208,9 @@ class DBConnection
   }
 
   public function insertGalleria($testo,$fileToUpload,$alt){
+    $fileToUpload = mysqli_real_escape_string($this->conn, $fileToUpload);
+    $testo = mysqli_real_escape_string($this->conn, $testo);
+    $alt = mysqli_real_escape_string($this->conn, $alt);
     $query1 = "INSERT INTO galleria(immagine,alt,didascalia) VALUES ('$fileToUpload','$alt','$testo')";
     $queryResult1 = mysqli_query($this->conn, $query1);
     if (mysqli_affected_rows($this->conn)==0){
@@ -310,6 +328,10 @@ class DBConnection
     }
 
     public function updateCorsi($id,$titolo,$testo,$testoLong,$alt,$giorno,$ora){
+      $titolo = mysqli_real_escape_string($this->conn, $titolo);
+      $testo = mysqli_real_escape_string($this->conn, $testo);
+      $testoLong = mysqli_real_escape_string($this->conn, $testoLong);
+      $alt = mysqli_real_escape_string($this->conn, $alt);
       $query = 'UPDATE corsi SET titolo="'.$titolo.'", descrizione="'.$testo.'", descrizione_long="'.$testoLong.'", alt="'.$alt.'", ora="'.$ora.'", giorno="'.$giorno.'" WHERE corsi_id="'.$id.'"';
       mysqli_query($this->conn,$query);
       if (mysqli_affected_rows($this->conn)==0){
@@ -321,6 +343,9 @@ class DBConnection
     }
 
     public function updateNews($id,$titolo,$testo,$alt){
+      $titolo = mysqli_real_escape_string($this->conn, $titolo);
+      $testo = mysqli_real_escape_string($this->conn, $testo);
+      $alt = mysqli_real_escape_string($this->conn, $alt);
       $query = 'UPDATE news SET titolo="'.$titolo.'", testo="'.$testo.'", alt="'.$alt.'" WHERE id="'.$id.'"';
       mysqli_query($this->conn,$query);
       if (mysqli_affected_rows($this->conn)==0){
