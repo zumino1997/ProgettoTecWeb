@@ -78,7 +78,12 @@ else {
 
     <?php
     if(!empty($listaNews)){
-      for($i=7; $i>1; $i--){
+      if (count($listNews)<7)
+        $i=count($listNews);
+      else {
+        $i=7;
+      }
+      for(; $i>1; $i--){
         $n=$listaNews[$i-1];
         if ((count($listaNews)-$i)%2==0){
           echo '<div class="divSx">';
