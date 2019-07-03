@@ -58,13 +58,6 @@ CONTATTI
 	margin-bottom: 0.1em;
 }
 
-/*assegnare un id a "salta la mappa" nel css per poterlo nascondere in questo file*/
-/*sistemare la mappa*/
-
-#map iframe{
-	width:100%;
-	height:400px;
-}
 
 /*****
 STAFF

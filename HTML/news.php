@@ -111,16 +111,11 @@ else {
         <li><a href="index.php" xml:lang="en">Home</a></li>
   	    <li><a href="corsi.php">Corsi</a></li>
         <li><a href="abbonamenti.php">Abbonamenti</a></li>
-  			<li id="currentLink" xml:lang="en">News</li>
+  			<li xml:lang="en">News</li>
   	    <li><a href="galleria.php">Galleria</a></li>
   	    <li><a href="staff.php" xml:lang="en">Staff</a></li>
   	    <li><a href="contatti.php">Contatti</a></li>
-<<<<<<< HEAD:HTML/news.php
         <?php include __DIR__ . DIRECTORY_SEPARATOR . "../PHP" . DIRECTORY_SEPARATOR . "userbar_mobile.php";?>
-=======
-        <?php include __DIR__ . DIRECTORY_SEPARATOR . "userbar_mobile.php";?>
-        <?php include __DIR__ . DIRECTORY_SEPARATOR . "userbar.php";?>
->>>>>>> 16a6a108681aed5d6133df308c0ffc07a685dec5:news.php
   	  </ul>
   </noscript>
 

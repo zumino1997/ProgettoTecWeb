@@ -138,14 +138,9 @@ $_SESSION ['paginaCorr']="";
   			<li><a href="abbonamenti.php">Abbonamenti</a></li>
   			<li><a href="news.php">News</a></li>
   			<li><a href="galleria.php">Galleria</a></li>
-  	    <li id="currentLink" xml:lang="en">Staff</li>
+  	    <li xml:lang="en">Staff</li>
   	    <li><a href="contatti.php">Contatti</a></li>
-<<<<<<< HEAD:HTML/staff.php
         <?php include __DIR__ . DIRECTORY_SEPARATOR . "../PHP" . DIRECTORY_SEPARATOR . "userbar_mobile.php";?>
-=======
-        <?php include __DIR__ . DIRECTORY_SEPARATOR . "userbar_mobile.php";?>
-        <?php include __DIR__ . DIRECTORY_SEPARATOR . "userbar.php";?>
->>>>>>> 16a6a108681aed5d6133df308c0ffc07a685dec5:staff.php
   	  </ul>
   </noscript>
 

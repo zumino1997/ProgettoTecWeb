@@ -61,27 +61,28 @@ $_SESSION ['paginaCorr']="";
 		</div>
 
 		<div id="contatti">
-			<h1>Contatti</h1>
-			<h2>Indirizzo</h2>
-			<p>Via Bassanese Coste, 156</p>
-			<p>31010 Maser, <span xml:abbr title="World Wide Web">TV</abbr></p>
-			<p>Italia</p>
-			<h2>Recapiti</h2>
-			<p>Telefono: 0423 565453</p>
-			<p>Cellulare: 347 1234567</p>
-			<h2>I nostri orari</h2>
-			<p>Lunedi - Venerdi: 10:00 - 20:00</p>
-			<a id="screenReader" href="#nav">Salta la mappa</a>
+      <h1>Contatti</h1>
+      <div id="info">
+  			<h2>Indirizzo</h2>
+  			<p>Via Bassanese Coste, 156</p>
+  			<p>31010 Maser, <span xml:abbr title="World Wide Web">TV</abbr></p>
+  			<p>Italia</p>
+  			<h2>Recapiti</h2>
+  			<p>Telefono: 0423 565453</p>
+  			<p>Cellulare: 347 1234567</p>
+  			<h2>I nostri orari</h2>
+  			<p>Lunedi - Venerdi: 10:00 - 20:00</p>
+      </div>
+      <img class="Dx" src="../IMG/esterno_palestra.jpg" alt="Esterno della palestra"/>
 		</div>
 
-		<div id="map">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11125.410647175351!2d11.96207182468705!3d45.80419511892312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf23f8f3d6e477cad!2sEnergya+Fitness+Club!5e0!3m2!1sit!2sit!4v1545300300095" ></iframe>
-		</div>
 
-		<div class="divGenerico evidenza clearfix">
-			<h1>Come trovarci</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor rhoncus posuere. Integer pellentesque eu nulla eu elementum. Vestibulum molestie risus eu nisl rhoncus suscipit. Aliquam nisi orci, feugiat sit amet nulla in, sodales interdum mi.</p>
-		</div>
+    <div class="divGenerico evidenza clearfix">
+    			<h1>Come trovarci</h1>
+    			<p>Arrivando da Cornuda: percorrere Via Cornuda e Via Bassanese/Via Bassanese Coste, fino ad arrivare a Coste di Maser. La struttura si trover&aacute; sulla vostra sinistra lungo la strada principale </p>
+    			<p>Arrivando da Asolo: percorrere Strada Provinciale 248 e Via Bassanese, passando per Crespignaga, fino ad arrivare a Coste di Maser. La struttura si trover&aacute; sulla vostra destra lungo la strada principale </p>
+    			<p>Arrivando da Caerano di San Marco: percorrere Via Monte Grappa, Strada Provinciale 248 e Via Caldiroro, fino ad arrivare a Coste di Maser. All'incrocio svoltare a destra e dopo circa 150 metri la struttura si trover&aacute; sulla vostra sinistra lungo la strada principale </p>
+    		</div>
 
 	</div>
 
@@ -97,12 +98,7 @@ $_SESSION ['paginaCorr']="";
   			<li><a href="galleria.php">Galleria</a></li>
   	    <li><a href="staff.php" xml:lang="en">Staff</a></li>
   			<li>Contatti</li>
-<<<<<<< HEAD:HTML/contatti.php
         <?php include __DIR__ . DIRECTORY_SEPARATOR . "../PHP" . DIRECTORY_SEPARATOR . "userbar_mobile.php";?>
-=======
-        <?php include __DIR__ . DIRECTORY_SEPARATOR . "userbar_mobile.php";?>
-        <?php include __DIR__ . DIRECTORY_SEPARATOR . "userbar.php";?>
->>>>>>> 16a6a108681aed5d6133df308c0ffc07a685dec5:contatti.php
   	  </ul>
   </noscript>
 
