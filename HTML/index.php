@@ -39,7 +39,7 @@ $_SESSION ['paginaCorr']="";
   </noscript>
 	<div id="nav">
 	  <div id="logo"><img src="../IMG/logo1.png" alt="Logo Energya"/></div>
-    <button id="menuIcon" title="menuIcon" onclick="menuHamburger()"><img src="../IMG/hamburger_icon.png" alt="menu icon"/></button>
+    <button id="menuIcon" title="menuIcon" onclick="menuHamburger()"><img src="../IMG/hamburger_icon.png" alt="icona menu"/></button>
 	  <ul class="menuItems" id="menuu" >
 	    <li id="currentLink" xml:lang="en">Home</li>
 	    <li><a href="corsi.php">Corsi</a></li>
