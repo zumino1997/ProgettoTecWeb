@@ -1,3 +1,5 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <?php
 
 if (session_status() == PHP_SESSION_NONE) {
@@ -7,9 +9,6 @@ if (session_status() == PHP_SESSION_NONE) {
 $_SESSION ['paginaCorr']="";
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -33,8 +32,9 @@ $_SESSION ['paginaCorr']="";
 
 </head>
 <body>
+  <a id="hideLink"href="#content">Vai al contenuto</a>
   <noscript>
-    <span id="menuNoScript"><span xml:lang="en">Javascript</span> Disabilitato: Il <a href="#NoJS">menu</a> &egrave; visualizzabile in fondo alla pagina</span>
+    <p id="menuNoScript"><span xml:lang="en">Javascript</span> Disabilitato: Il <a href="#NoJS">men&ugrave;</a> &egrave; visualizzabile in fondo alla pagina</p>
   </noscript>
 	<div id="nav">
 	  <div id="logo"><img src="../IMG/logo1.png" alt="Logo Energya"/></div>
@@ -58,7 +58,7 @@ $_SESSION ['paginaCorr']="";
 
 	<div id="content">
 		<div id="breadcrumb">
-			<p>Ti trovi in: <span xml:lang="en">Accesso non autorizzato</span></p>
+			<p>Ti trovi in: Accesso non autorizzato</p>
 		</div>
 
     <h1>Pagina non trovata</h1>

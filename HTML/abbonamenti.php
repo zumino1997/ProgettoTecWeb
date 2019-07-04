@@ -1,3 +1,5 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <?php
 
 if (session_status() == PHP_SESSION_NONE) {
@@ -7,8 +9,6 @@ if (session_status() == PHP_SESSION_NONE) {
 $_SESSION ['paginaCorr']="";
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -31,8 +31,9 @@ $_SESSION ['paginaCorr']="";
 
 </head>
 <body>
+  <a id="hideLink"href="#content">Vai al contenuto</a>
   <noscript>
-    <span id="menuNoScript"><span xml:lang="en">Javascript</span> Disabilitato: Il <a href="#NoJS">menu</a> &egrave; visualizzabile in fondo alla pagina</span>
+    <p id="menuNoScript"><span xml:lang="en">Javascript</span> Disabilitato: Il <a href="#NoJS">men&ugrave;</a> &egrave; visualizzabile in fondo alla pagina</p>
   </noscript>
   <div id="nav">
 	  <div id="logo"><img src="../IMG/logo1.png" alt="Logo Energya"/></div>
@@ -62,15 +63,14 @@ $_SESSION ['paginaCorr']="";
 
 		<div class="divGenerico">
 
-			<h1> I nostri abbonamenti </h1>
-			<p>All’interno del Club gli abbonati potranno usufruire dei numerosi ed
-         esclusivi servizi compresi nell’ abbonamento, sentendosi così in vacanza
-         ogni giorno dell’anno in completo relax:
-         </p>
+			<h1>I nostri abbonamenti</h1>
+			<p>All’interno del <span xml:lang="en">Club</span> gli abbonati potranno usufruire dei numerosi ed
+         esclusivi servizi compresi nell’abbonamento, sentendosi cos&igrave; in vacanza
+         ogni giorno dell’anno in completo <span xml:lang="en">relax</span>:</p>
       <ul>
-        <li>Possibilità di usufruire di tutte le sale e macchinari all'avanguardia </li>
-        <li>Disponibilità di un ampio parcheggio gratuito</li>
-        <li>Servizio Personal Trainer e cambio scheda</li>
+        <li>Possibilit&agrave; di usufruire di tutte le sale e macchinari all'avanguardia </li>
+        <li>Disponibilit&agrave; di un ampio parcheggio gratuito</li>
+        <li>Servizio <span xml:lang="en">Personal Trainer</span> e cambio scheda</li>
         <li>Thermarium – Piscina Coperta – Terrazza Estiva</li>
       </ul>
 
@@ -79,16 +79,16 @@ $_SESSION ['paginaCorr']="";
     <div class="Card Sx">
       <h2>Abbonamento Mensile</h2>
       <p class="bold">Costo: 60 euro</p>
-      <p>Con l'abbonamento mensile sarà possibile accedere alle nostre strutture tutti i giorni della settimana
-      durante gli orari indicati nella sezione "Contatti".  </p>
+      <p>Con l'abbonamento mensile sar&agrave; possibile accedere alle nostre strutture tutti i giorni della settimana
+      durante gli orari indicati nella sezione "Contatti".</p>
     </div>
 
     <div class="Card Dx">
       <h2>Abbonamento Trimestrale</h2>
       <p class="bold">Costo: 150 euro</p>
-      <p>Con l'abbonamento trimestrale sarà possibile ottenere un'esperienza completa presso la nostra struttura risparmiando
-      più del 15%! Inoltre, in omaggio per i clienti che sottoscriveranno questo abbonamento, sarà possibile ricevere in omaggio
-      una ingresso presso il centro Benessere "Pincopallino" </p>
+      <p>Con l'abbonamento trimestrale sar&agrave; possibile ottenere un'esperienza completa presso la nostra struttura risparmiando
+      più del 15%! Inoltre, in omaggio per i clienti che sottoscriveranno questo abbonamento, sar&agrave; possibile ricevere in omaggio
+      un'ingresso presso il centro Benessere "Pincopallino"</p>
     </div>
 
 	</div>

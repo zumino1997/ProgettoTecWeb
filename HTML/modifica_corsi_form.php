@@ -1,3 +1,5 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <?php
 
 if (session_status() == PHP_SESSION_NONE) {
@@ -36,9 +38,6 @@ else {
 }
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
-
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="Content-Script-Type" content="text/javascript"/>
@@ -61,8 +60,9 @@ else {
 
 </head>
 <body>
+  <a id="hideLink"href="#content">Vai al contenuto</a>
   <noscript>
-    <span id="menuNoScript"><span xml:lang="en">Javascript</span> Disabilitato: Il <a href="#NoJS">menu</a> &egrave; visualizzabile in fondo alla pagina</span>
+    <p id="menuNoScript"><span xml:lang="en">Javascript</span> Disabilitato: Il <a href="#NoJS">men&ugrave;</a> &egrave; visualizzabile in fondo alla pagina</p>
   </noscript>
 	<div id="nav">
 	  <div id="logo"><img src="../IMG/logo1.png" alt="Logo Energya"/></div>
@@ -116,11 +116,11 @@ else {
          <li>
            <label for="giorno">Giorno</label>
            <select id="giorno" name="giorno">
-             <option value="lunedi"<?php if ($giorno=="lunedi") echo "selected=\"selected\";" ?>>Luned&iacute;</option>
-             <option value="martedi"<?php if ($giorno=="martedi") echo "selected=\"selected\";" ?>>Martedi&iacute;</option>
-             <option value="mercoledi"<?php if ($giorno=="mercoledi") echo "selected=\"selected\";" ?>>Mercoled&iacute;</option>
-             <option value="giovedi"<?php if ($giorno=="giovedi") echo "selected=\"selected\";" ?>>Gioved&iacute;</option>
-             <option value="venerdi"<?php if ($giorno=="venerdi") echo "selected=\"selected\";" ?>>Venerd&iacute;</option>
+             <option value="lunedi"<?php if ($giorno=="lunedi") echo "selected=\"selected\";" ?>>Luned&igrave;</option>
+             <option value="martedi"<?php if ($giorno=="martedi") echo "selected=\"selected\";" ?>>Martedi&igrave;</option>
+             <option value="mercoledi"<?php if ($giorno=="mercoledi") echo "selected=\"selected\";" ?>>Mercoled&igrave;</option>
+             <option value="giovedi"<?php if ($giorno=="giovedi") echo "selected=\"selected\";" ?>>Gioved&igrave;</option>
+             <option value="venerdi"<?php if ($giorno=="venerdi") echo "selected=\"selected\";" ?>>Venerd&igrave;</option>
              <option value="sabato"<?php if ($giorno=="sabato") echo "selected=\"selected\";" ?>>Sabato</option>
              <option value="domenica"<?php if ($giorno=="domenica") echo "selected=\"selected\";" ?>>Domenica</option>
            </select>
