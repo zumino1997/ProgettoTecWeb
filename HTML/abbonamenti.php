@@ -31,11 +31,11 @@ $_SESSION ['paginaCorr']="";
 
 </head>
 <body>
-  <a id="hideLink"href="#content">Vai al contenuto</a>
   <noscript>
     <p id="menuNoScript"><span xml:lang="en">Javascript</span> Disabilitato: Il <a href="#NoJS">men&ugrave;</a> &egrave; visualizzabile in fondo alla pagina</p>
   </noscript>
   <div id="nav">
+    <a id="hideLink"href="#content">Vai al contenuto</a>
 	  <div id="logo"><img src="../IMG/logo1.png" alt="Logo Energya"/></div>
     <button id="menuIcon" title="menuIcon" onclick="menuHamburger()" ><img src="../IMG/hamburger_icon.png" alt="icona menu"/></button>
 	  <ul class="menuItems" id="menuu" >
