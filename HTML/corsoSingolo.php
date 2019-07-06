@@ -85,6 +85,7 @@ else {
       echo '<img src="'.$corso['Immagine'].'" alt="'.$corso['Alt'].'"/>';
       echo '<p class="time">'.$corso['Giorno'].' alle ore '.$corso['Ora'].'</p>';
       echo '<p>'.$corso['DescrizioneL'].'</p>';
+      echo '<a href="corsi.php?page='.$_SESSION['pageNumber'].'">Torna ai Corsi!</a>';
       echo '</div>';
     ?>
 
