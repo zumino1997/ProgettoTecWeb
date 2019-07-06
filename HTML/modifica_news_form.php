@@ -99,7 +99,7 @@ else {
           </li>
           <li>
            <label for="testo">Inserisci la notizia</label>
-           <input id="testo" name="testo" type="text" <?php echo "value=\"$testo\"";?> />
+           <textarea name="testo" id="testo" cols="1" rows="30"><?php echo $testo;?></textarea>
             <?php if(isset($_SESSION['error']['testoErr'])) { echo '<span class="error">'. $_SESSION['error']['testoErr'] .'</span>'; unset($_SESSION['error']['testoErr']); } else {echo "";} ?>
           </li>
        </ul>

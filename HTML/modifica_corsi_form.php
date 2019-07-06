@@ -100,12 +100,12 @@ else {
          </li>
          <li>
            <label for="testo">Inserisci la descrizione corta</label>
-           <input id="testo" name="testo" type="text" <?php echo "value=\"$testo\"";?> />
+           <textarea name="testo" id="testo" cols="1" rows="10"><?php echo $testo;?> </textarea>
            <?php if(isset($_SESSION['error']['testoErr'])) { echo '<span class="error">'. $_SESSION['error']['testoErr'] .'</span>'; unset($_SESSION['error']['testoErr']); } else {echo "";} ?>
          </li>
          <li>
            <label for="testoLong">Inserisci la descrizione lunga</label>
-           <input id="testoLong" name="testoLong" type="text" <?php echo "value=\"$testoLong\"";?> />
+           <textarea name="testoLong" id="testoLong"  cols="1" rows="25"><?php echo $testoLong;?> </textarea>
            <?php if(isset($_SESSION['error']['testoLongErr'])) { echo '<span class="error">'. $_SESSION['error']['testoLongErr'] .'</span>'; unset($_SESSION['error']['testoLongErr']); } else {echo "";} ?>
          </li>
          <li>
