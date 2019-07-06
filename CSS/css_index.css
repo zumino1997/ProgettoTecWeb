@@ -114,7 +114,7 @@ MENU
 	display:none;
 }
 
-#nav #currentLink{
+ul > #currentLink{
 	height: 100%;
 	padding: 0.5em;
 	cursor:default;
@@ -242,7 +242,7 @@ CONTENUTO
 
 .divGenerico{
 	margin-top: 4em;
-	clear:both;						//mettere cleafix su html
+	clear:both;
 }
 
 .divGenerico ul{
@@ -287,7 +287,7 @@ CONTENUTO
   background-color: #E4E4E4;
   border: none;
   color: #000;
-  padding: 1em 2em;
+  padding: 1em 1em;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -307,6 +307,10 @@ CONTENUTO
 	font-weight: bold;
 }
 
+.divSx ul, .divDx ul {
+	margin-left: 39%;
+}
+
 .divDx h1{
 	text-align:right;
 }
@@ -324,7 +328,7 @@ CONTENUTO
 	margin: 0 0 1.2em 1.2em;
 }
 
-#content #breadcrumb p{
+#breadcrumb p{
 	font-style: italic;
 	font-size: 1em;
 	margin: 0;
@@ -592,6 +596,17 @@ fieldset{
 
 
 /*****
+AMMINISTRAZIONE
+******/
+.ammin{
+text-align: center;
+width: 95%;
+padding:2.5%;
+}
+
+
+
+/*****
 PROFILO
 ******/
 
@@ -614,14 +629,11 @@ PROFILO
 .rem fieldset{
 	border:0;
 	margin: 0;
-	padding:0.8em 0;
-}
-
-.rem label{
-	padding:0.6em 0;
+	padding:0.4em 0;
 }
 
 .remP{
+	padding:0.6em 0;
 	width:50%;
 	float:left;
 }
@@ -629,10 +641,6 @@ PROFILO
 #utenteButt{
 	margin-top: 1em;
 }
-
-
-
-
 
 #did{
 	margin: 0;

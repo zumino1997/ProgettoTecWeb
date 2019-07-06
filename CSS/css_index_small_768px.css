@@ -175,6 +175,12 @@ button:focus{
 /*FINE STAFF*/
 
 /*CONTATTI*/
+#info{
+	width: 100%;
+}
+#contatti img{
+	width: 100%;
+}
 
 #contatti{
 	min-height: auto;

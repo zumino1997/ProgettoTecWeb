@@ -50,11 +50,11 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 
 <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
-<p type="text/javascript" src="../JS/script.js"> </p>
+<script type="text/javascript" src="../JS/script.js"> </script>
 
 </head>
 <body>
-  <a id="hideLink"href="#content">Vai al contenuto</a>
+  <!-- <a id="hideLink"href="#content">Vai al contenuto</a> -->
   <noscript>
     <p id="menuNoScript"><span xml:lang="en">Javascript</span> Disabilitato: Il <a href="#NoJS">men&ugrave;</a> &egrave; visualizzabile in fondo alla pagina</p>
   </noscript>
@@ -83,10 +83,10 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 			<p>Ti trovi in: Pannello di amministrazione >> Rimozione corsi</p>
 		</div>
 
-		<div class="Card Sx">
-      <h1>Elimina Corsi</h1>
+		<div class="ammin Sx">
+      <h1>Rimuovi Corsi</h1>
       <p class="center">Per eliminare uno dei corsi inseriti all'interno della sezione "Corsi",
-         premere il pulsante elimina al fianco del titolo corrispondente.</p>
+         premere il pulsante rimuovi al fianco del titolo corrispondente.</p>
      <h2 class="successo">
         <?php
          if ($_SESSION ['successoR']){
@@ -110,10 +110,10 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
                 </form>';
           }?>
     </div>
-    <div class="Card Dx">
+    <div class="ammin Dx">
       <h1>Modifica Corsi</h1>
       <p class="center">Per modificare uno dei corsi inseriti all'interno della sezione "Corsi",
-         premere il pulsante elimina al fianco del titolo corrispondente.</p>
+         premere il pulsante modifica al fianco del titolo corrispondente.</p>
      <h2 class="successo">
         <?php
          if ($_SESSION ['successoM']){

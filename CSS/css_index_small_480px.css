@@ -186,11 +186,16 @@ h1{
 	margin-bottom: 1em;
 }
 
+
+/*amministrazione*/
+
 .rem{
-	text-align: right;
+	text-align: center;
 }
 
 .remP{
-	display:inline;
-	width: auto;
+	text-align: center;
+	display:block;
+	width: 100%;
+	padding:0;
 }
