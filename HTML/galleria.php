@@ -1,3 +1,5 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <?php
 
 if (session_status() == PHP_SESSION_NONE) {
@@ -32,8 +34,6 @@ else {
 	}
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -57,8 +57,9 @@ else {
 
 </head>
 <body>
+  <a id="hideLink"href="#content">Vai al contenuto</a>
   <noscript>
-    <span id="menuNoScript"><span xml:lang="en">Javascript</span> Disabilitato: Il <a href="#NoJS">menu</a> &egrave; visualizzabile in fondo alla pagina</span>
+    <p id="menuNoScript"><span xml:lang="en">Javascript</span> Disabilitato: Il <a href="#NoJS">men&ugrave;</a> &egrave; visualizzabile in fondo alla pagina</p>
   </noscript>
 	<div id="nav">
 	  <div id="logo"><img src="../IMG/logo1.png" alt="Logo Energya"/></div>
@@ -91,6 +92,7 @@ else {
       foreach ($listaImg as $img) {
     		echo '<div id="column">';
         echo '<img src="'.$img['Immagine'].'" onclick="show(this)" alt="'.$img['Alt'].'"/>';
+        echo '<p id="did">'.$img['Didascalia'].'</p>';
     		echo '</div>';
     	}
     }
@@ -110,7 +112,6 @@ else {
 		<div id="showImage">
 			  <span id="closeImage" onclick="closeImage()">&times;</span>
 				<img id="imgExp"/>
-        <p id=did><?php echo $img['Didascalia']; ?></p>
 		</div>
 	</div>
 

@@ -1,3 +1,5 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <?php
 
 if (session_status() == PHP_SESSION_NONE) {
@@ -7,9 +9,6 @@ if (session_status() == PHP_SESSION_NONE) {
 $_SESSION ['paginaCorr']="";
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -35,7 +34,7 @@ $_SESSION ['paginaCorr']="";
 <body>
   <a id="hideLink"href="#content">Vai al contenuto</a>
   <noscript>
-    <span id="menuNoScript"><span xml:lang="en">Javascript</span> Disabilitato: Il <a href="#NoJS">menu</a> &egrave; visualizzabile in fondo alla pagina</span>
+    <p id="menuNoScript"><span xml:lang="en">Javascript</span> Disabilitato: Il <a href="#NoJS">men&ugrave;</a> &egrave; visualizzabile in fondo alla pagina</p>
   </noscript>
 	<div id="nav">
 	  <div id="logo"><img src="../IMG/logo1.png" alt="Logo Energya"/></div>
@@ -65,23 +64,23 @@ $_SESSION ['paginaCorr']="";
 		<div class="divSx">
 			<h1>Chi siamo</h1>
 			<img src="../IMG/foto1.jpg" alt="Sollevamento pesi"/>
-			<p>La palestra <span xml:lang="en">"Energya Fitness Club"</span> offre numerose opportunit&aacute; per sfruttare i benefici garantiti dall'allenamento fisico, in un ambiente accogliente e confortevole, sotto la guida di uno staff di istruttori preparati e disponibili.</p>
-			<p>Le nostre attivit&aacute; sono composte non solo da sala pesi e corpo libero, due fattori importantissimi per il <span xml:lang="en">"wellness"</span>, ma anche da diversi corsi divertenti e coinvolgenti.</p>
+			<p>La palestra <span xml:lang="en">"Energya Fitness Club"</span> offre numerose opportunit&agrave; per sfruttare i benefici garantiti dall'allenamento fisico, in un ambiente accogliente e confortevole, sotto la guida di uno staff di istruttori preparati e disponibili.</p>
+			<p>Le nostre attivit&agrave; sono composte non solo da sala pesi e corpo libero, due fattori importantissimi per il <span xml:lang="en">"wellness"</span>, ma anche da diversi corsi divertenti e coinvolgenti.</p>
 			<p>I nostri soci possono quindi disporre di varie alternative per soddisfare le proprie preferenze, oltre a sentirsi sempre in famiglia.</p>
 		</div>
 
 		<div class="divDx">
 			<h1>La nostra storia</h1>
 			<img src="../IMG/foto2.jpg" alt="Interno della palestra"/>
-			<p>La struttura, nata nel 1990, si erige a Coste di Maser ed &eacute; diventata ormai un punto fisso del territorio.</p>
+			<p>La struttura, nata nel 1990, si erige a Coste di Maser ed &egrave; diventata ormai un punto fisso del territorio.</p>
 			<p>Nel 1999 l'impianto aderisce ufficialmente alle norme della <abbr title="Associazione Italiana Cultura e Sport">AICS</abbr>, avendo l'obbligo di formare i propri istruttori e collaboratori con relativi corsi indetti dalla federazione. </p>
-			<p>Nel 2016 viene premiata dalla sezione del Veneto della federazione stessa per la longevit&aacute; e la professionalit&aacute; dimostrata negli anni.</p>
+			<p>Nel 2016 viene premiata dalla sezione del Veneto della federazione stessa per la longevit&agrave; e la professionalit&agrave; dimostrata negli anni.</p>
 		</div>
 
 		<div id="Banner">
 			<div>
 				<h1>Iscriviti al nostro sito</h1>
-				<p>Ricevi subito l'opportunit&aacute; di partecipare a uno dei nostri corsi o delle nostre attivit&aacute; gratuitamente!</p>
+				<p>Ricevi subito l'opportunit&agrave; di partecipare a uno dei nostri corsi o delle nostre attivit&agrave; gratuitamente!</p>
 				<a href="registrazione.php" id="linkSfondoScuro">Iscriviti</a>
 			</div>
 		</div>
@@ -90,8 +89,8 @@ $_SESSION ['paginaCorr']="";
 			<h1> I nostri punti di forza </h1>
 			<div class="Card Sx">
 				<img src="../IMG/woman.png" alt="Icona persona con manubri"/>
-				<h2>Professionalit&aacute;</h2>
-				<p>I nostri istruttori vantano lauree in scienze motorie e seguono costantemente corsi di aggiornamento per tenersi al passo con le novit&aacute;.</p>
+				<h2>Professionalit&agrave;</h2>
+				<p>I nostri istruttori vantano lauree in scienze motorie e seguono costantemente corsi di aggiornamento per tenersi al passo con le novit&agrave;.</p>
 			</div>
 			<div class="Card Dx">
 				<img src="../IMG/gym.png" alt="Icona manubrio"/>

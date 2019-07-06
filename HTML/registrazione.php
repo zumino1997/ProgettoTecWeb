@@ -1,3 +1,5 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <?php
 
 if (session_status() == PHP_SESSION_NONE) {
@@ -12,9 +14,6 @@ if (isset($_SESSION["email"])){
 $_SESSION ['paginaCorr']="registrazione";
 
 ?>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -38,8 +37,9 @@ $_SESSION ['paginaCorr']="registrazione";
 
 </head>
 <body>
+  <a id="hideLink"href="#content">Vai al contenuto</a>
   <noscript>
-    <span id="menuNoScript"><span xml:lang="en">Javascript</span> Disabilitato: Il <a href="#NoJS">menu</a> &egrave; visualizzabile in fondo alla pagina</span>
+    <p id="menuNoScript"><span xml:lang="en">Javascript</span> Disabilitato: Il <a href="#NoJS">men&ugrave;</a> &egrave; visualizzabile in fondo alla pagina</p>
   </noscript>
   <div id="nav">
 	  <div id="logo"><img src="../IMG/logo1.png" alt="Logo Energya"/></div>
@@ -59,8 +59,7 @@ $_SESSION ['paginaCorr']="registrazione";
 		<img src="../IMG/logo1.png" alt="Logo Energya"/>
 	</div>
 
-  <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "../PHP" . DIRECTORY_SEPARATOR . "userbar.php";
-   ?>
+  <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "../PHP" . DIRECTORY_SEPARATOR . "userbar.php";?>
 
 	<div id="content">
 		<div id="breadcrumb">
@@ -82,7 +81,7 @@ $_SESSION ['paginaCorr']="registrazione";
             <?php if(isset($_SESSION['error']['cognomeErr'])) { echo '<span class="error">'. $_SESSION['error']['cognomeErr'] .'</span>'; unset($_SESSION['error']['cognomeErr']); } else echo ""; ?>
 					</li>
           <li>
-						<label for="citta">Citt&aacute;</label>
+						<label for="citta">Citt&agrave;</label>
 						<input id="citta" name="citta" type="text" <?php if(isset($_SESSION['error']['cittaErr'])) if(isset ($_SESSION['var']['citta'])) {$citta=$_SESSION['var']['citta'];echo "value=\"$citta\"";} else echo "value=\"\"";?>/>
             <?php if(isset($_SESSION['error']['cittaErr'])) { echo '<span class="error">'. $_SESSION['error']['cittaErr'] .'</span>'; unset($_SESSION['error']['cittaErr']); } else echo ""; ?>
 					</li>
@@ -107,7 +106,7 @@ $_SESSION ['paginaCorr']="registrazione";
             <?php if(isset($_SESSION['error']['emailErr'])) { echo '<span class="error">'. $_SESSION['error']['emailErr'] .'</span>'; unset($_SESSION['error']['emailErr']); } else echo ""; ?>
 					</li>
           <li>
-						<label for="passwordR"><span xml:lang="en">Password</span></label>:
+						<label for="passwordR" xml:lang="en">Password</label>:
 						<input id="passwordR" name="passwordR" type="password"/>
 					</li>
           <li>

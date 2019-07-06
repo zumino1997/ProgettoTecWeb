@@ -1,3 +1,5 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <?php
 
 if (session_status() == PHP_SESSION_NONE) {
@@ -7,8 +9,6 @@ if (session_status() == PHP_SESSION_NONE) {
 $_SESSION ['paginaCorr']="";
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -32,8 +32,9 @@ $_SESSION ['paginaCorr']="";
 
 </head>
 <body>
+  <a id="hideLink"href="#content">Vai al contenuto</a>
   <noscript>
-    <span id="menuNoScript"><span xml:lang="en">Javascript</span> Disabilitato: Il <a href="#NoJS">menu</a> &egrave; visualizzabile in fondo alla pagina</span>
+    <p id="menuNoScript"><span xml:lang="en">Javascript</span> Disabilitato: Il <a href="#NoJS">men&ugrave;</a> &egrave; visualizzabile in fondo alla pagina</p>
   </noscript>
 	<div id="nav">
 	  <div id="logo"><img src="../IMG/logo1.png" alt="Logo Energya"/></div>
@@ -57,7 +58,7 @@ $_SESSION ['paginaCorr']="";
 
 	<div id="content">
 		<div id="breadcrumb">
-			<p>Ti trovi in: <span xml:lang="en">Contatti</span></p>
+			<p>Ti trovi in: Contatti</p>
 		</div>
 
 		<div id="contatti">
@@ -65,7 +66,7 @@ $_SESSION ['paginaCorr']="";
       <div id="info">
   			<h2>Indirizzo</h2>
   			<p>Via Bassanese Coste, 156</p>
-  			<p>31010 Maser, <span xml:abbr title="World Wide Web">TV</abbr></p>
+  			<p>31010 Maser, <span xml:abbr title="Treviso">TV</abbr></p>
   			<p>Italia</p>
   			<h2>Recapiti</h2>
   			<p>Telefono: 0423 565453</p>
@@ -79,8 +80,8 @@ $_SESSION ['paginaCorr']="";
 
     <div class="divGenerico evidenza clearfix">
     			<h1>Come trovarci</h1>
-    			<p>Arrivando da Cornuda: percorrere Via Cornuda e Via Bassanese/Via Bassanese Coste, fino ad arrivare a Coste di Maser. La struttura si trover&aacute; sulla vostra sinistra lungo la strada principale </p>
-    			<p>Arrivando da Asolo: percorrere Strada Provinciale 248 e Via Bassanese, passando per Crespignaga, fino ad arrivare a Coste di Maser. La struttura si trover&aacute; sulla vostra destra lungo la strada principale </p>
+    			<p>Arrivando da Cornuda: percorrere Via Cornuda e Via Bassanese/Via Bassanese Coste, fino ad arrivare a Coste di Maser. La struttura si trover&agrave; sulla vostra sinistra lungo la strada principale</p>
+    			<p>Arrivando da Asolo: percorrere Strada Provinciale 248 e Via Bassanese, passando per Crespignaga, fino ad arrivare a Coste di Maser. La struttura si trover&agrave; sulla vostra destra lungo la strada principale </p>
     			<p>Arrivando da Caerano di San Marco: percorrere Via Monte Grappa, Strada Provinciale 248 e Via Caldiroro, fino ad arrivare a Coste di Maser. All'incrocio svoltare a destra e dopo circa 150 metri la struttura si trover&aacute; sulla vostra sinistra lungo la strada principale </p>
     		</div>
 
