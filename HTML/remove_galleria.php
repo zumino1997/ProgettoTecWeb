@@ -79,10 +79,10 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 			<p>Ti trovi in: Pannello di amministrazione >> Rimozione corsi</p>
 		</div>
 
-		<div class="divGenerico">
-      <h1>Elimina foto galleria</h1>
+		<div class="ammin">
+      <h1>Rimuovi foto galleria</h1>
       <p class="center">Per eliminare una delle immagini inserite all'interno della sezione "Galleria",
-         premere il pulsante elimina al fianco del percorso dell'immagine corrispondente.</p>
+         premere il pulsante rimuovi al fianco del percorso dell'immagine corrispondente.</p>
       <h2 class="successo">
          <?php
           if ($_SESSION ['successoR']){
@@ -101,7 +101,7 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
                    <form class="rem" action="../PHP/post_remove_galleria.php?id='.$galleria['Id'].'">
                    <fieldset>
                      <label class="remP">'.$galleria['Immagine'].'</label><input type="hidden" value="'.$galleria['Id'].'" name="rimuovi"/>
-                     <input type="submit" class="button" value="Rimuovi Immagine'.$galleria['Immagine'].'" name="submit"/>
+                     <input type="submit" class="button" value="Rimuovi Immagine '.$galleria['Immagine'].'" name="submit"/>
                    </fieldset>
                    </form>';
                }

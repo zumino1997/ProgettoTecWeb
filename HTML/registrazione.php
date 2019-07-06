@@ -72,27 +72,27 @@ $_SESSION ['paginaCorr']="registrazione";
           <li>
 						<label for="nome">Nome</label>
             <?php //if (isset($_POST["nome"])) echo "value=\"$_POST[\"nome\"]\""; ?>
-						<input id="nome" name="nome" type="text" <?php if(isset($_SESSION['error']['nomeErr']))if(isset ($_SESSION['var']['nome'])) {$nome = $_SESSION['var']['nome']; echo "value=\"$nome\"";} else echo "value=\"\"";?>/>
+						<input id="nome" name="nome" type="text" <?php if(isset ($_SESSION['var']['nome'])) {$nome = $_SESSION['var']['nome']; echo "value=\"$nome\""; unset($_SESSION['var']['nome']);} else echo "value=\"\"";?>/>
             <?php if(isset($_SESSION['error']['nomeErr'])) { echo '<span class="error">'. $_SESSION['error']['nomeErr'] .'</span>'; unset($_SESSION['error']['nomeErr']); } else {echo "";} ?>
 					</li>
           <li>
 						<label for="cognome">Cognome</label>
-						<input id="cognome" name="cognome" type="text" <?php if(isset($_SESSION['error']['cognomeErr'])) if(isset ($_SESSION['var']['cognome'])) {$cognome=$_SESSION['var']['cognome'];echo "value=\"$cognome\"";} else echo "value=\"\"";?>/>
+						<input id="cognome" name="cognome" type="text" <?php  if(isset ($_SESSION['var']['cognome'])) {$cognome=$_SESSION['var']['cognome'];echo "value=\"$cognome\""; unset($_SESSION['var']['cognome']);} else echo "value=\"\"";?>/>
             <?php if(isset($_SESSION['error']['cognomeErr'])) { echo '<span class="error">'. $_SESSION['error']['cognomeErr'] .'</span>'; unset($_SESSION['error']['cognomeErr']); } else echo ""; ?>
 					</li>
           <li>
-						<label for="citta">Citt&agrave;</label>
-						<input id="citta" name="citta" type="text" <?php if(isset($_SESSION['error']['cittaErr'])) if(isset ($_SESSION['var']['citta'])) {$citta=$_SESSION['var']['citta'];echo "value=\"$citta\"";} else echo "value=\"\"";?>/>
+						<label for="citta">Citt&aacute;</label>
+						<input id="citta" name="citta" type="text" <?php  if(isset ($_SESSION['var']['citta'])) {$citta=$_SESSION['var']['citta'];echo "value=\"$citta\""; unset($_SESSION['var']['citta']);} else echo "value=\"\"";?>/>
             <?php if(isset($_SESSION['error']['cittaErr'])) { echo '<span class="error">'. $_SESSION['error']['cittaErr'] .'</span>'; unset($_SESSION['error']['cittaErr']); } else echo ""; ?>
 					</li>
           <li>
 						<label for="indirizzo">Indirizzo</label>
-						<input id="indirizzo" name="indirizzo" type="text"  <?php if(isset($_SESSION['error']['indirizzoErr'])) if(isset ($_SESSION['var']['indirizzo'])) {$indirizzo=$_SESSION['var']['indirizzo']; echo "value=\"$indirizzo\"";} else echo "value=\"\"";?>/>
+						<input id="indirizzo" name="indirizzo" type="text"  <?php  if(isset ($_SESSION['var']['indirizzo'])) {$indirizzo=$_SESSION['var']['indirizzo']; echo "value=\"$indirizzo\""; unset($_SESSION['var']['indirizzo']);} else echo "value=\"\"";?>/>
             <?php if(isset($_SESSION['error']['indirizzoErr'])) { echo '<span class="error">'. $_SESSION['error']['indirizzoErr'] .'</span>'; unset($_SESSION['error']['indirizzoErr']); } else echo ""; ?>
 					</li>
           <li>
 						<label for="nascita">Data di nascita (dd/mm/yyyy)</label>
-						<input id="nascita" name="nascita" type="text"  <?php if(isset($_SESSION['error']['nascitaErr'])) if(isset ($_SESSION['var']['nascita'])) {$nascita=$_SESSION['var']['nascita']; echo "value=\"$nascita\"";} else echo "value=\"\"";?>/>
+						<input id="nascita" name="nascita" type="text"  <?php  if(isset ($_SESSION['var']['nascita'])) {$nascita=$_SESSION['var']['nascita']; echo "value=\"$nascita\""; unset($_SESSION['var']['nascita']);} else echo "value=\"\"";?>/>
             <?php if(isset($_SESSION['error']['nascitaErr'])) { echo '<span class="error">'. $_SESSION['error']['nascitaErr'] .'</span>'; unset($_SESSION['error']['nascitaErr']); } else echo ""; ?>
 					</li>
 				</ul>
@@ -102,7 +102,7 @@ $_SESSION ['paginaCorr']="registrazione";
 				<ul>
           <li>
 						<label for="emailR">Indirizzo <span xml:lang="en">email</span></label>:
-						<input id="emailR" name="emailR" type="text"  <?php if(isset($_SESSION['error']['emailErr'])) if(isset ($_SESSION['var']['emailR'])) {$email=$_SESSION['var']['emailR']; echo "value=\"$email\"";} else echo "value=\"\"";?>/>
+						<input id="emailR" name="emailR" type="text"  <?php  if(isset ($_SESSION['var']['emailR'])) {$email=$_SESSION['var']['emailR']; echo "value=\"$email\""; unset($_SESSION['var']['emailR']);} else echo "value=\"\"";?>/>
             <?php if(isset($_SESSION['error']['emailErr'])) { echo '<span class="error">'. $_SESSION['error']['emailErr'] .'</span>'; unset($_SESSION['error']['emailErr']); } else echo ""; ?>
 					</li>
           <li>

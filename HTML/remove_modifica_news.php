@@ -82,10 +82,10 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
 			<p>Ti trovi in: Pannello di amministrazione >> Rimozione <span xml:lang="en">news</span></p>
 		</div>
 
-		<div class="Card Sx">
-      <h1>Elimina <span xml:lang="en">News</span></h1>
+		<div class="ammin Sx">
+      <h1>Rimuovi <span xml:lang="en">News</span></h1>
       <p class="center">Per eliminare una delle <span xml:lang="en">news</span> all'interno della sezione "<span xml:lang="en">News</span>",
-         premere il pulsante elimina al fianco del titolo corrispondente.</p>
+         premere il pulsante rimuovi al fianco del titolo corrispondente.</p>
      <h2 class="successo">
         <?php
          if ($_SESSION ['successoR']){
@@ -111,10 +111,10 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
           ?>
     </div>
 
-    <div class="Card Dx">
+    <div class="ammin Dx">
       <h1>Modifica <span xml:lang="en">News</span></h1>
       <p class="center">Per modificare una delle <span xml:lang="en">news</span> all'interno della sezione "<span xml:lang="en">News</span>",
-         premere il pulsante elimina al fianco del titolo corrispondente.</p>
+         premere il pulsante modifica al fianco del titolo corrispondente.</p>
       <h2 class="successo">
          <?php
           if ($_SESSION ['successoM']){

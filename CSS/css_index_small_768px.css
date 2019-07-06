@@ -53,8 +53,6 @@ button:focus{
 #nav li{
 	clear: both;
 	display: block;
-	/* background-color: #343434;
-	color: #fff; */
 	padding: 0;
 }
 
@@ -177,6 +175,12 @@ button:focus{
 /*FINE STAFF*/
 
 /*CONTATTI*/
+#info{
+	width: 100%;
+}
+#contatti img{
+	width: 100%;
+}
 
 #contatti{
 	min-height: auto;

@@ -36,7 +36,7 @@ function closeImage() {
 
 
 function checkNome(nomeInput){
-  var pattern= /^[a-zA-Z]{3,}$/;
+  var pattern= /^[a-zA-Z '-]{3,}$/;
   var name = nomeInput.getAttribute("name");
   if (pattern.test(nomeInput.value)){
   togliErrore(nomeInput);
@@ -52,7 +52,7 @@ function checkNome(nomeInput){
         mostraErrore(nomeInput, "Il campo \"città\" non può essere vuoto");
     }
     else
-      mostraErrore(nomeInput, "Inserire almeno 3 lettere. I numeri non sono consentiti.");
+      mostraErrore(nomeInput, "Inserire almeno 3 lettere. I numeri e i caratteri speciali non sono consentiti.");
     return false;
   }
 }
@@ -193,14 +193,19 @@ function checkAlt(testoInput) {
 
 function checkFile(testoInput){
     var fileName = testoInput.value,
-        idxDot = fileName.lastIndexOf(".") + 1,
-        extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+    idxDot = fileName.lastIndexOf(".") + 1,
+    extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
     if (!fileName){
       mostraErrore(testoInput,"Non hai caricato alcuna immagine");
       return false;
     }
     if (fileName && (extFile!="jpg" && extFile!="jpeg" && extFile!="png")){
       mostraErrore(testoInput,"Non hai caricato alcuna immagine");
+      return false;
+    }
+    var FileSize = testoInput.files[0].size;
+    if (FileSize > 500000) {
+      mostraErrore(testoInput,"Il file è troppo grande per essere caricato");
       return false;
     }
     if (fileName){
