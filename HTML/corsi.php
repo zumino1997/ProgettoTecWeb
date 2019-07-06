@@ -21,8 +21,10 @@ if ($dbOpen){
     $number_of_pages = ceil($number_of_results/$results_per_page);
     if (!isset($_GET['page']) || $_GET['page']>$number_of_pages || $_GET['page']<0) {
       $_GET['page']=1;
+      $_SESSION['pageNumber']=1;
       $page = 1;
     } else {
+      $_SESSION['pageNumber'] = $_GET['page'];
       $page = $_GET['page'];
     }
     $this_page_first_result = ($page-1)*$results_per_page;
