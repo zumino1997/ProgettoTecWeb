@@ -100,8 +100,8 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
                  echo'
                    <form class="rem" action="../PHP/post_remove_galleria.php?id='.$galleria['Id'].'">
                    <fieldset>
-                     <label class="remP">'.$galleria['Immagine'].'</label><input type="hidden" value="'.$galleria['Id'].'" name="rimuovi"/>
-                     <input type="submit" class="button" value="Rimuovi Immagine '.$galleria['Immagine'].'" name="submit"/>
+                     <label class="remP">'.substr($galleria['Immagine'],7).'</label><input type="hidden" value="'.$galleria['Id'].'" name="rimuovi"/>
+                     <input type="submit" class="button" value="Rimuovi Immagine '.substr($galleria['Immagine'],7).'" name="submit"/>
                    </fieldset>
                    </form>';
                }
