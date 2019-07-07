@@ -18,8 +18,11 @@ function mostraPassword() {
 
 //FUNZIONI PER "GALLERIA.PHP"
 
+
 function show(img) {
-  var imgExp = document.getElementById("imgExp");
+  var div = document.getElementById("showImage");
+  var imgExp=document.createElement("IMG");
+  div.appendChild (imgExp);
   imgExp.src = img.src;
   document.getElementById('showImage').style.display = "block";
   imgExp.alt = img.alt;
@@ -27,6 +30,9 @@ function show(img) {
 
 
 function closeImage() {
+  var div = document.getElementById("showImage");
+  if (div.childElementCount>=2)
+    div.removeChild(div.lastChild);
   document.getElementById('showImage').style.display = "none";
 }
 

@@ -69,7 +69,7 @@ else {
 	    <li><a href="corsi.php">Corsi</a></li>
       <li><a href="abbonamenti.php">Abbonamenti</a></li>
       <li><a href="news.php">News</a></li>
-	    <li>Galleria</li>
+	    <li id="currentLink">Galleria</li>
 	    <li><a href="staff.php" xml:lang="en">Staff</a></li>
 	    <li><a href="contatti.php">Contatti</a></li>
       <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "../PHP" . DIRECTORY_SEPARATOR . "userbar_mobile.php";?>
@@ -108,12 +108,12 @@ else {
       }
     }
     ?>
+    </div>
 
 		<div id="showImage">
 			  <span id="closeImage" onclick="closeImage()">&times;</span>
-				<img src="" alt="" id="imgExp"/>
+				<!-- <img src="" alt="" id="imgExp"/> -->
 		</div>
-	</div>
 
 	</div>
 
