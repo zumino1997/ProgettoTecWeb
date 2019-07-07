@@ -79,7 +79,7 @@ button:focus{
 
 #header{
 	height: auto;
-	padding: 7em 0 4em 0;
+	padding: 6em 0 3em 0;
 	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../IMG/banner.jpg");
 	background-size:cover;
 }

@@ -2,7 +2,7 @@
 	font-family: Georgia, 'Times New Roman', serif;
 }
 
-img, #nav, #userBar, #Banner, #scrollUp {
+img, #nav, #userBar, #Banner {
 	display: none;
 }
 
@@ -19,17 +19,14 @@ li{
 	list-style-type: none;
 }
 
+#hideLink{
+	display:none;
+}
+
 #content p{
 	margin:0;
 	padding:0;
 }
-/*da mettere solo nel caso decidessimo di mettere il titolo al sito al posto del logo
-
-#header {
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
-	padding-bottom: 1.0em;
-}*/
 
 #breadcrumb{
 	border-top: 1px solid #000;
@@ -67,16 +64,13 @@ STAFF
 	padding:0.5em 0;
 }
 
-/*.fila img {
-	display: block; se attivato mostra le foto degli allenatori
-}
-*/
+
 /*****
 GALLERIA
 *****/
 
 #column img {
-	display: block; /*le foto della galleria vengono volutamente mostrate in quanto lo scopo principale della pagina è quello*/
+	display: block;
 	width: 23%;
 	float:left;
 	padding:1%;

@@ -32,11 +32,11 @@ $_SESSION ['paginaCorr']="";
 
 </head>
 <body>
-  <a id="hideLink"href="#content">Vai al contenuto</a>
   <noscript>
     <p id="menuNoScript"><span xml:lang="en">Javascript</span> Disabilitato: Il <a href="#NoJS">men&ugrave;</a> &egrave; visualizzabile in fondo alla pagina</p>
   </noscript>
 	<div id="nav">
+    <a id="hideLink" href="#content">Vai al contenuto</a>
 	  <div id="logo"><img src="../IMG/logo1.png" alt="Logo Energya"/></div>
     <button id="menuIcon" title="menuIcon" onclick="menuHamburger()" ><img src="../IMG/hamburger_icon.png" alt="icona menu"/></button>
 	  <ul class="menuItems" id="menuu" >
@@ -66,7 +66,7 @@ $_SESSION ['paginaCorr']="";
       <div id="info">
   			<h2>Indirizzo</h2>
   			<p>Via Bassanese Coste, 156</p>
-  			<p>31010 Maser, <span xml:abbr title="Treviso">TV</abbr></p>
+  			<p>31010 Maser, <abbr title="Treviso">TV</abbr></p>
   			<p>Italia</p>
   			<h2>Recapiti</h2>
   			<p>Telefono: 0423 565453</p>
