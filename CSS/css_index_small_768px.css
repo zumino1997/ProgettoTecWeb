@@ -194,9 +194,8 @@ button:focus{
 
 /*GALLERIA*/
 
-#column{
-	width:40%;
-	padding:5%;
+.column img{
+	height: 10em;
 }
 
 #showImage img{
