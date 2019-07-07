@@ -51,6 +51,10 @@ p{
 	min-height: auto;
 }
 
+.divDx ul, .divSx ul{
+	margin-left: 0;
+}
+
 .divDx img, .divSx img{
 	display:none;
 }
