@@ -59,7 +59,11 @@ a:visited{
 }
 
 .linkAmministrazione{
-	padding: 1em;
+	padding: 0.5em;
+}
+
+.noDec{
+	padding:0.5em;
 }
 
 /*****
