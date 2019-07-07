@@ -82,7 +82,7 @@ if (!isset($_SESSION["successo"]))
             <?php if(isset($_SESSION['error']['err'])) { echo '<span class="error">'. $_SESSION['error']['err'] .'</span>'; unset($_SESSION['error']['err']); } else {echo "";} ?>
           </li>
           <li>
-						<label for="titolo">Alt immagine (facoltativo)</label>
+						<label for="alt">Alt immagine (facoltativo)</label>
 						<input id="alt" name="alt" type="text" <?php if(isset($_SESSION['error']['altErr'])) if(isset ($_SESSION['var']['alt'])) {$alt = $_SESSION['var']['alt']; echo "value=\"$alt\"";} else echo "value=\"\"";?>/>
             <?php if(isset($_SESSION['error']['altErr'])) { echo '<span class="error">'. $_SESSION['error']['altErr'] .'</span>'; unset($_SESSION['error']['altErr']); } else {echo "";} ?>
           </li>

@@ -80,8 +80,9 @@ $_SESSION ['paginaCorr']="login";
             <?php if(isset($_SESSION['error']['mailErr2'])) {echo '<span class="error">'. $_SESSION['error']['mailErr2'] .'</span>'; unset($_SESSION['error']['mailErr2']); } else {echo "";} ?>
 					</li>
 					<li>
-						<input type="checkbox" onclick="mostraPassword()"/> Mostra <span xml:lang="en">password</span>
-					</li>
+						<input id="mostraPassword" type="checkbox" onclick="mostraPassword()"/>
+            <label for="mostraPassword">Mostra <span xml:lang="en">Password</span></label>
+          </li>
 					<li id="buttons-login">
 						<input value="Login" class="button" id="login" name="login" type="submit" />
 						<input value="Cancella" class="button" id="delete-login-button" type="reset" />
