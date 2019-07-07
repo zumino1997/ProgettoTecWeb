@@ -115,6 +115,7 @@ else {
       <legend>Prenota una lezione gratuita</legend>
       <ul>
       <li>
+        <label for="corso">Seleziona il corso</label>
         <select id="corso" name="corso">
           <?php
             foreach ($listaCorsi as $corsi) {
@@ -156,7 +157,7 @@ else {
               </fieldset>
               </form>';
       }
-      else echo '<h1>Devi ancora effettura la tua prenotazione</h1>';
+      else echo '<h1>Devi ancora effettuare la tua prenotazione</h1>';
     ?>
   </div>
 	</div>

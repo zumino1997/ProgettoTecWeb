@@ -83,7 +83,7 @@ $_SESSION ['paginaCorr']="";
             <?php if(isset($_SESSION['error']['err'])) { echo '<span class="error">'. $_SESSION['error']['err'] .'</span>'; unset($_SESSION['error']['err']); } else {echo "";} ?>
           </li>
           <li>
-						<label for="titolo">Alt immagine (facoltativo)</label>
+						<label for="alt">Alt immagine (facoltativo)</label>
 						<input id="alt" name="alt" type="text" <?php if(isset($_SESSION['error']['altErr']))if(isset ($_SESSION['var']['alt'])) {$alt = $_SESSION['var']['alt']; echo "value=\"$alt\"";} else echo "value=\"\"";?>/>
             <?php if(isset($_SESSION['error']['altErr'])) { echo '<span class="error">'. $_SESSION['error']['altErr'] .'</span>'; unset($_SESSION['error']['altErr']); } else {echo "";} ?>
           </li>
@@ -93,7 +93,7 @@ $_SESSION ['paginaCorr']="";
             <?php if(isset($_SESSION['error']['testoErr'])) { echo '<span class="error">'. $_SESSION['error']['testoErr'] .'</span>'; unset($_SESSION['error']['testoErr']); } else {echo "";} ?>
           </li>
           <li>
-						<label for="testo">Descrizione lunga</label>
+						<label for="testoLong">Descrizione lunga</label>
 						<textarea name="testoLong" id="testoLong"  cols="1" rows="25"><?php if(isset($_SESSION['error']['testoLongErr'])) if(isset ($_SESSION['var']['testoLong'])) {$testo = $_SESSION['var']['testoLong']; echo $testo;} ?></textarea>
             <?php if(isset($_SESSION['error']['testoLongErr'])) { echo '<span class="error">'. $_SESSION['error']['testoLongErr'] .'</span>'; unset($_SESSION['error']['testoLongErr']); } else {echo "";} ?>
           </li>

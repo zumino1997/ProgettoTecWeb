@@ -90,9 +90,9 @@ else {
 		<?php
     if(!empty($listaImg)){
       foreach ($listaImg as $img) {
-    		echo '<div id="column">';
+    		echo '<div class="column">';
         echo '<img src="'.$img['Immagine'].'" onclick="show(this)" alt="'.$img['Alt'].'"/>';
-        echo '<p id="did">'.$img['Didascalia'].'</p>';
+        echo '<p class="did">'.$img['Didascalia'].'</p>';
     		echo '</div>';
     	}
     }
