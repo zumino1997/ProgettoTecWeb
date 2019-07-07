@@ -135,12 +135,13 @@ function checkTitolo(titoloInput) {
 
 function checkTesto(testoInput) {
     var pattern=/^.{40,300}$/;
-    if (pattern.test(testoInput.value)){
+    tInput = ((testoInput.value).replace(/(\r\n|\n|\r)/gm," "));
+    if (pattern.test(tInput)){
       togliErrore(testoInput);
       return true;
     }
     else{
-      if (testoInput.value=="")
+      if (tInput=="")
         mostraErrore(testoInput, "Il campo testo non può essere vuoto");
       else
         mostraErrore(testoInput, "La descrizione corta deve avere almeno 40 caratteri e una massimo di 300");
@@ -150,7 +151,8 @@ function checkTesto(testoInput) {
 
 function checkTestoLong(testoInput) {
     var pattern=/^.{40,900}$/;
-    if (pattern.test(testoInput.value)){
+    tInput = ((testoInput.value).replace(/(\r\n|\n|\r)/gm," "));
+    if (pattern.test(tInput)){
       togliErrore(testoInput);
       return true;
     }

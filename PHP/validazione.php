@@ -94,7 +94,8 @@ function valTitolo($titolo){
 
 function valTesto($testo){
   $testoErr="";
-  if (!preg_match("/^.{40,300}$/",$testo)) {
+  $testo1 = trim(preg_replace('/\s\s+/', ' ', $testo)); //nel caso di "a capo", vengono sostituiti con degli spazi
+  if (!preg_match("/^.{40,300}$/",$testo1)) {
     $testoErr = "La descrizione corta deve essere di minimo 40 e massimo 300 caratteri";
   }
   return $testoErr;
@@ -110,7 +111,8 @@ function valDidascalia($testo){
 
 function valTestoLong($testoLong){
   $testoLongErr="";
-  if (!preg_match("/^.{40,900}$/",$testoLong)) {
+  $testoLong1 = trim(preg_replace('/\s\s+/', ' ', $testoLong));
+  if (!preg_match("/^.{40,900}$/",$testoLong1)) {
     $testoLongErr = "La descrizione corta di minimo 40 e massimo 900 caratteri";
   }
   return $testoLongErr;
