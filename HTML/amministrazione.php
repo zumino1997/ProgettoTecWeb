@@ -81,12 +81,12 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
       }
       ?>
       <ul>
-				<li><a href="corsi_form.php">Pagina inserimento corsi</a></li>
-				<li><a href="news_form.php">Pagina inserimento <span xml:lang="en">news</span></a></li>
-				<li><a href="galleria_form.php">Pagina inserimento galleria</a></li>
-        <li><a href="remove_modifica_corsi.php">Pagina rimozione e modifica corsi</a></li>
-				<li><a href="remove_galleria.php">Pagina rimozione galleria</a></li>
-        <li><a href="remove_modifica_news.php">Pagina rimozione e modifica <span xml:lang="en">news</span></a></li>
+				<li class="noDec"><a class="linkAmministrazione" href="corsi_form.php">Inserimento corsi</a></li>
+				<li class="noDec"><a class="linkAmministrazione" href="news_form.php">Inserimento <span xml:lang="en">news</span></a></li>
+				<li class="noDec"><a class="linkAmministrazione" href="galleria_form.php">Inserimento galleria</a></li>
+        <li class="noDec"><a class="linkAmministrazione" href="remove_modifica_corsi.php">Rimozione e modifica corsi</a></li>
+				<li class="noDec"><a class="linkAmministrazione" href="remove_galleria.php">Rimozione galleria</a></li>
+        <li class="noDec"><a class="linkAmministrazione" href="remove_modifica_news.php">Rimozione e modifica <span xml:lang="en">news</span></a></li>
 			</ul>
 		</div>
 	</div>
