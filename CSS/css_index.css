@@ -58,8 +58,10 @@ a:visited{
 	overflow: hidden;
 }
 
-
-
+.linkAmministrazione{
+	padding: 1em;
+	text-decoration: none;
+}
 
 /*****
 MENU
