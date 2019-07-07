@@ -32,7 +32,6 @@ $_SESSION ['paginaCorr']="";
 
 </head>
 <body>
-  <a id="hideLink" href="#content">Vai al contenuto</a>
   <noscript>
     <p id="menuNoScript"><span xml:lang="en">Javascript</span> Disabilitato: Il <a href="#NoJS">men&ugrave;</a> &egrave; visualizzabile in fondo alla pagina</p>
   </noscript>
@@ -67,7 +66,7 @@ $_SESSION ['paginaCorr']="";
       <div id="info">
   			<h2>Indirizzo</h2>
   			<p>Via Bassanese Coste, 156</p>
-  			<p>31010 Maser, <span xml:abbr title="Treviso">TV</abbr></p>
+  			<p>31010 Maser, <abbr title="Treviso">TV</abbr></p>
   			<p>Italia</p>
   			<h2>Recapiti</h2>
   			<p>Telefono: 0423 565453</p>

@@ -69,7 +69,7 @@ else {
 	    <li><a href="corsi.php">Corsi</a></li>
       <li><a href="abbonamenti.php">Abbonamenti</a></li>
       <li><a href="news.php">News</a></li>
-	    <li id="currentLink">Galleria</li>
+	    <li>Galleria</li>
 	    <li><a href="staff.php" xml:lang="en">Staff</a></li>
 	    <li><a href="contatti.php">Contatti</a></li>
       <?php require_once __DIR__ . DIRECTORY_SEPARATOR . "../PHP" . DIRECTORY_SEPARATOR . "userbar_mobile.php";?>
@@ -104,14 +104,14 @@ else {
       if ($_GET['page']!=$page)
         echo '<a href="galleria.php?page=' . $page . '">' . $page . '</a> ';
       else {
-        echo '<span class="active"' . $page . '">' . $page . '</span> ';
+        echo '<span class="active">' . $page . '</span> ';
       }
     }
     ?>
 
 		<div id="showImage">
 			  <span id="closeImage" onclick="closeImage()">&times;</span>
-				<img id="imgExp"/>
+				<img src="" alt="" id="imgExp"/>
 		</div>
 	</div>
 
