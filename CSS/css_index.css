@@ -435,7 +435,7 @@ CSS CORSI
 
 .pagination{
 	text-align: center;
-	clear: both;						//mettere clearfix in html
+	clear: both;						/*mettere clearfix in html */
 	padding: 2em 0;
 }
 
