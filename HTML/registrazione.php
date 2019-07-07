@@ -136,7 +136,8 @@ $_SESSION ['paginaCorr']="registrazione";
   	    <li><a href="galleria.php">Galleria</a></li>
   	    <li><a href="staff.php" xml:lang="en">Staff</a></li>
   	    <li><a href="contatti.php">Contatti</a></li>
-        <?php include __DIR__ . DIRECTORY_SEPARATOR . "../PHP" . DIRECTORY_SEPARATOR . "userbar_mobile.php";?>
+        <li>Registrati</li>
+        <li><a href="login.php" xml:lang="en">Login</a></li>
   	  </ul>
   </noscript>
 

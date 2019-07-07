@@ -102,7 +102,8 @@ if ((!isset($_SESSION["email"]))||($_SESSION["email"]!="admin@admin.it")){
   	    <li><a href="galleria.php">Galleria</a></li>
   	    <li><a href="staff.php" xml:lang="en">Staff</a></li>
   	    <li><a href="contatti.php">Contatti</a></li>
-        <?php include __DIR__ . DIRECTORY_SEPARATOR . "../PHP" . DIRECTORY_SEPARATOR . "userbar_mobile.php";?>
+        <li>Pannello</li>
+        <li><a href="../PHP/logout.php" xml:lang="en">Logout</a></li>
   	  </ul>
   </noscript>
 

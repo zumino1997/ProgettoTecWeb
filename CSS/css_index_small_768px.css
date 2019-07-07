@@ -31,6 +31,10 @@ button:focus{
 	list-style-type: none;
 }
 
+noscript a{
+	color:#FFAF56;
+}
+
 #menuNoScript{
 	display: block;
 }
