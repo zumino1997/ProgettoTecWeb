@@ -178,11 +178,11 @@ h1{
 
 /*GALLERIA*/
 
-#column{
+.column{
 	width:90%;
 }
 
-#column img{
+.column img{
 	height: auto;
 }
 

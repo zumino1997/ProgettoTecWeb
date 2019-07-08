@@ -31,6 +31,10 @@ button:focus{
 	list-style-type: none;
 }
 
+noscript a{
+	color:#FFAF56;
+}
+
 #menuNoScript{
 	display: block;
 }
@@ -148,7 +152,6 @@ button:focus{
 
 .box img{
 	max-width: 60%;
-	max-height: auto;
 }
 
 .box p{
@@ -194,9 +197,8 @@ button:focus{
 
 /*GALLERIA*/
 
-#column{
-	width:40%;
-	padding:5%;
+.column img{
+	height: 10em;
 }
 
 #showImage img{
